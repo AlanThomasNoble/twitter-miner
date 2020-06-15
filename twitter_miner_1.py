@@ -76,7 +76,8 @@ def obtain_tweets_from_list_users(api):
 
 
 # Action: obtains tweets from a search query and returns list of json objects for each result from query
-# Return: JSON objects have the tweet text, tweet id, tweet hashtag information, and the tweet user information
+# Return: JSON objects have the tweet text, boolean stating if tweet has been truncated, tweet id, tweet hashtag information, 
+# and the tweet user information
 def obtain_tweets_from_search(api):
     search_query = input("Enter a twitter search query (Ex: Autonomous Vehicles, Self Driving Technology, etc.): ")
     num = input("Enter the number of results you would like: ")
