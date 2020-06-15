@@ -76,8 +76,7 @@ def obtain_tweets_from_list_users(api):
 
 
 # Action: obtains tweets from a search query and returns list of json objects for each result from query
-# Return: JSON objects have the tweet text, boolean stating if tweet has been truncated, tweet id, tweet hashtag information, 
-# and the tweet user information
+# Return: JSON objects have the tweet text, tweet id, tweet hashtag information, and the tweet user information
 def obtain_tweets_from_search(api):
     search_query = input("Enter a twitter search query (Ex: Autonomous Vehicles, Self Driving Technology, etc.): ")
     num = input("Enter the number of results you would like: ")
@@ -94,7 +93,7 @@ def obtain_tweets_from_search(api):
         out_json = {}
         out_json["tweet_id"] = tweet._json["id"]
         out_json["tweet_text"] = tweet._json["text"]
-        out_json["tweet_text_truncated"] = tweet._json["truncated"]
+        # out_json["tweet_text_truncated"] = tweet._json["truncated"]
         out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
         out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
 
@@ -122,11 +121,6 @@ def main():
     auth.set_access_token(access_token, access_token_secret)
     # Creating the API object while passing in auth information
     api = tweepy.API(auth)
-
-    l = [1272276179064684545]
-
-    # print(api.statuses_lookup(l))
-    # return 0
 
     # Outputs initial messages to the user
     user_input = start()

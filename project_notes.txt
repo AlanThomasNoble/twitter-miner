@@ -1,1 +1,18 @@
 Notes for the Twitter Miner
+
+# API for locating a tweet once we have the tweet's id
+# l = [1272276179064684545]
+# print(api.statuses_lookup(l))
+# return 0
+
+
+
+Next steps - 
+
+- Test run / Gather as many tweets as possible
+- Determine how to output the information collected
+- Determine ideal way to gather a massive amount of tweets. Look into other libraries to see if there are better ways to collect twitter information
+
+Idea for test run
+1) just get list of accounts 20 - 30 to get around 600 tweets
+2) user search function -> obtain account ids -> pull tweets from those accounts
