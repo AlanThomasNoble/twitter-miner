@@ -15,7 +15,7 @@ Next steps...
 Idea for test run
 
 Based around account search function: obtain_tweets_from_list_users(api)
-1) just get list of accounts 20 - 30 to get around 600 tweets ->almost done
+1) just get list of accounts 30-40 to get around 800 tweets ->almost done
 2) user search function(function for obtaining users related to autonomous vehicles) -> obtain account ids -> pull tweets from those accounts
 
 Based on search query function: obtain_tweets_from_search(api)

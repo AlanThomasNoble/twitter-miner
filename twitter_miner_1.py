@@ -58,23 +58,27 @@ def obtain_tweets_from_list_users(api):
 
     # open the file
     f_ptr = open(f'input/list_of_accounts.txt', 'r')
+    w_ptr = open(f'output/list_of_accounts_output.txt', 'w')
 
     # go through each line in the file
     running_count = 1
     for line in f_ptr:
         account = line.rstrip('\n')
         account_tweets = api.user_timeline(account)
-        #print(account_tweets)
-        #exit_program()
 
-        print("The following tweets are from this account: ", account)
+        account_line  = "The following tweets are from this account: " + account + "\n"
+        w_ptr.write(account_line)
+
         for tweet in account_tweets:
         # printing the text stored inside the tweet object
-            pre = "(" + str(running_count) + ")"
-            print(pre, tweet.text)
-            print()
+            written_tweet = str(running_count) + ") " + tweet.text + "\n\n"
+            w_ptr.write(written_tweet)
             running_count += 1
-        print()
+        w_ptr.write("\n")
+
+    f_ptr.close()
+    w_ptr.close()
+    print("Tweets can be found in new_output.txt")
 
 
 # Action: obtains tweets from a search query and returns list of json objects for each result from query
