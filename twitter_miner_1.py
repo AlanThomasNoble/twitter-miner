@@ -77,6 +77,7 @@ def obtain_tweets_from_list_users(api):
 
 # Action: obtains tweets from a search query and returns list of json objects for each result from query
 # Return: JSON objects have the tweet text, tweet id, tweet hashtag information, and the tweet user information
+# If we have list of keywords, we will be able to generate hundreds of tweets
 def obtain_tweets_from_search(api):
     search_query = input("Enter a twitter search query (Ex: Autonomous Vehicles, Self Driving Technology, etc.): ")
     num = input("Enter the number of results you would like: ")
@@ -106,6 +107,9 @@ def obtain_tweets_from_search(api):
 
     # how much data?
     # how should json look like
+
+
+#Add Function for finding list of accounts related to Autonomous Vehicles
 
 
 # Action: exits software

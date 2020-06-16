@@ -7,12 +7,17 @@ Notes for the Twitter Miner
 
 
 
-Next steps - 
-
-- Test run / Gather as many tweets as possible
-- Determine how to output the information collected
+Next steps...
+- Test run -> Gather as many tweets as possible
+- Determine how to output the information collected (Json)
 - Determine ideal way to gather a massive amount of tweets. Look into other libraries to see if there are better ways to collect twitter information
 
 Idea for test run
-1) just get list of accounts 20 - 30 to get around 600 tweets
-2) user search function -> obtain account ids -> pull tweets from those accounts
+
+Based around account search function: obtain_tweets_from_list_users(api)
+1) just get list of accounts 20 - 30 to get around 600 tweets ->almost done
+2) user search function(function for obtaining users related to autonomous vehicles) -> obtain account ids -> pull tweets from those accounts
+
+Based on search query function: obtain_tweets_from_search(api)
+1) List of keywords
+2) Generate up to 100 tweets for each keyword (30 keywords -> 3000 tweets)
