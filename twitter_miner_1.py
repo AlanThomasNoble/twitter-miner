@@ -64,6 +64,8 @@ def obtain_tweets_from_list_users(api):
     for line in f_ptr:
         account = line.rstrip('\n')
         account_tweets = api.user_timeline(account)
+        #print(account_tweets)
+        #exit_program()
 
         print("The following tweets are from this account: ", account)
         for tweet in account_tweets:
@@ -115,6 +117,7 @@ def obtain_tweets_from_search(api):
 # Action: exits software
 def exit_program():
     print("Exited program.")
+    sys.exit()
 
 
 def main():

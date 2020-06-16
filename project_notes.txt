@@ -21,3 +21,10 @@ Based around account search function: obtain_tweets_from_list_users(api)
 Based on search query function: obtain_tweets_from_search(api)
 1) List of keywords
 2) Generate up to 100 tweets for each keyword (30 keywords -> 3000 tweets)
+
+
+Pros -
+We can get a list of around 800 tweets
+
+Cons -
+The full tweet is not displayed
