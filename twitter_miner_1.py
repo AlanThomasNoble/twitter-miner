@@ -34,17 +34,46 @@ def obtain_tweets_from_single_user(api):
     print()
     print("The following tweets are from this account:", user_id)
 
-    # Using the API object to get tweets from a given user's timeline
-    # user_tweets = api.lookup_users(user_id)
-    user_tweets = api.user_timeline(user_id)
-    # foreach through all tweets pulled
-    count = 1
-    for tweet in user_tweets:
-    # printing the text stored inside the tweet object
-        pre = "(" + str(count) + ")"
-        print(pre, tweet.text)
-        print()
-        count += 1
+    tweets = []
+    incoming = api.user_timeline(screen_name=user_id,count=340,include_rts=True)
+    tweets.extend(incoming)
+    oldest = tweets[-1].id - 1
+
+    # user_timeline is limited to 200 tweet retrieval
+    # use while loop to bypass and reach twitter max of 3240 tweet retrieval
+    while len(incoming) > 0:
+        incoming = api.user_timeline(screen_name = user_id,count=340,max_id=oldest,tweet_mode='extended')
+        tweets.extend(incoming)
+
+        # Check Indexing...
+        oldest = tweets[-1].id - 1
+
+    total = len(tweets)
+    print(f"Tweets Retrieved {total}")
+
+    # Functionalize...?
+    from csv import DictWriter # move to above...
+    with open('tweets.csv','w') as file:
+        headers = ['User', 'Tweet'] # add more headers...i.e. tweet type (reply, quote, rt)
+        csv_writer = DictWriter(file,fieldnames=headers)
+        csv_writer.writeheader()
+
+        for tweet in tweets:
+            status = api.get_status(tweet.id, tweet_mode="extended")
+            try: # Check if Retweet
+                t = status.retweeted_status.full_text # Offers full text for retweets
+                # Write Tweet to File
+                csv_writer.writerow({
+                    'User': user_id,
+                    'Tweet': t
+                })
+            except AttributeError:  # Not a Retweet
+                t = status.full_text
+                # Write Tweet to File
+                csv_writer.writerow({
+                    'User': user_id,
+                    'Tweet': t
+                })
 
 
 # Action: outputs tweets from a list of users
