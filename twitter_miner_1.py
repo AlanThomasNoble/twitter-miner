@@ -12,6 +12,7 @@ def start():
     print("This software will be used to mine Twitter data.")
     print()
     print("(1) User - obtain a set of a given user's tweets using an account's user ID")
+    print("(1) Rev_User - revised function for obtaining a given user's tweets using an account's user ID")
     print("(2) List - obtain tweets from a list of users")
     print("(3) Search - obtain tweets from a search query")
     print("(4) Limits - prints json of current API usage limits")
@@ -75,6 +76,32 @@ def obtain_tweets_from_single_user(api):
                     'User': user_id,
                     'Tweet': t
                 })
+
+
+# EXPERIMENTAL FUNCTION FOR SINGLE USER
+# Revised function for obtaining a full tweet
+# Max is 200 tweets per user
+def REVISED_obtain_tweets_from_single_user(api):
+    user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
+    print()
+    print("Obtaining user's tweets...")
+    print()
+    print("The following tweets are from this account:", user_id)
+    new_tweets = api.user_timeline(screen_name=user_id, count=200, tweet_mode="extended")
+    count = 0
+    for tweet in new_tweets:
+        count += 1
+        if tweet._json['truncated']:
+            print("Found")
+            exit_program()
+        if not tweet._json['retweeted']:
+            print(count, tweet._json["full_text"])
+        else:
+            print("alan")
+            print(count, tweet._json.retweeted_status.full_text)
+        print()
+
+    print("Number of tweets found: ", count)
 
 
 # Action: outputs tweets from a list of users
@@ -168,6 +195,8 @@ def main():
 
     if user_input == "User":
         obtain_tweets_from_single_user(api)
+    elif user_input == "Rev_User":
+        REVISED_obtain_tweets_from_single_user(api)
     elif user_input == "List":
         obtain_tweets_from_list_users(api)
     elif user_input == "Search":

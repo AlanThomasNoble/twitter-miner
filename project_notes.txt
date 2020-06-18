@@ -28,3 +28,9 @@ We can get a list of around 800 tweets
 
 Cons -
 The full tweet is not displayed
+
+
+
+1) Take a look at Aashish's code
+2) implement keywords function
+3) try to get full tweet
