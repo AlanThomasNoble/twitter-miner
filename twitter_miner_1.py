@@ -43,7 +43,7 @@ def obtain_tweets_from_single_user(api):
     # Open File
     with open('tweets.csv','w') as file:
         # Initialize Headers and Writer Object
-        headers = ['User', 'Tweet', 'ID'] # add more headers...i.e. tweet type (reply, quote, rt)
+        headers = ['User', 'Tweet Text', 'ID', 'Tweet','Quoted','Reply','Retweet'] # add more headers...i.e. tweet type (reply, quote, rt)
         csv_writer = DictWriter(file,fieldnames=headers)
         csv_writer.writeheader()
 
@@ -54,62 +54,51 @@ def obtain_tweets_from_single_user(api):
         # Loop Through
             # > user_timeline is limited to 200 tweet retrieval
             # > use while loop to bypass and reach twitter max of 3240 tweet retrieval
-        while firstIteration or len(incoming) > 0:            
+        while firstIteration or len(incoming) > 0:
             # Collect First Set of Tweet Objects
             if firstIteration:
-                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True)
-            else:
-                incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended')
+                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True) # include rts in both?
+                firstIteration = False
 
             # Increment Total Tweets
             numTweets += len(incoming)
 
-            # Set First Iteration Equal to False
-            firstIteration = False
-
             # Obtain Full Tweets
             counter = len(incoming)
             for tweet in incoming:
-                # Alternative Method to reduce get_status() calls [not tested]
-                '''
-                if "RT @" in tweet.text:
-                    time.sleep(1.2)
-                    status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
-                    t = status.retweeted_status.full_text
-                    csv_writer.writerow({
-                        'User': user_id,
-                        'Tweet': t,
-                        'ID': tweet.id
-                    })
-                else:
-                    csv_writer.writerow({
-                        'User': user_id,
-                        'Tweet': t,
-                        'ID': tweet.text
-                    })
-                '''
-
                 time.sleep(1.2) # Ensure no Runtime Error
                 status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
                 try: # check if retweet
                     t = status.retweeted_status.full_text
                     csv_writer.writerow({
                         'User': user_id,
-                        'Tweet': t,
-                        'ID': tweet.id
+                        'Tweet Text': t,
+                        'ID': tweet.id,
+                        'Tweet': False,
+                        'Quoted': False,
+                        'Reply': False,
+                        'Retweet': True
                     })
+                    # status.is_quote_status
                 except AttributeError: # Not a retweet
                     t = status.full_text
                     csv_writer.writerow({
                         'User': user_id,
-                        'Tweet': t,
-                        'ID': tweet.id
+                        'Tweet Text': t,
+                        'ID': tweet.id,
+                        'Tweet': not status.is_quote_status and not bool(status.in_reply_to_status_id), 
+                        'Quoted': status.is_quote_status,
+                        'Reply': bool(status.in_reply_to_status_id),
+                        'Retweet': False
                     })
                 # Decrement
                 counter -= 1
                 # Adjust Frame of Reference
-                if not counter:
-                    oldest = tweet.id # set equal to last tweet
+                if counter == 0:
+                    oldest = tweet.id - 1 # set equal to last tweet
+
+            # Update Set of Tweet Objects
+            incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended')
 
         print(f"Tweets Retrieved {numTweets}")
 
