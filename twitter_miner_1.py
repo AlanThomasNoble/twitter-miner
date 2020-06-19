@@ -158,6 +158,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     running_count = 0
     for line in f_ptr:
         account = line.rstrip('\n')
+        # max number of tweets per accounts is 200
         account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
 
         account_line  = "The following tweets are from this account: " + account + "\n"
@@ -174,9 +175,9 @@ def FULL_TEXT_tweets_from_list_users(api):
                 w_ptr.write(str(running_count) + ") retweeted: " + status.retweeted_status.full_text + "\n")
             except AttributeError:  # Not a Retweet
                 w_ptr.write(str(running_count) + ") " + status.full_text + "\n")
-            # written_tweet = str(running_count) + ") " + status.full_text + "\n\n"
-            # w_ptr.write(written_tweet)
-        # w_ptr.write("\n")
+            # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
+            # which is the max output for the rate limit twitter sets
+            time.sleep(1)
         w_ptr.write("\n")
         w_ptr.write("\n")
 

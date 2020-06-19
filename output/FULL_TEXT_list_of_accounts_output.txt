@@ -1,15 +1,3 @@
-The following tweets are from this account: AVminer2
-1) .kjndkjgfndfkjgnkfdjng
-2) retweeted: Falcon 9 launches 58 Starlink satellites and 3 @planetlabs Skysats to orbit before returning to Earth and landing on a droneship https://t.co/K6OjgJQZfv
-3) ljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsd.ldkmfldskflksdfmlsdmfklsmdlfkmsdlk https://t.co/25wOUmvlS1
-4) sdkjndslkjfsdlkjfnlskdjnfkjsdnfkdjsnfkjnsdkjfnsdkjfnskjdnfjksndkfjnsdjknfksjdnfksdjnfkjnsdfkjndsjknflsdnfdjjjjjnsjndfksdjnfjksndfkjsndfjksdlnfjsdllsdfnskjdf sdfkjnsdlkjfnksjdf sdfjklsdnfkjlnsdkljfnsdf sdjfndsfjnsdklfnjsdkjnfkdsjnfdksnf sdfkjnsdkfjnskdjnfkjsdnfkjlsdnfkjsdnfjkdjjjj
-5) Eihdccjtrhf9876 #Eihdccjtrhf9876 https://t.co/UmfeVTqtKj
-6) #Eihdccjtrhf9876
-7) Eihdccjtrhf9876
-8) Happy Sunday!
-9) This account will be used for AV research.
-
-
 The following tweets are from this account: DrivingTheFutur
 10) retweeted: Google self-driving car gets pulled over for going too slow https://t.co/vjbAN1Iub8 https://t.co/XkacfYZr1r
 11) Autonomous Vehicles provide one step to a brighter future! #Drivingthefuture
@@ -36,37 +24,37 @@ https://t.co/OgXuiHRg1Q
 
 
 The following tweets are from this account: LawOfDriverless
-30) Interestingly, the Insurance Institute for Highway Safety studied more than 5,000 crashes documented by the US NHTSA and found that #autonomous  technology likely will only prevent one-third of all vehicle crashes: https://t.co/6jIfR9jSWl
-31) MOT changes may see cars tested for cyber security to ensure vehicles cannot be hacked: https://t.co/irAyim05p1
-32) retweeted: Very pleased to see that v2.0 of @BSI_UK's #CAV Vocabulary has been published. It's a great collaboration between BSI, @ccavgovuk + industry and I'm proud of my work in helping bring it all together so we can talk the same language. #AutomatedVehicles #TeamworkMakesTheDreamWork https://t.co/LR9V2KLfZX
-33) In collaboration between Coventry City Council, Birmingham City Council, Solihull Council, and Transport for West Midlands, UK trial route for #AutonomousVehicles will span 300km: https://t.co/q5SiE79RdB
-34) Interesting article on steps being taken to help #autonomous vehicles deal with defacement of road signs: https://t.co/Pw9UGE45mh https://t.co/x0bhsOngQN
-35) retweeted: This is great piece of analysis on the spectrum of autonomy by Karni A. Chagal-Feferkorn and shows why the SAE levels are so problematic. https://t.co/3qz5idMPsP
-36) retweeted: Read the analysis of responses to the @Law_Commission  second consultation paper on #automatedvehicles here: https://t.co/iW3qQmZViU https://t.co/RWANeV6dnR
-37) retweeted: In this article, we discuss the results of The Law Commission’s second consultation on automated vehicle road passenger services. It points towards the creation of 'HARPS' – a new category of regulated #publictransport https://t.co/RdB7hux7Lf https://t.co/CMQVSwChDs
-38) retweeted: Work has begun on building on the UK’s first stretch of road, 180miles of it, designed for testing #autonomous vehicles that will be open this year. https://t.co/gXZmyr2jJG
-39) retweeted: Some #autonomousvehicle companies 
+30) In the US, the Insurance Institute for Highway Safety urges NHTSA to expand and strengthen safety standards for self-driving cars - for example systems to refuse to start a journey if an airbag is malfunctioning or a passenger is not properly restrained: https://t.co/bRr6EUKrSi
+31) Work has begun on a 300km test route for real world driving trials of self-driving cars in the Midlands, with a view to covering urban, rural, suburban and highway roads: https://t.co/feM21a0bjq
+32) Interestingly, the Insurance Institute for Highway Safety studied more than 5,000 crashes documented by the US NHTSA and found that #autonomous  technology likely will only prevent one-third of all vehicle crashes: https://t.co/6jIfR9jSWl
+33) MOT changes may see cars tested for cyber security to ensure vehicles cannot be hacked: https://t.co/irAyim05p1
+34) retweeted: Very pleased to see that v2.0 of @BSI_UK's #CAV Vocabulary has been published. It's a great collaboration between BSI, @ccavgovuk + industry and I'm proud of my work in helping bring it all together so we can talk the same language. #AutomatedVehicles #TeamworkMakesTheDreamWork https://t.co/LR9V2KLfZX
+35) In collaboration between Coventry City Council, Birmingham City Council, Solihull Council, and Transport for West Midlands, UK trial route for #AutonomousVehicles will span 300km: https://t.co/q5SiE79RdB
+36) Interesting article on steps being taken to help #autonomous vehicles deal with defacement of road signs: https://t.co/Pw9UGE45mh https://t.co/x0bhsOngQN
+37) retweeted: This is great piece of analysis on the spectrum of autonomy by Karni A. Chagal-Feferkorn and shows why the SAE levels are so problematic. https://t.co/3qz5idMPsP
+38) retweeted: Read the analysis of responses to the @Law_Commission  second consultation paper on #automatedvehicles here: https://t.co/iW3qQmZViU https://t.co/RWANeV6dnR
+39) retweeted: In this article, we discuss the results of The Law Commission’s second consultation on automated vehicle road passenger services. It points towards the creation of 'HARPS' – a new category of regulated #publictransport https://t.co/RdB7hux7Lf https://t.co/CMQVSwChDs
+40) retweeted: Work has begun on building on the UK’s first stretch of road, 180miles of it, designed for testing #autonomous vehicles that will be open this year. https://t.co/gXZmyr2jJG
+41) retweeted: Some #autonomousvehicle companies 
 
 resume public testing, others express caution 
 
 https://t.co/xYgWV35GcY #fintech #insurtech #AV @KYLE_L_WIGGERS @VentureBeat @nigelwalsh @JeroenBartelse @SabineVdL @floriansemle @andi_staub @FGraillot @stratorob @insurtechforum @insurtechtalk https://t.co/E4PgkTSKFd
-40) Interested to see that researchers at Cornell are testing public reactions to #driverlesscars by using normal cars with drivers disguised as car seats - wasn't that the plot of a Sherlock episode? https://t.co/N9Z1KXWbZn https://t.co/dwynjddLt8
-41) retweeted: Pay bias bounties! Nice idea @Miles_Brundage! Now how do we get corporations to pay taxes...
+42) Interested to see that researchers at Cornell are testing public reactions to #driverlesscars by using normal cars with drivers disguised as car seats - wasn't that the plot of a Sherlock episode? https://t.co/N9Z1KXWbZn https://t.co/dwynjddLt8
+43) retweeted: Pay bias bounties! Nice idea @Miles_Brundage! Now how do we get corporations to pay taxes...
 
 https://t.co/kXHT6456JE
 
 #aiethics
-42) retweeted: This Robot Can Disinfect Rooms After Coronavirus Exposure | Mashable
+44) retweeted: This Robot Can Disinfect Rooms After Coronavirus Exposure | Mashable
 #Robots #Coronavirus #StayHome #Robotics #Automation #ArtificialIntelligence #MachineLearning #MachineIntelligence
 #AI #DL #ML #Tech #Technology 
 cc @LawOfDriverless @ele9061 @GunterHeinrich @TheCuriousLuke https://t.co/ExFPfAj0Yn
-43) retweeted: #Robot servers, powered by #AI and #Robotics &gt;&gt;&gt; @bearrobotics via @MikeQuindazzi &gt;&gt;&gt; #MachineLearning #ComputerVision #Robots #Restaurant #IoT &gt;&gt;&gt; Video https://t.co/4g3XqkDRf0
-44) The Mayo Clinic in Florida is using #AutonomousVehicles to safely transport COVID-19 tests: https://t.co/6ZfsuLvGy7 https://t.co/HpAEgvMUu5
-45) @au_tom_otive Your local @Nextdoor_UK (local social network) is a good shout for details of your local restaurant suppliers looking to pivot to supplying the public.
-46) @au_tom_otive As a consumer, you can now get eggs directly from the comapnies which used to serve the restaurant trade. Interestingly, 'trade' eggs are white - all the white eggs are diverted to trade because since the 90s the public have preferred brown as 'healthier'.
-47) In slightly 'no shit sherlock' news, it is confirmed that #autonomous vehicles is likely to reduce drink-driving rates but could lead to greater levels of binge drinking: https://t.co/aKpibObfeY
-48) retweeted: How to do social media. And how not to. https://t.co/1H9oC5vGtu
-49) retweeted: Brief non-legal post: consider joining @Nextdoor_UK which is like a hyper local twitter for the handful of streets around you. Lots of restaurants and restaurant suppliers offering to deliver food boxes to your doorstep, which will reduce pressure on supermarkets.
+45) retweeted: #Robot servers, powered by #AI and #Robotics &gt;&gt;&gt; @bearrobotics via @MikeQuindazzi &gt;&gt;&gt; #MachineLearning #ComputerVision #Robots #Restaurant #IoT &gt;&gt;&gt; Video https://t.co/4g3XqkDRf0
+46) The Mayo Clinic in Florida is using #AutonomousVehicles to safely transport COVID-19 tests: https://t.co/6ZfsuLvGy7 https://t.co/HpAEgvMUu5
+47) @au_tom_otive Your local @Nextdoor_UK (local social network) is a good shout for details of your local restaurant suppliers looking to pivot to supplying the public.
+48) @au_tom_otive As a consumer, you can now get eggs directly from the comapnies which used to serve the restaurant trade. Interestingly, 'trade' eggs are white - all the white eggs are diverted to trade because since the 90s the public have preferred brown as 'healthier'.
+49) In slightly 'no shit sherlock' news, it is confirmed that #autonomous vehicles is likely to reduce drink-driving rates but could lead to greater levels of binge drinking: https://t.co/aKpibObfeY
 
 
 The following tweets are from this account: _AVPodcast
@@ -121,105 +109,105 @@ https://t.co/wLFmsNYlAi
 
 
 The following tweets are from this account: selfdriving360
-70) This is Yape, self-driving delivery robot that uses facial recognition to unlock - via @futurism
+70) Self-driving trucks will be on our highways soon!
+
+Read/Add #SelfDrivingCars news
+https://t.co/bpSD60w38Y
+
+#selfdriving #driverless #robocars #cars #automotive #technology
+#driverlesscars #autonomouscars #autonomousvehicles https://t.co/GcqmWn7R94
+71) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+
+https://t.co/OAkQsrRHym
+72) Watch @Nurobots deploing its self-driving delivery vehicles on U.S. roads - Via @bgov @JeroenBartelse 
+
+Read/Add #SelfDrivingCars news
+https://t.co/bpSD60w38Y
+
+#driverlesscars #autonomouscars #autonomousvehicles 
+#selfdriving #driverless #robocars #cars #automotive #technology https://t.co/OvkzRT09b6
+73) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+
+https://t.co/2LkIhFwhzw
+74) This is Yape, self-driving delivery robot that uses facial recognition to unlock - via @futurism
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60NE0w
 
 #driverlesscars #autonomouscars #autonomousvehicles 
 #selfdriving #driverless https://t.co/FKJo8XqR9p
-71) This remote-controlled lawn mower can cover 8,000 square feet of grass in an hour. @businessinsider
+75) This remote-controlled lawn mower can cover 8,000 square feet of grass in an hour. @businessinsider
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60NE0w
 
 #selfdriving #driverless #robocars #cars #automotive #technology
 #driverlesscars #autonomouscars #autonomousvehicles https://t.co/xptm58HQd9
-72) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+76) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
 https://t.co/nWJorJ5HhU
-73) This bat's #echolocation could inspire new technology for driverless cars -- via @uwnews
+77) This bat's #echolocation could inspire new technology for driverless cars -- via @uwnews
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60NE0w
 
 #driverlesscars #autonomouscars #autonomousvehicles 
 #selfdriving #driverless #robocars #cars #automotive #technology https://t.co/lrHYHbB1gt
-74) See how @NVIDIADRIVE localization makes it easy for autonomous vehicles to find their way. 
+78) See how @NVIDIADRIVE localization makes it easy for autonomous vehicles to find their way. 
 
 https://t.co/MRSQ42LwbJ
 
 #driverlesscars #autonomouscars #autonomousvehicles 
 #machinelearning #deeplearning #ml #dl #ai 
 #computervision https://t.co/ontUFyeMnT
-75) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+79) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
 https://t.co/vjEEV0sJpM
-76) Futuristic #Mobility concept by @citroen
+80) Futuristic #Mobility concept by @citroen
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60w38Y
 
 #cars #automotive #driverlesscars #autonomouscars #autonomousvehicles 
 #selfdriving #driverless #robocars https://t.co/6GaPU5j1rf
-77) Self-driving cars will deliver parcels to your house in the UK - via @william_sachiti @JeroenBartelse 
+81) Self-driving cars will deliver parcels to your house in the UK - via @william_sachiti @JeroenBartelse 
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60NE0w
 
 #selfdriving #driverless #robocars #cars #automotive #technology
 #driverlesscars #autonomouscars #autonomousvehicles https://t.co/yhAAboZixN
-78) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+82) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
 https://t.co/eCOVVS500x
-79) This all-electric, self-driving minivan is designed for millennials
+83) This all-electric, self-driving minivan is designed for millennials
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60w38Y
 
 #electriccars #electricvehicles #cars #automotive #transport 
 #tech #technology #EmergingTech #selfdrivingcars #driverlesscars #autonomouscar https://t.co/dJYDStd6jR
-80) This self-driving car is basically a living room on wheels
+84) This self-driving car is basically a living room on wheels
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60NE0w
 
 #driverlesscars #autonomouscars #autonomousvehicles 
 #selfdriving #driverless #robocars #cars #automotive #technology https://t.co/H6g4l69xSt
-81) retweeted: Our Director of Computer Vision, Sarah Tariq, will be speaking at @theinformation Autonomous Vehicles Summit on June 25. Tickets are available here: https://t.co/toy8qZm4na https://t.co/6DQer8jWiH
-82) retweeted: The foundation of any ML system is data and at Cruise we have plenty of it. Pre-COVID-19, our fleet of 200+ AVs drove 24 hrs a day collecting huge amounts of data — petabytes per day. 
+85) retweeted: Our Director of Computer Vision, Sarah Tariq, will be speaking at @theinformation Autonomous Vehicles Summit on June 25. Tickets are available here: https://t.co/toy8qZm4na https://t.co/6DQer8jWiH
+86) retweeted: The foundation of any ML system is data and at Cruise we have plenty of it. Pre-COVID-19, our fleet of 200+ AVs drove 24 hrs a day collecting huge amounts of data — petabytes per day. 
 
 Here’s how we enable our teams to make the most of it. 
 https://t.co/xhkJg0q9mJ
 
 #CVPR2020 https://t.co/7gQ02T7oaR
-83) retweeted: How will AVs safely share the road with human drivers?  Rule 3 of #RSS addresses this issue: while the #AV may have the right of way according to the rules of the road, it should not allow a crash to happen just because others violate those principles. https://t.co/0BlUnqLgTq https://t.co/cfTB0Obngz
-84) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
-
-https://t.co/DDg5ejLf6j
-85) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
-
-https://t.co/jhIbeB6kwM
-86) A 100 year old video shows a car with park assist feature
-
-Read/Add #SelfDrivingCars news
-https://t.co/bpSD60NE0w
-
-#cars #automotive #driverlesscars #autonomouscars #autonomousvehicles 
-#selfdriving #driverless #robocars https://t.co/FrYtGIHkRB
-87) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
-
-https://t.co/XDeV7SiIO7
+87) retweeted: How will AVs safely share the road with human drivers?  Rule 3 of #RSS addresses this issue: while the #AV may have the right of way according to the rules of the road, it should not allow a crash to happen just because others violate those principles. https://t.co/0BlUnqLgTq https://t.co/cfTB0Obngz
 88) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
-https://t.co/CMbVAMnKcE
-89) This 50s classic car is returning with a new self-driving twist
+https://t.co/DDg5ejLf6j
+89) #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
-Read/Add #SelfDrivingCars news
-https://t.co/bpSD60w38Y
-
-#selfdriving #driverless #robocars #cars #automotive #technology
-#driverlesscars #autonomouscars #autonomousvehicles https://t.co/gNhCOcZZCy
+https://t.co/jhIbeB6kwM
 
 
 The following tweets are from this account: smartavcars
@@ -484,61 +472,65 @@ https://t.co/TKV3oO1j0O
 
 
 The following tweets are from this account: DCautonomous
-190) We're a week away from our next event on autonomous trucking - be sure to RSVP here: https://t.co/qlZXEQetKE
+190) retweeted: Juneteenth, which has its roots in Texas, has many, many years of history in the D.C. region.
+
+And this year, it has a new energy, too.
+
+https://t.co/iwt9RRupQR
+191) We're a week away from our next event on autonomous trucking - be sure to RSVP here: https://t.co/qlZXEQetKE
 
 #automatedvehicles #autonomousvehicles #SelfDrivingCars @sujamthe https://t.co/Zd1O8U0Lac
-191) @PAVECampaign @kirstenkorosec @PeterCBigelow @Automotive_News @junkoyoshida @eetimes This is a fascinating topic! Excited for this one!
-192) The first set of panelists for our #AutonomousTrucking event have been announced! Join us Thursday June 25.
+192) @PAVECampaign @kirstenkorosec @PeterCBigelow @Automotive_News @junkoyoshida @eetimes This is a fascinating topic! Excited for this one!
+193) The first set of panelists for our #AutonomousTrucking event have been announced! Join us Thursday June 25.
 
 RSVP: https://t.co/qlZXEQetKE
 
 #automatedvehicles #AutonomousVehicles #selfdriving https://t.co/WoLk4bWaGD
-193) Let's catch up over drinks at @CarTalkDC's virtual happy hour this Wednesday at 6pm! It might not be as fun as Blackfinn but at least it's quieter!
+194) Let's catch up over drinks at @CarTalkDC's virtual happy hour this Wednesday at 6pm! It might not be as fun as Blackfinn but at least it's quieter!
 
 @davewin @AVGregR 
 
 #AutonomousVehicles #automatedvehicles #Transportation 
 
 https://t.co/eFnKDEi9Bf
-194) Join us for our next online webinar! This time we will be discussing automated trucking with some of the leading minds in the industry. Panelists TBA!
+195) Join us for our next online webinar! This time we will be discussing automated trucking with some of the leading minds in the industry. Panelists TBA!
 
 RSVP here:
 
 https://t.co/qlZXEQetKE https://t.co/jnhZrtzJ2p
-195) retweeted: Slow Down. As of June 1 the default speed limit in the District is 20 MPH. #TwentyIsPlenty https://t.co/FnW0lkQWgo
-196) retweeted: New episode now live: @ZF_Group Senior VP Aine Denari joins the show to discuss the rise of advanced driver assistance systems (ADAS), the factors and technologies driving adoption, and how she is driving L2+ capability costs under $1,000 per vehicle https://t.co/J7f7DnGWVv
-197) retweeted: Happy Hour Livestream going live in five minutes: https://t.co/lNeWacl6mT
-198) retweeted: Join @Securing_Energy on May 21 for the kickoff of our #GetAmericaMovingAgain webinar series, featuring Kia Motors.
+196) retweeted: Slow Down. As of June 1 the default speed limit in the District is 20 MPH. #TwentyIsPlenty https://t.co/FnW0lkQWgo
+197) retweeted: New episode now live: @ZF_Group Senior VP Aine Denari joins the show to discuss the rise of advanced driver assistance systems (ADAS), the factors and technologies driving adoption, and how she is driving L2+ capability costs under $1,000 per vehicle https://t.co/J7f7DnGWVv
+198) retweeted: Happy Hour Livestream going live in five minutes: https://t.co/lNeWacl6mT
+199) retweeted: Join @Securing_Energy on May 21 for the kickoff of our #GetAmericaMovingAgain webinar series, featuring Kia Motors.
 
 We'll discuss the importance of the auto manufacturing industry for the U.S. economy and the #EV #AV future of the global auto sector. 
 
 https://t.co/IJyUrtR1eJ https://t.co/ahKG3ufny4
-199) @0xcharlie @Cruise @nudehaberdasher @KariByron Thanks @0xcharlie. We host events like this one to bring the public, gov't &amp; industry together to learn about AVs. Would love to have you on one of our panels! 
+200) @0xcharlie @Cruise @nudehaberdasher @KariByron Thanks @0xcharlie. We host events like this one to bring the public, gov't &amp; industry together to learn about AVs. Would love to have you on one of our panels! 
 
 https://t.co/ilkeNNSmuy
-200) Another reason why the #WashingtonDC region is a hotbed for #AutonomousVehicles tech
+201) Another reason why the #WashingtonDC region is a hotbed for #AutonomousVehicles tech
 
 @VTTINEWS @virginia_tech @Transurban 
 
 https://t.co/TbnbuRuvq5
-201) @Cruise @nudehaberdasher @0xcharlie @KariByron Cool, informative chat. We get asked this a lot. Please do more quick posts like this 👍
-202) @TheAutonocast @Waymo @bsofman Very exciting! Thank you for the great content throughout lockdown.
-203) retweeted: Don't forget to resiger for @SharedUseCntr Annual Summit this week.  Our Ex. Dir. Jerry Quandt will be speaking on curb management. https://t.co/zhNr0O3M7h https://t.co/d2WUoYniG6
-204) retweeted: Just because you can drive fast doesn’t mean you should. Slow down. Save a life. #SlowDownDC https://t.co/942R2etF94
-205) Join us for our first virtual event! It's collaboration w/ @SelfDriveCar101 on policy #AutonomousVehicles policy
+202) @Cruise @nudehaberdasher @0xcharlie @KariByron Cool, informative chat. We get asked this a lot. Please do more quick posts like this 👍
+203) @TheAutonocast @Waymo @bsofman Very exciting! Thank you for the great content throughout lockdown.
+204) retweeted: Don't forget to resiger for @SharedUseCntr Annual Summit this week.  Our Ex. Dir. Jerry Quandt will be speaking on curb management. https://t.co/zhNr0O3M7h https://t.co/d2WUoYniG6
+205) retweeted: Just because you can drive fast doesn’t mean you should. Slow down. Save a life. #SlowDownDC https://t.co/942R2etF94
+206) Join us for our first virtual event! It's collaboration w/ @SelfDriveCar101 on policy #AutonomousVehicles policy
 
 RSVP here:
 https://t.co/ilkeNNSmuy
 
 #Meetup #SelfDrivingCars  #policy #mobility #Transportation https://t.co/j5UACXwlyj
-206) Should be the best @TheAutonocast happy hour yet! https://t.co/9oVk3YwP7l
-207) @PAVECampaign @Tweetermeyer @TheAutonocast What a great addition to @PAVECampaign !
-208) What's the future of #AutonomousVehicles? Is there a future?! Find out here on this virtual shark tank style debate featuring some of the brightest minds in the field- Richard Mudge, Jane Lappin, @bradtem, and others
+207) Should be the best @TheAutonocast happy hour yet! https://t.co/9oVk3YwP7l
+208) @PAVECampaign @Tweetermeyer @TheAutonocast What a great addition to @PAVECampaign !
+209) What's the future of #AutonomousVehicles? Is there a future?! Find out here on this virtual shark tank style debate featuring some of the brightest minds in the field- Richard Mudge, Jane Lappin, @bradtem, and others
 
 Today 2 PM EST
 
 https://t.co/D5cigGOjQt
-209) @TranspoCampPHL A very big thank you to the organizers and volunteers! The conference ran smoothly, which enabled a lot of great networking and learning. Not an easy feat given the circumstances!
 
 
 The following tweets are from this account: DAVGtech
@@ -612,30 +604,30 @@ https://t.co/EmsuwNWR3m
 
 
 The following tweets are from this account: clearpathrobots
-250) Very interesting project from @GEResearch who are partnering with the @ArmyResearchLab to advance autonomous "off-road" navigation technology with the help of Husky UGV. Learn more about their project and Husky UGV here: https://t.co/D2n5ZEElFM https://t.co/f0gV0DzGJm
-251) retweeted: Really interesting article about #AutomatedWithVelodyne partner @clearpathrobots and how #COVID19 is accelerating their industrial automation business. #robotics #automation #lidar https://t.co/PQZ3XZrSZA
-252) Join @RIA_robotics on Wednesday, June 17th where our CEO, Matt Rendall, will be featured as a panelist! They will be discussing AMR technology, exploring potential use-cases, and seeing how you can apply them in your business. Register for the webinar here https://t.co/SANLYEfxhF https://t.co/vkuT6VUnvw
-253) Learn how Clearpath #robots take on some of the most dangerous jobs in the world as well as the #COVID19 crisis and the future of #robotics in @VelodyneLidar latest webinar with our CTO and Co-Founder, Ryan Gariepy. Watch here: https://t.co/yfhG8gtAUJ https://t.co/Xu2s9lzgGL
-254) Meet the Humans of Clearpath that are helping us automate the world’s dullest, deadliest and dirtiest jobs. This week we are featuring Wes Thomson! https://t.co/aMnQyxGvUD
-255) The @VelodyneLidar Puck 32MR generates precise real-time localization and object detection in autonomous mobile robots and other autonomous systems. This sensor is also optimized for outstanding indoor/outdoor performance. Find it on our store here: https://t.co/KYy1l9AFyV https://t.co/1FIpEiWohm
-256) In our latest blog we discuss some of the the key questions you should consider when commissioning custom robotics work. Having answers to these questions will not only save you time but will lead to much more productive discussions. Learn more here: https://t.co/PMPlhxwnGb https://t.co/dBPaEoVyW6
-257) In case you missed it, last month we announced our partnership with @Microsoft to support ROS on Windows on our robots, starting with Jackal UGV. Read more about it here: https://t.co/5FCZZgX6Ku https://t.co/FOHvUQgSZI
-258) Interested in learning about how Clearpath's automation efforts have accelerated in response to COVID-19? @businessinsider discusses how the pandemic has condensed automation roadmaps and has led to more demand for automated solutions. https://t.co/dm1qUjt6wU https://t.co/I0BiIRqqbR
-259) Our CTO, Ryan Gariepy, was recently interviewed for the Leadership and Loyalty podcast. Listen below as Ryan sits down with @TheDovBaron to discuss the future of robotics. 
+250) Great to see Husky nominated for best #ROS #Robot https://t.co/ZRUF9tSvWb
+251) Very interesting project from @GEResearch who are partnering with the @ArmyResearchLab to advance autonomous "off-road" navigation technology with the help of Husky UGV. Learn more about their project and Husky UGV here: https://t.co/D2n5ZEElFM https://t.co/f0gV0DzGJm
+252) retweeted: Really interesting article about #AutomatedWithVelodyne partner @clearpathrobots and how #COVID19 is accelerating their industrial automation business. #robotics #automation #lidar https://t.co/PQZ3XZrSZA
+253) Join @RIA_robotics on Wednesday, June 17th where our CEO, Matt Rendall, will be featured as a panelist! They will be discussing AMR technology, exploring potential use-cases, and seeing how you can apply them in your business. Register for the webinar here https://t.co/SANLYEfxhF https://t.co/vkuT6VUnvw
+254) Learn how Clearpath #robots take on some of the most dangerous jobs in the world as well as the #COVID19 crisis and the future of #robotics in @VelodyneLidar latest webinar with our CTO and Co-Founder, Ryan Gariepy. Watch here: https://t.co/yfhG8gtAUJ https://t.co/Xu2s9lzgGL
+255) Meet the Humans of Clearpath that are helping us automate the world’s dullest, deadliest and dirtiest jobs. This week we are featuring Wes Thomson! https://t.co/aMnQyxGvUD
+256) The @VelodyneLidar Puck 32MR generates precise real-time localization and object detection in autonomous mobile robots and other autonomous systems. This sensor is also optimized for outstanding indoor/outdoor performance. Find it on our store here: https://t.co/KYy1l9AFyV https://t.co/1FIpEiWohm
+257) In our latest blog we discuss some of the the key questions you should consider when commissioning custom robotics work. Having answers to these questions will not only save you time but will lead to much more productive discussions. Learn more here: https://t.co/PMPlhxwnGb https://t.co/dBPaEoVyW6
+258) In case you missed it, last month we announced our partnership with @Microsoft to support ROS on Windows on our robots, starting with Jackal UGV. Read more about it here: https://t.co/5FCZZgX6Ku https://t.co/FOHvUQgSZI
+259) Interested in learning about how Clearpath's automation efforts have accelerated in response to COVID-19? @businessinsider discusses how the pandemic has condensed automation roadmaps and has led to more demand for automated solutions. https://t.co/dm1qUjt6wU https://t.co/I0BiIRqqbR
+260) Our CTO, Ryan Gariepy, was recently interviewed for the Leadership and Loyalty podcast. Listen below as Ryan sits down with @TheDovBaron to discuss the future of robotics. 
 
 Listen to the episode here: https://t.co/pUuUJpZ4YF https://t.co/5Ku1Cu6cjf
-260) retweeted: Don't miss our interview this Friday 10amPT with Ryan Gariepy, CTO &amp; Co-Founder of @clearpathrobots to learn how #robots take on some of the most dangerous jobs in the world as well as the #COVID19 crisis and the future of #robotics. Sign up here! https://t.co/9rkdmAypUv https://t.co/DNe5JTOhzc
-261) Researchers from @nrg_ut have developed Vaultbot – a Husky based robot built to improve situational awareness in the teleoperation of dual-arm mobile robots, specifically in hazardous and uncertain environments. Read more about it here: https://t.co/NYefbpOsAc https://t.co/wj6C9aDER5
-262) Join @VelodyneLidar on June 5th for a conversation with our CTO/Co-Founder Ryan Gariepy to discuss how #robots take on dangerous jobs, the #COVID19 crisis, &amp; what the future holds for #robotics. Register for the webinar here! https://t.co/Gf2T24brZn https://t.co/Skaz0PsYwp
-263) retweeted: As you can see @clearpathrobots #UGV solutions are perfect for many research &amp; development applications! Read their #construction case study, where contractors can track in real time &amp; prevent costly rework: https://t.co/ldwkLAQp20 #VelodyneLidar #lidar #AutomatedWithVelodyne https://t.co/gjnKlRp5ON
-264) That's one nice looking robot!  We're excited to see it in action :)  #JackalUGV @VelodyneLidar @novatelinc https://t.co/7DdHMIN0cK
-265) retweeted: Today's #AutomatedWithVelodyne partner introduction @clearpathrobots is also the featured guest on our webinar this Friday! See details below and register today! https://t.co/TMnYAdt894
-266) retweeted: Meet @clearpathrobots, Canadian-based partner in #AutomatedWithVelodyne who work w/#industrial, #mining, #military, #ag, #aerospace companies/academia worldwide. We love seeing what their #UGV #robots can do! Read more! https://t.co/1IwfLoJN2h #AwV #AwVIntro #VelodyneLidar #lidar https://t.co/47TnO18X3Y
-267) We are excited to announce the completion of a $29 million (USD) investment.
+261) retweeted: Don't miss our interview this Friday 10amPT with Ryan Gariepy, CTO &amp; Co-Founder of @clearpathrobots to learn how #robots take on some of the most dangerous jobs in the world as well as the #COVID19 crisis and the future of #robotics. Sign up here! https://t.co/9rkdmAypUv https://t.co/DNe5JTOhzc
+262) Researchers from @nrg_ut have developed Vaultbot – a Husky based robot built to improve situational awareness in the teleoperation of dual-arm mobile robots, specifically in hazardous and uncertain environments. Read more about it here: https://t.co/NYefbpOsAc https://t.co/wj6C9aDER5
+263) Join @VelodyneLidar on June 5th for a conversation with our CTO/Co-Founder Ryan Gariepy to discuss how #robots take on dangerous jobs, the #COVID19 crisis, &amp; what the future holds for #robotics. Register for the webinar here! https://t.co/Gf2T24brZn https://t.co/Skaz0PsYwp
+264) retweeted: As you can see @clearpathrobots #UGV solutions are perfect for many research &amp; development applications! Read their #construction case study, where contractors can track in real time &amp; prevent costly rework: https://t.co/ldwkLAQp20 #VelodyneLidar #lidar #AutomatedWithVelodyne https://t.co/gjnKlRp5ON
+265) That's one nice looking robot!  We're excited to see it in action :)  #JackalUGV @VelodyneLidar @novatelinc https://t.co/7DdHMIN0cK
+266) retweeted: Today's #AutomatedWithVelodyne partner introduction @clearpathrobots is also the featured guest on our webinar this Friday! See details below and register today! https://t.co/TMnYAdt894
+267) retweeted: Meet @clearpathrobots, Canadian-based partner in #AutomatedWithVelodyne who work w/#industrial, #mining, #military, #ag, #aerospace companies/academia worldwide. We love seeing what their #UGV #robots can do! Read more! https://t.co/1IwfLoJN2h #AwV #AwVIntro #VelodyneLidar #lidar https://t.co/47TnO18X3Y
+268) We are excited to announce the completion of a $29 million (USD) investment.
 
 The need for automation is projected to grow as companies seek ways to improve business continuity. In recent months, OTTO has seen a surge in demand from essential businesses: https://t.co/8Qkc4XMJn0 https://t.co/BqSbTZzQD9
-268) The MicroStrain 3DM is the smallest and lightest precision industrial AHRS available. With the ability to achieve the optimum combination of measurement qualities under all dynamic conditions. Find it on our store here: https://t.co/ELF3ZKujmo https://t.co/4Tqb8OnvEQ
-269) More awesome photos of this cool #JackalUGV project from @ITL_TUHH! https://t.co/u39owWq5PF
+269) The MicroStrain 3DM is the smallest and lightest precision industrial AHRS available. With the ability to achieve the optimum combination of measurement qualities under all dynamic conditions. Find it on our store here: https://t.co/ELF3ZKujmo https://t.co/4Tqb8OnvEQ
 
 
 The following tweets are from this account: AutonomousAlgo
@@ -663,24 +655,74 @@ https://t.co/HgqC3ZkIEg #pokemoncards #pokemonscratch
 
 
 The following tweets are from this account: guidaautonoma
-290) #Autonomousvehicles – why safety takes the front seat 
+290) Anxious passengers feel #selfdrivingcars not safe amid #coronavirus
+
+https://t.co/sp4b2smM1o
+#AI #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel #delivery https://t.co/xVyGFHnr3q
+291) .@CarnegieMellon method makes more data available for training #SelfDrivingCars
+
+https://t.co/bbg7dqvdhI
+#AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
+292) #Tesla admits its approach to #selfdriving is harder but might be only way to scale - @ElectrekCo 
+
+https://t.co/6DY1VhPVQi
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning
+293) #BMW and #Mercedes blame ‘timing’ for abandoning plan to jointly develop #autonomous cars
+
+https://t.co/kgjpA0CwcA
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport https://t.co/wMtxK6uuuK
+294) #MIT Researchers Help Teach #Toyota #AutonomousVehicles to Drive
+
+https://t.co/Z6K7xgPPzG
+#SelfDrivingCars #AI #5G #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery #MachineLearning https://t.co/HHHyN3hndN
+295) #Facebook snaps up crowdsourced mapping company @mapillary 
+
+https://t.co/1OSO8RQ3dV
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel
+296) #Google parent company Alphabet is back in #China (because it never left)
+
+https://t.co/Zg7C0GgXGi
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport
+297) #Volkswagen ’s ID 4 revealed in leaked images
+
+https://t.co/EmbZ9jDfsm
+#electricvehicles #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
+298) #Guidaautonoma: questionario online @uniud per i cittadini per un progetto di ricerca internazionale 
+
+https://t.co/DAkSa6S33y
+#SelfDrivingCars #AI #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #startup #Robot #MachineLearning https://t.co/hvgpAzVMbN
+299) #Guidaautonoma, il prototipo italiano che apprende a riposo
+
+Sviluppato dall'Università di Trento 
+
+https://t.co/mKFyDzoMyw
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #startup #Robot #MachineLearning https://t.co/fP4VSTJ881
+300) Anfia e Unrae: misure urgenti per l'auto
+
+https://t.co/x7YfKiTbXH
+#Automobile #guidaautonoma #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel https://t.co/H2wZLr8LEM
+301) #Tesla, nuovo accordo con #Panasonic per la fornitura di batterie
+
+https://t.co/UbIVEbuFqz
+#electricvehicles #guidaautonoma #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #SmartCity #startup #Robot #MachineLearning
+302) #Autonomousvehicles – why safety takes the front seat 
 
 https://t.co/GrkljyIl5p
 #SelfDrivingCars #AI #IoT #5G #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery #ArtificialIntelligence
-291) Driver free but virus fee? #Robocar firms hit new speed bump 
+303) Driver free but virus fee? #Robocar firms hit new speed bump 
 
 https://t.co/9Diwcj2elj
 #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
-292) #SelfDrivingCars Will Wipe Out Drive-By Shootings, Kind Of
+304) #SelfDrivingCars Will Wipe Out Drive-By Shootings, Kind Of
 
 via @forbes https://t.co/npKwMf2OdN
 #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel
-293) retweeted: 🥇 Leading #autonomous @asokan_telecom @MarineInsight @guidaautonoma @HouEX @ccdeditor @CashTechNews @manish2u60 via https://t.co/xsujT5W0IX
-294) Accelerating #ADAS and AV Development with the @gomentum Digital Twin
+305) retweeted: 🥇 Leading #autonomous @asokan_telecom @MarineInsight @guidaautonoma @HouEX @ccdeditor @CashTechNews @manish2u60 via https://t.co/xsujT5W0IX
+306) Accelerating #ADAS and AV Development with the @gomentum Digital Twin
 
 https://t.co/29rZmmZpP1
 #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel https://t.co/mAfbcwGKdn
-295) Congrats all🔝10 #influencers for #AutonomousVehicles 🚚 OR #Selfdriving car 🚘 OR #Google Car
+307) Congrats all🔝10 #influencers for #AutonomousVehicles 🚚 OR #Selfdriving car 🚘 OR #Google Car
 in the world 🌍!!
 
 ⏩ https://t.co/nsLqtdWpa3
@@ -696,76 +738,14 @@ in the world 🌍!!
 @businessinsider
 @verge 
 #autonomous https://t.co/AEx95k2AlX
-296) ‘Ghost’ vehicle research shows energy savings in #SelfDrivingCars
+308) ‘Ghost’ vehicle research shows energy savings in #SelfDrivingCars
 
 https://t.co/aDzv2sAAEY
 #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery https://t.co/8qQTSeDF34
-297) #Ford ’s hands-free driving feature won’t be available until late 2021 
+309) #Ford ’s hands-free driving feature won’t be available until late 2021 
 
 https://t.co/GUhfRL3Xsq
 #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility
-298) 500 elettrica promette un assaggio di #guidaautonoma. Un pieno di tecnologia per la mitica #Fiat
-
-https://t.co/8pFuwSqMVm
-#electricvehicles #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity https://t.co/QsvRekf9CH
-299) Consumer Expectations for #AutonomousVehicles Focus on Safety and Utility 
-
-https://t.co/3zHI0wle3J
-#SelfDrivingCars #AI #IoT #5G #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
-300) Study: #AutonomousVehicles Not Detect Darker-Skinned Pedestrians As Often As Lighter Ones
-
-https://t.co/gbkiNiX62U
-#SelfDrivingCars #AI #IoT #5G #AVs #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility https://t.co/R0RL40Nufp
-301) Where Are The #ADAS #Startups?
-
-By @dsilver829  https://t.co/EYoGMKRqan
-#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #driverless #driverlesscars #startup #SmartCity #startup #Robot #transport #Mobility #Travel #delivery #MachineLearning
-302) Il mercato delle auto intelligenti vale 1,2 miliardi di euro in #Italia 
-
-https://t.co/j7czbgjEXR
-#guidaautonoma #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport
-303) #Guidaautonoma: i livelli da 0 a 5 e i sistemi #ADAS
-
-https://t.co/uRajJikDIj
-#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
-304) #Volkswagen ID.3, al via gli ordini
-
-https://t.co/MqWqhCeuMD
-#electricvehicles #guidaautonoma #SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel https://t.co/GbalCK4Osf
-305) Congrats all🔝10 #influencers for
-#SelfDrivingCars 🚘🚚 
-in the world 🌍!!
-
-⏩ https://t.co/gnwc5J7llO
-
-@mikequindazzi
-@jeroenbartelse
-@robotconsumer
-@enricomolinari
-@haroldsinnott
-@pinakilaskar
-@jblefevre60
-@guidaautonoma
-@selfdriving360
-@SpirosMargaris
-#AI #Iot #MachineLearning https://t.co/DmJqWTUklO
-306) .@arrival expands beyond electric #delivery vans with a new EV bus 
-
-https://t.co/nR4ewaPzPp
-#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel
-307) #Lyft vows ‘100 percent’ of its vehicles will be #electric by 2030
-
-https://t.co/S3hjBHulgU
-#ElectricVehicles
-#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport
-308) #SelfDrivingCars Are Not a Safety Solution 
-
-https://t.co/LcD2Iy1n39 via @innotechtoday 
-#AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #transport #Mobility #Travel #delivery
-309) #Michigan, #Fiat C#hrysler Team on #Selfdriving Car Work
-
-https://t.co/uJb8g8HTuj
-#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #autonomous #robotics #tech #driverless #driverlesscars #startups #SmartCity #startup #Robot #Mobility #Travel #delivery #ArtificialIntelligence
 
 
 The following tweets are from this account: LocomationAI
@@ -983,66 +963,66 @@ via @GoogleNews
 
 
 The following tweets are from this account: NewMobilities
-390) Japanese telco SoftBank invests in startup Splyt in hunt for super app #FutureOfMobility #MaaS 
+390) Quantabus: une nouvelle solution pour compter les voyageurs à bord des bus #FutureOfMobility #Buses 
+
+https://t.co/YG1tdD1JDt
+391) Successful trial from South Western Railway and Porterbrook to reduce harmful emissions from diesel trains by 90% #FutureOfMobility #RollingStock 
+
+https://t.co/n2r87eccEa
+392) Rapid Bus collaborates with Google Maps app to help users plan trips, view real-time location of buses #FutureOfMobility #PassengerInformation 
+
+https://t.co/m55SQjjRcY
+393) MIT and Toyota release innovative dataset to accelerate autonomous driving research #FutureOfMobility #AutonomousCars 
+
+https://t.co/U4ZyvNwMN3
+394) Madrid : l'application Metro donne en temps réel l'occupation des stations #FutureOfMobility #PassengerInformation 
+
+https://t.co/Hr4SB359qY
+395) DB Cargo : asset digitalization with IoT and edge computing #FutureOfMobility #IoT 
+
+https://t.co/GawWBWfroo
+396) Russian Railways finding solutions to create train AI safety systems #FutureOfMobility #ArtificialIntelligence 
+
+https://t.co/pRMaWOogjN
+397) Ford Mustang Mach-E hands-free driving to compete with Tesla, GM #FutureOfMobility #AutonomousCars 
+
+https://t.co/h0Qady2B0Z
+398) Les CFF testent des trains qui carburent à l’électricité solaire #FutureOfMobility #RollingStock 
+
+https://t.co/mNcKhyPptn
+399) Archer throws its hat into the ring with a 150-mph eVTOL design #FutureOfMobility #FlyingVehicles 
+
+https://t.co/aLKxEVpKVf
+400) Automotive biometrics market set for growth as GM and Osram announce new technologies #FutureOfMobility #Biometrics 
+
+https://t.co/OhPXyvXCiC
+401) Japanese telco SoftBank invests in startup Splyt in hunt for super app #FutureOfMobility #MaaS 
 
 https://t.co/aTkBs1rvu8
-391) LIRR met à jour son application TrainTime avec le Capacity Tracker #FutureOfMobility #PassengerInformation 
+402) LIRR met à jour son application TrainTime avec le Capacity Tracker #FutureOfMobility #PassengerInformation 
 
 https://t.co/DbaCHmFHfj
-392) First of a kind funding awarded for 25 rail innovation projects #FutureOfMobility #Rail 
+403) First of a kind funding awarded for 25 rail innovation projects #FutureOfMobility #Rail 
 
 https://t.co/A43kFF1wch
-393) Innovative modular multi-function wagons on test #FutureOfMobility #RollingStock 
+404) Innovative modular multi-function wagons on test #FutureOfMobility #RollingStock 
 
 https://t.co/ESLyamo7Sg
-394) S. Korea to Spend 160 bln Won on Developing Self-driving Ships #FutureOfMobility #WaterTransport 
+405) S. Korea to Spend 160 bln Won on Developing Self-driving Ships #FutureOfMobility #WaterTransport 
 
 https://t.co/MP2Q1xYGZ9
-395) Strasbourg installe des stations-service sur ses pistes cyclables #FutureOfMobility #Rideables 
+406) Strasbourg installe des stations-service sur ses pistes cyclables #FutureOfMobility #Rideables 
 
 https://t.co/o61y9U0i7i
-396) UK’S First Hydrogen-Powered Train Secures Funding For Hydrogen-Powered Train Design #FutureOfMobility #RollingStock 
+407) UK’S First Hydrogen-Powered Train Secures Funding For Hydrogen-Powered Train Design #FutureOfMobility #RollingStock 
 
 https://t.co/kjbE35si6h
-397) Startups Tortoise, Swiftmile are combining their tech to solve scooter chaos #FutureOfMobility #Rideables 
+408) Startups Tortoise, Swiftmile are combining their tech to solve scooter chaos #FutureOfMobility #Rideables 
 
 https://t.co/H91UIQj9q6
-398) Uber’s first SaaS partnership brings on-demand public transit to the Uber app #FutureOfMobility #RideSharing 
+409) Uber’s first SaaS partnership brings on-demand public transit to the Uber app #FutureOfMobility #RideSharing 
 
 https://t.co/LYJW3WZyM1
-399) Electric Truck Unicorn Arrival Revamps The Transit Bus For A Post-Coronavirus Era #FutureOfMobility #Buses 
-
-https://t.co/fgBoxgPQcK
-400) Bytemark Bridge connects transit agencies to the future of MaaS #FutureOfMobility #MaaS 
-
-https://t.co/0lYaOIw1FS
-401) California city of Santa Monica maps first U.S. zero-emission delivery zone #FutureOfMobility #Environment 
-
-https://t.co/x9Lk7Spliy
-402) Do Safety Regulators Want Parachutes On Passenger Air Taxis? #FutureOfMobility #FlyingVehicles 
-
-https://t.co/GFUsjRrvqd
-403) UITP’s SPACE project on automated vehicles reaches new milestone #FutureOfMobility #AutonomousShuttles 
-
-https://t.co/E7hsHAzddA
-404) Icomera report measures return of ridership through Wi-Fi usage #FutureOfMobility #ICT 
-
-https://t.co/BuQjEG7fLV
-405) Indian Railways installs innovative automated ticket machine : minimum contact, checking temperature and face mask [Video] #FutureOfMobility #Ticketing 
-
-https://t.co/RzE51RLf9e
-406) Coavionnage: Wingly lève 3 millions d’euros pour attirer les business traveler #FutureOfMobility #Air 
-
-https://t.co/zvnFb8GNmz
-407) AI system could identify roadside invasive plant species #FutureOfMobility #ArtificialIntelligence 
-
-https://t.co/BkIcOvUveb
-408) Rail industry calls for green hydrogen and battery train order to spur post-Coronavirus economy #FutureOfMobility #RollingStock 
-
-https://t.co/kHS5nGykom
-409) Taxis volants : Le point sur la technologie, le business model, les principaux projets et les défis restants #FutureOfMobility #FlyingVehicles 
-
-https://t.co/YgfXk9Kr9e
 
 
 The following tweets are from this account: selfdriving
@@ -1105,44 +1085,47 @@ We thoughts you might like our round-up of this week's autonomous vehicle news!
 
 
 The following tweets are from this account: Model3Owners
-450) @DuwaneSessions @EliBurton_ @IntEngineering He gives the smart Trevors a bad rap
-451) @Teslatunity That’s the one I want
-452) retweeted: Congrats to this lucky new #Tesla Model Y owner! The first Model Y was delivered in Ontario today at the Lawrence location https://t.co/OAAm9FFx8e
-453) Have to admit... I’m ready for a new phone now https://t.co/lqQItsfYba
-454) @marc_benton would hate this 😜 https://t.co/WyAaAGBwKz
-455) @boadickia @Tesla @elonmusk @28delayslater Lol
-456) @slye I’ve never been to a Fudruckers
-457) @EliBurton_ @IntEngineering Trevor should watch this, he’d learn a thing or two
-458) Close enough https://t.co/TqxYCYS7QM https://t.co/rmfdrJVc8b
-459) @Nikola_Truth He sure loves to beat his little man chest
-460) @elonmusk @Teslarati Hurry up, Cybertruck fans have money burning holes in their pockets! Myself included. 
-Would you make the Roadster and Semi there along with the Y?
-461) @elonmusk @Teslarati We know you love Texas, admit it 😉
-462) Boom. Tesla is looking to buy 2100 acres in Texas!!!
+450) @jeremyjudkins Someone is paying attention ☝️
+451) Apple controlling its own destiny again. First it was the IBM/Motorola PowerPC divorce, now it's Intel.
 
-https://t.co/7T51jsqEhi
-463) @TesLatino @Out_of_Spec Not my best tweet https://t.co/Qjqx8XmTKx
-464) retweeted: My new video from #GigaBerlin today.
+Their ARM SOC is world-class and gaining performance each year https://t.co/aZIqBKHhPT
+452) Any guesses what I designed? https://t.co/fwq7Pac32j
+453) The secret is out, yes it was @MattiHaapoja who joined me on the track this week. Sadly his camera broke but he did a great segment using his iPhone. Check it out!
+PS: Pretty sure I beat his time 😜
+https://t.co/Yfm9qYmCFs
+454) If this is real (you never quite know with Elon) it will make copious headlines when people get zapped. Legal? https://t.co/iji3zVA6uc
+455) @wehavemiko She’s very aware of the consequences 😁
+456) @TesLatino Only when I’m not in my own car so I can’t see the carnage
+457) #BAMF https://t.co/YNYfUiT15h
+458) I’m being driven around by the Mrs for a change https://t.co/1t4dYLvLvV
+459) @UndecidedMF I have the IKEA automated blinds. If you haven’t checked them out...
+460) @UndecidedMF Good one Matt. I’m doing something similar
+461) retweeted: We are now developing the 2nd row seats back cover mats for Tesla Model Y. 
 
-A 3rd tower crane is getting build and the rails for a 4th crane are prepared. They are already working on foundations for three sections of the factory and the new container park hints to the arrival of more workers.
+ETA will be around mid of August.
 
-https://t.co/23sZBcOwal https://t.co/4QVh1aTRrz
-465) @EliBurton_ Snake oil salesmen are still a thing
-466) @slye Andy, your twitter confessions are disturbing. First it was never have seen Back to the Future and now you’ve never been to IKEA? https://t.co/jOFKZAi1EI
-467) @tesla_talks @elonmusk @jgrano305 @DriveTeslaca @TeslaMilton @MFrunker @trevlan006 @TeslaCanuck @Tesla @TeslaCybertruck You didn’t know this?
-468) retweeted: Tesla 2020.24.5 OTA Software Update Introduces Camera &amp; Autopilot Improvements
-
-A Great Feature Requested by ⁦@teslaownersSV⁩  https://t.co/SiFmx1CHbR
-469) In my next video.... https://t.co/ZgeYXvQcio
+Detail &amp; preorder with email: https://t.co/kPZSBJmrv4 https://t.co/zpjtSMoUdo
+462) @nikolatrevor @realdarkromance @TeslaTested @WholeMarsBlog Can I race it? Tesla hasn’t delivered on their race a semi around track yet. My body is ready.
+463) My Zero G wheels thank you @elonmusk 👍🏼 https://t.co/C1UrdaEVkk
+464) @elonmusk @cleantechnica How long do we have to wait in 🇨🇦 to get this? We’re always behind and it’s a PITA
+465) @YunLinSJ Why? It’s funnier when he whines and has tantrums
+466) Someone isn’t getting his Roadsters https://t.co/O1Xr6G5VSx
+467) @ajtourville @28delayslater @elonmusk Esti de débile con
+468) First Model Y delivery in Ontario. Congrats Sam!! https://t.co/CPA4wlkdgh
+469) @BLKMDL3 Too bad we’re not in LA huh @bradgarcia ?
 
 
 The following tweets are from this account: hyper_drive
-470) retweeted: Have not heard anything (!) new on the transportation front at this House Dem infrastructure presser. Ways and Means Chairman Richie Neal did not mention anything about how to pay for the highway bill his colleagues are touting.
-471) retweeted: Locking in this year's drop in carbon emissions could be relatively cheap, according to the IEA https://t.co/ImPqVUNFcF
-472) Electric-vehicle battery demand has fallen steeply in 2020 - but there's optimism for batteries that will be more powerful, cheaper, and plentiful in the long term https://t.co/CR9l3blgFV
-473) retweeted: In addition to being a great chart, this highlights how EVs  are running cleaner every year. 
+470) retweeted: San Francisco starts a coronavirus relief fund for Black-owned businesses, initially $1.5 million using donations from its existing virus fund: https://t.co/AUaVRJUyR1
+
+“For generations, Black-owned businesses have been marginalized and discriminated against" says @LondonBreed
+471) Walmart partner and self-driving vehicle starupt Gatik doesn't agonize over autonomy, it worries about delivery--that means, get closer to the customer to shrink the delivery window. https://t.co/2KRe8l3Xl7
+472) retweeted: Have not heard anything (!) new on the transportation front at this House Dem infrastructure presser. Ways and Means Chairman Richie Neal did not mention anything about how to pay for the highway bill his colleagues are touting.
+473) retweeted: Locking in this year's drop in carbon emissions could be relatively cheap, according to the IEA https://t.co/ImPqVUNFcF
+474) Electric-vehicle battery demand has fallen steeply in 2020 - but there's optimism for batteries that will be more powerful, cheaper, and plentiful in the long term https://t.co/CR9l3blgFV
+475) retweeted: In addition to being a great chart, this highlights how EVs  are running cleaner every year. 
 EVs have lower lifetime CO2 emissions than comparable internal combustion vehicles, even if you assume the trend below grinds to a halt. It won't, and the gap will continue to widen. https://t.co/xwED8NSvsl
-474) retweeted: I had to reread this several times before I could believe it. 
+476) retweeted: I had to reread this several times before I could believe it. 
 
 For the next 5 years, the breakdown of Ireland's transportation budget will be:
 
@@ -1151,36 +1134,33 @@ For the next 5 years, the breakdown of Ireland's transportation budget will be:
 
 ▪️ 27%-- Auto infrastructure (roads and highways)
 https://t.co/hqyglaABgT
-475) retweeted: EXCLUSIVE Carlos Ghosn always said he was set up. Now it looks like there are emails to prove it. Great scoop from Reed Stevenson &amp; co ⁦@business⁩  https://t.co/FY5JuFv7uq
-476) retweeted: I stayed up late last night to spend some time looking out the window. It was a beautiful day to see the Great Lakes and my childhood home in upstate New York. https://t.co/iNpPDCH4Fi
-477) retweeted: VW launches ID home charging station, announces 'complete charging network around the ID.3' https://t.co/fBc3mWMDjn by @fredericlambert
-478) retweeted: I think @nikolamotor has a lot of potential. But at this point, that's all it is, potential. $0 in revenue, nothing in production. Valuing this company at $30B or more is just as stupid as @Tesla at $180B. Stock market has nothing to do with actual value https://t.co/YV64faPzVs
-479) retweeted: The founder of the electric truck company is now worth $7.4 billion.
+477) retweeted: EXCLUSIVE Carlos Ghosn always said he was set up. Now it looks like there are emails to prove it. Great scoop from Reed Stevenson &amp; co ⁦@business⁩  https://t.co/FY5JuFv7uq
+478) retweeted: I stayed up late last night to spend some time looking out the window. It was a beautiful day to see the Great Lakes and my childhood home in upstate New York. https://t.co/iNpPDCH4Fi
+479) retweeted: VW launches ID home charging station, announces 'complete charging network around the ID.3' https://t.co/fBc3mWMDjn by @fredericlambert
+480) retweeted: I think @nikolamotor has a lot of potential. But at this point, that's all it is, potential. $0 in revenue, nothing in production. Valuing this company at $30B or more is just as stupid as @Tesla at $180B. Stock market has nothing to do with actual value https://t.co/YV64faPzVs
+481) retweeted: The founder of the electric truck company is now worth $7.4 billion.
 
 His company has no product.
 
 No revenue.
 
 It has a bunch of pre-orders however. One catch though, there's no money down and not binding in anyway. https://t.co/5YhJhGvJoI
-480) Venezuela’s fall from oil superpower to failing producer can be illustrated in one image: a single drilling rig working the world’s largest oil reserves. https://t.co/hLbptrbP3k via @business
-481) A plan to avoid drone crashes uses traffic management from space https://t.co/JplDGpadN0 via @technology
-482) retweeted: Amazon said it will implement a one-year moratorium on police use of its facial recognition software.
+482) Venezuela’s fall from oil superpower to failing producer can be illustrated in one image: a single drilling rig working the world’s largest oil reserves. https://t.co/hLbptrbP3k via @business
+483) A plan to avoid drone crashes uses traffic management from space https://t.co/JplDGpadN0 via @technology
+484) retweeted: Amazon said it will implement a one-year moratorium on police use of its facial recognition software.
 
 Earlier, the @ACLU tested the software with photos of Congress members and found it falsely matched 28 of them with mugshots, disproportionately selecting minority lawmakers https://t.co/VFga8XixrL
-483) retweeted: The view from Dragon today @Space_Station. https://t.co/mvVnBvivIt
-484) “The future of coal depends on Asian demand, which is still growing, and is offsetting the decline from the rest of the world over the next decade.”  —The Pandemic Has Everyone Ditching Coal Quicker — Except Asia https://t.co/uAJstCU0qr
-485) Tesla Cuts German Factory’s Water Needs in Nod to Local Concerns https://t.co/fTzfX3RUwk
-486) retweeted: In May, @lc_hurst and I got a chance to interview Shell's CEO. We asked:
+485) retweeted: The view from Dragon today @Space_Station. https://t.co/mvVnBvivIt
+486) “The future of coal depends on Asian demand, which is still growing, and is offsetting the decline from the rest of the world over the next decade.”  —The Pandemic Has Everyone Ditching Coal Quicker — Except Asia https://t.co/uAJstCU0qr
+487) Tesla Cuts German Factory’s Water Needs in Nod to Local Concerns https://t.co/fTzfX3RUwk
+488) retweeted: In May, @lc_hurst and I got a chance to interview Shell's CEO. We asked:
 
 - How do you face your children’s questions about climate change?
 - Do you support heavy government intervention?
 - Does the pandemic accelerate peak demand for oil?
 
 + lots more https://t.co/zmWF8p1LL0
-487) Tesla Hails Air-Quality Effects of Shutdowns Elon Musk Called Fascist https://t.co/iV5e6g6kGT
-488) retweeted: Transportation is still searching for its pandemic normal. 
-@TSA data shows 400k+ air travelers of late, 15%+ of a year ago. Next milestone: half a million air passengers/day, 20% of last year's volume https://t.co/nO1LfzC9Am https://t.co/0jmm3ImDUs
-489) A Million-Mile Battery From China Could Power Your Electric Car https://t.co/O6e3SlbG3S
+489) Tesla Hails Air-Quality Effects of Shutdowns Elon Musk Called Fascist https://t.co/iV5e6g6kGT
 
 
 The following tweets are from this account: argoai
@@ -1226,52 +1206,48 @@ Check out those pyrotechnics! https://t.co/VubQHkI2Gg
 
 
 The following tweets are from this account: roborace
-510) Epic fails and wins from one of the coolest team ever 🤟 This Thursday 12:00 PM PDT on https://t.co/UGpN0mfRQB https://t.co/Iz3VIbpBbu
-511) @CarnegieMellon @LTIatCMU welcome to @Roborace
+510) Roborace Metaverse Take 1 https://t.co/tDdfBsALVk
+511) Epic fails and wins from one of the coolest team ever 🤟 This Thursday 12:00 PM PDT on https://t.co/UGpN0mfRQB https://t.co/Iz3VIbpBbu
+512) @CarnegieMellon @LTIatCMU welcome to @Roborace
  
 This gonna be awesome 😎🤟 https://t.co/Qt4VPGuOjF
-512) @DanielSimonCom is LIVE at 12:00 PM LA time today on https://t.co/tiRC5qMu5L 
+513) @DanielSimonCom is LIVE at 12:00 PM LA time today on https://t.co/tiRC5qMu5L 
 True Story of Robocar... https://t.co/ClyOkfv3aH
-513) This Thursday, May 21 Daniel Simon will unveil the True Story about Robocar creation. Join our live stream at 12:00 PM LA time on https://t.co/tiRC5qMu5L https://t.co/sf9NjH9EDB
-514) Story of the most INSANE garage in the world, @TheArsenale, is to be revealed this Thursday, April 30th at 12 PM PDT: https://t.co/UGpN0lYgZ3 https://t.co/p4I6mCl51k
-515) @BrynBalcombe, Roborace CSO, will be hosting a live stream this Friday. "Where are the self-driving cars and trucks", — they ask 👀 Well, let's sort it out 😎
+514) This Thursday, May 21 Daniel Simon will unveil the True Story about Robocar creation. Join our live stream at 12:00 PM LA time on https://t.co/tiRC5qMu5L https://t.co/sf9NjH9EDB
+515) Story of the most INSANE garage in the world, @TheArsenale, is to be revealed this Thursday, April 30th at 12 PM PDT: https://t.co/UGpN0lYgZ3 https://t.co/p4I6mCl51k
+516) @BrynBalcombe, Roborace CSO, will be hosting a live stream this Friday. "Where are the self-driving cars and trucks", — they ask 👀 Well, let's sort it out 😎
 
 https://t.co/HhpNZUolOx https://t.co/7LiVA6kQCM
-516) Don't miss our Instagram live cast with KW Suspension today at 12 PM PDT ☀️
+517) Don't miss our Instagram live cast with KW Suspension today at 12 PM PDT ☀️
 https://t.co/hzGSk7X7Al https://t.co/TrU8ue8SBb
-517) retweeted: My first instagram live chat: Tomorrow, on @roborace instagram channel, April 16, 12PM PDT: Mark Roberts [ of McLaren F1 fame and now Chief Creative Officer at Charge Cars ] and me. Looking forward to it, please join! @markroberts01 @roborace #hopemyinternetfinallyworks https://t.co/qglCSyfqrB
-518) Roborace vs Charge Cars
+518) retweeted: My first instagram live chat: Tomorrow, on @roborace instagram channel, April 16, 12PM PDT: Mark Roberts [ of McLaren F1 fame and now Chief Creative Officer at Charge Cars ] and me. Looking forward to it, please join! @markroberts01 @roborace #hopemyinternetfinallyworks https://t.co/qglCSyfqrB
+519) Roborace vs Charge Cars
 This Thursday 12:00 PM PDT on https://t.co/UGpN0lYgZ3 https://t.co/qZreClWX0V
-519) We continue our weekly Instagram lives with @kengushi, a pro drift driver. And yeah, our AIs are passionate about drifting too 🤟 
+520) We continue our weekly Instagram lives with @kengushi, a pro drift driver. And yeah, our AIs are passionate about drifting too 🤟 
 Will this bring us new experiences? Will see 😎
 
 Join us for our IG LIVE conversation, April 02 at 12 PM PST!
 👉 https://t.co/UGpN0lYgZ3 👀.  . https://t.co/FkeesYMEwD
-520) Lights on! DevBot 2.0 is awake… ⚡️
+521) Lights on! DevBot 2.0 is awake… ⚡️
 #roborace #robocar #devbot #seasonbeta https://t.co/OpnpGyAb2C
-521) A peek behind the scenes of simulation testing! These are images of our Las Vegas test track, generated for our in-house engineering simulator by our location tool Ribbon. #roborace https://t.co/ArTBzVgKAB
-522) @PloC_4 It's a quintessence of generative approach when a multiparametric machine becomes a co-composer of us humans 😎
-523) Roborace becomes a music project! 🤟
+522) A peek behind the scenes of simulation testing! These are images of our Las Vegas test track, generated for our in-house engineering simulator by our location tool Ribbon. #roborace https://t.co/ArTBzVgKAB
+523) @PloC_4 It's a quintessence of generative approach when a multiparametric machine becomes a co-composer of us humans 😎
+524) Roborace becomes a music project! 🤟
 Check it out 👉 https://t.co/vhK3mcSqkr
 Available on Spotify, Apple Music, SoundCloud, Deezer, etc. https://t.co/bagPM1eT3F
-524) @SportTechie ...maybe next year, team. https://t.co/eGZkzTSdQV
-525) retweeted: The amazing Robocar. The first ever driverless hillclimb.  👏 👏 👏 #FOS https://t.co/LPsGR6wT1m
-526) What an incredible year! 🙏
+525) @SportTechie ...maybe next year, team. https://t.co/eGZkzTSdQV
+526) retweeted: The amazing Robocar. The first ever driverless hillclimb.  👏 👏 👏 #FOS https://t.co/LPsGR6wT1m
+527) What an incredible year! 🙏
 
 ✅ First-ever autonomous race and overtake
 ✅ First autonomous car at historic @ShelsleyWalsh
 ✅ @GWR set
 ✅ First official autonomous lap time at @FOSGoodwood
 ✅ Top 10 UK Tech and Science brand on social media https://t.co/kD7MHshRy5
-527) Meet the team behind the @VWDataLab project 👋
+528) Meet the team behind the @VWDataLab project 👋
 
 Using DevBot 2.0, the team carried out a number of challenges throughout 2019 with the goal of using machine learning and data to further enhance their knowledge of autonomous vehicle technology 🧮 https://t.co/ocFG8bODxI
-528) retweeted: On Wednesday, 12/18 join Robert Downey Jr. and #YoutubeOriginals for #AgeOfAi a brand new series exploring the world of artificial intelligence and its impact across our daily lives. https://t.co/LdHyRSqDug
-529) retweeted: Do the coders trust their code enough to let it drive them? 💻
-
-The @VWDataLab and @Italdesign team jumped into DevBot 2.0 to put their code to the test in Zala Zone, Hungary 😬
-
-FULL FEATURE 👉 https://t.co/qaFMOgENn6 https://t.co/HWwaXmxuTU
+529) retweeted: On Wednesday, 12/18 join Robert Downey Jr. and #YoutubeOriginals for #AgeOfAi a brand new series exploring the world of artificial intelligence and its impact across our daily lives. https://t.co/LdHyRSqDug
 
 
 The following tweets are from this account: Cruise
@@ -1396,38 +1372,39 @@ The answer? It’s already happening! Check it out: https://t.co/nk4tHWy82s …
 
 
 The following tweets are from this account: LyftLevel5
-590) retweeted: Vehicle emissions are one of the largest sources of climate pollution. That’s why we’re committing to reach 100% #ElectricVehicles on the Lyft platform by 2030, in collaboration with @EnvDefenseFund. It's an ambitious goal, and we're up for the challenge. https://t.co/dXxtV5yxft https://t.co/ff9vqN4vdO
-591) retweeted: Starting this year, we’re making Juneteenth an official holiday at Lyft. It’s one step in our ongoing journey toward racial equality at Lyft, and in this country. 
+590) retweeted: Check out PAVE's Virtual Panel — “The View From the Rider’s Seat: Insights From Early AV Customer Experiences” featuring PAVE members @DataspeedInc and @lyft, as well as @Aptiv.
+
+Full recording available now 🎥 https://t.co/WDPJwww65f
+591) retweeted: Vehicle emissions are one of the largest sources of climate pollution. That’s why we’re committing to reach 100% #ElectricVehicles on the Lyft platform by 2030, in collaboration with @EnvDefenseFund. It's an ambitious goal, and we're up for the challenge. https://t.co/dXxtV5yxft https://t.co/ff9vqN4vdO
+592) retweeted: Starting this year, we’re making Juneteenth an official holiday at Lyft. It’s one step in our ongoing journey toward racial equality at Lyft, and in this country. 
 
 So, what’s Juneteenth? ⬇️ https://t.co/DZjLbD8RBR
-592) retweeted: NEW Smarter Cars Podcast: We've launched Season 5 of the podcast - really enjoyed talking with Jody Kelman about Lyft's self-driving program, from its partnerships with Aptiv and Waymo to development of its own autonomous driving system
+593) retweeted: NEW Smarter Cars Podcast: We've launched Season 5 of the podcast - really enjoyed talking with Jody Kelman about Lyft's self-driving program, from its partnerships with Aptiv and Waymo to development of its own autonomous driving system
 https://t.co/lFfOJczy4h
-593) retweeted: A note from our co-founders: a call to action for each of us. https://t.co/tE4cdDeVeB https://t.co/816QMJrCsZ
-594) Big thanks to @MP_Conf for inviting Raj Kapoor, our CSO, to share his perspective on the impact of autonomous tech on ridesharing. https://t.co/NUF2mjxgVh
-595) When we heard our local hospitals needed face shields, a group of Level 5 volunteers put our 3D printers to work. Thank you, frontline workers, for the critical work you're doing—we're honored to help keep you safe during this time. https://t.co/5Iv5ziFcAW
-596) Thank you @SHPESV for choosing us as your Company of the Year for our February Latinx in Tech event! You made this event a pleasure to host and we enjoyed opening up our AV garage to you and the 100 others who joined us. https://t.co/qRZAvfrqnA
-597) retweeted: Autonomous logistics for people and stuff is the way of the future. 
+594) retweeted: A note from our co-founders: a call to action for each of us. https://t.co/tE4cdDeVeB https://t.co/816QMJrCsZ
+595) Big thanks to @MP_Conf for inviting Raj Kapoor, our CSO, to share his perspective on the impact of autonomous tech on ridesharing. https://t.co/NUF2mjxgVh
+596) When we heard our local hospitals needed face shields, a group of Level 5 volunteers put our 3D printers to work. Thank you, frontline workers, for the critical work you're doing—we're honored to help keep you safe during this time. https://t.co/5Iv5ziFcAW
+597) Thank you @SHPESV for choosing us as your Company of the Year for our February Latinx in Tech event! You made this event a pleasure to host and we enjoyed opening up our AV garage to you and the 100 others who joined us. https://t.co/qRZAvfrqnA
+598) retweeted: Autonomous logistics for people and stuff is the way of the future. 
 
 Sacha Arnoud is an OG of vision and autonomy, first @google on Mapping, then @Waymo leading perception+ML infra, and now @lyft's @LyftLevel5! 
 
 Tune in to his #RAAIS2020 talk on 26 June:
 https://t.co/zDmsViC1HI
-598) Check out @viglovikov's interview with @ToolboxforIT for his insider perspective how to do well in AV and why rideshare is the future of mobility.
+599) Check out @viglovikov's interview with @ToolboxforIT for his insider perspective how to do well in AV and why rideshare is the future of mobility.
 https://t.co/fQ7U8czDve
-599) From one engineer building an electrolytic corrosion setup in his garage, to another converting the cricket pitch in his backyard into a lidar sensor range, our team is experimenting with creative ways to move AV development forward from home. https://t.co/RPHf0d7bFe
-600) retweeted: Together with over 120,000 members of the driver community, we formed a Driver Task Force to provide rides to those who need it most. Thanks to those helping deliver essential supplies, food, and rides for front-line medical professionals. Join us at https://t.co/dHICisHXKA https://t.co/UXvvTXEju3
-601) retweeted: Many students rely on school meals. Together with #LyftUp partner @ArmyofAngelsFL, drivers are delivering thousands of meals to students &amp; families in need throughout the Orlando area. Thank you to all the drivers for helping while schools are shut down. https://t.co/r6khYiDdJJ
-602) retweeted: LyftUp has created a network of over 500 partners to offer access to free transportation for vulnerable communities, critical workers, and critical supplies. We’re in this together. Join us at https://t.co/y594MuXl5k. #LyftUp https://t.co/RRJ5x4RE8G
-603) Photo roundup time 📸: Last week was our WFH spirit week. We saw fun hats, sports attire, Hawaiian shirts, Lyft swag and more. How are you staying connected with your teams? https://t.co/4PPiD6UIxe
-604) @startuployalist We’d love to meet with a fellow autonomous enthusiast! Check your DMs.
-605) retweeted: #COVID19 has changed our lives. In a scenario when education and workforce are experiencing some of the biggest challenges, learning new #skills should be made more accessible. Hence, we're excited to announce one free month on 40+ Nanodegree programs. https://t.co/noRYuDF4Pm
-606) Missed the share-out of the winning solutions from our @kaggle competition at NeurIPS? Head to the Kaggle forum where @viglovikov (Level 5 CV Engineer and Kaggle Grandmaster) shared a writeup &amp; an inside look at his experience coordinating a competition.
+600) From one engineer building an electrolytic corrosion setup in his garage, to another converting the cricket pitch in his backyard into a lidar sensor range, our team is experimenting with creative ways to move AV development forward from home. https://t.co/RPHf0d7bFe
+601) retweeted: Together with over 120,000 members of the driver community, we formed a Driver Task Force to provide rides to those who need it most. Thanks to those helping deliver essential supplies, food, and rides for front-line medical professionals. Join us at https://t.co/dHICisHXKA https://t.co/UXvvTXEju3
+602) retweeted: Many students rely on school meals. Together with #LyftUp partner @ArmyofAngelsFL, drivers are delivering thousands of meals to students &amp; families in need throughout the Orlando area. Thank you to all the drivers for helping while schools are shut down. https://t.co/r6khYiDdJJ
+603) retweeted: LyftUp has created a network of over 500 partners to offer access to free transportation for vulnerable communities, critical workers, and critical supplies. We’re in this together. Join us at https://t.co/y594MuXl5k. #LyftUp https://t.co/RRJ5x4RE8G
+604) Photo roundup time 📸: Last week was our WFH spirit week. We saw fun hats, sports attire, Hawaiian shirts, Lyft swag and more. How are you staying connected with your teams? https://t.co/4PPiD6UIxe
+605) @startuployalist We’d love to meet with a fellow autonomous enthusiast! Check your DMs.
+606) retweeted: #COVID19 has changed our lives. In a scenario when education and workforce are experiencing some of the biggest challenges, learning new #skills should be made more accessible. Hence, we're excited to announce one free month on 40+ Nanodegree programs. https://t.co/noRYuDF4Pm
+607) Missed the share-out of the winning solutions from our @kaggle competition at NeurIPS? Head to the Kaggle forum where @viglovikov (Level 5 CV Engineer and Kaggle Grandmaster) shared a writeup &amp; an inside look at his experience coordinating a competition.
 https://t.co/UWuUz5dYyR
-607) Big thanks to everyone who filled our garage at our Latinx in Self-Driving event last week! We had a blast getting to know each of you and sharing our approach to developing AVs that can make transportation safer and more accessible for everyone. https://t.co/NubC9pLT3J
-608) Creating machine-learning-heavy stacks that generalize well takes some upfront work, but can accelerate development in the long run. Learn how we're thinking about building for generalization in our technology stack.
+608) Big thanks to everyone who filled our garage at our Latinx in Self-Driving event last week! We had a blast getting to know each of you and sharing our approach to developing AVs that can make transportation safer and more accessible for everyone. https://t.co/NubC9pLT3J
+609) Creating machine-learning-heavy stacks that generalize well takes some upfront work, but can accelerate development in the long run. Learn how we're thinking about building for generalization in our technology stack.
 https://t.co/5njnWBfqqO
-609) "Successful PMs need to break down large products into small milestones so that the incremental improvements can be celebrated along the way." Read more bits of wisdom from Charlotte, a Product Manager at Level 5, on the Lyft Engineering Blog @lyfteng
-https://t.co/sEtaD3wscE
 
 
 The following tweets are from this account: zoox
@@ -1725,26 +1702,26 @@ Thanks for stopping by our HQ to learn about the Waymo Driver, and meet some of 
 
 
 The following tweets are from this account: AutonomousMob
-789) 2020 Automated Vehicles Symposium to be held virtually #AutonomousMobility https://t.co/1Kfq6uUbUs
-790) Audi opens Automated Driving Development R&amp;D office in Silicon Valley; ADAS specifically for North America #AutonomousMobility https://t.co/vdv4xB1tpi
-791) S.Korea : Wireless Charging/Autonomous Driving Buses to Debut in Daedeok R&amp;D Zone #AutonomousMobility https://t.co/Jyqo1EtUr3
-792) UITP’s SPACE project on automated vehicles reaches new milestone #AutonomousMobility https://t.co/KIRarhLmnr
-793) First public autonomous shuttle fleet in Germany awarded innovation prize #AutonomousMobility https://t.co/bE7IQnTmg5
-794) Jacksonville, Fla., Sees Spot for AV in Monorail Overhaul #AutonomousMobility https://t.co/TRO59FRmCU
-795) Harmonisation could help regulatory headache posed by autonomous vehicles #AutonomousMobility https://t.co/LMKcoDyF9b
-796) retweeted: U.S. will unveil data-sharing platform for autonomous vehicle testing #AutonomousMobility https://t.co/n31uWXjDS5
-797) CMU research shows self-driving cars that recognize free space can better detect objects #AutonomousMobility https://t.co/QFDMd3ik6R
-798) LG Uplus launches 5G-based autonomous driving validation business #AutonomousMobility https://t.co/tB8vfU4Ke6
-799) Painting On City Streets Can Impact Traffic Safety, Good Or Bad, For Human Drivers And For AI Self-Driving Cars #AutonomousMobility https://t.co/lzw6NviVuJ
-800) U.S. will unveil data-sharing platform for autonomous vehicle testing #AutonomousMobility https://t.co/n31uWXjDS5
-801) Toyota Looks Pretty Smart Right Now On Autonomous Vehicles #AutonomousMobility https://t.co/VYAzMy3rDB
-802) Venti Technologies announces first deployment of autonomous SUVs #AutonomousMobility https://t.co/evatyxygv1
-803) Guidehouse Insights forecasts deployments of highly automated vehicles are unlikely before 2025 #AutonomousMobility https://t.co/yEPUKwHlp8
-804) An autonomous-vehicle expert reveals the 5 companies best positioned to survive the wave of consolidation headed for the self-driving car industry #AutonomousMobility https://t.co/6C2trkfThC
-805) Why 5G is considered an essential element in China’s autonomous driving road map #AutonomousMobility https://t.co/w3pKH603pt
-806) Results of industry-wide consultation on geospatial data for self-driving vehicles announced #AutonomousMobility https://t.co/O6IsvvTTTq
-807) Curiosity Lab teams with Kennesaw State University for open source V2V project #AutonomousMobility https://t.co/5mcTSboklZ
-808) Autopilot to usher in golden age in China #AutonomousMobility https://t.co/UJjRJuY0fC
+789) ADAS Revenues Pave the Way to a Driverless Future #AutonomousMobility https://t.co/6DEFOGrQCW
+790) MIT and Toyota release innovative dataset to accelerate autonomous driving research #AutonomousMobility https://t.co/Z3eyEcYvSK
+791) CMU method makes more data available for training self-driving cars #AutonomousMobility https://t.co/QaJxrMlkKk
+792) Ford Mustang Mach-E hands-free driving to compete with Tesla, GM #AutonomousMobility https://t.co/OIG7kU2OlL
+793) USDOT announces first participants in new automated vehicle initiative #AutonomousMobility https://t.co/5QAKaiux6X
+794) Study: Driverless Cars are Bad at Detecting Dark Skin #AutonomousMobility https://t.co/rJbhkvNb3N
+795) Suisse : un bus autonome sera testé dès cet été sur le site hospitalier de Belle-Idée #AutonomousMobility https://t.co/YKsKGxtPda
+796) 2020 Automated Vehicles Symposium to be held virtually #AutonomousMobility https://t.co/1Kfq6uUbUs
+797) Audi opens Automated Driving Development R&amp;D office in Silicon Valley; ADAS specifically for North America #AutonomousMobility https://t.co/vdv4xB1tpi
+798) S.Korea : Wireless Charging/Autonomous Driving Buses to Debut in Daedeok R&amp;D Zone #AutonomousMobility https://t.co/Jyqo1EtUr3
+799) UITP’s SPACE project on automated vehicles reaches new milestone #AutonomousMobility https://t.co/KIRarhLmnr
+800) First public autonomous shuttle fleet in Germany awarded innovation prize #AutonomousMobility https://t.co/bE7IQnTmg5
+801) Jacksonville, Fla., Sees Spot for AV in Monorail Overhaul #AutonomousMobility https://t.co/TRO59FRmCU
+802) Harmonisation could help regulatory headache posed by autonomous vehicles #AutonomousMobility https://t.co/LMKcoDyF9b
+803) retweeted: U.S. will unveil data-sharing platform for autonomous vehicle testing #AutonomousMobility https://t.co/n31uWXjDS5
+804) CMU research shows self-driving cars that recognize free space can better detect objects #AutonomousMobility https://t.co/QFDMd3ik6R
+805) LG Uplus launches 5G-based autonomous driving validation business #AutonomousMobility https://t.co/tB8vfU4Ke6
+806) Painting On City Streets Can Impact Traffic Safety, Good Or Bad, For Human Drivers And For AI Self-Driving Cars #AutonomousMobility https://t.co/lzw6NviVuJ
+807) U.S. will unveil data-sharing platform for autonomous vehicle testing #AutonomousMobility https://t.co/n31uWXjDS5
+808) Toyota Looks Pretty Smart Right Now On Autonomous Vehicles #AutonomousMobility https://t.co/VYAzMy3rDB
 
 
 The following tweets are from this account: ApexAI_Inc
@@ -1844,71 +1821,73 @@ https://t.co/sHFv79cMON
 
 
 The following tweets are from this account: beepAVsolutions
-829) Our Beep team has been busy updating the operating software on our shuttles to improve the rider experience in @learnlakenona! 
+829) We have implemented new processes and procedures with your safety in mind.
+
+Here’s a look at our enhanced cleaning procedures, onboard hand sanitizer, and disinfectant wipes https://t.co/VcTzOErj8T https://t.co/Gm9KzQrHYs
+830) KNOW BEFORE YOU RIDE: we’re following the direction of @OCFLMayor and @orlandomayor for 😷. https://t.co/dEE74Lrzdf
+831) Did you know that we are operating on a modified schedule in @LearnLakeNona? 
+
+Check out our schedule and track your next ride with us https://t.co/zJVFiC4OqA https://t.co/NAf1Lm4Y4D
+832) Our Beep team has been busy updating the operating software on our shuttles to improve the rider experience in @learnlakenona! 
 
 Find out more about the process: https://t.co/O4kXy8WG6k https://t.co/8Yyw7H2nlT
-830) The countdown is on! We can’t wait to welcome you back onboard our shuttles in @learnlakenona later today.
+833) The countdown is on! We can’t wait to welcome you back onboard our shuttles in @learnlakenona later today.
 
 Find out what you need to know before you ride: https://t.co/VcTzOE9Ihl https://t.co/UrZkMH7gPU
-831) We have been tirelessly planning for your next ride with us. 
+834) We have been tirelessly planning for your next ride with us. 
 
 Every new process and procedure has taken into account the guidance from our local, state, &amp; federal leaders. 
 
 We went above and beyond to take extra levels of care and precaution. 
 
 More here https://t.co/VcTzOE9Ihl https://t.co/7mhuL9kxkw
-832) We have partnered with Berman Corp to make sure the best industry practices for sanitizing our shuttles is part of our new process.  
+835) We have partnered with Berman Corp to make sure the best industry practices for sanitizing our shuttles is part of our new process.  
 
 Find out what other changes we have made with your in mind: https://t.co/gi3zzGECvd https://t.co/vTpXzmSALr
-833) DISCUSSION: @nurobots Matthew Lipka "We're all as an industry being consistent here..." #AVTESTInitiative with @NHTSAgov https://t.co/in4YoO3wQZ
-834) DISCUSSION: @BEEPCEO on #AVTESTInitiative regarding the acceptance AV systems "make the residents part of the plan". https://t.co/8Z5zE1o80A
-835) Couldn't agree more with @Waymo's Dr. Matthew Schwall statement during @NHTSAgov #AVTESTInitiative panel discussion: "It's important to engage early and often" with the public. It is key to safety, understanding and public awareness. https://t.co/MS0cVvXqYz
-836) HAPPENING NOW: @BEEPCEO on a virtual panel with @nurobots, @Toyota, @Waymo, @Uber regarding the opportunities and challlenges with Automated Driving Systems during @NHTSAgov and @USDOT launch of the #AVTESTInitiative. https://t.co/UAUGJUlVm5
-837) HAPPENING NOW: https://t.co/CyVRki70dL
-838) Thank you @USDOT and @NHTSAgov for providing this platform with the #AVTESTInitiative . Looking foward to the rest of the discussion on Wednesday during a virtual panel with @BEEPCEO, @nurobots, @uber, @Waymo, @Toyota. MORE: https://t.co/dzI7ZgOADT https://t.co/JAEqjWagWb
-839) We can’t wait to see you again. Our shuttle attendants are getting ready to welcome you onboard. We'll be wearing masks the next time you see us, but I promise you we will still be smiling underneath them. Find out what other changes we have made: https://t.co/VcTzOE9Ihl https://t.co/mASmBhRs3M
-840) retweeted: . @MyFDOT appreciates @USDOT's continued support as we deploy emerging and innovative technologies that will enhance safety throughout Florida’s transportation system. https://t.co/7EoLvumGMi
-841) JOIN THE DISCUSSION: Tomorrow at 1:00pm, @BEEPCEO will be alongside others in the AV industry for a panel on "Opportunities and Challenges with Automated Driving Systems". 
+836) DISCUSSION: @nurobots Matthew Lipka "We're all as an industry being consistent here..." #AVTESTInitiative with @NHTSAgov https://t.co/in4YoO3wQZ
+837) DISCUSSION: @BEEPCEO on #AVTESTInitiative regarding the acceptance AV systems "make the residents part of the plan". https://t.co/8Z5zE1o80A
+838) Couldn't agree more with @Waymo's Dr. Matthew Schwall statement during @NHTSAgov #AVTESTInitiative panel discussion: "It's important to engage early and often" with the public. It is key to safety, understanding and public awareness. https://t.co/MS0cVvXqYz
+839) HAPPENING NOW: @BEEPCEO on a virtual panel with @nurobots, @Toyota, @Waymo, @Uber regarding the opportunities and challlenges with Automated Driving Systems during @NHTSAgov and @USDOT launch of the #AVTESTInitiative. https://t.co/UAUGJUlVm5
+840) HAPPENING NOW: https://t.co/CyVRki70dL
+841) Thank you @USDOT and @NHTSAgov for providing this platform with the #AVTESTInitiative . Looking foward to the rest of the discussion on Wednesday during a virtual panel with @BEEPCEO, @nurobots, @uber, @Waymo, @Toyota. MORE: https://t.co/dzI7ZgOADT https://t.co/JAEqjWagWb
+842) We can’t wait to see you again. Our shuttle attendants are getting ready to welcome you onboard. We'll be wearing masks the next time you see us, but I promise you we will still be smiling underneath them. Find out what other changes we have made: https://t.co/VcTzOE9Ihl https://t.co/mASmBhRs3M
+843) retweeted: . @MyFDOT appreciates @USDOT's continued support as we deploy emerging and innovative technologies that will enhance safety throughout Florida’s transportation system. https://t.co/7EoLvumGMi
+844) JOIN THE DISCUSSION: Tomorrow at 1:00pm, @BEEPCEO will be alongside others in the AV industry for a panel on "Opportunities and Challenges with Automated Driving Systems". 
 REGISTER: https://t.co/dzI7ZgOADT
 #AVTESTInitiative https://t.co/CyVRki70dL
-842) As we look to restart our service soon, we want you to know every change always had your safety and the safety of our attendants in mind. We can't wait to see you again https://t.co/VcTzOE9Ihl https://t.co/GWLoNATLi3
-843) Congrats to our fellow AV partners 
+845) As we look to restart our service soon, we want you to know every change always had your safety and the safety of our attendants in mind. We can't wait to see you again https://t.co/VcTzOE9Ihl https://t.co/GWLoNATLi3
+846) Congrats to our fellow AV partners 
 @Cruise, @fcagroup, @localmotors , @NAVYA_Group , @nurobots, @Toyota, @Uber, and @Waymo.
 
 Honored to be along side @CaltransHQ , @MyFDOT , @MichiganDOT ,@ODOT_Statewide, @PennDOTNews, 
 @TxDOT , and @UtahDOT for the #AVTESTInitiative w/ 
 @USDOT https://t.co/7XHakNcs86
-844) ...and build stronger relationships among Federal, State, and local governments and stakeholders. https://t.co/JA7vWjH37W
-845) “Your partnership is critical”, said Nicole Nason Administrator of @USDOTFHWA on the #AVTESTInitiative announced today by @USDOT &amp; @NHTSA. The initiative will increase the public’s awareness of testing, centralize the Department’s role in promoting safety and innovation...
-846) "These systems hold the promise to one day limit crashes..." said Deputy Administrator @NHTSA James Owens during the announcement of the #AVTestInitiative with @USDOT. ANNOUNCEMENT:  https://t.co/sGM4xWBF8G
-847) Thank you @SecElaineChao, @USDOT, and @NHTSAgov for selecting Beep as one of 9 companies and 8 states to participate in the #AVTESTInitiative.  We support all efforts to coordinate and share information in ADS testing for the safe deployment of AV. https://t.co/lx9bdqimLA
-848) TODAY at 1pm: @USDOT &amp; @SecElaineChao will announce Beep, other AV leaders, and state transportation departments as partners in @NHTSAgov's new AV TEST Initiative to highlight AV projects happening acorss the country. 
-
-WATCH THE ANNOUNCEMENT: https://t.co/FuH5GxFkES https://t.co/hCrvWIRUsm
+847) ...and build stronger relationships among Federal, State, and local governments and stakeholders. https://t.co/JA7vWjH37W
+848) “Your partnership is critical”, said Nicole Nason Administrator of @USDOTFHWA on the #AVTESTInitiative announced today by @USDOT &amp; @NHTSA. The initiative will increase the public’s awareness of testing, centralize the Department’s role in promoting safety and innovation...
 
 
 The following tweets are from this account: BrulteCo
-849) retweeted: Come to #CoMotionMIAMILIVE and hear from our good friend @gbrulte, Co-Founder &amp; President of @BrulteCo, this June 30th and July 1st. https://t.co/cOsz4zPX55 https://t.co/WySHbmIjOO
-850) retweeted: Consumer expectations for online deliveries are radically shifting the retail sector. On the latest episode of the #SAETomorrowToday podcast, @gautam_narang, CEO of @gatik_ai, joins @gbrulte to discuss the company’s approach to the “middle mile” &amp; the #AV: https://t.co/61106JPRMg https://t.co/4cghXgZvbJ
-851) retweeted: On the latest episode of @SAEIntl's Tomomorrow Today #Podcast, I sat down @Gautam_Narang, Co-Founder &amp; CEO of @Gatik_AI to discuss why the future of delivery is autonomous. Listen today: https://t.co/LqVQAtObaV
-852) retweeted: During a time when we are better appreciating home delivery services as a way to stay safe, @nurobots' offerings have never been more relevant. David Estrada, Nuro CLO, sits down with Grayson Brulte on the latest episode of the #SAETomorrowToday podcast: https://t.co/61106JPRMg https://t.co/OCZBBC2iIU
-853) retweeted: On the latest episode of @SAEIntl's Tomorrow Today #Podcast, David Estrada, Chief Legal Officer of @nurobots and I sat down to discuss the past, present, and future of mobility. Listen today. https://t.co/Po7gJPHzgV
-854) retweeted: Interested in @TuSimpleAI? In January, I sat down with Robert Brown to discuss the current and future state of autonomous trucking on the @SAEIntl Tomorrow Today #Podcast. https://t.co/HcL9gTs90i
-855) retweeted: Our Chief Safety Innovation Officer, Dr. Mark Rosekind, joined @gbrulte of @SAEIntl to discuss how Mark's time at @NASA and @NHTSAgov prepared him for the important work he has been doing at Zoox over the past three years. https://t.co/BKsnMsFaae
-856) Brulte &amp; Company co-founder @gbrulte joined the @SmartDrivingCar #Podcast to discuss why global auto makers must completely re-think their autonomous mobility strategy as a result of the Covid-19 pandemic. Listen today. https://t.co/I6k8vlaAUd
-857) retweeted: Developing an Autonomous Future featuring Gopal Rajegowda of @RelatedCos is now streaming on @ApplePodcasts. https://t.co/coIgsDawc8
-858) retweeted: The Road to Autonomy #Podcast is now streaming on @Spotify. Subscribe and listen today. https://t.co/bWv9OOVyMY https://t.co/Isn7J1ub1q
-859) retweeted: The Road to Autonomy is now streaming on @iHeartRadio. Listen and subscribe today. https://t.co/lAPghgYBBy https://t.co/xMnxaZF6dV
-860) retweeted: The Business of Self-Driving Cars featuring @russ1mitchell is now streaming on @ApplePodcasts. https://t.co/4waXT6r7px
-861) retweeted: On the next episode of The Road To Autonomy, @russ1mitchell who covers the rapidly changing global auto industry at The @LATimes joins @gbrulte to discuss the business of self-driving cars. Episode will be released next week on @ApplePodcasts. https://t.co/n21sNlMm72
-862) retweeted: On The Road To Autonomy #podcast, @gbrulte speaks with @ChrisEmmanuelFL about the innovations Henry Morrison Flagler developed with The Florida East Coast Railway/Florida East Coast Hotel Companies and the impact that Flagler’s legacy has had on #Florida. https://t.co/6WPeFxZemx
-863) retweeted: The Road To Autonomy Podcast is now streaming on your favorite #podcast platforms. Subscribe on @ApplePodcasts: https://t.co/6FcDuP1Fjl and @Spotify: https://t.co/bWv9OOVyMY. https://t.co/tiySxGZjiw
-864) retweeted: If you are interested in the Natural Gas &amp; Oil Industry, @RDeanForeman1, Chief Economist at @APIenergy and I discuss America's energy independence, market trends and the future of the industry on the @SAEIntl Tomorrow Today Podcast. Listen Today: https://t.co/OsIQf4Fmtx https://t.co/LUnntwjjID
-865) retweeted: ‘What Inspires Innovators?’ Now streaming Series 1 of our new podcast, SAE Tomorrow Today! Host @gbrulte dives into the minds of the industry’s brightest, feat. guests from @Zoox, @TuSimpleAI, @APIenergy, @Audi, @ChildrensPhila, @ATT &amp; @MarathonPetroCo: https://t.co/Rs5dJ8O4ay https://t.co/cagG02Cnwk
-866) retweeted: Mobility is changing at light speed. We’re thrilled to announce our new podcast: ‘Tomorrow, Today,’ with host, 
+849) retweeted: Join me on Wednesday, July 1st at #CoMotionMIAMILIVE to learn why #Florida is leading all things autonomy and why brands will define the future of mobility. https://t.co/18EhfEGWuF @LA_CoMotion https://t.co/MlRRNpa10F
+850) retweeted: Come to #CoMotionMIAMILIVE and hear from our good friend @gbrulte, Co-Founder &amp; President of @BrulteCo, this June 30th and July 1st. https://t.co/cOsz4zPX55 https://t.co/WySHbmIjOO
+851) retweeted: Consumer expectations for online deliveries are radically shifting the retail sector. On the latest episode of the #SAETomorrowToday podcast, @gautam_narang, CEO of @gatik_ai, joins @gbrulte to discuss the company’s approach to the “middle mile” &amp; the #AV: https://t.co/61106JPRMg https://t.co/4cghXgZvbJ
+852) retweeted: On the latest episode of @SAEIntl's Tomomorrow Today #Podcast, I sat down @Gautam_Narang, Co-Founder &amp; CEO of @Gatik_AI to discuss why the future of delivery is autonomous. Listen today: https://t.co/LqVQAtObaV
+853) retweeted: During a time when we are better appreciating home delivery services as a way to stay safe, @nurobots' offerings have never been more relevant. David Estrada, Nuro CLO, sits down with Grayson Brulte on the latest episode of the #SAETomorrowToday podcast: https://t.co/61106JPRMg https://t.co/OCZBBC2iIU
+854) retweeted: On the latest episode of @SAEIntl's Tomorrow Today #Podcast, David Estrada, Chief Legal Officer of @nurobots and I sat down to discuss the past, present, and future of mobility. Listen today. https://t.co/Po7gJPHzgV
+855) retweeted: Interested in @TuSimpleAI? In January, I sat down with Robert Brown to discuss the current and future state of autonomous trucking on the @SAEIntl Tomorrow Today #Podcast. https://t.co/HcL9gTs90i
+856) retweeted: Our Chief Safety Innovation Officer, Dr. Mark Rosekind, joined @gbrulte of @SAEIntl to discuss how Mark's time at @NASA and @NHTSAgov prepared him for the important work he has been doing at Zoox over the past three years. https://t.co/BKsnMsFaae
+857) Brulte &amp; Company co-founder @gbrulte joined the @SmartDrivingCar #Podcast to discuss why global auto makers must completely re-think their autonomous mobility strategy as a result of the Covid-19 pandemic. Listen today. https://t.co/I6k8vlaAUd
+858) retweeted: Developing an Autonomous Future featuring Gopal Rajegowda of @RelatedCos is now streaming on @ApplePodcasts. https://t.co/coIgsDawc8
+859) retweeted: The Road to Autonomy #Podcast is now streaming on @Spotify. Subscribe and listen today. https://t.co/bWv9OOVyMY https://t.co/Isn7J1ub1q
+860) retweeted: The Road to Autonomy is now streaming on @iHeartRadio. Listen and subscribe today. https://t.co/lAPghgYBBy https://t.co/xMnxaZF6dV
+861) retweeted: The Business of Self-Driving Cars featuring @russ1mitchell is now streaming on @ApplePodcasts. https://t.co/4waXT6r7px
+862) retweeted: On the next episode of The Road To Autonomy, @russ1mitchell who covers the rapidly changing global auto industry at The @LATimes joins @gbrulte to discuss the business of self-driving cars. Episode will be released next week on @ApplePodcasts. https://t.co/n21sNlMm72
+863) retweeted: On The Road To Autonomy #podcast, @gbrulte speaks with @ChrisEmmanuelFL about the innovations Henry Morrison Flagler developed with The Florida East Coast Railway/Florida East Coast Hotel Companies and the impact that Flagler’s legacy has had on #Florida. https://t.co/6WPeFxZemx
+864) retweeted: The Road To Autonomy Podcast is now streaming on your favorite #podcast platforms. Subscribe on @ApplePodcasts: https://t.co/6FcDuP1Fjl and @Spotify: https://t.co/bWv9OOVyMY. https://t.co/tiySxGZjiw
+865) retweeted: If you are interested in the Natural Gas &amp; Oil Industry, @RDeanForeman1, Chief Economist at @APIenergy and I discuss America's energy independence, market trends and the future of the industry on the @SAEIntl Tomorrow Today Podcast. Listen Today: https://t.co/OsIQf4Fmtx https://t.co/LUnntwjjID
+866) retweeted: ‘What Inspires Innovators?’ Now streaming Series 1 of our new podcast, SAE Tomorrow Today! Host @gbrulte dives into the minds of the industry’s brightest, feat. guests from @Zoox, @TuSimpleAI, @APIenergy, @Audi, @ChildrensPhila, @ATT &amp; @MarathonPetroCo: https://t.co/Rs5dJ8O4ay https://t.co/cagG02Cnwk
+867) retweeted: Mobility is changing at light speed. We’re thrilled to announce our new podcast: ‘Tomorrow, Today,’ with host, 
 @gbrulte, to explore and understand the biggest challenges ahead. Series One drops in early February. Take a sneak peek: https://t.co/61106JPRMg #SAETomorrowToday https://t.co/B0evIWlONP
-867) retweeted: The #Florida Delegation at #CES2020 with friends @AlexRoy144 and @Tweetermeyer. https://t.co/d2B8pesnj1
-868) retweeted: With self-driving cars, #Chefs will be able to create bespoke dinning experiences that begin the minute you leave your hotel or residence. https://t.co/zJl554ehnp
+868) retweeted: The #Florida Delegation at #CES2020 with friends @AlexRoy144 and @Tweetermeyer. https://t.co/d2B8pesnj1
 
 
 The following tweets are from this account: RoadToAutonomy
@@ -1965,3 +1944,294 @@ https://t.co/Zirai5Tfny
 Watch COAST Chief Technology Officer Pierre Lefevre as he shares with @Automotive_IQ insights on the role of AI in designing user experience and user interaction.
 
 For a limited time, watch it on demand: https://t.co/9bwan1oxTW
+901) How do you control a self-driving car? 
+COAST CTO Pierre Lefevre shares his insight on the role of AI in designing UX and UI for autonomy at Automotive IQ's free online event on Tuesday, May 26th at 11am EDT.  Register for free at https://t.co/lzuVdF8mtO
+
+ https://t.co/HFxGj3DrTp https://t.co/vfDbpwc6Sp
+902) @Automotive_IQ Register at https://t.co/lzuVdEQL5e to listen to Pierre Lefevre speak on “How do you control a self-driving car?”
+
+The event will be live on Tuesday May 26th at 11:00am - 11:45am US Eastern Time
+903) retweeted: Q&amp;A: Pierre Lefevre, @CoastAV: "Cities should be built for people not cars..."
+
+#AutoIQ #AVO20 #autonomousvehicles #selfdrivingcars #automotive #3dmapping #robotics 
+
+https://t.co/0EVX4TWYXF
+904) Moments until @CoastAV CTO Pierre Lefevre and @Leddar_Tech VIP of Sales &amp; Business Development Adrian Pierce speak at #AV20. https://t.co/9mJUHy6T6z
+905) https://t.co/364gHEi72o
+906) COAST Autonomous Delivers Care Packages to Taal Volcano Evacuees - https://t.co/fpgFznddhd https://t.co/w9JEvYDFDY
+907) Looking forward to teaming up with our great #partners @Leddar_Tech once again! 
+
+#SiliconValley #SanFranciscoBay
+#Autonomous #LiDAR #AV20 
+
+https://t.co/eACfN6xNyh
+908) Coast Autonomous | St. Leo University 
+
+#campuslife #electric 
+#autonomous #accessibility
+
+https://t.co/9RY8JTTfLP
+909) @CoastAV CTO Pierre Lefevre will be joining the stage with President &amp; COO of @Leddar_Tech Frantz Saintellemy at AV20 held in San Francisco on February 27th.
+
+#MustSee #ADAS #AD #LiDar #AutonomousVehicles #SiliconValley #AV20 #SF https://t.co/k9BTS9U6ge
+910) #Autonomous #AV #Community #Florida #MaaS #Renaissance2021 #SaintLeoUniversity #SelfDriving #Tampa #Technology #Transportation #University #Campus https://t.co/JVss961ju7
+911) #Autonomous #AV #Community #Florida #MaaS #Renaissance2021 #SaintLeoUniversity #SelfDriving #Tampa #Technology #Transportation #University #Campus https://t.co/iHIAk6kYFK
+912) Check it out: https://t.co/KZwP8I7sdt
+
+#Autonomous #AV #Community #Florida #MaaS #Renaissance2021 #SaintLeoUniversity #SelfDriving #Tampa #Technology #Transportation #University #Campus
+913) Coast Autonomous partnered with Got Agua? to deliver care packages to 150 families impacted by the #TaalVolcano eruption. The COAST and Got Agua team members were overwhelmed by the generosity of spirit of these families in #Batangas who had recently lost so much. 
+#Philippines🇵🇭 https://t.co/BsD71a3zwe
+914) COAST Autonomous Signs MOU With Saint Leo University in Florida https://t.co/hhnDw00Xz1
+915) retweeted: 🚨 Exciting News! 🚨
+We are delighted to announce we are collaborating with @CoastAV to help cities become more sustainable and liveable. 
+
+All the details here: https://t.co/4a76L8GHYK
+
+#SelfDrivingCars
+#SmartMobility
+#sustainability
+916) COAST Autonomous and DG Cities Announce Collaboration to Transform Cities Through the Integration of Connected ... https://t.co/3LDee9ajJA
+
+
+The following tweets are from this account: autonomoustc
+917) https://t.co/41lqnXyMo4
+918) https://t.co/Er1DxUt54n
+919) .@cdixon predicts how the world will look in 10 years, when self-driving cars are everywhere https://t.co/5AaADPBC70 via @techinsider
+920) Autonomous Technology Still Needs Humans After All https://t.co/iKGogdqkYf via @triplepundit
+921) Apple shifts focus of Project Titan to autonomous car technology https://t.co/oisM01hvhH
+922) Tech Companies Still Trusted More on        Autonomous Car Development     https://t.co/0xqSYqbOsq via @WSJ
+923) Why GM Is Holding Back Its Bleeding-Edge Tech For Autonomous Vehicles via @forbes https://t.co/K7yHm8sWtQ
+924) News: Tesla and autonomous tech firm Mobileye end partnership https://t.co/9PJxD8LAZb
+925) Deliver robots will soon invade Austin, Texas https://t.co/4Kejksq1g6 via @MailOnline
+
+
+The following tweets are from this account: TheAutonocast
+926) New episode now live: @AlexRoy144, @kirstenkorosec and @Tweetermeyer  discuss the depiction of AVs in the first half of the new Amazon Prime show "Upload" and why SciFi is worth discussing when it comes to autonomous drive technology. https://t.co/vyaRd2XpOF
+927) One of the episodes we mentioned this week comes from the early, pre-Kirsten days of The Autonocast. One of our first guests ever, @MayaForCongress, joined us for a fantastic discussion about equity and the future of mobility. Please give it a listen. https://t.co/Rd3ZoouwAw
+928) New episode now live:  we discuss why racism, equity and diversity are such important topics for the mobility technology sector, and then chat about the recent controversy over an IIHS study about AV safety. Plus, Kirsten trolls Alex and Ed (as usual). https://t.co/scy5jAmwEk
+929) retweeted: Remember when I said on @TheAutonocast that AV sector consolidation would take &lt;6 months?
+
+Try 6 weeks. https://t.co/dXSmWZqzSt
+930) New episode now live: Anuja Sonalker of @STEERTechLLC joins @kirstenkorosec, @AlexRoy144 and @Tweetermeyer to discuss STEER's aftermarket/OEM autonomous parking system, cybersecurity, safety and more. https://t.co/8h6We2Zp3u
+931) retweeted: Despite all of Dyson’s expertise, their unbuilt EV’s steering wheel is from 1994. https://t.co/yPYZ2GKGfH
+932) retweeted: The simple and beautiful things that bind all of us, no matter what is going on in the world.
+
+THREAD 👇 https://t.co/fcgOmbuHu3
+933) retweeted: "Katherine swapped out the cover girl for Olivia Hallisey, the 2015 Google Science Fair Grand Prize winner, and photoshopped in some new headlines. The result? A magazine cover that offers girls better alternatives to tips on how to “Wake up Pretty.”
+
+https://t.co/6uKtq2oayq
+934) New episode now live: @ZF_Group Senior VP Aine Denari joins the show to discuss the rise of advanced driver assistance systems (ADAS), the factors and technologies driving adoption, and how she is driving L2+ capability costs under $1,000 per vehicle https://t.co/J7f7DnGWVv
+935) Here, in celebration of this momentous update from 
+@APStylebook, is our 2019 @SXSW panel discussion on automated driving terminology and why it's literally a matter of life and death. https://t.co/VRG2HGd0iU https://t.co/CkKbpMCGOF
+936) retweeted: "What matters is not just how fast they're running, it's where are they running to," @Tweetermeyer says. 
+
+Listen to him, @kirstenkorosec, @AlexRoy144 and @damon_corp discuss @business's look at the state of self-driving in 2020 https://t.co/Frwf3ZT6Jh https://t.co/CiKUY3HAk5
+937) retweeted: Another piece to keep in mind: VCs say Zoox has been assembling an impressive IP portfolio for a while, making them an attractive target even for an acquirer that isn't directly interested in the robotaxi application they've been pursuing. See: https://t.co/6x32CKlziu
+938) retweeted: Earlier this year I took one of the most impressive autonomous vehicle rides I've ever had with Zoox, and then sat down with their CTO Jesse Levinson. You can listen to that conversation here: https://t.co/ZwyTgNTjsZ
+939) retweeted: Entertaining and insightful episode from ⁦@TheAutonocast⁩ . ⁦@AlexRoy144⁩ you were quite on fire 🔥! https://t.co/8NGj7zoXO1
+940) Happy Hour Livestream going live in five minutes: https://t.co/lNeWacl6mT
+941) @NW_Horadam @AVGregR @leslietron listen pal, stirring the pot is OUR job https://t.co/8fPkSdFFKU
+942) @AVGregR @leslietron We are a zoombomb-friendly irregular livestream!
+943) retweeted: Looking forward to this tonight! I might even make my debut as a zoombomber behind my better half, @leslietron 🙂 https://t.co/Ld0K0IHlsQ
+944) THAT WHICH IS DEAD CAN NEVER DIE: THE AUTONOCAST HAPPY HOUR LIVESTREAM RETURNS!
+
+Enjoy an informed but sloppy discussion of oil markets and EVs, featuring our friends
+
+@leslietron 
+@evchels 
+@samabuelsamid 
+
+4 PM Pacific, 7 PM Eastern, today. Live on https://t.co/lNeWacl6mT https://t.co/aKP6rwprqK
+945) retweeted: In which I march through Bloomberg’s latest ranking of autonomous vehicles companies, and point out who the true leaders are...🔥🔥🔥🔥 https://t.co/O0jL7GseXT
+
+
+The following tweets are from this account: voyage
+946) retweeted: This is a very hard problem, but systems like Shield are key to achieving driverless, and I am thrilled with our progress. Learn more here.
+
+https://t.co/janbjP4noZ
+947) retweeted: Watch as we disable our primary perception systems and stress-test @voyage Shield, our collision mitigation system.
+
+Shield is a supercharged automatic emergency braking system, powered by super high-res sensors, powerful compute, and SOTA computer vision.
+
+Enjoy 🙏 https://t.co/X1EKlvDBYB
+948) retweeted: 🤯 Fun-fact: In @SECNAV75’s background is a replica of the USS Constitution (launched in 1797), constructed from wood from the original ship!
+949) retweeted: I know Sec. Mabus inspired every Voyager to lead from the front, and left us in awe of those who serve this country. Thank you for joining us 🙏
+
+I hope you all have a safe and relaxing Memorial Day weekend 🇺🇸 https://t.co/QuHKF8pERK
+950) retweeted: 🇺🇸 Today's @voyage all-hands was joined by @SECNAV75, who served as @BarackObama’s Secretary of the Navy.
+
+Sec. Mabus shared many incredible &amp; hard-earned leadership lessons. Leading through crises is a skill to be learned, and we were lucky to learn from one of the best. https://t.co/vXV7WoThcB
+951) We fully endorse this message 👍
+
+https://t.co/ImZva2VIQJ
+952) retweeted: I think @TaraAndringa's experience with @voyage at The Villages retirement community beautifully illustrates the core finding of our new poll. Perceptions of AVs may be grim, but they are hardly permanent and we know what makes them change. https://t.co/UwUzgr2V77
+953) retweeted: Register for Wednesday's virtual panel on the challenges of public perception of AVs and how PAVE is working to tackle them. This frank discussion will follow the release of a new poll with panelists from @NSCsafety, @UnitedSpinal &amp; @voyage. https://t.co/RCNwPPC9FZ https://t.co/WDm2MlwV7b
+954) retweeted: I am glad articles like this are being written. It feels good to read rah-rah pieces about AV as the savior to needless roadway death, but they don't do the journey to build it justice.
+
+Building this technology is complex and not for the faint of heart, but it will be worth it.
+955) retweeted: There's hundreds of reasons to be optimistic about self-driving cars. Millions will see a dramatic improvement in their daily lives.
+
+But, the industry is facing challenges. We talked to @cademetz and the @nytimes about @voyage's plan to overcome them.
+
+https://t.co/eRYXPiUS6t
+956) 🚘 We are delighted to partner with @fcagroup to integrate our self-driving technology into purpose-built Chrysler Pacifica vehicles.
+
+This is one of the last remaining puzzle pieces necessary to remove the Test Driver and launch fully driverless cars.
+
+https://t.co/NAS8H3n2Yp
+957) retweeted: ⁦⁦I am thrilled to share this news! ⁦@voyage⁩ is partnering with ⁦@fcagroup⁩ to deliver fully driverless cars 🚙 https://t.co/Re3c10c1RC
+958) retweeted: 7️⃣ I am incredibly proud of our team for pulling this off. They showed the perseverance necessary to get a multi-hundred-day partnership deal over the finish line.
+
+Also, a big thank you FCA for being great partners. We look forward to a fleet of thousands of your vehicles!
+959) retweeted: 6️⃣ Since then, we’ve been hard at work with FCA's excellent engineers to integrate our self-driving technology into our new purpose-built Chrysler Pacifica mini-vans.
+
+Their team has thought through every detail you could possibly imagine.
+
+https://t.co/G624DHQVJk
+960) retweeted: 5️⃣ Breakthrough! The stars aligned, and we signed our partnership with FCA on August 5th 2019.
+
+This is a photo of me at FCA headquarters with a snazzy new hat.
+
+That was a great day. The deal felt like @voyage punching above its weight, and we likely were. https://t.co/gKVmf3Pz89
+961) retweeted: 4️⃣ In early 2019, deal fatigue began to creep in. Partnerships like this are not yet common-place.
+
+However, we all kept on pushing and pushing hard (and kudos to FCA for being so excellent to work with). It involved a lot of flying and early morning presentations 💤 https://t.co/rFMifuY6By
+962) retweeted: 3️⃣ We got our first signal that a partnership with FCA was theoretically possible in December 2018, and our COO (@ninaqi), ceremoniously shared this Bitmoji.
+
+That said, we were still a _long_ way from getting this done, and accessing the vehicle we needed to enable driverless. https://t.co/t03Q3Czoew
+963) retweeted: 2️⃣ Our self-driving technology needs access to the lowest-level systems within a vehicle. If a failure occurs, our software needs to react.
+
+We also need braking and steering redundancies installed. If an actuator is compromised, our software needs to adapt and change its plan.
+964) retweeted: 1️⃣ This story begins in September 2018 (618 days ago!)
+
+To deliver a fully driverless car, if you’re not an auto-maker, you need a vehicle partnership.
+
+Why?
+965) retweeted: ⚡️ Big news from @voyage: we have partnered with @fcagroup to deliver fully driverless cars!
+
+Our self-driving technology is now integrated into a purpose-built Chrysler Pacifica. This is one of the last steps to pull the Test Driver.
+
+Thread…
+
+📰 https://t.co/mqkyip1kol
+
+
+The following tweets are from this account: donkey_car
+966) Get started at https://t.co/tYJ2hhTLps https://t.co/Ja0xII6HSi
+967) retweeted: @LeonardMosescu @chr1sa @diyrobocars @donkey_car Yes it is ! I created a python code to to generate tracks from random points. The code is here: https://t.co/Ir6pvuYs0s
+968) retweeted: The dev team is having fun with virtual @DIYRobocars track generation with Unity on the @donkey_car discord:
+https://t.co/l0Jd9FDlFy https://t.co/tJyyMwSKsH
+969) retweeted: Thanks Everyone for another fun virtual race! Amazing Ai racers competing head-to-head, Virtual Makers Fair event. Catch us again next month! @donkey_car @diyrobocars @OttawaAVGroup @DAVGtech @makerfaire 
+
+https://t.co/rccW6mOMZg
+970) Yay, we are part of the virtual @makerfaire with @diyrobocars.  Come see our race or better yet train a model and race with us.  https://t.co/COHmWswL8n
+971) retweeted: Please join us next week for our second DIYRobocars online race. We will be using a new Mountain Track course!
+https://t.co/jrjDahCFIQ
+972) retweeted: cc @DIYRobocars @donkey_car https://t.co/ewbyqZ3xC0
+973) Just a reminder that in 2 hours we race virtual donkey cars! https://t.co/6YnO8dh7Pf
+974) @SmallpixelCar @diyrobocars @NVIDIAEmbedded You can legitimately say you won.
+975) retweeted: Donkey Car v3.1.2 is now released!   Great work by @tawnkramer  and all the other contributers to bring all these great features to @donkey_car .
+
+PiOLED support, FPV server, RealSense T265 support, voice control with Alexa, MPU9250 support, Arduino Drivetrain, RoboHat MM1
+976) retweeted: Here comes the 1st @DIYRobocars virtual race! AI cars going head-to-head in a online simulator, open to all to compete or watch @Twitch
+
+Works w/any car, like @donkey_car, that can connect to a sim. It's just software; u don't need an actual car to compete
+https://t.co/p6UWpFXJe4 https://t.co/Ix5ADN4R00
+977) retweeted: Here's a look at the @donkey_car virtual racing we're going to start doing later this month at @DIYRobocars. Full details coming soon
+
+https://t.co/zmneTCCtim
+978) retweeted: I may be biased, but I think my #donkeycar is a rather handsome #diyrobocar! https://t.co/mWHP7ZTxje
+979) retweeted: I was social distancing before it was cool.
+980) retweeted: DUDE!! @a1k0n has a LEGIT robocar! Incredibly fast. https://t.co/Q9O01L9zLV
+981) retweeted: Training day at our #AI race track! 🏎️ 🏁 There's still time to qualify your #Jetson powered racer, #Donkeycar or @diyrobocars for The amAIzing Race during #GTC20.  #JetsonDevDays Sign up to qualify: https://t.co/CW09IoG54f https://t.co/oVhWQfj1jQ
+982) @dturn1 @a1k0n https://t.co/2plQrCsGi5
+983) retweeted: Keep running laps @SmallpixelCar... 5seconds is doable! And calling all racers.... there's still time to sign-up! 🏁🏎️#JetsonDevDays https://t.co/CW09IoG54f https://t.co/UtsM84SuBF
+984) @a1k0n @dturn1 Don’t forget I created a 3D printable lower arm for a blaze.  It is better than the original
+985) retweeted: Sync'd @joshu's GoPro w/ my datalogging; video is 2.5X speed, Google imagery upper-right. Found out my track boundaries are WAY off in some places, which is mainly why the car drives onto the grass, aside from the wobbly steering. https://t.co/pklpJkvJNM
+
+
+The following tweets are from this account: SmartCrossings
+986) #Selfdriving divisions aren’t exempt from COVID-induced corporate belt-tightening. #GM self-driving subsidiary #Cruise laid off 8% of its workforce, reducing headcount across product, marketing, and ride-share teams
+
+https://t.co/fENpYxnbci
+987) https://t.co/gwO7PylYfp
+988) #Teleoperated scooters, developed by technology companies #GoX and #Tortoise, are available for the public to try at #CuriosityLab, an innovation hub focused on #AutonomousVehicles and other new transportation technology
+
+https://t.co/VzgmIaQQg4
+989) He makes this statement while most auto OEMs are scaling back 
+
+https://t.co/zFlYZB1ehI
+990) “The FSD price will continue to rise as the software gets closer to full self-driving capability with regulatory approval. It that point, the value of #FSD is probably somewhere in excess of $100,000,” #Musk also said in the tweet
+
+https://t.co/HM04bDj8fZ
+991) retweeted: Sunday saw NASCAR racing get back underway, what if AI self-driving cars were included: https://t.co/SBU2pggYq3 @LanceEliot #AITrends #selfdriving #AI #selfdrivingcars #autonomousdriving #autonomousvehicles #techbrium #forbes #cars #tech #driverless #ML #DL
+992) retweeted: Finding Lanes Without Deep Learning https://t.co/wGmpNRJC94 #python #artificialintelligence #selfdrivingcars https://t.co/Qs7Tjc3nXB
+993) retweeted: Surprise! 2020 Is Not the Year for Self-Driving Cars  https://t.co/BIM1IQ9qdH #ai #selfdrivingcars
+994) retweeted: In this upcoming webinar, experts from Elektrobit and Equinix discuss ways to manage the massive volumes of data required for #ADAS and automated driving development. Register today: 
+ https://t.co/7oiTAfE4fz
+#selfdrivingcars #autonomousvehicles #connectedcar
+995) retweeted: Waymo Develops a Machine Learning Model to Predict the Behavior of Other Road Users for its Self-Driving Vehicles
+
+https://t.co/FZ5Txfz0x4
+via @FutureCar_Media 
+#SelfDrivingCars #DriverlessCars #AI #MachineLearning #PredictiveAnalytics 
+https://t.co/8UbWC4P4sU
+996) retweeted: It is really necessary to use technology to reduce driving risk.
+#SelfDrivingCars #ArtificialIntelligence https://t.co/uoLzfVTzCG
+997) retweeted: Survey finds #coronavirus changing consumer comfort with #AI, #robots, and #SelfDrivingCars https://t.co/JSQjDAEMUw via @therobotreport  #Covid19 #ArtificialIntelligence https://t.co/37bWr9oOWF
+998) retweeted: Can #SelfDrivingCars master the skill of navigating around double-parked vehicles? Let’s find out how self-driving #cars deal with double #parking.
+
+https://t.co/Z7F8NZkV6t https://t.co/5Dgz9VB3MY
+999) retweeted: Here’s why Elon Musk keeps raising the price of #Tesla’s ‘Full Self-Driving’ option https://t.co/jto6SiUSuk #SelfDrivingCars #TechJunkieNews https://t.co/tOLcwtNC6Q
+1000) retweeted: How @Waymo integrates #Data from various Sensors to make sense of it's surroundings &amp; understand it's environments.
+
+#AI #ArtificialIntelligence #SelfDrivingCars
+
+https://t.co/DrbnryHXB7
+1001) retweeted: #EmergingTech leverages #AR to help drivers see the invisible
+
+#IoT #5G #SelfDrivingCars #Robotics #makeyourownlane #defstar5 #smm #VR
+
+@pradeeprao_ @enricomolinari @ingliguori @labordeolivier   @kuriharan @baski_LA @BViseeon @joelVEc1 @SirTouati @readtechz @baski_LA https://t.co/25Mo3doaXT
+1002) retweeted: The VoloDrone can lift up to 200 KGs + is considered a "heavy-lift" drone
+
+@CNET #Drones #Robotics #AI #AutonomousVehicles #Tech 
+
+@MikeQuindazzi @Ronald_vanLoon @GlenGilmore @mvollmer1 
+@SpirosMargaris @RobCrasco @JacBurns_Comext @kuriharan 
+@psb_dc @kashthefuturist @Hal_Good https://t.co/QFwZjkuxzP
+1003) retweeted: Aptiv "is the rare auto supplier that seems to have successfully transformed itself into a serious autonomous vehicle (AV) player" - Bloomberg @business https://t.co/ZsejzJD6pQ
+1004) retweeted: "When you think about #robotaxis the promise is #efficiency and efficiency translates into lower cost and when you look at the models of the costs you can promise with a robotic car it rivals public transportation. " @EcoMotionIL #AV Hear more: https://t.co/EcsgQs7QwQ
+1005) retweeted: @Propelmee takes the driving in self-driving seriously
+
+Read #SelfDrivingCars news
+https://t.co/bpSD60NE0w
+
+#cars #automotive #driverlesscars #autonomouscars #autonomousvehicles 
+#selfdriving #driverless #robocars https://t.co/DleVNq9BZs
+
+
+The following tweets are from this account: StarskyRobotics
+1006) Thanks for the write up, @FreightWaves! https://t.co/h4CBt10HQQ
+1007) Another great award to be proud of — Starsky has been named to the 2020 FreightTech 25 list! Chosen from the FreightTech 100, it highlights the most innovative companies across the freight industry. https://t.co/YeWrReOi5g
+1008) Starsky Robotics lands on the @CNBC #Upstart100 list! We’re so proud to be recognized among the most promising start-ups around the world. See the whole list: https://t.co/6IzXKd6hyj
+1009) Leo Orenstein, Starsky’s Senior Controls Engineer says trucks are the hardest control problem he has ever faced, but he’s enjoying every single part of it and looking for more people who are not afraid of challenges to join the team.  https://t.co/WWwzxoEnEn
+1010) We’re thrilled to be included in the 2020 FreightTech 100 list by @FreightWaves as one of the most innovative and disruptive companies across the industry. #autonomous #freight #logistics #award https://t.co/DFcouYzkNr
+1011) Kartik Tiwari, Starsky Robotics CTO: “It’s getting verified not just by us, but by the broader industry that #autonomy is a big problem to solve. A human in the loop is the only viable solution.” #teleoperation #trucking 
+https://t.co/OJZltiIs5e
+1012) Thank you @WomenInTrucking for having us for the informative and empowering #Accelerate19 Conference in Dallas this week! Check out the extract from the panel to see how Starsky envisions #autonomous technology will change the trucking industry. https://t.co/JH5QdA8CUe
+1013) In our latest employee spotlight, hear from Aishanou Rait, Senior Perception Engineer at Starsky, about her #career path in #robotics and the challenges women face in tech today. https://t.co/AlQ7dg34W7
+1014) retweeted: Starsky Robotics CEO Stefan Seltz-Axmacher runs a traditional trucking outfit alongside the company's high-tech business, which has helped inform Starsky's approach to creating driverless technology. https://t.co/Fx7ZhbKmu7
+1015) In the future, moving goods will become as easy, and almost as cheap, as moving bits of information. Check out the op-ed by Stefan Seltz-Axmacher, Starsky’s CEO, for the World Economic Forum. #AutonomousVehicles #Freight #Transportation #Shipping https://t.co/3TaIK6cyWj
+1016) Starsky’s CEO, Stefan Seltz-Axmacher: “We don’t just want to build autonomous trucks: we want to build #autonomous #trucking.” Check out Stefan's blog post for more details on Starsky’s Hutch API that was launched today. https://t.co/7vImzKCfns
+1017) We’re thrilled to announce the Hutch API, an api to dispatch #autonomous trucks that makes our capacity accessible to #freight brokers without back office human intervention. https://t.co/SFAyR49WC8
+1018) Starsky Robotics partnered with a digital broker @Loadsmart to complete the first automated load dispatch. We were able to collaborate to price as well as book and load a shipment to one of the #autonomous trucks without any human involvement. https://t.co/6J9Xxv8Z6c https://t.co/QSq3PjuXzc
+1019) Kevin Keogh, Starsky’s System Validation Lead, on what made it possible for Starsky to get ahead of the competition, the role of System Validation to ensure #safety, and why a good company culture is essential for making a safe product. https://t.co/pqhaUPfKUi
+1020) Kartik Tiwari, CTO of Starsky Robotics, on how a combination of #autonomy and #teleoperation makes it possible to completely remove a human driver from a vehicle. https://t.co/xAbRKGGKUD
+1021) We’re excited to announce that Starsky Robotics has been selected as a 2019 TechPioneer by World Economic Forum! #techpioneers19 @wef @techpioneers Read more: https://t.co/BS6QI5DopX
+1022) Starsky just made history: we became the first #autonomous company to test on a public highway with no human on-board. #unmanned #driverless #trucks https://t.co/bXKk2kUJjq
+1023) Fox News: Starsky Robotics CEO Stefan Seltz-Axmacher on plans to put #driverless trucks on the roads in Florida. https://t.co/cjkI007GzP
+1024) Starsky Robotics set a #record for the fastest #unmanned road-legal vehicle. Our truck hit 55 MPH with nobody on board: https://t.co/BvKw4Bb0iO
+1025) A big day for Florida! Thank you to Sen. @JeffreyBrandes and Rep. @JasonFischerFL for creating one of the nation’s first regulatory environments facilitating the safe testing and deployment of AVs. https://t.co/TdXzFQhWQc
+
+
