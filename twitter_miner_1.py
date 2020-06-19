@@ -1,7 +1,7 @@
 import tweepy
 import sys
 import time
-import pdb
+
 consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
 consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
 access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
