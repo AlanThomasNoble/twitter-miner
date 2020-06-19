@@ -46,7 +46,7 @@ def obtain_tweets_from_single_user(api):
     # Open File
     with open('tweets.csv','w') as file:
         # Initialize Headers and Writer Object
-        headers = ['User', 'Tweet Text', 'ID', 'Tweet','Quoted','Reply','Retweet'] # add more headers...i.e. tweet type (reply, quote, rt)
+        headers = ['User','Tweet Text','DateTime','ID','Tweet','Quoted','Reply','Retweet']
         csv_writer = DictWriter(file,fieldnames=headers)
         csv_writer.writeheader()
 
@@ -76,6 +76,7 @@ def obtain_tweets_from_single_user(api):
                     csv_writer.writerow({
                         'User': user_id,
                         'Tweet Text': t,
+                        'DateTime': status.created_at.__str__(),
                         'ID': tweet.id,
                         'Tweet': False,
                         'Quoted': False,
@@ -88,6 +89,7 @@ def obtain_tweets_from_single_user(api):
                     csv_writer.writerow({
                         'User': user_id,
                         'Tweet Text': t,
+                        'DateTime': status.created_at.__str__(),
                         'ID': tweet.id,
                         'Tweet': not status.is_quote_status and not bool(status.in_reply_to_status_id), 
                         'Quoted': status.is_quote_status,
@@ -125,13 +127,14 @@ def PARTIAL_TEXT_tweets_from_list_users(api):
     for line in f_ptr:
         account = line.rstrip('\n')
         account_tweets = api.user_timeline(account)
-
-        account_line  = "The following tweets are from this account: " + account + "\n"
+        account_line  = f"The following tweets are from this account: {account}\n" # +
+        # account_line  = "The following tweets are from this account: " + account + "\n"
         w_ptr.write(account_line)
 
         for tweet in account_tweets:
         # printing the text stored inside the tweet object
-            written_tweet = str(running_count) + ") " + tweet.text + "\n\n"
+            written_tweet = f'{running_count}) {tweet.text}\n\n' # +
+            # written_tweet = str(running_count) + ") " + tweet.text + "\n\n"
             w_ptr.write(written_tweet)
             running_count += 1
         w_ptr.write("\n")
@@ -164,7 +167,8 @@ def FULL_TEXT_tweets_from_list_users(api):
         # max number of tweets per accounts is 200
         account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
 
-        account_line  = "The following tweets are from this account: " + account + "\n"
+        account_line  = f"The following tweets are from this account: {account}\n" # +
+        # account_line  = "The following tweets are from this account: " + account + "\n"
         w_ptr.write(account_line)
 
         # status.retweeted can be used to see if the text was retweeted
@@ -176,11 +180,14 @@ def FULL_TEXT_tweets_from_list_users(api):
             status = api.get_status(tweet_id, tweet_mode="extended")
 
             try:
-                w_ptr.write(str(running_count) + ") retweet status: " + status.retweeted_status.full_text + "\n\n")
+                w_ptr.write(f"{running_count}) retweet status: {status.retweeted_status.full_text}\n\n") # +
+                # w_ptr.write(str(running_count) + ") retweet status: " + status.retweeted_status.full_text + "\n\n")
             except AttributeError:
-                w_ptr.write(str(running_count) + ") account status: " + status.full_text + "\n")
+                w_ptr.write(f"{running_count}) account status: {status.full_text}\n") # +
+                # w_ptr.write(str(running_count) + ") account status: " + status.full_text + "\n")
                 try:
-                    w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
+                    w_ptr.write(f"retweet status: {status.quoted_status.full_text}\n\n") # +
+                    # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
                 except AttributeError:
                     w_ptr.write("\n")
 
@@ -206,7 +213,8 @@ def obtain_tweets_from_search(api):
     num = input("Enter the number of results you would like: ")
     print()
 
-    print("Searching for ", search_query, " ...")
+    print(f"Searching for {search_query} ...") # +
+    # print("Searching for ", search_query, " ...")
     print()
 
     tweets = api.search(search_query, count=int(num))
@@ -226,7 +234,8 @@ def obtain_tweets_from_search(api):
         count += 1
         print()
 
-    print("Number of results printed: ", count)
+    print(f"Number of results printed: {count}") # +
+    # print("Number of results printed: ",  count)
 
     # how much data?
     # how should json look like
