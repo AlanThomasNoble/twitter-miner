@@ -174,20 +174,19 @@ def FULL_TEXT_tweets_from_list_users(api):
             tweet_id = each_tweet.id
             # obtains status using tweet id
             status = api.get_status(tweet_id, tweet_mode="extended")
-
+            w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
             try:
-                w_ptr.write(str(running_count) + ") retweet status: " + status.retweeted_status.full_text + "\n\n")
+                w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
             except AttributeError:
-                w_ptr.write(str(running_count) + ") account status: " + status.full_text + "\n")
+                w_ptr.write("account status: " + status.full_text + "\n")
                 try:
                     w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
                 except AttributeError:
                     w_ptr.write("\n")
-
             # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
             # which is the max output for the rate limit twitter sets
             time.sleep(1)
-        exit_program()
+        print(running_count)
 
         w_ptr.write("\n")
         w_ptr.write("\n")
