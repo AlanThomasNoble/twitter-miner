@@ -61,7 +61,7 @@ def obtain_tweets_from_single_user(api):
         while firstIteration or len(incoming) > 0:
             # Collect First Set of Tweet Objects
             if firstIteration:
-                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True) # include rts in both?
+                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True) # include rts in both?, why didn't you move this outside of while?
                 firstIteration = False
 
             # Increment Total Tweets
@@ -84,7 +84,6 @@ def obtain_tweets_from_single_user(api):
                         'Reply': False,
                         'Retweet': True
                     })
-                    # status.is_quote_status
                 except AttributeError: # Not a retweet
                     t = status.full_text
                     csv_writer.writerow({
