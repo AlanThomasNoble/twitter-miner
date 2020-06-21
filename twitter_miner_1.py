@@ -29,6 +29,7 @@ def check_limit(api):
     # check for '/statuses/user_timeline'
     # check for '/statuses/lookup'
     # check for '/statuses/show/:id'
+    # check for '/search/tweets'
     print(api.rate_limit_status())
 
 
@@ -208,32 +209,58 @@ def FULL_TEXT_tweets_from_list_users(api):
 # Action: obtains tweets from a search query and returns list of json objects for each result from query
 # Return: JSON objects have the tweet text, tweet id, tweet hashtag information, and the tweet user information
 # If we have list of keywords, we will be able to generate hundreds of tweets
+# Enter a list of twitter search queries (Ex: Autonomous Vehicles, Self Driving Technology, etc.) in list_of_keywords.txt
+# IMPORTANT DETAILS:
+# Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
+# q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
 def obtain_tweets_from_search(api):
-    search_query = input("Enter a twitter search query (Ex: Autonomous Vehicles, Self Driving Technology, etc.): ")
-    num = input("Enter the number of results you would like: ")
+    num_tweets = input("Enter the number of tweets you would like per keyword in the list: ")
+    print()
+    print("Obtaining tweets from a list of keywords...")
     print()
 
-    print("Searching for ", search_query, " ...")
-    print()
+    # open the file
+    f_ptr = open(f'input/list_of_keywords.txt', 'r')
+    w_ptr = open(f'output/keywords_output.txt', 'w')
 
-    tweets = api.search(search_query, count=int(num))
-    count = 0
-    for tweet in tweets:
-        # print(tweet._json["text"])
-        # sample json - we can change later
-        out_json = {}
-        out_json["tweet_id"] = tweet._json["id"]
-        out_json["tweet_text"] = tweet._json["text"]
-        # out_json["tweet_text_truncated"] = tweet._json["truncated"]
-        out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
-        out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
-
-        print(out_json)
-
-        count += 1
+    # go through each line in the file
+    running_count = 0
+    for query in f_ptr:
+        print("Searching for ", query, " ...")
         print()
 
-    print(f"Number of results printed: {count}") # +
+        tweets = api.search(query, count=int(num_tweets))
+        for tweet in tweets:
+            running_count += 1
+            status = api.get_status(tweet.id, tweet_mode="extended")
+            
+            print(f"{running_count}) {status.created_at}\n")
+            try:
+                print(f"retweet status: {status.retweeted_status.full_text}\n\n") # +
+                # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
+            except AttributeError:
+                print(f"account status: {status.full_text}\n") # +
+                # w_ptr.write("account status: " + status.full_text + "\n")
+                try:
+                    print(f"retweet status: {status.quoted_status.full_text}\n\n") # +
+                    # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
+                except AttributeError:
+                    print("\n")
+
+            exit_program()
+
+            # out_json = {}
+            # out_json["tweet_id"] = tweet._json["id"]
+            # out_json["tweet_text"] = tweet._json["text"]
+            # # out_json["tweet_text_truncated"] = tweet._json["truncated"]
+            # out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
+            # out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
+            # print(out_json)
+            # print()
+        # we can only make 180 requests every 15 minutes
+        time.sleep(5)
+
+        print(f"Number of results printed: {count}") # +
     # print("Number of results printed: ", count)
 
     # how much data?
