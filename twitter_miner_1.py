@@ -146,7 +146,7 @@ def PARTIAL_TEXT_tweets_from_list_users(api):
 
 # Action: outputs FULL TEXT tweets from a list of users
 # The file containing the list of accounts is found in the input folder
-# WILL OBTAIN FULL TEXT BUT WILL TAKE A LONG TIME TO RUN
+# WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
 # Requirements
 # 1) Each account id corresponds to a PUBLIC accounts
 # 2) Each account id is spelled correctly
