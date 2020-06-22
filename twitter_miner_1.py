@@ -229,12 +229,14 @@ def obtain_tweets_from_search(api):
         print("Searching for ", query, " ...")
         print()
 
+        print(f"Results for the term: {query}")
         tweets = api.search(query, count=int(num_tweets))
         for tweet in tweets:
             running_count += 1
+
             status = api.get_status(tweet.id, tweet_mode="extended")
             
-            print(f"{running_count}) {status.created_at}\n")
+            print(f"{running_count}) {status.user.screen_name}, {status.created_at}\n")
             try:
                 print(f"retweet status: {status.retweeted_status.full_text}\n\n") # +
                 # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
@@ -247,7 +249,7 @@ def obtain_tweets_from_search(api):
                 except AttributeError:
                     print("\n")
 
-            exit_program()
+        exit_program()
 
             # out_json = {}
             # out_json["tweet_id"] = tweet._json["id"]
