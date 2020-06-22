@@ -262,7 +262,7 @@ def obtain_tweets_from_search(api):
         # we can only make 180 requests every 15 minutes
         time.sleep(5)
 
-        print(f"Number of results printed: {count}") # +
+        print(f"Number of results printed: {running_count}") # +
     # print("Number of results printed: ", count)
 
     # how much data?
