@@ -1,42 +1,88 @@
-The following tweets are from this account: AVminer2
-1) 2020-06-19 18:56:41
-retweet status: This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet
-
-
-
 The following tweets are from this account: ALakrintis
+1) 2020-06-23 18:15:31
+account status: #NVIDIA and #MercedesBenz Jointly Develops #Software Defined #Architecture for #AutomatedDriving https://t.co/OJPNeb9JKv
+mood: neutral (0.0), subjectivity level: 0.0
+
 2) 2020-06-19 18:26:23
 account status: #BMW to cut 6,000 jobs and slam brakes on #MercedesBenz #selfdriving alliance amid #Covid19 impact https://t.co/zE1T9G0UwY
+mood: neutral (0.0), subjectivity level: 0.0
 
+3) 2020-06-17 13:35:23
+account status: #PhantomAI and #Renesas Joint Development for #ADAS and #AutonomousDriving Technologies #SoC #semiconductor #DeepLearning #NeuralNetworks  https://t.co/okUUNTk3uR
+mood: neutral (0.0), subjectivity level: 0.0
 
+4) 2020-06-17 11:39:16
+account status: Aisin Seiki joins #StradVision Series B for #autonomousvehicle #algorithms https://t.co/r3viy4JEdj via @therobotreport
+mood: neutral (0.0), subjectivity level: 0.0
 
-The following tweets are from this account: LawOfDriverless
-3) 2020-06-21 06:38:15
-account status: If this works (and can successfully build in gender and cultural differences) this will be really useful for #AutonomousVehicles https://t.co/7kHAEnE1C1
-retweet status: Being able to read body language is an essential human skill. Soon, it might be one for robots, too. Researchers have developed an algorithm that analyzes and guesses how you’re feeling purely by the way you walk: https://t.co/anjLPe1stQ https://t.co/gpUtryJEJS
+5) 2020-06-16 16:52:48
+account status: The #impact of #Covid19 on Global #Mobility https://t.co/PPvczSxbaa
+mood: neutral (0.0), subjectivity level: 0.0
 
+6) 2020-06-16 12:53:41
+account status: #MIT and #Toyota release innovative new visual open data to accelerate #autonomousdriving research @automotiveworld https://t.co/hQWdFDfzHW
+mood: positive (0.1590909090909091), subjectivity level: 0.48863636363636365
 
+7) 2020-06-15 12:13:40
+account status: Venti Technologies Announces First #Deployment of #Autonomous SUVs | Business Wire https://t.co/pvrEyUICvx
+mood: positive (0.325), subjectivity level: 0.5166666666666666
 
-The following tweets are from this account: _AVPodcast
-4) 2019-12-06 18:21:19
-account status: "The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG."
-https://t.co/oQHpt8THMb #autonomousvehicles
+8) 2020-06-15 10:26:54
+account status: New @SA_Update Report: #Processors for #AutonomousDriving Platforms: Powering Artificial Intelligence #AI #ML #Software #Hardware #DeepLearning #startup  https://t.co/yt4s3depKz
+mood: negative (-0.2318181818181818), subjectivity level: 0.7272727272727273
 
+9) 2020-06-11 12:52:15
+account status: Greg Waters joins #Mythic Board of Directors https://t.co/hvLpVhU459 #AI #Inference #SoC #semiconductor
+mood: neutral (0.0), subjectivity level: 0.0
 
+10) 2020-06-10 13:45:44
+retweet status: #Ford and #VW detail cooperation efforts in #electrification and #autonomousdriving targeting both commercial and light passenger #vehicles #mebplatform #powertrain #automotive #electricvehicles https://t.co/uam1w0l0Zo
+mood: positive (0.2), subjectivity level: 0.35
 
-The following tweets are from this account: selfdriving360
-5) 2020-06-22 01:04:00
-account status: Watch how Chinas driverless super tractors conduct test runs in the fields in Henan Province
+11) 2020-06-09 15:52:19
+account status: #StradVision Expands #European Operations with #EU General Manager and #SAELevel4 #AutonomousVehicles https://t.co/pLRQdQNsk2 via @YahooFinance
+mood: neutral (0.02500000000000001), subjectivity level: 0.25
 
-Read/Add #SelfDrivingCars news
-https://t.co/bpSD60NE0w
+12) 2020-06-09 11:02:45
+retweet status: Sign up for our Next Webinar on June 24th at 11:30 AM EDT/ 4:30PM BST/ 8:30 AM PDT register here: https://t.co/e6SBUW5V6K
 
-#selfdriving #driverless #robocars #cars #automotive #technology
-#driverlesscars #autonomouscars #autonomousvehicles https://t.co/LP9oq5XH8H
+We will host an analyst roundtable to discuss which consumer behaviors to come about as a result of the COVID-19 pandemic. (click link for more details) https://t.co/2Fyr1CTN26
+mood: positive (0.25), subjectivity level: 0.25
 
+13) 2020-06-09 10:17:22
+account status: #Autonomous public #transport #bus #trials to launch in five #European cities #autonomousvehicles #autonomousbuses https://t.co/TidaIkbCv9
+mood: positive (0.13333333333333333), subjectivity level: 0.25555555555555554
 
+14) 2020-06-09 09:56:16
+retweet status: 🚗New: One of the oldest self-driving vehicle firms @oxbotica has been talking to potential acquirers.
 
-The following tweets are from this account: smartavcars
-6) 2020-03-26 16:07:04
-retweet status: The #COVID19 crisis has created many challenges which will require a purely #technological solution. Among them is driving automation. For #selfdrivingcars to play a meaningful role in a new economic future, system trust will be central. Find out more: https://t.co/X6qVDgOnmS https://t.co/t6d6DVa5d2
+https://t.co/Qz81xS9FPS
+mood: neutral (0.0), subjectivity level: 1.0
+
+15) 2020-06-08 17:48:24
+account status: When life gives you lemons, make lemonade and a ride hailing network with humans! But hey the car is EV! https://t.co/PxCdCaeYEu
+mood: neutral (0.0), subjectivity level: 0.0
+retweet status: So now they are talking about a “human-driven” ride-hailing network for $TSLA. Who needs “autonomy” when you have “TAM”? https://t.co/vlgOoJ6CrI
+
+mood: neutral (0.0), subjectivity level: 0.0
+
+16) 2020-06-05 12:07:52
+retweet status: #Nikola merges with #VectorIQ; lists on #NASDAQ and raises $700M #hydrogeneconomy #fuelcells #powertrain #electrification https://t.co/f6G0JRBYYB
+mood: neutral (0.0), subjectivity level: 0.0
+
+17) 2020-06-04 10:08:34
+account status: #Einride launches ‘intelligent #freight #mobility platform’ in anticipation of #autonomous #logistics https://t.co/tlCcpT7HHl via @MechatronixNews
+mood: positive (0.6000000000000001), subjectivity level: 0.8
+
+18) 2020-06-02 15:32:53
+account status: New #AutonomousVehicle Trials Database, new areas created for developing #autonomous shuttles around the world https://t.co/U85jkPFTpi
+mood: positive (0.22424242424242424), subjectivity level: 0.5363636363636363
+
+19) 2020-06-02 13:47:48
+account status: #Yandex switches from #selfdriving #Toyota Prius to autonomous #Hyundai Sonata https://t.co/4T7Bmmxd5j via @mashable
+mood: positive (0.4), subjectivity level: 0.7
+
+20) 2020-05-29 10:45:09
+account status: This looks promising! #Hexagon #NovAtel unveils #ROS-based #autonomousdriving platform https://t.co/3NCFirp72z via @MechatronixNews
+mood: positive (0.25), subjectivity level: 0.5
 

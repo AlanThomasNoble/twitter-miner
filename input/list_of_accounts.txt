@@ -1,4 +1,3 @@
-AVminer2
 ALakrintis
 LawOfDriverless
 _AVPodcast
