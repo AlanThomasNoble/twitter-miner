@@ -8,19 +8,9 @@ access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
 access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
-import nltk
-import ssl
+#from twitter_nlp import mood_function
+import twitter_nlp
 
-# try:
-#     _create_unverified_https_context = ssl._create_unverified_context
-# except AttributeError:
-#     pass
-# else:
-#     ssl._create_default_https_context = _create_unverified_https_context
-
-# nltk.download('stopwords')
-
-from textblob import TextBlob, Word, Blobber
 #####################################################################################################
 
 
@@ -201,17 +191,17 @@ def FULL_TEXT_tweets_from_list_users(api):
             try:
                 retweet_status = status.retweeted_status.full_text
                 w_ptr.write(f"retweet status: {retweet_status}\n") # +
-                w_ptr.write(f"{mood_function(retweet_status)}\n\n")
+                w_ptr.write(f"{twitter_nlp.mood_function(retweet_status)}\n\n")
                 # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
             except AttributeError:
                 account_status = status.full_text
                 w_ptr.write(f"account status: {status.full_text}\n") # +
-                w_ptr.write(f"{mood_function(account_status)}\n")
+                w_ptr.write(f"{twitter_nlp.mood_function(account_status)}\n")
                 # w_ptr.write("account status: " + status.full_text + "\n")
                 try:
                     retweet_status = status.quoted_status.full_text
                     w_ptr.write(f"retweet status: {retweet_status}\n") # +
-                    w_ptr.write(f"{mood_function(retweet_status)}\n\n")
+                    w_ptr.write(f"{twitter_nlp.mood_function(retweet_status)}\n\n")
                     # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
                 except AttributeError:
                     w_ptr.write("\n")
@@ -291,23 +281,6 @@ def obtain_tweets_from_search(api):
 
     # how much data?
     # how should json look like
-
-
-def mood_function(tweet_text):
-    text_obj = TextBlob(tweet_text)
-    polarity = text_obj.polarity
-    subjectivity = text_obj.subjectivity
-
-    # We can determine the thresholds for tweet mood
-    mood = ""
-    if polarity < -0.1:
-        mood = "negative"
-    elif polarity >= -0.1 and polarity <= 0.1:
-        mood = "neutral"
-    else:
-        mood = "positive"
-
-    return f"mood: {mood} ({polarity}), subjectivity level: {subjectivity}"
 
 
 # Action: exits software
