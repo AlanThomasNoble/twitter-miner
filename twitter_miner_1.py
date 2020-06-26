@@ -1,6 +1,7 @@
 import tweepy
 import sys
 import time
+import csv
 
 consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
 consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
@@ -9,7 +10,7 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 #from twitter_nlp import mood_function
-#import twitter_nlp
+import twitter_nlp
 
 #####################################################################################################
 
@@ -170,54 +171,93 @@ def FULL_TEXT_tweets_from_list_users(api):
 
     # open the file
     f_ptr = open(f'input/list_of_accounts.txt', 'r')
-    w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
+    # w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
+    
+    with open('output/FULL_TEXT_LIST.csv', 'w', newline='') as csvfile:
+        fieldnames = [
+            'user', 
+            'post date-time', 
+            'account status', 
+            'account sentiment', 
+            'retweet status', 
+            'retweet sentiment',
+            'post location', 
+            'tweet id', 
+            'account subjectivity', 
+            'retweet subjectivity'
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
 
-    # go through each line in the file
-    running_count = 0
-    for line in f_ptr:
-        account = line.rstrip('\n')
-        # max number of tweets per accounts is 200
-        account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
+        # go through each line in the file
+        running_count = 0
+        for line in f_ptr:
+            account = line.rstrip('\n')
+            # max number of tweets per accounts is 200
+            account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
 
-        account_line  = f"The following tweets are from this account: {account}\n" # +
-        # account_line  = "The following tweets are from this account: " + account + "\n"
-        w_ptr.write(account_line)
+            # status.retweeted can be used to see if the text was retweeted
+            for each_tweet in account_tweets:
+                running_count += 1
+                # obtains tweet id
+                tweet_id = each_tweet.id
+                # obtains status using tweet id
+                status = api.get_status(tweet_id, tweet_mode="extended")
 
-        # status.retweeted can be used to see if the text was retweeted
-        for each_tweet in account_tweets:
-            running_count += 1
-            # obtains tweet id
-            tweet_id = each_tweet.id
-            # obtains status using tweet id
-            status = api.get_status(tweet_id, tweet_mode="extended")
+                # w_ptr.write(f"{running_count}) {status.created_at}\n")
+                # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
+                retweet_status = ""
+                retweet_exists = False
+                account_status = ""
+                account_exists = False
+                account_sentiment = ""
+                retweet_sentiment = ""
+                account_subjectivity = ""
+                retweet_subjectivity = ""
 
-            w_ptr.write(f"{running_count}) {status.created_at}\n")
-            # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
-            try:
-                retweet_status = status.retweeted_status.full_text
-                w_ptr.write(f"retweet status: {retweet_status}\n") # +
-                w_ptr.write(f"{twitter_nlp.mood_function(retweet_status)}\n\n")
-                # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
-            except AttributeError:
-                account_status = status.full_text
-                w_ptr.write(f"account status: {status.full_text}\n") # +
-                w_ptr.write(f"{twitter_nlp.mood_function(account_status)}\n")
-                # w_ptr.write("account status: " + status.full_text + "\n")
                 try:
-                    retweet_status = status.quoted_status.full_text
-                    w_ptr.write(f"retweet status: {retweet_status}\n") # +
-                    w_ptr.write(f"{twitter_nlp.mood_function(retweet_status)}\n\n")
-                    # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
+                    retweet_status = status.retweeted_status.full_text
+                    retweet_exists = True
+                    retweet_sentiment = "Found"
+                    retweet_subjectivity = "Found"
                 except AttributeError:
-                    w_ptr.write("\n")
-            # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
-            # which is the max output for the rate limit twitter sets
-            time.sleep(1)
-        print(running_count)
-        # exit_program()
+                    account_status = status.full_text
+                    account_exists = True
+                    account_sentiment = "Found"
+                    account_subjectivity = "Found"
+                    retweet_status = ""
+                    retweet_exists = False
 
-        w_ptr.write("\n")
-        w_ptr.write("\n")
+                    try:
+                        retweet_status = status.quoted_status.full_text
+                        retweet_exists = True
+                        retweet_sentiment = "Found"
+                        retweet_subjectivity = "Found"
+                    except AttributeError:
+                        retweet_status = ""
+                        retweet_exists = False
+
+                writer.writerow({
+                    'user': account,
+                    'post date-time': status.created_at,
+                    'account status': account_status,
+                    'account sentiment': account_sentiment,
+                    'retweet status': retweet_status,
+                    'retweet sentiment': retweet_sentiment,
+                    'post location': status.place,
+                    'tweet id': tweet_id,
+                    'account subjectivity': account_subjectivity,
+                    'retweet subjectivity': retweet_subjectivity 
+                })
+                
+                # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
+                # which is the max output for the rate limit twitter sets
+                time.sleep(1)
+            print(running_count)
+            exit_program()
+
+        # w_ptr.write("\n")
+        # w_ptr.write("\n")
 
     f_ptr.close()
     w_ptr.close()

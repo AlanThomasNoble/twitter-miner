@@ -9,47 +9,39 @@ import re
 # else:
 #     ssl._create_default_https_context = _create_unverified_https_context
 
-# nltk.download('stopwords')
+# nltk.download()
 
 from textblob import TextBlob, Word, Blobber
 
-def cleanTxt(text):
- text = re.sub('@[A-Za-z0–9]+', '', text) #Removing @mentions
- text = re.sub('#', '', text) # Removing '#' hash tag
- text = re.sub('RT[\s]+', '', text) # Removing RT
- text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
- return text
+# copied a clean txt function: https://ipullrank.com/step-step-twitter-sentiment-analysis-visualizing-united-airlines-pr-crisis/
+def cleanTxt(tweet):
+    #Convert to lower case
+    tweet = tweet.lower()
+    #Convert www.* or https?://* to URL
+    tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','URL',tweet)
+    #Convert @username to AT_USER
+    tweet = re.sub('@[^\s]+','AT_USER',tweet)
+    #Remove additional white spaces
+    tweet = re.sub('[\s]+', ' ', tweet)
+    #Replace #word with word
+    tweet = re.sub(r'#([^\s]+)', r'\1', tweet)
+    #trim
+    tweet = tweet.strip('\'"')
+    return tweet 
 
 def mood_function(tweet_text):
-    # pat = re.compile(r'[^a-zA-Z ]+')
-    # answer = re.sub(pat, '', tweet_text.lower())
-    # print(answer)
-
-    answer = cleanTxt(tweet_text)
-    print(answer)
-    text_obj = TextBlob(answer)
+    text_obj = TextBlob(tweet_text)
     polarity = text_obj.polarity
     subjectivity = text_obj.subjectivity
 
 
     # We can determine the thresholds for tweet mood
     mood = ""
-    if polarity < -0.1:
+    if polarity < -0.01:
         mood = "negative"
-    elif polarity >= -0.1 and polarity <= 0.1:
+    elif polarity >= -0.01 and polarity <= 0.01:
         mood = "neutral"
     else:
         mood = "positive"
 
-    text_obj_2 = TextBlob(tweet_text)
-    polarity_2 = text_obj_2.polarity
-    subjectivity_2 = text_obj_2.subjectivity
-    mood_1 = ""
-    if polarity_2 < -0.1:
-        mood_1 = "negative"
-    elif polarity_2 >= -0.1 and polarity_2 <= 0.1:
-        mood_1 = "neutral"
-    else:
-        mood_1 = "positive"
-
-    return f"textblob --> mood: {mood} ({polarity}), subjectivity level: {subjectivity}\ntextblob --> mood: {mood_1} ({polarity_2}), subjectivity level: {subjectivity_2}"
+    return f"textblob --> mood: {mood} ({polarity}), subjectivity level: {subjectivity}"
