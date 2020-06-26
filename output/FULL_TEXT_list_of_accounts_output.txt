@@ -9,10 +9,35 @@ account status: #BMW to cut 6,000 jobs and slam brakes on #MercedesBenz #selfdri
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 
+3) 2020-06-17 13:35:23
+account status: #PhantomAI and #Renesas Joint Development for #ADAS and #AutonomousDriving Technologies #SoC #semiconductor #DeepLearning #NeuralNetworks  https://t.co/okUUNTk3uR
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
+4) 2020-06-17 11:39:16
+account status: Aisin Seiki joins #StradVision Series B for #autonomousvehicle #algorithms https://t.co/r3viy4JEdj via @therobotreport
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
+5) 2020-06-16 16:52:48
+account status: The #impact of #Covid19 on Global #Mobility https://t.co/PPvczSxbaa
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
 
 
 The following tweets are from this account: LawOfDriverless
-3) 2020-06-21 06:38:15
+6) 2020-06-26 18:14:44
+retweet status: UNECE Regulation on Automated Lane Keeping Systems (#ALKS) adopted. This is “...the first binding international regulation on so-called “level 3” vehicle automation.” https://t.co/plj8UIECNl
+textblob --> mood: positive (0.125), subjectivity level: 0.16666666666666666
+textblob --> mood: positive (0.125), subjectivity level: 0.16666666666666666
+
+7) 2020-06-26 10:26:48
+account status: Nice article for a friday from @2025AD: depictions of #driverlesscars in film over the years, assessed by accuracy -  https://t.co/2xLgORXNA2 https://t.co/sqlWgwCKNV
+textblob --> mood: positive (0.6), subjectivity level: 1.0
+textblob --> mood: positive (0.6), subjectivity level: 1.0
+
+8) 2020-06-21 06:38:15
 account status: If this works (and can successfully build in gender and cultural differences) this will be really useful for #AutonomousVehicles https://t.co/7kHAEnE1C1
 textblob --> mood: positive (0.3833333333333333), subjectivity level: 0.35000000000000003
 textblob --> mood: positive (0.3833333333333333), subjectivity level: 0.35000000000000003
@@ -20,128 +45,130 @@ retweet status: Being able to read body language is an essential human skill. So
 textblob --> mood: positive (0.16285714285714287), subjectivity level: 0.36500000000000005
 textblob --> mood: positive (0.16285714285714287), subjectivity level: 0.36500000000000005
 
-4) 2020-06-19 09:28:11
+9) 2020-06-19 09:28:11
 account status: In the US, the Insurance Institute for Highway Safety urges NHTSA to expand and strengthen safety standards for self-driving cars - for example systems to refuse to start a journey if an airbag is malfunctioning or a passenger is not properly restrained: https://t.co/bRr6EUKrSi
 textblob --> mood: neutral (0.0), subjectivity level: 0.1
 textblob --> mood: neutral (0.0), subjectivity level: 0.1
 
+10) 2020-06-19 09:25:53
+account status: Work has begun on a 300km test route for real world driving trials of self-driving cars in the Midlands, with a view to covering urban, rural, suburban and highway roads: https://t.co/feM21a0bjq
+textblob --> mood: neutral (0.05), subjectivity level: 0.07500000000000001
+textblob --> mood: neutral (0.05), subjectivity level: 0.07500000000000001
+
 
 
 The following tweets are from this account: _AVPodcast
-5) 2019-12-06 18:21:19
+11) 2019-12-06 18:21:19
 account status: "The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG."
 https://t.co/oQHpt8THMb #autonomousvehicles
 textblob --> mood: neutral (0.05), subjectivity level: 0.30000000000000004
 textblob --> mood: neutral (0.05), subjectivity level: 0.30000000000000004
 
-6) 2019-11-21 16:02:34
+12) 2019-11-21 16:02:34
 account status: Apple Podcasts: https://t.co/XbO7P9gfOs
 Spotify: https://t.co/C4FzzICxFh
 Stitcher: https://t.co/bQeHLKCt5B
 Google Play Music: https://t.co/YrIRES3UWd
 
 Full Episode List: https://t.co/M77H7LWbLI
+textblob --> mood: positive (0.35), subjectivity level: 0.55
+textblob --> mood: positive (0.35), subjectivity level: 0.55
+
+13) 2019-11-21 16:02:34
+account status: In this episode we discuss the challenges and opportunities associated with the massive datasets created by vehicles today, how this data can and will be commercialized in the coming years, and what this all means for software development in the automotive industry.
+textblob --> mood: neutral (0.0), subjectivity level: 1.0
+textblob --> mood: neutral (0.0), subjectivity level: 1.0
+
+14) 2019-11-21 16:02:33
+account status: Episode #11 - Today’s guest is @Heiser, Co-founder and CEO of @renovo_auto. #AutonomousVehicles https://t.co/FOBaebLDFU
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
+15) 2019-11-21 15:58:28
+account status: Apple Podcasts: https://t.co/XbO7P9gfOs
+Spotify: https://t.co/C4FzzICxFh
+Stitcher: https://t.co/bQeHLKCt5B
+Google Play Music: https://t.co/YrIRES3UWd
+
+Full Episode List: https://t.co/M77H7LWbLI
+textblob --> mood: positive (0.35), subjectivity level: 0.55
 textblob --> mood: positive (0.35), subjectivity level: 0.55
 
 
 
 The following tweets are from this account: selfdriving360
-7) 2020-06-25 19:33:59
+16) 2020-06-26 18:34:13
 account status: #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
 
-https://t.co/kuoJMLNv0x
+https://t.co/SB1HWlo50a
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 
-8) 2020-06-25 19:03:00
-account status: Watch how @Cruise self-driving cars perform in complex #SanFrancisco traffic conditions
+17) 2020-06-26 18:04:00
+account status: The best concept cars packed with technology from #CES2020
+
+Read/Add #SelfDrivingCars news
+https://t.co/bpSD60w38Y
+
+#cars #automotive #driverlesscars #autonomouscars #autonomousvehicles 
+#selfdriving #driverless #robocars https://t.co/yadI0WxjGx
+textblob --> mood: positive (1.0), subjectivity level: 0.3
+textblob --> mood: positive (1.0), subjectivity level: 0.3
+
+18) 2020-06-26 17:33:16
+account status: #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+
+https://t.co/OwiVuDulcD
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
+19) 2020-06-26 17:02:00
+account status: The #Tesla of #buses has arrived! via @businessinsider 
 
 Read/Add #SelfDrivingCars news
 https://t.co/bpSD60w38Y
 
 #driverlesscars #autonomouscars #autonomousvehicles 
-#selfdriving #driverless #robocars #cars #automotive #technology https://t.co/ko9XXM6BoQ
-textblob --> mood: negative (-0.3), subjectivity level: 0.4
-textblob --> mood: negative (-0.3), subjectivity level: 0.4
+#selfdriving #driverless #robocars #cars #automotive #technology https://t.co/6dQkGSxcTU
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+
+20) 2020-06-26 16:31:44
+account status: #selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+
+https://t.co/eTly6nKoPI
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
 
 
 
 The following tweets are from this account: smartavcars
-9) 2020-03-26 16:07:04
+21) 2020-03-26 16:07:04
 retweet status: The #COVID19 crisis has created many challenges which will require a purely #technological solution. Among them is driving automation. For #selfdrivingcars to play a meaningful role in a new economic future, system trust will be central. Find out more: https://t.co/X6qVDgOnmS https://t.co/t6d6DVa5d2
 textblob --> mood: positive (0.2563311688311688), subjectivity level: 0.37869318181818185
 textblob --> mood: positive (0.2563311688311688), subjectivity level: 0.37869318181818185
 
-10) 2020-03-26 16:06:22
+22) 2020-03-26 16:06:22
 retweet status: #SocialDistancing may be speeding up the future of robotics. 💥
 
 For a while, companies have been working on a "no-contact delivery" through #selfdriving services. And now, to keep people healthy and safe, this technology may be here before we know it! 🤖
 
 https://t.co/mUPCbEf5Ua
-textblob --> mood: positive (0.3333333333333333), subjectivity level: 0.375
+textblob --> mood: positive (0.375), subjectivity level: 0.375
 textblob --> mood: positive (0.375), subjectivity level: 0.375
 
-
-
-The following tweets are from this account: sensible4ltd
-11) 2020-06-24 09:48:24
-account status: We are collaborating with @EspooEsbo with a shared goal to make Espoo into a #smartcity with #sustainable solutions. Our vision is featured in Espoos sustainable development rapport which, is a part of the UNs sustainable development goals 2030. #autonomousdriving https://t.co/Hfyds1H0qQ
+23) 2020-03-17 15:47:56
+account status: https://t.co/wGXEQ2B5tT
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 textblob --> mood: neutral (0.0), subjectivity level: 0.0
 
-12) 2020-06-23 11:27:49
-account status: Our #autonomous pilot is still running in #Helsinki and, everyone is welcome to hop on and go for a ride. Our #software enables #selfdriving in all environments and offers a smooth ride for our passengers. 
-For more info about the pilot check our website https://t.co/FEXtTE30kK https://t.co/lg6Kh1vTUz
-textblob --> mood: positive (0.44000000000000006), subjectivity level: 0.52
-textblob --> mood: positive (0.44000000000000006), subjectivity level: 0.52
+24) 2020-03-17 15:47:33
+account status: https://t.co/vsg58r71oD
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
+textblob --> mood: neutral (0.0), subjectivity level: 0.0
 
-
-
-The following tweets are from this account: NewsfromTRL
-13) 2020-06-24 07:40:04
-account status: Ever wondered who decides when a vehicle is safe enough to be used on our roads? How will it work for #self-driving cars? In this new podcast, we discuss #CAVs and the challenges in bringing them to widespread adoption.  
-
-https://t.co/XgL429r8N4 https://t.co/vZzB22ct2a
-textblob --> mood: positive (0.21212121212121213), subjectivity level: 0.48484848484848486
-textblob --> mood: positive (0.21212121212121213), subjectivity level: 0.48484848484848486
-
-14) 2020-06-23 07:05:05
-account status: The SMLL Virtual Validation of Automated Vehicles webinar is TODAY at 16:00hrs. 
-
- 👉 Join from PC, Mac, Linux, iOS or Android: https://t.co/D9WDbFk3sx 
-
-Join us for a stunning visual explanation: What is it? How does it work? Why does it matter? What next https://t.co/i3K0tSIIBL
-textblob --> mood: positive (0.16666666666666666), subjectivity level: 0.3333333333333333
-textblob --> mood: positive (0.16666666666666666), subjectivity level: 0.3333333333333333
-
-
-
-The following tweets are from this account: AUVSI
-15) 2020-06-25 19:45:04
-account status: Don't miss out on your chance to drive the industry forward as a thought leader at the 2020 Automated Vehicles Symposium! The deadline to sponsor is TOMORROW, June 26th! Position your company as a thought leader and secure a speaking role at AVS 2020:
-https://t.co/T8yBWjDyBc https://t.co/qpBno2Ml1h
-textblob --> mood: positive (0.4), subjectivity level: 0.6
-textblob --> mood: positive (0.4), subjectivity level: 0.6
-
-16) 2020-06-25 18:02:51
-account status: Honeywell Aerospace has begun testing #autonomous systems that are designed to help urban air mobility vehicles land. Fully-automated landings are expected within 12 months.
-https://t.co/N2PbrwiBui
-textblob --> mood: positive (0.10000000000000002), subjectivity level: 0.3666666666666667
-textblob --> mood: positive (0.10000000000000002), subjectivity level: 0.3666666666666667
-
-
-
-The following tweets are from this account: AI_motive
-17) 2019-11-18 17:30:18
-account status: Today in Budapest we showcased our automated valet parking solution developed with Vodafone Hungary and HERE Technologies The solution works with indoor #maps and #IoT infrastructure to ensure quick #automated #parking.
-https://t.co/FaKpJFrMKx
-textblob --> mood: positive (0.21666666666666667), subjectivity level: 0.4
-textblob --> mood: positive (0.21666666666666667), subjectivity level: 0.4
-
-18) 2019-10-15 15:30:21
-account status: Today we're announcing our new partnership with @onsemi to explore the future of #sensorfusion hardware platforms.
-https://t.co/b0UQa6t1Wv
-textblob --> mood: neutral (0.06818181818181818), subjectivity level: 0.2897727272727273
-textblob --> mood: neutral (0.06818181818181818), subjectivity level: 0.2897727272727273
+25) 2020-03-17 15:47:00
+retweet status: Road users don’t always move in an expected direction. Here, we yield to an oncoming cyclist, before changing lanes through fast-moving traffic in preparation for an upcoming right-hand turn. YT: https://t.co/cT7zeJhASY https://t.co/s1uPYr0xJQ
+textblob --> mood: neutral (-0.1), subjectivity level: 0.4
+textblob --> mood: neutral (-0.1), subjectivity level: 0.4
 
