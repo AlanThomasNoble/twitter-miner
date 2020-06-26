@@ -21,9 +21,6 @@ def mood_function(tweet_text):
     polarity = text_obj.polarity
     subjectivity = text_obj.subjectivity
 
-    text_obj_2 = TextBlob(tweet_text)
-    polarity_2 = text_obj_2.polarity
-    subjectivity_2 = text_obj_2.subjectivity
 
     # We can determine the thresholds for tweet mood
     mood = ""
@@ -34,12 +31,15 @@ def mood_function(tweet_text):
     else:
         mood = "positive"
 
-    mood_1 = ""
-    if polarity_2 < -0.1:
-        mood_1 = "negative"
-    elif polarity_2 >= -0.1 and polarity_2 <= 0.1:
-        mood_1 = "neutral"
-    else:
-        mood_1 = "positive"
+    # text_obj_2 = TextBlob(tweet_text)
+    # polarity_2 = text_obj_2.polarity
+    # subjectivity_2 = text_obj_2.subjectivity
+    # mood_1 = ""
+    # if polarity_2 < -0.1:
+    #     mood_1 = "negative"
+    # elif polarity_2 >= -0.1 and polarity_2 <= 0.1:
+    #     mood_1 = "neutral"
+    # else:
+    #     mood_1 = "positive"
 
-    return f"textblob --> mood: {mood} ({polarity}), subjectivity level: {subjectivity}\ntextblob --> mood: {mood_1} ({polarity_2}), subjectivity level: {subjectivity_2}"
+    return f"textblob --> mood: {mood} ({polarity}), subjectivity level: {subjectivity}"
