@@ -1,14 +1,1 @@
-User,Tweet Text,DateTime,ID,Tweet,Quoted,Reply,Retweet
-AVminer2,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,2020-06-19 18:56:41,1274053506316619776,False,False,False,True
-AVminer2,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,2020-06-19 18:56:02,1274053343195824128,True,False,False,False
-AVminer2,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/LHkepF4EyZ,2020-06-19 18:55:49,1274053287453605889,False,True,False,False
-AVminer2,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/BJTCGLVWr8,2020-06-19 17:43:29,1274035084157505538,False,True,False,False
-AVminer2,.kjndkjgfndfkjgnkfdjng,2020-06-18 22:58:25,1273751952405475328,True,False,False,False
-AVminer2,Falcon 9 launches 58 Starlink satellites and 3 @planetlabs Skysats to orbit before returning to Earth and landing on a droneship https://t.co/K6OjgJQZfv,2020-06-18 22:20:19,1273742366294376448,False,False,False,True
-AVminer2,ljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsd.ldkmfldskflksdfmlsdmfklsmdlfkmsdlk https://t.co/25wOUmvlS1,2020-06-18 21:34:17,1273730782310346753,False,True,False,False
-AVminer2,sdkjndslkjfsdlkjfnlskdjnfkjsdnfkdjsnfkjnsdkjfnsdkjfnskjdnfjksndkfjnsdjknfksjdnfksdjnfkjnsdfkjndsjknflsdnfdjjjjjnsjndfksdjnfjksndfkjsndfjksdlnfjsdllsdfnskjdf sdfkjnsdlkjfnksjdf sdfjklsdnfkjlnsdkljfnsdf sdjfndsfjnsdklfnjsdkjnfkdsjnfdksnf sdfkjnsdkfjnskdjnfkjsdnfkjlsdnfkjsdnfjkdjjjj,2020-06-18 21:33:46,1273730648780558338,True,False,False,False
-AVminer2,Eihdccjtrhf9876 #Eihdccjtrhf9876 https://t.co/UmfeVTqtKj,2020-06-14 21:14:41,1272276295003639810,False,True,False,False
-AVminer2,#Eihdccjtrhf9876,2020-06-14 21:14:13,1272276179064684545,True,False,False,False
-AVminer2,Eihdccjtrhf9876,2020-06-14 21:13:32,1272276005592469504,True,False,False,False
-AVminer2,Happy Sunday!,2020-06-09 21:41:20,1270471064087408643,True,False,False,False
-AVminer2,This account will be used for AV research.,2020-06-09 21:39:58,1270470721903431682,True,False,False,False
+User,Tweet Text,DateTime,location,ID,Hashtags,User Mentions,Tweet,Quoted,Reply,Retweet

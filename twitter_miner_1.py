@@ -9,7 +9,7 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 #from twitter_nlp import mood_function
-import twitter_nlp
+#import twitter_nlp
 
 #####################################################################################################
 
@@ -41,7 +41,6 @@ def check_limit(api):
 
 
 # Action: outputs a set of a given user's tweets
-# Action: outputs a set of a given user's tweets
 def obtain_tweets_from_single_user(api):
     user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
     print()
@@ -55,7 +54,7 @@ def obtain_tweets_from_single_user(api):
     # Open File
     with open('tweets.csv','w') as file:
         # Initialize Headers and Writer Object
-        headers = ['User','Tweet Text','DateTime','ID','Tweet','Quoted','Reply','Retweet']
+        headers = ['User','Tweet Text','DateTime','location','ID','Hashtags','User Mentions','Tweet','Quoted','Reply','Retweet']
         csv_writer = DictWriter(file,fieldnames=headers)
         csv_writer.writeheader()
 
@@ -86,7 +85,10 @@ def obtain_tweets_from_single_user(api):
                         'User': user_id,
                         'Tweet Text': t,
                         'DateTime': status.created_at.__str__(),
+                        'location': status.place,
                         'ID': tweet.id,
+                        'Hashtags': [h['text'] for h in tweet.entities['hashtags']],
+                        'User Mentions': [t['screen_name'] for t in tweet.entities['user_mentions']],
                         'Tweet': False,
                         'Quoted': False,
                         'Reply': False,
@@ -98,7 +100,10 @@ def obtain_tweets_from_single_user(api):
                         'User': user_id,
                         'Tweet Text': t,
                         'DateTime': status.created_at.__str__(),
+                        'Location': status.place,
                         'ID': tweet.id,
+                        'Hashtags': [h['text'] for h in tweet.entities['hashtags']],
+                        'User Mentions': [t['screen_name'] for t in tweet.entities['user_mentions']],
                         'Tweet': not status.is_quote_status and not bool(status.in_reply_to_status_id), 
                         'Quoted': status.is_quote_status,
                         'Reply': bool(status.in_reply_to_status_id),
