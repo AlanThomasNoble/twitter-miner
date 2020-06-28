@@ -19,6 +19,9 @@ def cleanTxt(tweet):
     tweet = tweet.lower()
     #Convert www.* or https?://* to URL
     tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','URL',tweet)
+        # suggested addition: r'(https?)//(www\.[A-Za-z-]{2,256}\.[a-z]{2,6})([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+        # Use if desired, the current one is more of catchall...which might be advantageous.
+        # r stands for raw string, I don't think it matters (similar to f-strings)
     #Convert @username to AT_USER
     tweet = re.sub('@[^\s]+','AT_USER',tweet)
     #Remove additional white spaces

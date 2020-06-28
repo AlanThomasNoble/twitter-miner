@@ -2,6 +2,7 @@ import tweepy
 import sys
 import time
 import csv
+from csv import DictWriter # Currently Needed for User Function Code (otherwise reference to csv would be needed)
 
 consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
 consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
@@ -10,7 +11,7 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 #from twitter_nlp import mood_function
-import twitter_nlp
+#import twitter_nlp
 
 #####################################################################################################
 
@@ -49,13 +50,10 @@ def obtain_tweets_from_single_user(api):
     print()
     print("The following tweets are from this account:", user_id)
 
-    # Import
-    from csv import DictWriter
-
     # Open File
     with open('tweets.csv','w') as file:
         # Initialize Headers and Writer Object
-        headers = ['User','Tweet Text','DateTime','location','ID','Hashtags','User Mentions','Tweet','Quoted','Reply','Retweet']
+        headers = ['User','Tweet Text','DateTime','Location','ID','Hashtags','User Mentions','Tweet','Quoted','Reply','Retweet']
         csv_writer = DictWriter(file,fieldnames=headers)
         csv_writer.writeheader()
 
@@ -86,7 +84,7 @@ def obtain_tweets_from_single_user(api):
                         'User': user_id,
                         'Tweet Text': t,
                         'DateTime': status.created_at.__str__(),
-                        'location': status.place,
+                        'Location': status.place,
                         'ID': tweet.id,
                         'Hashtags': [h['text'] for h in tweet.entities['hashtags']],
                         'User Mentions': [t['screen_name'] for t in tweet.entities['user_mentions']],
