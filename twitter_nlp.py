@@ -33,7 +33,7 @@ def cleanTxt(tweet):
     return tweet 
 
 def mood_function(tweet_text):
-    text_obj = TextBlob(tweet_text)
+    text_obj = TextBlob(cleanTxt(tweet_text))
     polarity = text_obj.polarity
     subjectivity = text_obj.subjectivity
 
