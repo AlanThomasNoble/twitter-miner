@@ -47,4 +47,9 @@ def mood_function(tweet_text):
     else:
         mood = "positive"
 
-    return f"textblob --> mood: {mood} ({polarity}), subjectivity level: {subjectivity}"
+    ret_list = []
+    ret_list.append(mood)
+    ret_list.append(polarity)
+    ret_list.append(subjectivity)
+
+    return ret_list

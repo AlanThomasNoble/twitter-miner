@@ -10,8 +10,7 @@ access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
 access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
-#from twitter_nlp import mood_function
-#import twitter_nlp
+import twitter_nlp
 
 #####################################################################################################
 
@@ -201,6 +200,7 @@ def FULL_TEXT_tweets_from_list_users(api):
                 tweet_id = each_tweet.id
                 # obtains status using tweet id
                 status = api.get_status(tweet_id, tweet_mode="extended")
+                print(status.place)
 
                 # w_ptr.write(f"{running_count}) {status.created_at}\n")
                 # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
@@ -216,21 +216,21 @@ def FULL_TEXT_tweets_from_list_users(api):
                 try:
                     retweet_status = status.retweeted_status.full_text
                     retweet_exists = True
-                    retweet_sentiment = "Found"
-                    retweet_subjectivity = "Found"
+                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                 except AttributeError:
                     account_status = status.full_text
                     account_exists = True
-                    account_sentiment = "Found"
-                    account_subjectivity = "Found"
+                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
+                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
                     retweet_status = ""
                     retweet_exists = False
 
                     try:
                         retweet_status = status.quoted_status.full_text
                         retweet_exists = True
-                        retweet_sentiment = "Found"
-                        retweet_subjectivity = "Found"
+                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                     except AttributeError:
                         retweet_status = ""
                         retweet_exists = False
@@ -242,7 +242,7 @@ def FULL_TEXT_tweets_from_list_users(api):
                     'account sentiment': account_sentiment,
                     'retweet status': retweet_status,
                     'retweet sentiment': retweet_sentiment,
-                    'post location': status.place,
+                    'post location': status.place, # only available if user adds on IOS or andriod / not on web
                     'tweet id': tweet_id,
                     'account subjectivity': account_subjectivity,
                     'retweet subjectivity': retweet_subjectivity 
@@ -252,7 +252,6 @@ def FULL_TEXT_tweets_from_list_users(api):
                 # which is the max output for the rate limit twitter sets
                 time.sleep(1)
             print(running_count)
-            exit_program()
 
         # w_ptr.write("\n")
         # w_ptr.write("\n")
@@ -260,7 +259,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     f_ptr.close()
     w_ptr.close()
     print(running_count, "tweets found.")
-    print("Tweets can be found in FULL_TEXT_list_of_accounts_output.txt")
+    print("Tweets can be found in FULL_TEXT_LIST.csv")
 
 
 # Action: obtains tweets from a search query and returns list of json objects for each result from query

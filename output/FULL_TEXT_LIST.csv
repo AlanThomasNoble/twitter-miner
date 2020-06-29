@@ -1,21 +1,74 @@
 user,post date-time,account status,account sentiment,retweet status,retweet sentiment,post location,tweet id,account subjectivity,retweet subjectivity
-AVminer2,2020-06-26 21:07:18,😠👿😤,Found,,,,1276623091419021312,Found,
-AVminer2,2020-06-26 21:06:40,Twitter whyyy,Found,,,,1276622933839032321,Found,
-AVminer2,2020-06-26 21:06:20,Please work,Found,,,,1276622850334621696,Found,
-AVminer2,2020-06-26 20:59:09,Hii,Found,,,,1276621043764015104,Found,
-AVminer2,2020-06-26 20:57:23,test,Found,,,,1276620596080791552,Found,
-AVminer2,2020-06-26 20:52:54,Location Test 3,Found,,,,1276619467330551808,Found,
-AVminer2,2020-06-26 20:52:50,Location Test 2,Found,,,,1276619450188431367,Found,
-AVminer2,2020-06-26 20:52:38,Location Test 1,Found,,,,1276619401245134856,Found,
-AVminer2,2020-06-19 18:56:41,,,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,Found,,1274053506316619776,,Found
-AVminer2,2020-06-19 18:56:02,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,Found,,,,1274053343195824128,Found,
-AVminer2,2020-06-19 18:55:49,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/LHkepF4EyZ,Found,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/BJTCGLVWr8,Found,,1274053287453605889,Found,Found
-AVminer2,2020-06-19 17:43:29,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/BJTCGLVWr8,Found,More than 100 spacecraft have been signed up to fly on Falcon 9 since we launched the rideshare program. Small satellite operators can book their ride to orbit online → https://t.co/hyMYK3v29p https://t.co/HYGfD333ix,Found,,1274035084157505538,Found,Found
-AVminer2,2020-06-18 22:58:25,.kjndkjgfndfkjgnkfdjng,Found,,,,1273751952405475328,Found,
-AVminer2,2020-06-18 22:20:19,,,Falcon 9 launches 58 Starlink satellites and 3 @planetlabs Skysats to orbit before returning to Earth and landing on a droneship https://t.co/K6OjgJQZfv,Found,,1273742366294376448,,Found
-AVminer2,2020-06-18 21:34:17,ljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsdljksdflsdfdslkfjsldkfjsdklfsd;lfkjsd;lkfjsdklfjsd.ldkmfldskflksdfmlsdmfklsmdlfkmsdlk https://t.co/25wOUmvlS1,Found,Happy Sunday!,Found,,1273730782310346753,Found,Found
-AVminer2,2020-06-18 21:33:46,sdkjndslkjfsdlkjfnlskdjnfkjsdnfkdjsnfkjnsdkjfnsdkjfnskjdnfjksndkfjnsdjknfksjdnfksdjnfkjnsdfkjndsjknflsdnfdjjjjjnsjndfksdjnfjksndfkjsndfjksdlnfjsdllsdfnskjdf sdfkjnsdlkjfnksjdf sdfjklsdnfkjlnsdkljfnsdf sdjfndsfjnsdklfnjsdkjnfkdsjnfdksnf sdfkjnsdkfjnskdjnfkjsdnfkjlsdnfkjsdnfjkdjjjj,Found,,,,1273730648780558338,Found,
-AVminer2,2020-06-14 21:14:41,Eihdccjtrhf9876 #Eihdccjtrhf9876 https://t.co/UmfeVTqtKj,Found,"This photo has not been edited, look closer on this drone footage",Found,,1272276295003639810,Found,Found
-AVminer2,2020-06-14 21:14:13,#Eihdccjtrhf9876,Found,,,,1272276179064684545,Found,
-AVminer2,2020-06-14 21:13:32,Eihdccjtrhf9876,Found,,,,1272276005592469504,Found,
-AVminer2,2020-06-09 21:41:20,Happy Sunday!,Found,,,,1270471064087408643,Found,
+Tesla,2020-06-20 20:44:50,https://t.co/26o1bAP14v,neutral,,,,1274443110362214405,0.0,
+ALakrintis,2020-06-29 08:25:41,"#Tencent releases new #simulation platform for #autonomousdriving
+https://t.co/WWkFp9akmM",positive,,,,1277518590779015168,0.45454545454545453,
+LawOfDriverless,2020-06-29 07:48:00,"Niche but thoughtful article on whether the rise of #autonomous vehicles is likely to bring down the prevelence of drive by shootings: 
+
+https://t.co/o16AJVxn2V",positive,,,,1277509104865550337,0.6222222222222222,
+_AVPodcast,2019-12-06 18:21:19,"""The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG.""
+https://t.co/oQHpt8THMb #autonomousvehicles",positive,,,,1203016585960493056,0.30000000000000004,
+selfdriving360,2020-06-29 16:08:48,,,Level 3 in 3 years. https://t.co/D9BGBE97Eb,neutral,,1277635137090584582,,0.0
+smartavcars,2020-03-26 16:07:04,,,"The #COVID19 crisis has created many challenges which will require a purely #technological solution. Among them is driving automation. For #selfdrivingcars to play a meaningful role in a new economic future, system trust will be central. Find out more: https://t.co/X6qVDgOnmS https://t.co/t6d6DVa5d2",positive,,1243207851209707520,,0.37869318181818185
+sensible4ltd,2020-06-29 11:48:06,,,"Vielä tällä viikolla ehdit @FABULOSPCP robottibussin kyytiin Helsingin Itä-Pasilassa! Katso aikataulut @HSL_HRT Reittioppaasta tai tästä linkistä https://t.co/29j3S3ocSD
+#AutonomousVehicles #smartmobility #helsinki #GATCHA @sensible4ltd Kuva: Jussi Hellsten https://t.co/Lo4nSPuGRM",neutral,,1277569528055181322,,0.0
+NewsfromTRL,2020-06-24 07:40:04,"Ever wondered who decides when a vehicle is safe enough to be used on our roads? How will it work for #self-driving cars? In this new podcast, we discuss #CAVs and the challenges in bringing them to widespread adoption.  
+
+https://t.co/XgL429r8N4 https://t.co/vZzB22ct2a",positive,,,,1275695168470036481,0.48484848484848486,
+AUVSI,2020-06-29 16:30:40,"Deep space exploration is a costly and hazardous prospect. NASA is working on plans to develop small, steam-powered #robots to hop along the surface of icy moons.
+https://t.co/lGGaoS9KGV",positive,,,,1277640637605699585,0.45000000000000007,
+AI_motive,2019-11-18 17:30:18,"Today in Budapest we showcased our automated valet parking solution developed with Vodafone Hungary and HERE Technologies The solution works with indoor #maps and #IoT infrastructure to ensure quick #automated #parking.
+https://t.co/FaKpJFrMKx",positive,,,,1196480763966955520,0.4,
+AutonomousVT,2020-06-26 14:03:12,.@Waymo continues to steadily make solid partnerships. This time with @volvocars and its affiliates @PolestarCars and Lynk &amp; Co. https://t.co/kl2HLvpjxO,positive,,,,1276516363729801216,0.3,
+diyrobocars,2020-06-29 16:22:05,,,"Donkey car, car car car car car car;
+Donkey car, car car car car car car;
+Donkey Car.
+
+Anyone like our tiny tiny donkey car?  It's very small.
+
+@donkey_car  @diyrobocars #donkeycar https://t.co/eRYGhUxMRJ",negative,,1277638477530578944,,0.5066666666666667
+TRIAD_Global,2020-06-26 07:00:14,"#MandaliKhalesi, our VP of #AutomatedDriving Strategy and #Mapping, discussed mobility and mapping innovation with #Maxar, #Grab and #WMMotor at the latest #MOVEAsia Webinar. Check it out!
+
+https://t.co/tTMFqroRXq
+
+#TRI_AD",positive,,,,1276409923128168448,0.9,
+DCautonomous,2020-06-25 16:06:15,@AU_SPA @sbjesq @AUVSI Our founders are @AmericanU grads and will be leading the panel tonight! @AmericanUAlum,neutral,,,,1276184944893550592,0.0,
+DAVGtech,2020-06-21 12:31:06,"Yesterday we had a ten year old in Canada racing a sixteen year old in France. This is a truly unique community and opportunity to engage with folks all over the world. Come for racing, stay for learning and building relationships. https://t.co/leWDDuLeW3",positive,Next Virtual Race League: @DIYRobocars Race #4 - Parking Lot Nerds https://t.co/5KUpu7VGaH #Meetup on August 1st. via @Meetup @DAVGtech @OttawaAVGroup @DWalmroth,neutral,,1274681245784555522,0.35,0.0
+BradBerman,2020-06-09 23:24:37,"Four Tesla workers at main factory Model S/X line test positive for COVID-19.
+https://t.co/QPZtDKWtlt https://t.co/Fs6vweo7jM",positive,,,,1270497056444964864,0.43939393939393934,
+clearpathrobots,2020-06-29 15:30:30,"Our friends at @WaterlooENG reviewed the Stencil 2 mobile 3D mapping platform from @Kaarta3D. Check out some of the 3D maps they were able to generate from this compact, all-in-one 3D sensing device. Watch the full review video here: https://t.co/Ny5cGg3OMD https://t.co/6nBAeKo6eu",positive,,,,1277625496826793988,0.5875,
+AutonomousAlgo,2020-06-17 05:35:56,"1997 Pokemon Scratch Series2 - The Rarest Pokémon Expansion Set Ever?
+https://t.co/HgqC3ZkIEg #pokemoncards #pokemonscratch",neutral,,,,1273127214012383233,0.0,
+guidaautonoma,2020-06-29 16:18:47,"New international regulations could pave the way for #SelfDrivingCars
+
+https://t.co/w3t9dJfOXW
+#AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel https://t.co/6piZwx3Lz9",positive,,,,1277637647494774784,0.38484848484848483,
+LocomationAI,2020-06-26 17:30:44,,,"“Combined, ground freight is a $1.5T industry in the U.S. and a couple multiples of that globally. There’s more than enough room for multiple [autonomous vehicle] companies to succeed even if they are delivering the exact same products.” –@cmericli, @LocomationAI #TIAVS https://t.co/lQjuipmGng",positive,,1276568590477660163,,0.29642857142857143
+Waymo,2020-06-25 17:07:51,"Waymo is now the exclusive global L4 partner for Volvo Car Group. Through our strategic partnership, we will first work together to integrate the Waymo Driver into an all-new mobility-focused electric vehicle platform for ride-hailing services. More: https://t.co/Tgi3RMXbWc https://t.co/ohm1QsTCwb",positive,,,,1276200445308997633,0.27777777777777773,
+car_selfdriving,2019-04-20 19:51:53,,,"No thanks, just lived through one! https://t.co/W7ZjgvosHN",negative,,1119690167864836096,,0.2
+carselfdriving,2020-06-25 15:49:28,,,Senior citizens will be the power users of self-driving technology. https://t.co/cT4z2L4FGD,neutral,,1276180719954354179,,0.0
+NewMobilities,2020-06-29 14:30:16,"California is creating America’s largest market for electric trucks #FutureOfMobility #Logistics 
+
+https://t.co/XCbjCmqFTs",neutral,,,,1277610338037518336,0.0,
+selfdriving,2020-06-26 17:21:01,Discover the top 10 technologies that have made our roads and vehicles safer over time. @NSCSafety #NationalSafetyMonth https://t.co/01PQBKUoDV https://t.co/M8D3qxWscT,positive,,,,1276566147861745664,0.5,
+SelfDrivingFEED,2020-04-04 19:44:11,,,"@SelfDrivingFEED 
+Gill Pratt, Toyota, Waymo and FiveAI confirmed the Collapse of the Autonomous Vehicle Industry – It can be Reversed with an Ego, Echo Chamber and Engineering Paradigm Shift
+https://t.co/32nNgCYLno",positive,,1246523981491920896,,0.85
+Model3Owners,2020-06-29 15:00:10,"@rich_teer @EVRevShow @Tesla Thanks Rich! Many people think we parted on unfriendly terms, which is NOT the case. Ken and I are very much friends, we mutually wanted to refocus on different EV segments",positive,,,,1277617862295904256,0.462,
+hyper_drive,2020-06-26 14:35:35,,,"LAID-BACK LUXURY: Power Dome Hood &amp; Power Nap Seats, @Ford’s New F-150 Pickup Becomes a Sanctuary For Sleepy Truckers😴'They’ll get home from work and not go in the house right away. They’ll actually spend ‘me time’ in the truck' $F @SophiaCai99 https://t.co/3mFtYbzFHY @business",positive,,1276524512889241602,,0.3634199134199134
+AutomatedDriver,2019-04-24 01:33:55,Do you think more jobs will be created or lost with the introduction of driver-less cars?,positive,,,,1120863408851759104,0.5,
+argoai,2020-06-18 16:42:18,"Join us tomorrow at #CVPR2020 for the Workshop on Autonomous Driving, beginning at 9am PT. Argo principal scientists will present the winners of the #Argoverse competition and discuss the latest advances in perception for self-driving. More info: https://t.co/pOK975Cvd1 https://t.co/GFiKtgBI42",positive,,,,1273657299274477570,0.525,
+roborace,2020-06-25 19:04:16,Roborace live on https://t.co/IZZq2sVFZz https://t.co/K8l6QWZvAl,positive,,,,1276229743256485891,0.5,
+Cruise,2020-06-26 20:10:40,@vaskiniris @sfsmallbusiness @sanfranmag We're happy to support and join the panel!,positive,,,,1276608840352464896,1.0,
+selfdrivinglaw,2020-02-11 10:11:25,,,@A14C2H when will the traffic lights at Barhill coming from Longstanton be sorted? It's taking 30 minutes to travel 1.5miles every morning.,neutral,,1227173284757884930,,0.0
+driveai_,2019-06-03 17:57:47,There’s a LOT happening the #SelfDriving car world. Make sure you understand the fundamentals – check out @joeboissy’s piece in @VentureBeat on smart cities and the future of AVs: https://t.co/yxtRiwaF75,positive,,,,1135606518030561280,0.5522486772486772,
+LyftLevel5,2020-06-25 15:32:11,"To fuel AV innovation, we're sharing the largest self-driving Prediction Dataset released to date and announcing our upcoming Motion Prediction competition. 
+https://t.co/f8UpeQeAnk",neutral,,,,1276176372109438976,0.0,
+zoox,2020-06-26 13:30:05,"We are delighted to announce that Zoox is teaming up with @amazon. We have made great strides in creating autonomous mobility from the ground up, and are excited to continue working with our exceptionally talented team to realize that vision. https://t.co/TdQKaebKW7",positive,,,,1276508031593795588,0.76,
+MITDriverless,2020-06-23 22:50:22,,,BREAKING NEWS: @Ansys Spurs Innovation Through Student Competition for Autonomous Vehicle Technology Design https://t.co/tRxNeXGTMs https://t.co/G6U1J5nUxx,positive,,1275561866140553220,,0.7
+_Driverless,2020-04-07 20:42:26,Timely milestone for @nurobots.  Congrats. #AVProgress #driverless https://t.co/jwhdN6EFis,neutral,"NEW: Self-driving robot start-up Nuro can now test grocery-delivery cars on California roads without a human driver behind the wheel, making it the second company to get a permit allowing such trials from the safety-conscious state. https://t.co/wC3OFCH9So",negative,,1247625807331241985,0.0,0.3509090909090909
+Tesla,2020-06-20 20:44:50,https://t.co/26o1bAP14v,neutral,,,,1274443110362214405,0.0,
+DriverlessID,2017-08-31 20:18:06,Are you a fast-paced and hungry writer with an obsession for self-driving cars? Join us: https://t.co/0wn92nuFYm,neutral,,,,903351210807316480,0.0,
+aurrigotech,2020-04-24 09:47:11,"Cargo is still being moved and with a reduction in workforce due to COVID-19 not to mention social distancing rules set to stay in place for some time, autonomous and safe airside cargo handling is important to airlines and airports across the world
+
+https://t.co/OszXt6JVf6",positive,,,,1253621502232100867,0.5283333333333333,
+driverlesscomm1,2019-06-06 15:05:37,"A cheaper, more efficient alternative to light rail: Autonomous shuttles @AtlantaBeltLine @MARTASERVICE @beltlinerailnow https://t.co/UNpiHPR5F7",positive,Transportation on the entire BeltLine in 10 years for a fraction of the cost? Autonomous shuttles are the answer. https://t.co/zQIRhtOi6v,positive,,1136650358074335232,0.6333333333333333,0.6625
