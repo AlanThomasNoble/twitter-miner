@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 The following tweets are from this account: DrivingTheFutur
 1) RT @TechCrunch: Google self-driving car gets pulled over for going too slow https://t.co/vjbAN1Iub8 https://t.co/XkacfYZr1r
 
@@ -3084,6 +3083,3 @@ The system finds free parking spaces by drone and navigates the vehicle ther…
 1236) https://t.co/XeCTdKwV1X
 
 
-=======
-The following tweets are from this account: AVminer2
->>>>>>> 163038c531ac436a9133f1769252afe207e064b3

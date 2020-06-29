@@ -257,8 +257,7 @@ def FULL_TEXT_tweets_from_list_users(api):
         # w_ptr.write("\n")
 
     f_ptr.close()
-    w_ptr.close()
-    print(running_count, "tweets found.")
+    print(running_count, "tweets generated.")
     print("Tweets can be found in FULL_TEXT_LIST.csv")
 
 
@@ -270,59 +269,141 @@ def FULL_TEXT_tweets_from_list_users(api):
 # Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
 # q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
 def obtain_tweets_from_search(api):
-    num_tweets = input("Enter the number of tweets you would like per keyword in the list: ")
+    num_tweets = input("Enter the number of tweets you would like per keyword in the list (enter >= 5 tweets): ")
     print()
     print("Obtaining tweets from a list of keywords...")
     print()
 
     # open the file
     f_ptr = open(f'input/list_of_keywords.txt', 'r')
-    w_ptr = open(f'output/keywords_output.txt', 'w')
 
-    # go through each line in the file
-    running_count = 0
-    for query in f_ptr:
-        print("Searching for ", query, " ...")
-        print()
+    with open('output/KEYWORD_SEARCH_OUTPUT.csv', 'w', newline='') as csvfile:
+        fieldnames = [
+            'user', 
+            'post date-time', 
+            'account status', 
+            'account sentiment', 
+            'retweet status', 
+            'retweet sentiment',
+            'post location', 
+            'tweet id', 
+            'account subjectivity', 
+            'retweet subjectivity'
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
 
-        print(f"Results for the term: {query}")
-        tweets = api.search(query, count=int(num_tweets))
-        for tweet in tweets:
-            running_count += 1
+        # go through each line in the file
+        running_count = 0
+        for query in f_ptr:
 
-            status = api.get_status(tweet.id, tweet_mode="extended")
-            
-            print(f"{running_count}) {status.user.screen_name}, {status.created_at}\n")
-            try:
-                print(f"retweet status: {status.retweeted_status.full_text}\n\n") # +
-                # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
-            except AttributeError:
-                print(f"account status: {status.full_text}\n") # +
-                # w_ptr.write("account status: " + status.full_text + "\n")
+            tweets = api.search(query, count=int(num_tweets))
+
+            for tweet in tweets:
+                running_count += 1
+                status = api.get_status(tweet.id, tweet_mode="extended")
+
+                # initializing all the fieldnames
+                retweet_status = ""
+                retweet_exists = False
+                account_status = ""
+                account_exists = False
+                account_sentiment = ""
+                retweet_sentiment = ""
+                account_subjectivity = ""
+                retweet_subjectivity = ""
+
                 try:
-                    print(f"retweet status: {status.quoted_status.full_text}\n\n") # +
-                    # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
+                    retweet_status = status.retweeted_status.full_text
+                    retweet_exists = True
+                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                 except AttributeError:
-                    print("\n")
+                    account_status = status.full_text
+                    account_exists = True
+                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
+                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
+                    retweet_status = ""
+                    retweet_exists = False
 
-        exit_program()
+                    try:
+                        retweet_status = status.quoted_status.full_text
+                        retweet_exists = True
+                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                    except AttributeError:
+                        retweet_status = ""
+                        retweet_exists = False
 
-            # out_json = {}
-            # out_json["tweet_id"] = tweet._json["id"]
-            # out_json["tweet_text"] = tweet._json["text"]
-            # # out_json["tweet_text_truncated"] = tweet._json["truncated"]
-            # out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
-            # out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
-            # print(out_json)
-            # print()
-        # we can only make 180 requests every 15 minutes
-        time.sleep(5)
+                writer.writerow({
+                    'user': "",
+                    'post date-time': status.created_at,
+                    'account status': account_status,
+                    'account sentiment': account_sentiment,
+                    'retweet status': retweet_status,
+                    'retweet sentiment': retweet_sentiment,
+                    'post location': status.place, # only available if user adds on IOS or andriod / not on web
+                    'tweet id': tweet.id,
+                    'account subjectivity': account_subjectivity,
+                    'retweet subjectivity': retweet_subjectivity 
+                })
 
-        print(f"Number of results printed: {running_count}") # +
-    # print("Number of results printed: ", count)
+                # we can only make 900 get status calls -> 1 status call per sec
+                # we can only make 180 search api calls -> 1 search api call per 5 sec
+                # in every 15 min
+                time.sleep(1)
 
-    # how much data?
-    # how should json look like
+        fptr.close()
+        print(f"{running_count} tweets generated")
+        print("Outout can be found in KEYWORD_SEARCH_OUTPUT.csv.")
+    
+
+    # w_ptr = open(f'output/keywords_output.txt', 'w')
+
+    # # go through each line in the file
+    # running_count = 0
+    # for query in f_ptr:
+    #     print("Searching for ", query, " ...")
+    #     print()
+
+    #     print(f"Results for the term: {query}")
+    #     tweets = api.search(query, count=int(num_tweets))
+    #     for tweet in tweets:
+    #         running_count += 1
+
+    #         status = api.get_status(tweet.id, tweet_mode="extended")
+            
+    #         print(f"{running_count}) {status.user.screen_name}, {status.created_at}\n")
+    #         try:
+    #             print(f"retweet status: {status.retweeted_status.full_text}\n\n") # +
+    #             # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
+    #         except AttributeError:
+    #             print(f"account status: {status.full_text}\n") # +
+    #             # w_ptr.write("account status: " + status.full_text + "\n")
+    #             try:
+    #                 print(f"retweet status: {status.quoted_status.full_text}\n\n") # +
+    #                 # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
+    #             except AttributeError:
+    #                 print("\n")
+
+    #     exit_program()
+
+    #         # out_json = {}
+    #         # out_json["tweet_id"] = tweet._json["id"]
+    #         # out_json["tweet_text"] = tweet._json["text"]
+    #         # # out_json["tweet_text_truncated"] = tweet._json["truncated"]
+    #         # out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
+    #         # out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
+    #         # print(out_json)
+    #         # print()
+    #     # we can only make 180 requests every 15 minutes
+    #     time.sleep(5)
+
+    #     print(f"Number of results printed: {running_count}") # +
+    # # print("Number of results printed: ", count)
+
+    # # how much data?
+    # # how should json look like
 
 
 # Action: exits software
