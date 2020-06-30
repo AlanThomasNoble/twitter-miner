@@ -225,7 +225,6 @@ def FULL_TEXT_tweets_from_list_users(api):
                     account_subjectivity = twitter_nlp.mood_function(account_status)[2]
                     retweet_status = ""
                     retweet_exists = False
-
                     try:
                         retweet_status = status.quoted_status.full_text
                         retweet_exists = True
@@ -279,7 +278,8 @@ def obtain_tweets_from_search(api):
 
     with open('output/KEYWORD_SEARCH_OUTPUT.csv', 'w', newline='') as csvfile:
         fieldnames = [
-            'user', 
+            'user',
+            'search query', 
             'post date-time', 
             'account status', 
             'account sentiment', 
@@ -325,7 +325,6 @@ def obtain_tweets_from_search(api):
                     account_subjectivity = twitter_nlp.mood_function(account_status)[2]
                     retweet_status = ""
                     retweet_exists = False
-
                     try:
                         retweet_status = status.quoted_status.full_text
                         retweet_exists = True
@@ -336,7 +335,8 @@ def obtain_tweets_from_search(api):
                         retweet_exists = False
 
                 writer.writerow({
-                    'user': "",
+                    'user': status.user.screen_name,
+                    'search query': query,
                     'post date-time': status.created_at,
                     'account status': account_status,
                     'account sentiment': account_sentiment,
@@ -353,58 +353,9 @@ def obtain_tweets_from_search(api):
                 # in every 15 min
                 time.sleep(1)
 
-        fptr.close()
         print(f"{running_count} tweets generated")
-        print("Outout can be found in KEYWORD_SEARCH_OUTPUT.csv.")
-    
-
-    # w_ptr = open(f'output/keywords_output.txt', 'w')
-
-    # # go through each line in the file
-    # running_count = 0
-    # for query in f_ptr:
-    #     print("Searching for ", query, " ...")
-    #     print()
-
-    #     print(f"Results for the term: {query}")
-    #     tweets = api.search(query, count=int(num_tweets))
-    #     for tweet in tweets:
-    #         running_count += 1
-
-    #         status = api.get_status(tweet.id, tweet_mode="extended")
-            
-    #         print(f"{running_count}) {status.user.screen_name}, {status.created_at}\n")
-    #         try:
-    #             print(f"retweet status: {status.retweeted_status.full_text}\n\n") # +
-    #             # w_ptr.write("retweet status: " + status.retweeted_status.full_text + "\n\n")
-    #         except AttributeError:
-    #             print(f"account status: {status.full_text}\n") # +
-    #             # w_ptr.write("account status: " + status.full_text + "\n")
-    #             try:
-    #                 print(f"retweet status: {status.quoted_status.full_text}\n\n") # +
-    #                 # w_ptr.write("retweet status: " + status.quoted_status.full_text + "\n\n")
-    #             except AttributeError:
-    #                 print("\n")
-
-    #     exit_program()
-
-    #         # out_json = {}
-    #         # out_json["tweet_id"] = tweet._json["id"]
-    #         # out_json["tweet_text"] = tweet._json["text"]
-    #         # # out_json["tweet_text_truncated"] = tweet._json["truncated"]
-    #         # out_json["tweet_user_info"] = tweet._json["user"]["screen_name"]
-    #         # out_json["tweet_hashtag"] = tweet._json["entities"]["hashtags"]
-    #         # print(out_json)
-    #         # print()
-    #     # we can only make 180 requests every 15 minutes
-    #     time.sleep(5)
-
-    #     print(f"Number of results printed: {running_count}") # +
-    # # print("Number of results printed: ", count)
-
-    # # how much data?
-    # # how should json look like
-
+        print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
+ 
 
 # Action: exits software
 def exit_program():

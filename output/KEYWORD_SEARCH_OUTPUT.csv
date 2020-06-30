@@ -1,36 +1,194 @@
-user,post date-time,account status,account sentiment,retweet status,retweet sentiment,post location,tweet id,account subjectivity,retweet subjectivity
-,2020-06-29 21:11:06,,,"#Autonomous garbage-collecting #robotic vehicle
+user,search query,post date-time,account status,account sentiment,retweet status,retweet sentiment,post location,tweet id,account subjectivity,retweet subjectivity
+mavenvc,"Pandemic Autonomous Vehicles
+",2020-06-30 17:30:07,How might the pandemic response have looked different if autonomous vehicles had widespread adoption before it began? Thoughtful answers from @alexrodriguesca of @embarktrucks and other AV leaders https://t.co/S8rV0omyec,positive,,,,1278017986993901573,0.54375,
+mbuenafe,"Pandemic Autonomous Vehicles
+",2020-06-29 18:32:15,,,"U.S. consumers’ enthusiasm for autonomous delivery technologies – including drones, self-driving vehicles and robots – is growing during the COVID-19 pandemic, says new CTA study https://t.co/WB1Uv1CbvT",positive,,1277671235791568896,,0.5772727272727273
+jrhuddles,"Pandemic Autonomous Vehicles
+",2020-06-29 17:21:57,,,"U.S. consumers’ enthusiasm for autonomous delivery technologies – including drones, self-driving vehicles and robots – is growing during the COVID-19 pandemic, says new CTA study https://t.co/WB1Uv1CbvT",positive,,1277653546280812547,,0.5772727272727273
+JamieBoone,"Pandemic Autonomous Vehicles
+",2020-06-29 17:19:05,,,"U.S. consumers’ enthusiasm for autonomous delivery technologies – including drones, self-driving vehicles and robots – is growing during the COVID-19 pandemic, says new CTA study https://t.co/WB1Uv1CbvT",positive,,1277652824659296256,,0.5772727272727273
+riyaVanandwala,"Pandemic Autonomous Vehicles
+",2020-06-29 17:08:38,,,"U.S. consumers’ enthusiasm for autonomous delivery technologies – including drones, self-driving vehicles and robots – is growing during the COVID-19 pandemic, says new CTA study https://t.co/WB1Uv1CbvT",positive,,1277650194121834499,,0.5772727272727273
+Luso_Clemens,"Autonomous Vehicles
+",2020-06-30 17:55:17,,,"Uber's goal has been: monopolies -&gt; profits. 
 
-MT @Realtechmatters #robotics #AI #ML #SelfDriving #IoT #IIoT #AutonomousVehicles #EmergingTech #innovation #4IR 
+So far:
 
-@PawlowskiMario @JeroenBartelse @kuriharan @mvollmer1 @MargaretSiegien @ShiCooks @Droit_IA 
-https://t.co/Dz5d6RkFe4",positive,,1277711211120005124,,0.44999999999999996
-,2020-06-29 21:07:52,,,"Self-driving cars will impact many industries. Everything from parking spaces, real estate, and trucking will be influenced by autonomous vehicle technologies. 
+❌Ride-hail monopoly 
+❌Food-delivery monopoly
+❌Any monopoly
+❌Profit
+❌Autonomous vehicles to cut labor costs
+✅Reclassification laws to explode labor costs
+✅Pricing wars in every market
 
-If people can sleep in a self-driving car, what happens to the hotel business? #Automation https://t.co/TtDrXdPefL",positive,,1277710398150578182,,0.5
-,2020-06-29 20:58:31,,,"#Autonomous garbage-collecting #robotic vehicle
+https://t.co/tdbYHXfQpT https://t.co/Il4MP6T6kP",positive,,1278024322880278528,,1.0
+jon_kavanagh,"Autonomous Vehicles
+",2020-06-30 17:50:19,"Perhaps autonomous vehicles could be designed and marketed to the ""more life-experienced"" members of our community.  Being able to get to doctor's appointments, social outings, etc., is critical for their well-being, can reduce healthcare costs, and add life to their years...",positive,,,,1278023073007128587,0.5383333333333333,
+ApuntoHernandez,"Autonomous Vehicles
+",2020-06-30 17:50:13,,,"Uber's goal has been: monopolies -&gt; profits. 
 
-MT @Realtechmatters #robotics #AI #ML #SelfDriving #IoT #IIoT #AutonomousVehicles #EmergingTech #innovation #4IR 
+So far:
 
-@PawlowskiMario @JeroenBartelse @kuriharan @mvollmer1 @MargaretSiegien @ShiCooks @Droit_IA 
-https://t.co/Dz5d6RkFe4",positive,,1277708045242556417,,0.44999999999999996
-,2020-06-29 20:42:34,Hands-On 1 Hour Deep Learning Udemy #DeepLearning #learning  https://t.co/v4CW7GiKY5,neutral,,,,1277704031197069323,0.4,
-,2020-06-29 21:10:06,I’ve enjoyed watching a local #Pittsburgh autonomous car company develop amazing technologies to build the safest driver possible @aurora_inno https://t.co/Lge3juazf1,positive,"“Humans have to make these kind of predictive judgements in order to safely drive."" @kileykoscinski reports on new technology making autonomous vehicles more prepared to encounter obstacles. https://t.co/djRv8RDkL3",positive,"Place(_api=<tweepy.api.API object at 0x11529a6a0>, id='01b347e54132a78d', url='https://api.twitter.com/1.1/geo/id/01b347e54132a78d.json', place_type='city', name='Cranberry', full_name='Cranberry, PA', country_code='US', country='United States', contained_within=[], bounding_box=BoundingBox(_api=<tweepy.api.API object at 0x11529a6a0>, type='Polygon', coordinates=[[[-80.160831, 40.6404525], [-79.995749, 40.6404525], [-79.995749, 40.7760807], [-80.160831, 40.7760807]]]), attributes={})",1277710961500184577,0.6599999999999999,0.5090909090909091
-,2020-06-29 21:08:30,"Here’s What Your Future Relationship With A Semi-Autonomous Car Could Look Like      
-https://t.co/QVaYL5c2GN",neutral,,,,1277710556921761795,0.125,
-,2020-06-29 21:07:52,,,"Self-driving cars will impact many industries. Everything from parking spaces, real estate, and trucking will be influenced by autonomous vehicle technologies. 
+❌Ride-hail monopoly 
+❌Food-delivery monopoly
+❌Any monopoly
+❌Profit
+❌Autonomous vehicles to cut labor costs
+✅Reclassification laws to explode labor costs
+✅Pricing wars in every market
 
-If people can sleep in a self-driving car, what happens to the hotel business? #Automation https://t.co/TtDrXdPefL",positive,,1277710398150578182,,0.5
-,2020-06-29 21:06:55,"Tomorrow (6/30) at 9 am PDT we offer a CLE webinar, ""Crash Avoidance Technologies Are Here and Autonomous Vehicles Are Coming: Identifying Robot Car Defects and What to Do About Them."" For more details and to register go to https://t.co/pQXHMkvrxa https://t.co/4AlHIblTD1",positive,,,,1277710160866078721,0.6,
-,2020-06-29 20:26:24,,,"Self-driving cars will impact many industries. Everything from parking spaces, real estate, and trucking will be influenced by autonomous vehicle technologies. 
+https://t.co/tdbYHXfQpT https://t.co/Il4MP6T6kP",positive,,1278023045962227717,,1.0
+tofutoughguy,"Autonomous Vehicles
+",2020-06-30 17:47:26,,,"Uber's goal has been: monopolies -&gt; profits. 
 
-If people can sleep in a self-driving car, what happens to the hotel business? #Automation https://t.co/TtDrXdPefL",positive,,1277699965096210432,,0.5
-,2020-06-29 21:14:00,"""Our goal is to teach the Marker to perform tasks on its own at a significant distance from the operator, at a distance determined by the robotic platform’s range,""
+So far:
 
-.......autonomous military robots..great..... 
+❌Ride-hail monopoly 
+❌Food-delivery monopoly
+❌Any monopoly
+❌Profit
+❌Autonomous vehicles to cut labor costs
+✅Reclassification laws to explode labor costs
+✅Pricing wars in every market
 
-https://t.co/3fckGtOm1M 
+https://t.co/tdbYHXfQpT https://t.co/Il4MP6T6kP",positive,,1278022347945988097,,1.0
+motherboard,"Autonomous Vehicles
+",2020-06-30 17:45:59,,,"Uber's goal has been: monopolies -&gt; profits. 
 
-#robot #Military #autonomous #tech",positive,,,,1277711941436231680,0.4958333333333334,
-,2020-06-29 21:06:55,"Tomorrow (6/30) at 9 am PDT we offer a CLE webinar, ""Crash Avoidance Technologies Are Here and Autonomous Vehicles Are Coming: Identifying Robot Car Defects and What to Do About Them."" For more details and to register go to https://t.co/pQXHMkvrxa https://t.co/4AlHIblTD1",positive,,,,1277710160866078721,0.6,
-,2020-06-29 21:01:03,🚨 Update: A band of CTHULHU-WORSHIPPING SYNTHJAEGERS has committed aggravated autonomous embezzlement in a robotic robot factory factory.,positive,,,,1277708685079429133,0.44999999999999996,
+So far:
+
+❌Ride-hail monopoly 
+❌Food-delivery monopoly
+❌Any monopoly
+❌Profit
+❌Autonomous vehicles to cut labor costs
+✅Reclassification laws to explode labor costs
+✅Pricing wars in every market
+
+https://t.co/tdbYHXfQpT https://t.co/Il4MP6T6kP",positive,,1278021983289184257,,1.0
+RobotConsumer,"Autonomous Cars
+",2020-06-30 18:00:05,,,"Nvidia, Mercedes Partner On Autonomous Vehicle Venture; A ‘Match Made In Auto Heaven’ Says Oppenheimer 
+
+READ MORE: https://t.co/ptfbkmjPJ7
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future #SelfDriving #SelfDrivingAirplanes #SelfDrivingCars #SelfDrivingTrucks+ https://t.co/tTPXod7qGh",positive,,1278025528537161728,,0.44166666666666665
+RobotConsumer,"Autonomous Cars
+",2020-06-30 18:00:04,,,"Autonomous Vehicle Period Begins in China | RayHaber | raillynews 
+
+READ MORE: https://t.co/dZ71cPvSZS
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future #SelfDriving #SelfDrivingAirplanes #SelfDrivingCars #SelfDrivingTrucks~ https://t.co/W6QLKDaH6M",positive,,1278025527157313536,,0.44166666666666665
+belleslettre,"Autonomous Cars
+",2020-06-30 17:58:41,,,"""Autonomous cars, Crawford argues, are not primarily a caring, humane project to save lives, rather they are a scam designed to make our lives less interesting, less surprising and more profitable to the Silicon Valley monopolists""
+
+https://t.co/a3J4SPEyC0",positive,,1278025176882479104,,0.4047619047619047
+IAM__Network,"Autonomous Cars
+",2020-06-30 17:50:26,"Nvidia, Mercedes Partner On Autonomous Vehicle Venture; A ‘Match Made In Auto Heaven’ Says Oppenheimer 
+
+READ MORE: https://t.co/ptfbkmjPJ7
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future #SelfDriving #SelfDrivingAirplanes #SelfDrivingCars #SelfDrivingTrucks+ https://t.co/tTPXod7qGh",positive,,,,1278023102253993997,0.44166666666666665,
+IAM__Network,"Autonomous Cars
+",2020-06-30 17:48:51,"Autonomous Vehicle Period Begins in China | RayHaber | raillynews 
+
+READ MORE: https://t.co/dZ71cPvSZS
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future #SelfDriving #SelfDrivingAirplanes #SelfDrivingCars #SelfDrivingTrucks~ https://t.co/W6QLKDaH6M",positive,,,,1278022701140058115,0.44166666666666665,
+bizcom,"Autonomous Robot
+",2020-06-30 18:01:16,Autonomous robot uses UVC light to disinfect warehouses #ArtificialIntelligence via https://t.co/1aqtDoV6xO https://t.co/GMRaEgaqe5,positive,,,,1278025829180755971,0.7,
+FlashTweet,"Autonomous Robot
+",2020-06-30 17:57:09,"1️⃣🌐[#ALaUne] Le @MIT crée un #robot autonome capable de tuer la #Covid19 présent sur des surfaces à l'aide de lumières #UVC https://t.co/FKq12Yr1Vh v/ @TechSpot 
+
+💬 Cette #innovation déployée à grande échelle aiderait à supporter une 2e vague
+
+#Tech #AI   
+#FlashTweet ⚡️ https://t.co/ljE9YxiXAA",negative,,,,1278024792290058244,0.45,
+Moosi007,"Autonomous Robot
+",2020-06-30 17:56:22,,,"#Autonomous #robot uses UVC light to disinfect warehouses
+#AI #AIio #BigData #ML #NLU #Iot https://t.co/yilK4uR9w7
+
+@HaroldSinnott
+@HeinzVHoenen
+@helene_wpli
+@IIoT_World
+@ipfconline1
+@jblefevre60
+@JimMarous https://t.co/SaoRaTSCE2",positive,,1278024596327981056,,0.7
+electivenow,"Autonomous Robot
+",2020-06-30 17:47:57,,,"#Hand of a businessman shaking hands with a Android robot. The concept of human interaction with artificial intelligence #HydrogenPower #Autonomous 
+#Innovation #Technology #Science #Engineering #Scientists #ScienceAndTechnology #SmartTech #FutureOfMobility #Futuretechnology  #Al https://t.co/0a0K7H9WWT",negative,,1278022475389874177,,0.6
+MolecularMatch,"Autonomous Robot
+",2020-06-30 17:46:30,,,"Dr. Christopher Amling, an expert in robotic surgery for prostate and bladder cancer, discusses the possibility that an autonomous robot could one day free surgeons from repetitive surgical tasks.
+
+🔗 (via @WSJ): https://t.co/gtlJhwqvfF",positive,,1278022110170865664,,0.4875
+B2B_fvanvlerken,"Testing Autonomous Vehicles
+",2020-06-30 08:01:59,,,"Most of the headlines on autonomous vehicles have been on the big 3: especially Waymo, Ford and GM's Cruise. Baidu entered AV's top 5 list this year and has now completed work on the world's biggest AV testing ground. https://t.co/wMKzOwdq8w",positive,,1277875011785756677,,0.5599999999999999
+kartiksehgal3,"Testing Autonomous Vehicles
+",2020-06-29 21:03:09,,,"Most of the headlines on autonomous vehicles have been on the big 3: especially Waymo, Ford and GM's Cruise. Baidu entered AV's top 5 list this year and has now completed work on the world's biggest AV testing ground. https://t.co/wMKzOwdq8w",positive,,1277709212953370625,,0.5599999999999999
+Maurice_Geraets,"Testing Autonomous Vehicles
+",2020-06-29 13:41:50,,,"Most of the headlines on autonomous vehicles have been on the big 3: especially Waymo, Ford and GM's Cruise. Baidu entered AV's top 5 list this year and has now completed work on the world's biggest AV testing ground. https://t.co/wMKzOwdq8w",positive,,1277598149801115648,,0.5599999999999999
+NXP,"Testing Autonomous Vehicles
+",2020-06-29 13:05:07,"Most of the headlines on autonomous vehicles have been on the big 3: especially Waymo, Ford and GM's Cruise. Baidu entered AV's top 5 list this year and has now completed work on the world's biggest AV testing ground. https://t.co/wMKzOwdq8w",positive,,,,1277588912299479042,0.5599999999999999,
+Rayanoubaiy,"Testing Autonomous Vehicles
+",2020-06-29 09:57:35,"Development and Testing of Navigation Algorithms for Autonomous Underwater Vehicles
+This book focuses on pose estimation...
+https://t.co/enUHN3UXWy",positive,,,,1277541717353193472,0.7,
+charlierichmond,"Autonomous Driving
+",2020-06-30 17:56:31,10 Bonus Autonomous Driving News Stories https://t.co/dhGi0DqRsw,positive,,,,1278024630498758657,0.7,
+readyforthenet,"Autonomous Driving
+",2020-06-30 17:52:42,'MIT and Toyota release innovative dataset to accelerate autonomous driving research' https://t.co/eB5n31lFho https://t.co/Y5ILTQIrrz,positive,,,,1278023670842011648,0.85,
+Insight_Digital,"Autonomous Driving
+",2020-06-30 17:42:23,,,"Amazon to Acquire Self-Driving Startup #Zoox
+
+Does this acquisition position Amazon Prime one-step closer to autonomous vehicles for delivery of online purchases? https://t.co/BglT4apAQK https://t.co/nmdgLUgb4J",positive,,1278021073527640064,,0.7
+Traffic21CMU,"Autonomous Driving
+",2020-06-30 17:42:12,,,A team of @CarnegieMellon Engineering researchers has shown that autonomous vehicles can be electric—despite the decreased driving range. https://t.co/UsUhstGeek https://t.co/La6wcvcEyE,neutral,,1278021031077257216,,0.7
+Eddysoft,"Autonomous Driving
+",2020-06-30 17:33:16,,,"Are self-driving cars safe? At TomTom, it’s our vision to create a safe, connected and autonomous world. Learn in our latest blog post how our ADAS and HD maps play a vital role in making autonomous driving safer. #AutonomousDriving #HDMaps",positive,,1278018781290418177,,0.6166666666666667
+RobotConsumer,"Autonomous mobility
+",2020-06-30 18:00:04,,,"#Daimler - backed #Momenta says its #robotaxis will be fully #driverless and profitable in 2024
+
+https://t.co/7aOvuQeGf2
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverlesscars #startups #SmartCity #startup #MachineLearning #Mobility https://t.co/r9IWr7AvZ1",positive,,1278025525781463045,,0.7
+guidaautonoma,"Autonomous mobility
+",2020-06-30 17:37:02,"#Daimler - backed #Momenta says its #robotaxis will be fully #driverless and profitable in 2024
+
+https://t.co/7aOvuQeGf2
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #autonomous #Robotics #driverlesscars #startups #SmartCity #startup #MachineLearning #Mobility https://t.co/r9IWr7AvZ1",positive,,,,1278019728737554432,0.7,
+OlayiwolAyinde,"Autonomous mobility
+",2020-06-30 16:41:30,,,"Archetype hosts webinar on 'The Future of Mobility in the
+Post-COVID19 era'- A Peek into the Connected and Autonomous Future. Our Founder &amp; CEO @sauravk_89 will be discussing the future of mobility in the Post-Covid19 era
+with @ACMAIndia. Join now https://t.co/h7mqgdUNQW",positive,,1278005753996103682,,0.26875
+Anvith64518557,"Autonomous mobility
+",2020-06-30 16:41:06,,,"#Lyft resumes #autonomous vehicle testing on public roads 
+
+https://t.co/67PHOuuCaJ
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel #delivery",positive,,1278005652950880256,,0.3833333333333333
+guidaautonoma,"Autonomous mobility
+",2020-06-30 16:38:43,"#Lyft resumes #autonomous vehicle testing on public roads 
+
+https://t.co/67PHOuuCaJ
+#SelfDrivingCars #AI #IoT #5G #AutonomousVehicles #selfdriving #Robotics #driverless #driverlesscars #startups #SmartCity #startup #Robot #MachineLearning #transport #Mobility #Travel #delivery",positive,,,,1278005054113546240,0.3833333333333333,
+Sabrina_Hanifa,"Autonomous Vehicle Networks
+",2020-06-30 13:46:48,,,"SERV acquires autonomous technology company, @rekastudios to enable unified mobility across the automotive networks in the region.
+
+Read more here https://t.co/czudOHh5v5 https://t.co/W1KzrZQKLN",positive,,1277961789821448193,,0.6
+SERVMalaysia,"Autonomous Vehicle Networks
+",2020-06-30 13:39:43,,,"SERV acquires autonomous technology company, @rekastudios to enable unified mobility across the automotive networks in the region.
+
+Read more here https://t.co/czudOHh5v5 https://t.co/W1KzrZQKLN",positive,,1277960007321915394,,0.6
+rekastudios,"Autonomous Vehicle Networks
+",2020-06-30 13:26:52,,,"SERV acquires autonomous technology company, @rekastudios to enable unified mobility across the automotive networks in the region.
+
+Read more here https://t.co/czudOHh5v5 https://t.co/W1KzrZQKLN",positive,,1277956773228343301,,0.6
+SERVMalaysia,"Autonomous Vehicle Networks
+",2020-06-30 11:48:26,"SERV acquires autonomous technology company, @rekastudios to enable unified mobility across the automotive networks in the region.
+
+Read more here https://t.co/czudOHh5v5 https://t.co/W1KzrZQKLN",positive,,,,1277932002453278720,0.6,
+AbhiHingmire8,"Autonomous Vehicle Networks
+",2020-06-25 02:39:37,,,"Wireless technologies are gaining acceptance as the need to increase capacity within a limited physical footprint drives the demand for mobile robotic systems. Learn how 5G communications address the key challenges with this tech: https://t.co/gZcE3ZDKvz
+#5G #wireless #robotics https://t.co/LS9lzVXqIn",negative,,1275981948918226944,,0.37142857142857144
+patternpanda,"Covid-19 and Autonomous Driving
+",2020-06-30 10:57:05,"And, of course their COVID-19 detection cameras. FLIR cameras seen in LAX
+https://t.co/I7kQIyUa4D",neutral,,,,1277919076959092737,0.0,
