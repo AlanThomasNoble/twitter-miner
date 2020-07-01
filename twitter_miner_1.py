@@ -352,7 +352,7 @@ def obtain_tweets_from_search(api):
                 # we can only make 180 search api calls -> 1 search api call per 5 sec
                 # in every 15 min
                 time.sleep(1)
-
+            print(running_count, "tweets collected...")
         print(f"{running_count} tweets generated")
         print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
  
