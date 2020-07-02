@@ -117,17 +117,15 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
             c.execute('''CREATE TABLE tweets (user TEXT, tweet_text TEXT, date_time DATETIME, location TEXT, id INTEGER, hashtags TEXT, user_mentions TEXT, tweet BOOLEAN, quoted BOOLEAN, reply BOOLEAN, retweet BOOLEAN)''')
 
         # init loop variables
-        firstIteration = True; incoming = []; oldest = []; numTweets = 0
+        firstIteration = True; incoming = []; oldest = [];
 
+        runningCount = 0
         # Scraping
         while firstIteration or len(incoming) > 0:
             # Collect First Set of Tweet Objects
             if firstIteration:
                 incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True,tweet_mode='extended')
                 firstIteration = False
-
-            # Increment Total Tweets
-            numTweets += len(incoming)
 
             # Obtain Full Tweets
             counter = len(incoming)
@@ -151,6 +149,10 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 if counter == 0:
                     oldest = tweet.id - 1 # Set equal to last tweet
 
+                # Print Running Count
+                runningCount += 1
+                print(f'Running Count: {runningCount}\r', end="")
+
             # Update Set of Tweet Objects
             incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
 
@@ -158,13 +160,18 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         conn.commit()
         conn.close()
 
-        print(f'Tweets Retrieved {numTweets}')
-        print(f'SQL File Located in tweets.db')
+        print('Completed.')
+        print(f'Tweets Retrieved {runningCount}')
+        print('SQL File Located in tweets.db')
         convertToCSV(fileName) # Remove as Desired.
 
     except KeyboardInterrupt:
         conn.commit()
         conn.close()
+        print('\nStopped Early...')
+        print(f'Tweets Retrieved {runningCount}')
+        print('SQL File Located in tweets.db')
+        convertToCSV(fileName) # Remove as Desired.
         exit_program()
 
 # Action: quickly outputs tweets from a list of users
