@@ -2,7 +2,7 @@ import tweepy
 import sys
 import time
 import csv
-from csv import DictWriter # Currently Needed for User Function Code (otherwise reference to csv would be needed)
+import sqlite3, os, pandas as pd
 
 consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
 consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
@@ -40,84 +40,126 @@ def check_limit(api):
     # check for '/search/tweets'
     print(api.rate_limit_status())
 
+# Action: Converts DB Files to CSV Format
+# Specify Params for Desired Columns (Default is Everything *)
+def convertToCSV(fileName, params='*'):
+    conn = sqlite3.connect(f'{fileName}.db')
+    c = conn.cursor()
+    query = f'SELECT * FROM {fileName}'
+    results = pd.read_sql_query(query, conn)
+    results.to_csv(f"{fileName}.csv", index=True)
+
+    conn.close()
+
+    # Alternative Method: Not Working
+    '''
+    import subprocess
+    schema = subprocess.run(
+        ['sqlite3', '.open tweets.db','.headers on','.mode csv','.output tweets.csv', '.tables', 'SELECT * FROM tweets;', '.quit' ],
+        capture_output=True)
+
+    print(schema)
+    table = fileName.strip('.db')
+    import os.path
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(BASE_DIR, fileName)
+    p.call(['sqlite3', '.open tweets.db','.headers on',
+                '.mode csv','.output tweets.csv', '.tables',
+                'SELECT * FROM tweets;', '.quit' ])
+    '''
+
+# Action: Outputs Data Based on Status Object (Defaults to Single User)
+def getInfo(status, t, retweet, func='single_user'):
+    user = status.author.screen_name
+    tweet_text = t
+    date_time = status.created_at.__str__()
+    location = status.place
+    ID = status.id
+    hashtags = ', '.join([h['text'] for h in status.entities['hashtags']])
+    user_mentions = ', '.join([t['screen_name'] for t in status.entities['user_mentions']])
+    if retweet:
+        tweet = False
+        quoted = False
+        reply = False
+        retweet = True
+    else:
+        tweet = not status.is_quote_status and not bool(status.in_reply_to_status_id)
+        quoted = status.is_quote_status
+        reply = bool(status.in_reply_to_status_id)
+        retweet = False
+
+    if func == 'single_user':
+        return tuple((user, tweet_text, date_time, location, ID, hashtags, user_mentions, tweet, quoted, reply, retweet))
+    # Add your own if block here for the corresponding function.
 
 # Action: outputs a set of a given user's tweets
-def obtain_tweets_from_single_user(api):
+def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
     user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
     print()
     print("Obtaining user's tweets...")
     print()
     print("The following tweets are from this account:", user_id)
 
-    # Open File
-    with open('tweets.csv','w') as file:
-        # Initialize Headers and Writer Object
-        headers = ['User','Tweet Text','DateTime','Location','ID','Hashtags','User Mentions','Tweet','Quoted','Reply','Retweet']
-        csv_writer = DictWriter(file,fieldnames=headers)
-        csv_writer.writeheader()
+    # Delete File Contents
+    if not append:
+        os.system(f'rm -rf {fileName}.*')
 
-        ## Scraping
-        # Initialize Variables
-        firstIteration = True # overrides first iteration
-        incoming = []; oldest = []; numTweets = 0
-        # Loop Through
-            # > user_timeline is limited to 200 tweet retrieval
-            # > use while loop to bypass and reach twitter max of 3240 tweet retrieval
-        while firstIteration or len(incoming) > 0:
-            # Collect First Set of Tweet Objects
-            if firstIteration:
-                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True) # include rts in both?, why didn't you move this outside of while?
-                firstIteration = False
+    # Connection Object
+    conn = sqlite3.connect(f'{fileName}.db')
 
-            # Increment Total Tweets
-            numTweets += len(incoming)
+    # Cursor Object
+    c = conn.cursor() # Cursor Object
 
-            # Obtain Full Tweets
-            counter = len(incoming)
-            for tweet in incoming:
-                time.sleep(1.2) # Ensure no Runtime Error
-                status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
-                try: # check if retweet
-                    t = status.retweeted_status.full_text
-                    csv_writer.writerow({
-                        'User': user_id,
-                        'Tweet Text': t,
-                        'DateTime': status.created_at.__str__(),
-                        'Location': status.place,
-                        'ID': tweet.id,
-                        'Hashtags': [h['text'] for h in tweet.entities['hashtags']],
-                        'User Mentions': [t['screen_name'] for t in tweet.entities['user_mentions']],
-                        'Tweet': False,
-                        'Quoted': False,
-                        'Reply': False,
-                        'Retweet': True
-                    })
-                except AttributeError: # Not a retweet
-                    t = status.full_text
-                    csv_writer.writerow({
-                        'User': user_id,
-                        'Tweet Text': t,
-                        'DateTime': status.created_at.__str__(),
-                        'Location': status.place,
-                        'ID': tweet.id,
-                        'Hashtags': [h['text'] for h in tweet.entities['hashtags']],
-                        'User Mentions': [t['screen_name'] for t in tweet.entities['user_mentions']],
-                        'Tweet': not status.is_quote_status and not bool(status.in_reply_to_status_id), 
-                        'Quoted': status.is_quote_status,
-                        'Reply': bool(status.in_reply_to_status_id),
-                        'Retweet': False
-                    })
-                # Decrement
-                counter -= 1
-                # Adjust Frame of Reference
-                if counter == 0:
-                    oldest = tweet.id - 1 # set equal to last tweet
+    # Create Table (datatypes: https://www.sqlite.org/datatype3.html)
+    if not append:
+        c.execute('''CREATE TABLE tweets (user TEXT, tweet_text TEXT, date_time DATETIME, location TEXT, id INTEGER, hashtags TEXT, user_mentions TEXT, tweet BOOLEAN, quoted BOOLEAN, reply BOOLEAN, retweet BOOLEAN)''')
 
-            # Update Set of Tweet Objects
-            incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended')
+    # init loop variables
+    firstIteration = True; incoming = []; oldest = []; numTweets = 0
 
-        print(f"Tweets Retrieved {numTweets}")
+    # Scraping
+    while firstIteration or len(incoming) > 0:
+        # Collect First Set of Tweet Objects
+        if firstIteration:
+            incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True,tweet_mode='extended')
+            firstIteration = False
 
+        # Increment Total Tweets
+        numTweets += len(incoming)
+
+        # Obtain Full Tweets
+        counter = len(incoming)
+        for tweet in incoming:
+            time.sleep(1.2) # Ensure no Runtime Error
+            status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
+            try: # check if retweet
+                t = status.retweeted_status.full_text
+                data = getInfo(status,t,True) # Returns a Tuple
+                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                c.execute(query, data)
+            except AttributeError: # Not a retweet
+                t = status.full_text
+                data = getInfo(status,t,False) # Returns a Tuple
+                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                c.execute(query, data)
+
+            # Decrement
+            counter -= 1
+            # Adjust Frame of Reference
+            if counter == 0:
+                oldest = tweet.id - 1 # Set equal to last tweet
+
+        # Update Set of Tweet Objects
+        incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
+    
+    # Save Data and Close Connection
+    conn.commit()
+    conn.close()
+
+    print(f'Tweets Retrieved {numTweets}')
+    print(f'SQL File Located in tweets.db')
+    convertToCSV(fileName) # Remove as Desired.
 
 # Action: quickly outputs tweets from a list of users
 # Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
@@ -384,7 +426,7 @@ def main():
         exit_program()
     '''
     if user_input == "User":
-        obtain_tweets_from_single_user(api)
+        obtain_tweets_from_single_user(api, append=True)
     elif user_input == "List":
         PARTIAL_TEXT_tweets_from_list_users(api)
     elif user_input == "F_List":

@@ -6,8 +6,36 @@ import pdb
 
 # DB? ..sql, mongo?...more efficient?
 
+# import sqlite3
+# connection = sqlite3.connect('tweets.db')
+# c = connection.cursor()
+# c.execute('''CREATE TABLE tweets
+# 		(title TEXT, rating REAL, price INTEGER) ''')
+# c.executemany('''INSERT INTO books VALUES (?,?,?)''', all_books)
+# To Convert to CSV File
+# >sqlite3 c:/sqlite/chinook.db
+# sqlite> .headers on
+# sqlite> .mode csv
+# sqlite> .output data.csv
+# sqlite> SELECT customerid,
+#    ...>        firstname,
+#    ...>        lastname,
+#    ...>        company
+#    ...>   FROM customers;
+# sqlite> .quit
+
+
+
 class Visuals:
 	df = []
+
+	def vis(filename, visualization, spec=''): # **kwargs
+		# Inits
+		df = pandas.read_csv(file)
+		plt.style.use('fivethirtyeight')
+
+		# Call Visualization
+		return visualization(df, spec)
 
 	def wordCloud(data, spec):
 		pdb.set_trace()
@@ -47,11 +75,3 @@ class Visuals:
 		plt.ylabel('Counts')
 		df['Analysis'].value_counts().plot(kind='bar')
 		plt.show()
-
-	def vis(filename, visualization, spec=''):
-		# Inits
-		df = pandas.read_csv(file)
-		plt.style.use('fivethirtyeight')
-
-		# Call Visualization
-		return visualization(data, spec)

@@ -38,11 +38,12 @@ def cleanData(text, cleanEmoticons=False, removeFullHashtag=True, removeFullMent
     if removeFullMention:
         text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
     else:
-        # use above cleanTxt
+        pass
     if removeFullHashtag:
         text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
     else:
-        # use above cleanTxt
+        pass
+    
     text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
 
     # Cleanup

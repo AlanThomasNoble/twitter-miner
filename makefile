@@ -6,6 +6,10 @@ style:
 miner:
 	python3 twitter_miner_1.py
 
+# Interactive Mode
+iminer:
+	python3 -i twitter_miner_1.py
+
 # Removes Python Artifacts
 clean-pyc:
 	find . -name '*.pyc' -exec rm --force {} +
