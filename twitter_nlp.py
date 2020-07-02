@@ -1,6 +1,6 @@
 # import nltk
 # import ssl
-import re, pdb
+import re
 # try:
 #     _create_unverified_https_context = ssl._create_unverified_context
 # except AttributeError:
@@ -34,7 +34,6 @@ def cleanTxt(tweet):
 '''This implementation entirely removes hashtags and mentions'''
 '''pythex.org'''
 def cleanData(text, cleanEmoticons=False, removeFullHashtag=True, removeFullMention=True):
-    pdb.set_trace()
     # Removals
     if removeFullMention:
         text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
