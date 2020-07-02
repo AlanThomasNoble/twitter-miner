@@ -30,13 +30,19 @@ def cleanTextNN(text, cleanEmoticons=False):
     return text
 
 
-##############################################################################################################################
+###############################################################################################################################
+
 ############################################# GETTING DATA IN USABLE FORMAT ###################################################
 
 import numpy as np
-
+print("1")
 # extract columns 1 and 3 from the CSV
-training = np.genfromtxt('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Sentiment_Analysis_Dataset.csv', delimiter=',', skip_header=1, usecols=(1, 3), dtype=None)
+training = np.genfromtxt('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files/Sentiment_Analysis_Dataset.csv', 
+    delimiter=',',
+    skip_header=1,
+    usecols=(1, 3), 
+    dtype=None
+)
 
 # list of all the tweets
 train_x_before = [x[1] for x in training]
@@ -62,12 +68,12 @@ max_words = 3000
 tokenizer = Tokenizer(num_words = max_words) # turns each text into a sequence of integers in order to apply machine learning
 
 # feed our tweets to the tokenizer
-tokenizer.fit_on_text(train_x) # This method creates the vocabulary dict based on word frequency: cat->1 dog->2
+tokenizer.fit_on_texts(train_x) # This method creates the vocabulary dict based on word frequency: cat->1 dog->2
 
 dictionary = tokenizer.word_index # Dictionary of word to ID/index
 
 # moves the dictionary that we just got to a file called nn_dictionary.json in the output folder
-with open(output/nn_dictionary.json, 'w') as dictionary_file:
+with open('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files//nn_dictionary.json', 'w') as dictionary_file:
     json.dump(dictionary, dictionary_file)
 
 def convert_text_to_index_array(text):
@@ -77,7 +83,7 @@ def convert_text_to_index_array(text):
 
 # for each tweet, take the text, and convert the text to a list of its ID/Index then add that list to a master list
 allWordIndices = []
-for text in train[x]:
+for text in train_x:
     indices_for_each_word_in_text_list = convert_text_to_index_array(text)
     allWordIndices.append(indices_for_each_word_in_text_list)
 
@@ -85,7 +91,7 @@ for text in train[x]:
 allWordIndices = np.asarray(allWordIndices)
 
 train_x = tokenizer.sequences_to_matrix(allWordIndices, mode='binary')
-train_y = keras.utils.to_categorical(train_y, 2)
+train_y = keras.utils.to_categorical(train_y, 2) #update
 
 
 ##############################################################################################################################
@@ -94,15 +100,15 @@ train_y = keras.utils.to_categorical(train_y, 2)
 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
-
+print("2")
 # Building the neural net
 # relu is an activation function - all the activatioin functions in keras/tensorflow are viable
 model = Sequential() # a simple type of neural network that consists of a stack of layers executed in that order
-model.add(Dense(512, input_shape=(max_words,), activatin='relu')) # 512 nodes
+model.add(Dense(512, input_shape=(max_words,), activation='relu')) # 512 nodes
 model.add(Dropout(0.5)) # used to randomly remove data to prevent overfitting
 model.add(Dense(256, activation='sigmoid'))
 model.add(Dropout(0.5))
-model.add(Dense(3, activation="softmax")) # might need to change to 3 later because 3 possible classifications
+model.add(Dense(2, activation="softmax")) # might need to change to 3 later because 3 possible classifications update
 
 # now we need to compile this neural network
 model.compile(loss='categorical_crossentropy', optimizer="adam", metrics=['accuracy'])
@@ -112,7 +118,7 @@ model.compile(loss='categorical_crossentropy', optimizer="adam", metrics=['accur
 ##############################################################################################################################
 
 ############################################# TRAINING THE NEURAL NETWORK ####################################################
-
+print("3")
 # 5 epochs is said to be good, experimenting is possible, don't want overfitting
 # validation split - identifying how much of your input should be used for testing. 10 percent
 model.fit(train_x, train_y, 
@@ -126,8 +132,8 @@ model.fit(train_x, train_y,
 ##############################################################################################################################
 
 ############################################### SAVING THE NEURAL NETWORK ####################################################
-
-
-
-
-
+print("4")
+model_json = model.to_json()
+with open('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files//model.json', 'w') as json_file_w_NN:
+    json_file_w_NN.write(model_json)
+model.save_weights('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files//model.h5')
