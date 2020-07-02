@@ -5,21 +5,51 @@
 # 3) Train it with said data
 # 4) Save the neural net for future use
 
+#################################################### PREPROCESSING ############################################################
+import re
+
+# Alternative/Merged Implementation of Clean Text
+'''This implementation entirely removes hashtags and mentions'''
+'''pythex.org'''
+def cleanTextNN(text, cleanEmoticons=False):
+    # Conversions
+    text = text.lower() # Convert to lowercase
+    
+    # Removals
+    text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
+    text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
+    text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
+
+    # Cleanup
+    text = re.sub('[\s]+',' ',text) # Removes additional white spaces
+    text = text.strip('\'"').lstrip().rstrip() # Trim (Removes '' and Trailing and Leading Spaces)
+
+    if cleanEmoticons:
+        pass    # :\)|:-\)|:\(|:-\(|;\);-\)|:-O|8-|:P|:D|:\||:S|:\$|:@|8o\||\+o\(|\(H\)|\(C\)|\(\?\)
+
+    return text
+
+
+##############################################################################################################################
 ############################################# GETTING DATA IN USABLE FORMAT ###################################################
 
 import numpy as np
 
 # extract columns 1 and 3 from the CSV
 training = np.genfromtxt('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Sentiment_Analysis_Dataset.csv', delimiter=',', skip_header=1, usecols=(1, 3), dtype=None)
-# print(len(training)) -> 1578627
 
 # list of all the tweets
-train_x = [x[1] for x in training]
+train_x_before = [x[1] for x in training]
+train_x = [cleanTextNN(tweet) for tweet in train_x_before]
+# print(len(train_x_before))
+# print(train_x_before[1])
+# print(len(train_x))
+# print(train_x[1])
+# sys.exit()
 
 # list of all the respective sentiment labels
 train_y = np.asarray([x[0] for x in training])
 
-import sys
 import json
 import keras
 import keras.preprocessing.text as kpt
@@ -60,15 +90,42 @@ train_y = keras.utils.to_categorical(train_y, 2)
 
 ##############################################################################################################################
 
-############################################# BUILDING OUT NEURAL NETWORK $###################################################
+############################################# BUILDING OUT NEURAL NETWORK ####################################################
 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 
-model = Sequential()
-model.add
+# Building the neural net
+# relu is an activation function - all the activatioin functions in keras/tensorflow are viable
+model = Sequential() # a simple type of neural network that consists of a stack of layers executed in that order
+model.add(Dense(512, input_shape=(max_words,), activatin='relu')) # 512 nodes
+model.add(Dropout(0.5)) # used to randomly remove data to prevent overfitting
+model.add(Dense(256, activation='sigmoid'))
+model.add(Dropout(0.5))
+model.add(Dense(3, activation="softmax")) # might need to change to 3 later because 3 possible classifications
+
+# now we need to compile this neural network
+model.compile(loss='categorical_crossentropy', optimizer="adam", metrics=['accuracy'])
+# the accuracy metric will give us helpful output on how well our NN is performing
 
 
+##############################################################################################################################
+
+############################################# TRAINING THE NEURAL NETWORK ####################################################
+
+# 5 epochs is said to be good, experimenting is possible, don't want overfitting
+# validation split - identifying how much of your input should be used for testing. 10 percent
+model.fit(train_x, train_y, 
+    batch_size=32, 
+    epochs=5, 
+    verbose=1, 
+    validation_split=0.1, 
+    shuffle=True
+)
+
+##############################################################################################################################
+
+############################################### SAVING THE NEURAL NETWORK ####################################################
 
 
 
