@@ -1,7 +1,6 @@
-import nltk
-import ssl
-import re
-
+# import nltk
+# import ssl
+import re, pdb
 # try:
 #     _create_unverified_https_context = ssl._create_unverified_context
 # except AttributeError:
@@ -11,17 +10,15 @@ import re
 
 # nltk.download()
 
-from textblob import TextBlob, Word, Blobber
+from textblob import TextBlob #, Word, Blobber
 
 # copied a clean txt function: https://ipullrank.com/step-step-twitter-sentiment-analysis-visualizing-united-airlines-pr-crisis/
+'''
 def cleanTxt(tweet):
     #Convert to lower case
     tweet = tweet.lower()
     #Convert www.* or https?://* to URL
     tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','URL',tweet)
-        # suggested addition: r'(https?)//(www\.[A-Za-z-]{2,256}\.[a-z]{2,6})([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-        # Use if desired, the current one is more of catchall...which might be advantageous.
-        # r stands for raw string, I don't think it matters (similar to f-strings)
     #Convert @username to AT_USER
     tweet = re.sub('@[^\s]+','AT_USER',tweet)
     #Remove additional white spaces
@@ -30,13 +27,46 @@ def cleanTxt(tweet):
     tweet = re.sub(r'#([^\s]+)', r'\1', tweet)
     #trim
     tweet = tweet.strip('\'"')
-    return tweet 
+    return tweet  
+'''
 
+# Alternative/Merged Implementation of Clean Text
+'''This implementation entirely removes hashtags and mentions'''
+'''pythex.org'''
+def cleanData(text, cleanEmoticons=False, removeFullHashtag=True, removeFullMention=True):
+    pdb.set_trace()
+    # Removals
+    if removeFullMention:
+        text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
+    else:
+        # use above cleanTxt
+    if removeFullHashtag:
+        text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
+    else:
+        # use above cleanTxt
+    text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
+
+    # Cleanup
+    text = re.sub('[\s]+',' ',text) # Removes additional white spaces
+    text = text.strip('\'"').lstrip().rstrip() # Trim (Removes '' and Trailing and Leading Spaces)
+
+    if cleanEmoticons:
+        pass    # :\)|:-\)|:\(|:-\(|;\);-\)|:-O|8-|:P|:D|:\||:S|:\$|:@|8o\||\+o\(|\(H\)|\(C\)|\(\?\)
+
+    return text
+
+# Subjectivity and Polarity
+def getSubjectivity(text):
+    return TextBlob(text).sentiment.subjectivity # or t.subjectivity (the call to sentiment is really not necessary)
+
+def getPolarity(text):
+    return TextBlob(text).sentiment.polarity # or t.polarity
+
+# Mood Function
 def mood_function(tweet_text):
-    text_obj = TextBlob(cleanTxt(tweet_text))
-    polarity = text_obj.polarity
-    subjectivity = text_obj.subjectivity
-
+    text = cleanData(tweet_text) # text_obj = TextBlob(cleanTxt(tweet_text))
+    polarity = getSubjectivity(text) #text_obj.polarity
+    subjectivity = getPolarity(text) #text_obj.subjectivity
 
     # We can determine the thresholds for tweet mood
     mood = ""
@@ -47,9 +77,4 @@ def mood_function(tweet_text):
     else:
         mood = "positive"
 
-    ret_list = []
-    ret_list.append(mood)
-    ret_list.append(polarity)
-    ret_list.append(subjectivity)
-
-    return ret_list
+    return [mood, polarity, subjectivity]

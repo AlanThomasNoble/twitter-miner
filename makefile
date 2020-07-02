@@ -8,12 +8,12 @@ miner:
 
 # Removes Python Artifacts
 clean-pyc:
-    find . -name '*.pyc' -exec rm --force {} +
-    find . -name '*.pyo' -exec rm --force {} +
-   name '*~' -exec rm --force  {} 
+	find . -name '*.pyc' -exec rm --force {} +
+	find . -name '*.pyo' -exec rm --force {} +
+	name '*~' -exec rm --force  {} 
 
 # Removes Build Artifacts
 clean-build:
-    rm --force --recursive build/
-    rm --force --recursive dist/
-    rm --force --recursive *.egg-info
+	rm --force --recursive build/
+	rm --force --recursive dist/
+	rm --force --recursive *.egg-info

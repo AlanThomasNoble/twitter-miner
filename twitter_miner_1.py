@@ -11,7 +11,7 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 import twitter_nlp
-
+# import datavis
 #####################################################################################################
 
 
@@ -375,6 +375,14 @@ def main():
     # Outputs initial messages to the user
     user_input = start()
 
+    '''
+    # Potential Impl? (shorter, but may need to change function names)
+    valid = ["User","List","F_List","Search","Limits"]
+    if user_input in valid:
+        user_input(api)
+    else:
+        exit_program()
+    '''
     if user_input == "User":
         obtain_tweets_from_single_user(api)
     elif user_input == "List":
