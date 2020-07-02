@@ -62,6 +62,11 @@ train_y = keras.utils.to_categorical(train_y, 2)
 
 ############################################# BUILDING OUT NEURAL NETWORK $###################################################
 
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation
+
+model = Sequential()
+model.add
 
 
 
