@@ -8,8 +8,7 @@ import numpy as np
 
 # extract columns 1 and 3 from the CSV
 training = np.genfromtxt('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Sentiment_Analysis_Dataset.csv', delimiter=',', skip_header=1, usecols=(1, 3), dtype=None)
-print(len(training))
-
+# print(len(training)) -> 1578627
 
 # create our training data from the tweets
 train_x = [x[1] for x in training]
