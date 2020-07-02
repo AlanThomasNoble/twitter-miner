@@ -2,29 +2,6 @@ import numpy as np
 from wordcloud import WordCloud
 import matlablib.pyplot as plt
 import pandas as pd
-import pdb
-
-# DB? ..sql, mongo?...more efficient?
-
-# import sqlite3
-# connection = sqlite3.connect('tweets.db')
-# c = connection.cursor()
-# c.execute('''CREATE TABLE tweets
-# 		(title TEXT, rating REAL, price INTEGER) ''')
-# c.executemany('''INSERT INTO books VALUES (?,?,?)''', all_books)
-# To Convert to CSV File
-# >sqlite3 c:/sqlite/chinook.db
-# sqlite> .headers on
-# sqlite> .mode csv
-# sqlite> .output data.csv
-# sqlite> SELECT customerid,
-#    ...>        firstname,
-#    ...>        lastname,
-#    ...>        company
-#    ...>   FROM customers;
-# sqlite> .quit
-
-
 
 class Visuals:
 	df = []

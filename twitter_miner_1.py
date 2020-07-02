@@ -95,71 +95,77 @@ def getInfo(status, t, retweet, func='single_user'):
 
 # Action: outputs a set of a given user's tweets
 def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
-    user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
-    print()
-    print("Obtaining user's tweets...")
-    print()
-    print("The following tweets are from this account:", user_id)
+    try:
+        user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
+        print()
+        print("Obtaining user's tweets...")
+        print()
+        print("The following tweets are from this account:", user_id)
 
-    # Delete File Contents
-    if not append:
-        os.system(f'rm -rf {fileName}.*')
+        # Delete File Contents
+        if not append:
+            os.system(f'rm -rf {fileName}.*')
 
-    # Connection Object
-    conn = sqlite3.connect(f'{fileName}.db')
+        # Connection Object
+        conn = sqlite3.connect(f'{fileName}.db')
 
-    # Cursor Object
-    c = conn.cursor() # Cursor Object
+        # Cursor Object
+        c = conn.cursor() # Cursor Object
 
-    # Create Table (datatypes: https://www.sqlite.org/datatype3.html)
-    if not append:
-        c.execute('''CREATE TABLE tweets (user TEXT, tweet_text TEXT, date_time DATETIME, location TEXT, id INTEGER, hashtags TEXT, user_mentions TEXT, tweet BOOLEAN, quoted BOOLEAN, reply BOOLEAN, retweet BOOLEAN)''')
+        # Create Table (datatypes: https://www.sqlite.org/datatype3.html)
+        if not append:
+            c.execute('''CREATE TABLE tweets (user TEXT, tweet_text TEXT, date_time DATETIME, location TEXT, id INTEGER, hashtags TEXT, user_mentions TEXT, tweet BOOLEAN, quoted BOOLEAN, reply BOOLEAN, retweet BOOLEAN)''')
 
-    # init loop variables
-    firstIteration = True; incoming = []; oldest = []; numTweets = 0
+        # init loop variables
+        firstIteration = True; incoming = []; oldest = []; numTweets = 0
 
-    # Scraping
-    while firstIteration or len(incoming) > 0:
-        # Collect First Set of Tweet Objects
-        if firstIteration:
-            incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True,tweet_mode='extended')
-            firstIteration = False
+        # Scraping
+        while firstIteration or len(incoming) > 0:
+            # Collect First Set of Tweet Objects
+            if firstIteration:
+                incoming = api.user_timeline(screen_name=user_id,count=200,include_rts=True,tweet_mode='extended')
+                firstIteration = False
 
-        # Increment Total Tweets
-        numTweets += len(incoming)
+            # Increment Total Tweets
+            numTweets += len(incoming)
 
-        # Obtain Full Tweets
-        counter = len(incoming)
-        for tweet in incoming:
-            time.sleep(1.2) # Ensure no Runtime Error
-            status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
-            try: # check if retweet
-                t = status.retweeted_status.full_text
-                data = getInfo(status,t,True) # Returns a Tuple
-                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-                c.execute(query, data)
-            except AttributeError: # Not a retweet
-                t = status.full_text
-                data = getInfo(status,t,False) # Returns a Tuple
-                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-                c.execute(query, data)
+            # Obtain Full Tweets
+            counter = len(incoming)
+            for tweet in incoming:
+                time.sleep(1.2) # Ensure no Runtime Error
+                status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
+                try: # check if retweet
+                    t = status.retweeted_status.full_text
+                    data = getInfo(status,t,True) # Returns a Tuple
+                    query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                    c.execute(query, data)
+                except AttributeError: # Not a retweet
+                    t = status.full_text
+                    data = getInfo(status,t,False) # Returns a Tuple
+                    query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                    c.execute(query, data)
 
-            # Decrement
-            counter -= 1
-            # Adjust Frame of Reference
-            if counter == 0:
-                oldest = tweet.id - 1 # Set equal to last tweet
+                # Decrement
+                counter -= 1
+                # Adjust Frame of Reference
+                if counter == 0:
+                    oldest = tweet.id - 1 # Set equal to last tweet
 
-        # Update Set of Tweet Objects
-        incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
-    
-    # Save Data and Close Connection
-    conn.commit()
-    conn.close()
+            # Update Set of Tweet Objects
+            incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
 
-    print(f'Tweets Retrieved {numTweets}')
-    print(f'SQL File Located in tweets.db')
-    convertToCSV(fileName) # Remove as Desired.
+        # Save Data and Close Connection
+        conn.commit()
+        conn.close()
+
+        print(f'Tweets Retrieved {numTweets}')
+        print(f'SQL File Located in tweets.db')
+        convertToCSV(fileName) # Remove as Desired.
+
+    except KeyboardInterrupt:
+        conn.commit()
+        conn.close()
+        exit_program()
 
 # Action: quickly outputs tweets from a list of users
 # Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
@@ -426,7 +432,7 @@ def main():
         exit_program()
     '''
     if user_input == "User":
-        obtain_tweets_from_single_user(api, append=True)
+        obtain_tweets_from_single_user(api)
     elif user_input == "List":
         PARTIAL_TEXT_tweets_from_list_users(api)
     elif user_input == "F_List":
