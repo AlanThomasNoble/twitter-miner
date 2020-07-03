@@ -11,12 +11,12 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 import twitter_nlp
-# import datavis
+from datavis import Visuals
 #####################################################################################################
 
 
 # Provides initial output to the user
-def start():
+def minerStart():
     print()
     print("This software will be used to mine Twitter data.")
     print()
@@ -25,11 +25,26 @@ def start():
     print("(3) F_List - obtain full text tweets from a list of users")
     print("(4) Search - obtain tweets from a search query")
     print("(5) Limits - prints json of current API usage limits")
-    print("(6) Exit - exits software")
+    print("(6) Visuals - skips to visualization step")
+    print("(7) Exit - exits software")
     print()
     data = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
     print()
     return data
+
+# Provides Secondary Output to User for Visualizations
+def visualsStart(): 
+    # add spec option later if needed.
+    print("\nVisualization Types")
+    print("(1) wordCloud")
+    print("(2) WIP")
+    print("(3) WIP\n")
+    visType = input("Choose Desired Visualization (i.e. wordCloud): ")
+    print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
+    os.system('ls *.db') # or *.csv
+    fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+
+    return visType, fileName
 
 
 # Returns json showing the current limits of the API calls
@@ -40,6 +55,7 @@ def check_limit(api):
     # check for '/search/tweets'
     print(api.rate_limit_status())
 
+
 # Action: Converts DB Files to CSV Format
 # Specify Params for Desired Columns (Default is Everything *)
 def convertToCSV(fileName, params='*'):
@@ -48,26 +64,9 @@ def convertToCSV(fileName, params='*'):
     query = f'SELECT * FROM {fileName}'
     results = pd.read_sql_query(query, conn)
     results.to_csv(f"{fileName}.csv", index=True)
-
     conn.close()
+    print(f'CSV File Generated - {fileName}.csv')
 
-    # Alternative Method: Not Working
-    '''
-    import subprocess
-    schema = subprocess.run(
-        ['sqlite3', '.open tweets.db','.headers on','.mode csv','.output tweets.csv', '.tables', 'SELECT * FROM tweets;', '.quit' ],
-        capture_output=True)
-
-    print(schema)
-    table = fileName.strip('.db')
-    import os.path
-
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(BASE_DIR, fileName)
-    p.call(['sqlite3', '.open tweets.db','.headers on',
-                '.mode csv','.output tweets.csv', '.tables',
-                'SELECT * FROM tweets;', '.quit' ])
-    '''
 
 # Action: Outputs Data Based on Status Object (Defaults to Single User)
 def getInfo(status, t, retweet, func='single_user'):
@@ -92,6 +91,7 @@ def getInfo(status, t, retweet, func='single_user'):
     if func == 'single_user':
         return tuple((user, tweet_text, date_time, location, ID, hashtags, user_mentions, tweet, quoted, reply, retweet))
     # Add your own if block here for the corresponding function.
+
 
 # Action: outputs a set of a given user's tweets
 def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
@@ -160,7 +160,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         conn.commit()
         conn.close()
 
-        print('Completed.')
+        print('\nCompleted.')
         print(f'Tweets Retrieved {runningCount}')
         print('SQL File Located in tweets.db')
         convertToCSV(fileName) # Remove as Desired.
@@ -170,8 +170,9 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         conn.close()
         print('\nStopped Early...')
         print(f'Tweets Retrieved {runningCount}')
-        print('SQL File Located in tweets.db')
+        print(f'SQL File Located in {fileName}.db')
         convertToCSV(fileName) # Remove as Desired.
+        print(f'CSV File Located in {fileName}.csv')
         exit_program()
 
 # Action: quickly outputs tweets from a list of users
@@ -255,8 +256,7 @@ def FULL_TEXT_tweets_from_list_users(api):
                 tweet_id = each_tweet.id
                 # obtains status using tweet id
                 status = api.get_status(tweet_id, tweet_mode="extended")
-                
-                # print(status.place)
+                print(status.place)
 
                 # w_ptr.write(f"{running_count}) {status.created_at}\n")
                 # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
@@ -429,26 +429,22 @@ def main():
     api = tweepy.API(auth)
 
     # Outputs initial messages to the user
-    user_input = start()
+    user_input = minerStart()
 
-    '''
-    # Potential Impl? (shorter, but may need to change function names)
-    valid = ["User","List","F_List","Search","Limits"]
-    if user_input in valid:
-        user_input(api)
-    else:
-        exit_program()
-    '''
-    if user_input == "User":
-        obtain_tweets_from_single_user(api)
-    elif user_input == "List":
-        PARTIAL_TEXT_tweets_from_list_users(api)
-    elif user_input == "F_List":
-        FULL_TEXT_tweets_from_list_users(api)
-    elif user_input == "Search":
-        obtain_tweets_from_search(api)
-    elif user_input == "Limits":
-        check_limit(api)
+    validCalls = dict(User=obtain_tweets_from_single_user,
+            List=PARTIAL_TEXT_tweets_from_list_users,
+            F_List=FULL_TEXT_tweets_from_list_users,
+            Search=obtain_tweets_from_search,
+            Limits=check_limit)
+
+    if user_input in validCalls:
+        validCalls[user_input](api)
+    elif user_input == 'Visuals':
+        vis, file = visualsStart()
+        try:
+            v = Visuals(file, vis)
+        except ValueError:
+            exit_program()
     else:
         exit_program()
 
