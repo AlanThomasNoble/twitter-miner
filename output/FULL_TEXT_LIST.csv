@@ -1,4 +1,127 @@
 user,post date-time,account status,account sentiment,retweet status,retweet sentiment,post location,tweet id,account subjectivity,retweet subjectivity
+AVminer2,2020-07-03 20:14:24,@sepinwall random tweet #awesome,positive,,,,1279146495867002880,0.75,
+AVminer2,2020-07-03 20:13:51,https://t.co/LgBA0hTQLU,neutral,,,,1279146358629437440,0.0,
 AVminer2,2020-07-02 03:04:32,'#Daimler-backed #Momenta says its #robotaxis will be fully #driverless and profitable in 2024 https://t.co/ymh44Ss3A5 via @techcrunch',neutral,,,,1278524934499827712,0.0,
-AVminer2,2020-06-29 16:45:18,Autonomous vehicles are performing better and better every day.,positive,,,,1277644319927795712,0.4666666666666666,
-AVminer2,2020-06-29 16:44:57,the future of autonomous vehicles is looking bleak due to Covid-19,positive,,,,1277644232229031937,-0.18125,
+AVminer2,2020-06-29 16:45:18,Autonomous vehicles are performing better and better every day.,positive,,,,1277644319927795712,0.5666666666666667,
+AVminer2,2020-06-29 16:44:57,the future of autonomous vehicles is looking bleak due to Covid-19,negative,,,,1277644232229031937,0.55,
+AVminer2,2020-06-29 16:44:36,The future of autonomous vehicles is not bright.,positive,,,,1277644144870141952,0.5416666666666666,
+AVminer2,2020-06-29 16:43:04,This is alright.,neutral,,,,1277643760877350913,0.0,
+AVminer2,2020-06-29 16:42:46,This is not good at all!,negative,,,,1277643684419420160,0.6000000000000001,
+AVminer2,2020-06-29 16:42:35,This is terrible!,negative,,,,1277643639401955328,1.0,
+AVminer2,2020-06-26 21:07:18,😠👿😤,neutral,,,,1276623091419021312,0.0,
+AVminer2,2020-06-26 21:06:40,Twitter whyyy,neutral,,,,1276622933839032321,0.0,
+AVminer2,2020-06-26 21:06:20,Please work,neutral,,,,1276622850334621696,0.0,
+AVminer2,2020-06-26 20:59:09,Hii,neutral,,,,1276621043764015104,0.0,
+AVminer2,2020-06-26 20:57:23,test,neutral,,,,1276620596080791552,0.0,
+AVminer2,2020-06-26 20:52:54,Location Test 3,neutral,,,,1276619467330551808,0.0,
+AVminer2,2020-06-26 20:52:50,Location Test 2,neutral,,,,1276619450188431367,0.0,
+AVminer2,2020-06-26 20:52:38,Location Test 1,neutral,,,,1276619401245134856,0.0,
+AVminer2,2020-06-19 18:56:41,,,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,neutral,,1274053506316619776,,0.0
+AVminer2,2020-06-19 18:56:02,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet,neutral,,,,1274053343195824128,0.0,
+AVminer2,2020-06-19 18:55:49,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/LHkepF4EyZ,neutral,This is my tweet. This is my tweet. This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet.This is my tweet. This is my tweet https://t.co/BJTCGLVWr8,neutral,,1274053287453605889,0.0,0.0
+ALakrintis,2020-07-03 08:52:36,"#GreenPower Motor Company (GreenPower) has announced the development of the first fully autonomous EV Star shuttle will undergo testing for transit applications. 
+#PerroneRobotics (PRI) is currently integrating the autonomous components.
+https://t.co/dW4kYH0VsM",positive,,,,1278974915266437120,0.5333333333333332,
+ALakrintis,2020-07-01 10:48:50,,,"Here’s a little sneak peak behind the scenes of teleoperation testing. We connected our teleoperation module to a towing tractor and took it outside for a short drive.
+#roboauto #warehouse #worksmarter https://t.co/IRqXV7HUv5",negative,,1278279389600505861,,0.3875
+ALakrintis,2020-07-01 08:12:41,#Daimler-backed #Momenta says its #robotaxis will be fully #driverless and profitable in 2024 https://t.co/jBE7YSkeC0 via @techcrunch,neutral,,,,1278240093564809216,0.0,
+ALakrintis,2020-06-29 08:25:41,"#Tencent releases new #simulation platform for #autonomousdriving
+https://t.co/WWkFp9akmM",positive,,,,1277518590779015168,0.45454545454545453,
+ALakrintis,2020-06-23 18:15:31,#NVIDIA and #MercedesBenz Jointly Develops #Software Defined #Architecture for #AutomatedDriving https://t.co/OJPNeb9JKv,neutral,,,,1275492698191994881,0.0,
+ALakrintis,2020-06-19 18:26:23,"#BMW to cut 6,000 jobs and slam brakes on #MercedesBenz #selfdriving alliance amid #Covid19 impact https://t.co/zE1T9G0UwY",neutral,,,,1274045879998087168,0.0,
+ALakrintis,2020-06-17 13:35:23,#PhantomAI and #Renesas Joint Development for #ADAS and #AutonomousDriving Technologies #SoC #semiconductor #DeepLearning #NeuralNetworks  https://t.co/okUUNTk3uR,neutral,,,,1273247873073909761,0.0,
+ALakrintis,2020-06-17 11:39:16,Aisin Seiki joins #StradVision Series B for #autonomousvehicle #algorithms https://t.co/r3viy4JEdj via @therobotreport,neutral,,,,1273218650221182976,0.0,
+ALakrintis,2020-06-16 16:52:48,The #impact of #Covid19 on Global #Mobility https://t.co/PPvczSxbaa,neutral,,,,1272935167875846144,0.0,
+ALakrintis,2020-06-16 12:53:41,#MIT and #Toyota release innovative new visual open data to accelerate #autonomousdriving research @automotiveworld https://t.co/hQWdFDfzHW,positive,,,,1272874990338281472,0.48863636363636365,
+ALakrintis,2020-06-15 12:13:40,Venti Technologies Announces First #Deployment of #Autonomous SUVs | Business Wire https://t.co/pvrEyUICvx,positive,,,,1272502531663572993,0.5166666666666666,
+ALakrintis,2020-06-15 10:26:54,New @SA_Update Report: #Processors for #AutonomousDriving Platforms: Powering Artificial Intelligence #AI #ML #Software #Hardware #DeepLearning #startup  https://t.co/yt4s3depKz,negative,,,,1272475665003134977,0.7272727272727273,
+ALakrintis,2020-06-11 12:52:15,Greg Waters joins #Mythic Board of Directors https://t.co/hvLpVhU459 #AI #Inference #SoC #semiconductor,neutral,,,,1271062693450047494,0.0,
+ALakrintis,2020-06-10 13:45:44,,,#Ford and #VW detail cooperation efforts in #electrification and #autonomousdriving targeting both commercial and light passenger #vehicles #mebplatform #powertrain #automotive #electricvehicles https://t.co/uam1w0l0Zo,positive,,1270713762853486595,,0.35
+ALakrintis,2020-06-09 15:52:19,#StradVision Expands #European Operations with #EU General Manager and #SAELevel4 #AutonomousVehicles https://t.co/pLRQdQNsk2 via @YahooFinance,positive,,,,1270383232291409920,0.25,
+ALakrintis,2020-06-09 11:02:45,,,"Sign up for our Next Webinar on June 24th at 11:30 AM EDT/ 4:30PM BST/ 8:30 AM PDT register here: https://t.co/e6SBUW5V6K
+
+We will host an analyst roundtable to discuss which consumer behaviors to come about as a result of the COVID-19 pandemic. (click link for more details) https://t.co/2Fyr1CTN26",positive,,1270310359845478400,,0.25
+ALakrintis,2020-06-09 10:17:22,#Autonomous public #transport #bus #trials to launch in five #European cities #autonomousvehicles #autonomousbuses https://t.co/TidaIkbCv9,positive,,,,1270298936763392007,0.25555555555555554,
+ALakrintis,2020-06-09 09:56:16,,,"🚗New: One of the oldest self-driving vehicle firms @oxbotica has been talking to potential acquirers.
+
+https://t.co/Qz81xS9FPS",neutral,,1270293629484126208,,1.0
+ALakrintis,2020-06-08 17:48:24,"When life gives you lemons, make lemonade and a ride hailing network with humans! But hey the car is EV! https://t.co/PxCdCaeYEu",neutral,So now they are talking about a “human-driven” ride-hailing network for $TSLA. Who needs “autonomy” when you have “TAM”? https://t.co/vlgOoJ6CrI,neutral,,1270050056314462210,0.0,0.0
+ALakrintis,2020-06-05 12:07:52,,,#Nikola merges with #VectorIQ; lists on #NASDAQ and raises $700M #hydrogeneconomy #fuelcells #powertrain #electrification https://t.co/f6G0JRBYYB,neutral,,1268877196850012160,,0.0
+LawOfDriverless,2020-07-03 08:56:06,,,"ANNOUNCEMENT: The UK Connected and Automated Mobility Roadmap to 2030 is being updated. Get on the CAM Roadmap. 
+
+Involved in #CAM? Your business can be featured in the Roadmap as a CAM Creator and reach a global audience. 
+
+Register here: https://t.co/0yDySnYtWG https://t.co/CfLOTpwi5H",neutral,,1278975795491270657,,0.0
+LawOfDriverless,2020-07-02 22:16:19,,,Join our Transport team on 16 July as they host a joint webinar with the Institute of Transport Studies to explore the future of Autonomous Vehicles. Register for the event using the link below: https://t.co/GMQ229iawO,positive,,1278814789788106753,,0.4125
+LawOfDriverless,2020-07-02 13:05:14,,,👇🏽 https://t.co/3na0sMmZpQ,neutral,,1278676102131716096,,0.0
+LawOfDriverless,2020-06-29 07:48:00,"Niche but thoughtful article on whether the rise of #autonomous vehicles is likely to bring down the prevelence of drive by shootings: 
+
+https://t.co/o16AJVxn2V",positive,,,,1277509104865550337,0.6222222222222222,
+LawOfDriverless,2020-06-26 18:14:44,,,UNECE Regulation on Automated Lane Keeping Systems (#ALKS) adopted. This is “...the first binding international regulation on so-called “level 3” vehicle automation.” https://t.co/plj8UIECNl,positive,,1276579663364661253,,0.16666666666666666
+LawOfDriverless,2020-06-26 10:26:48,"Nice article for a friday from @2025AD: depictions of #driverlesscars in film over the years, assessed by accuracy -  https://t.co/2xLgORXNA2 https://t.co/sqlWgwCKNV",positive,,,,1276461904467243009,1.0,
+LawOfDriverless,2020-06-21 06:38:15,If this works (and can successfully build in gender and cultural differences) this will be really useful for #AutonomousVehicles https://t.co/7kHAEnE1C1,positive,"Being able to read body language is an essential human skill. Soon, it might be one for robots, too. Researchers have developed an algorithm that analyzes and guesses how you’re feeling purely by the way you walk: https://t.co/anjLPe1stQ https://t.co/gpUtryJEJS",positive,,1274592451379036160,0.35000000000000003,0.36500000000000005
+LawOfDriverless,2020-06-19 09:28:11,"In the US, the Insurance Institute for Highway Safety urges NHTSA to expand and strengthen safety standards for self-driving cars - for example systems to refuse to start a journey if an airbag is malfunctioning or a passenger is not properly restrained: https://t.co/bRr6EUKrSi",neutral,,,,1273910438120620037,0.1,
+LawOfDriverless,2020-06-19 09:25:53,"Work has begun on a 300km test route for real world driving trials of self-driving cars in the Midlands, with a view to covering urban, rural, suburban and highway roads: https://t.co/feM21a0bjq",positive,,,,1273909861416423424,0.07500000000000001,
+LawOfDriverless,2020-06-12 16:49:06,"Interestingly, the Insurance Institute for Highway Safety studied more than 5,000 crashes documented by the US NHTSA and found that #autonomous  technology likely will only prevent one-third of all vehicle crashes: https://t.co/6jIfR9jSWl",positive,,,,1271484685336612871,0.74,
+LawOfDriverless,2020-06-09 12:55:54,MOT changes may see cars tested for cyber security to ensure vehicles cannot be hacked: https://t.co/irAyim05p1,neutral,,,,1270338836254601216,0.0,
+LawOfDriverless,2020-06-03 06:44:58,,,"Very pleased to see that v2.0 of @BSI_UK's #CAV Vocabulary has been published. It's a great collaboration between BSI, @ccavgovuk + industry and I'm proud of my work in helping bring it all together so we can talk the same language. #AutomatedVehicles #TeamworkMakesTheDreamWork https://t.co/LR9V2KLfZX",positive,,1268071156684402690,,0.71875
+LawOfDriverless,2020-06-01 10:24:00,"In collaboration between Coventry City Council, Birmingham City Council, Solihull Council, and Transport for West Midlands, UK trial route for #AutonomousVehicles will span 300km: https://t.co/q5SiE79RdB",neutral,,,,1267401503180050433,0.0,
+LawOfDriverless,2020-05-31 10:02:36,Interesting article on steps being taken to help #autonomous vehicles deal with defacement of road signs: https://t.co/Pw9UGE45mh https://t.co/x0bhsOngQN,positive,,,,1267033732285898752,0.6,
+LawOfDriverless,2020-05-27 09:44:08,,,This is great piece of analysis on the spectrum of autonomy by Karni A. Chagal-Feferkorn and shows why the SAE levels are so problematic. https://t.co/3qz5idMPsP,positive,,1265579531672465410,,0.75
+LawOfDriverless,2020-05-22 08:24:18,,,Read the analysis of responses to the @Law_Commission  second consultation paper on #automatedvehicles here: https://t.co/iW3qQmZViU https://t.co/RWANeV6dnR,neutral,,1263747502282596352,,0.0
+LawOfDriverless,2020-05-21 17:43:59,,,"In this article, we discuss the results of The Law Commission’s second consultation on automated vehicle road passenger services. It points towards the creation of 'HARPS' – a new category of regulated #publictransport https://t.co/RdB7hux7Lf https://t.co/CMQVSwChDs",positive,,1263525961590607873,,0.22727272727272727
+LawOfDriverless,2020-05-20 11:26:21,,,"Work has begun on building on the UK’s first stretch of road, 180miles of it, designed for testing #autonomous vehicles that will be open this year. https://t.co/gXZmyr2jJG",positive,,1263068539126255616,,0.5111111111111111
+LawOfDriverless,2020-05-15 05:53:16,,,"Some #autonomousvehicle companies 
+
+resume public testing, others express caution 
+
+https://t.co/xYgWV35GcY #fintech #insurtech #AV @KYLE_L_WIGGERS @VentureBeat @nigelwalsh @JeroenBartelse @SabineVdL @floriansemle @andi_staub @FGraillot @stratorob @insurtechforum @insurtechtalk https://t.co/E4PgkTSKFd",neutral,,1261172778033709056,,0.06666666666666667
+LawOfDriverless,2020-04-24 14:57:15,Interested to see that researchers at Cornell are testing public reactions to #driverlesscars by using normal cars with drivers disguised as car seats - wasn't that the plot of a Sherlock episode? https://t.co/N9Z1KXWbZn https://t.co/dwynjddLt8,positive,,,,1253699529574174721,0.4055555555555555,
+_AVPodcast,2019-12-06 18:21:19,"""The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG.""
+https://t.co/oQHpt8THMb #autonomousvehicles",positive,,,,1203016585960493056,0.30000000000000004,
+_AVPodcast,2019-11-21 16:02:34,"Apple Podcasts: https://t.co/XbO7P9gfOs
+Spotify: https://t.co/C4FzzICxFh
+Stitcher: https://t.co/bQeHLKCt5B
+Google Play Music: https://t.co/YrIRES3UWd
+
+Full Episode List: https://t.co/M77H7LWbLI",positive,,,,1197545848759939074,0.55,
+_AVPodcast,2019-11-21 16:02:34,"In this episode we discuss the challenges and opportunities associated with the massive datasets created by vehicles today, how this data can and will be commercialized in the coming years, and what this all means for software development in the automotive industry.",neutral,,,,1197545847430336513,1.0,
+_AVPodcast,2019-11-21 16:02:33,"Episode #11 - Today’s guest is @Heiser, Co-founder and CEO of @renovo_auto. #AutonomousVehicles https://t.co/FOBaebLDFU",neutral,,,,1197545843651424257,0.0,
+_AVPodcast,2019-11-21 15:58:28,"Apple Podcasts: https://t.co/XbO7P9gfOs
+Spotify: https://t.co/C4FzzICxFh
+Stitcher: https://t.co/bQeHLKCt5B
+Google Play Music: https://t.co/YrIRES3UWd
+
+Full Episode List: https://t.co/M77H7LWbLI",positive,,,,1197544817661624322,0.55,
+_AVPodcast,2019-11-21 15:58:28,"In this episode we discuss how the commercialization of AVs will convert our parking garages into tech-enabled marketplaces, how ride-sharing companies like Uber/Lyft are thinking about their AV fleets in off-hours, and what it’s like to start a company in the nascent AV industry",neutral,,,,1197544816113926144,0.0,
+_AVPodcast,2019-11-21 15:58:27,"Episode #10 - Today’s guest are Sarah Park and Jae Paik, Co-founders at zero5. https://t.co/dFiGYXuCaq",neutral,,,,1197544813987430400,0.0,
+_AVPodcast,2019-10-11 02:03:36,"They're coming! #autonomousvehicles #Waymo
+
+https://t.co/GyIBbzaMWo",neutral,,,,1182476815983464450,0.0,
+_AVPodcast,2019-10-02 18:01:46,"@DeepScale_ acquired by @Tesla, @Waymo valuation slashed by @MorganStanley https://t.co/kyuo3V07HJ #axiosautonomousvehicles",neutral,,,,1179456455453184005,0.0,
+_AVPodcast,2019-09-25 14:51:20,"Apple Podcasts: https://t.co/vBhonPxr7N
+Spotify: https://t.co/a2EE6EZJid
+Stitcher: https://t.co/7sNQTk17Ze
+Google Play Music: https://t.co/RZKf4gU61E
+
+Full Episode List: https://t.co/M77H7LWbLI",positive,,,,1176871813063688193,0.55,
+_AVPodcast,2019-09-25 14:51:19,"In this episode we discuss the impact that AV technology will have on the trucking industry, how Locomation’s convoy approach differs from fully autonomous and driver assistance systems, and the path to bringing this technology to market over the next few years.",positive,,,,1176871812140916738,0.26666666666666666,
+_AVPodcast,2019-09-25 14:51:19,"Episode #9 - Today’s guest is @cmericli , Co-founder and CEO of @LocomationAI . #AutonomousVehicles https://t.co/iaBgYvEUxU",neutral,,,,1176871810236682240,0.0,
+_AVPodcast,2019-09-25 01:20:00,2. Rivian's waiting list just got longer https://t.co/iCko98ucxi #autonomousvehicles,neutral,,,,1176667638065487872,0.0,
+_AVPodcast,2019-09-24 19:50:54,1 big thing: The AV cash grab https://t.co/olaFqYCjus #autonomousvehicles,neutral,,,,1176584816323514368,0.1,
+_AVPodcast,2019-09-18 20:25:17,1 big thing: GM and UAW bargaining in the dark https://t.co/yNHYJRnVOj #autonomousvehicles,negative,,,,1174419139093393409,0.25,
+_AVPodcast,2019-08-29 18:00:42,"@LeslieNooteboom @HumanisingAuto Apple Podcasts: https://t.co/MEB5oiETj1
+Spotify: https://t.co/KgVJ2nCoQe
+Stitcher: https://t.co/2I1NsU0KfY
+Google Play Music: https://t.co/4Hl5w1PTCa
+
+Full Episode List: https://t.co/M77H7LWbLI",positive,,,,1167134997469229057,0.55,
+_AVPodcast,2019-08-29 17:55:38,"Episode #8 -  Today’s guest is @LeslieNooteboom , Co-founder at @HumanisingAuto.  In this episode we discuss the challenges AVs face in predicting human behavior and what this means for the commercial rollout of AVs across the globe. #AutonomousVehicles https://t.co/cTw9xlzupk",neutral,,,,1167133720890855424,0.05,
+_AVPodcast,2019-08-28 16:54:07,1 big thing: CEO indictment hangs over https://t.co/FB97b4Kfde https://t.co/ia6289TXO8 #autonomousvehicles,neutral,,,,1166755854151872512,0.1,
+_AVPodcast,2019-08-27 01:47:26,,,"First On-Demand Autonomous Shuttle Trial Opens To Public 
+#Singapore #AutonomousVehicles #Transportation
+
+https://t.co/WvPIDZuApU",positive,,1166165290213728258,,0.36666666666666664
+_AVPodcast,2019-08-27 01:20:00,"@UPS buys stake in @TuSimpleAI testing self-driving trucks in Arizona. 
+
+https://t.co/wLFmsNYlAi",neutral,,,,1166158389031972867,0.0,
