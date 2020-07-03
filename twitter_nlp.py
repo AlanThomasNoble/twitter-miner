@@ -19,6 +19,10 @@ def cleanTxt(tweet):
 
 # Mood Function
 def mood_function(tweet_text):
+    # print(1, tweet_text)
+    # print(2, cleanTxt(tweet_text))
+    # print(3, cleanData(tweet_text))
+    # print()
     # preprocess text and input it into textblob
     text_obj = TextBlob(cleanTxt(tweet_text))
     polarity = text_obj.polarity
