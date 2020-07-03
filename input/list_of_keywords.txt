@@ -33,7 +33,6 @@ Assisted Driving
 Self-driving
 Self Driving
 Selfdriving
-Self Driving Crash
 Selfdrive
 AI Cars
 AI Mobility
