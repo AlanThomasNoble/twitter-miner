@@ -1,23 +1,39 @@
 import re
 from textblob import TextBlob #, Word, Blobber
 
-# copied a clean txt function: https://ipullrank.com/step-step-twitter-sentiment-analysis-visualizing-united-airlines-pr-crisis/
-'''
+# function: https://ipullrank.com/step-step-twitter-sentiment-analysis-visualizing-united-airlines-pr-crisis/
 def cleanTxt(tweet):
     #Convert to lower case
     tweet = tweet.lower()
-    #Convert www.* or https?://* to URL
-    tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','URL',tweet)
-    #Convert @username to AT_USER
-    tweet = re.sub('@[^\s]+','AT_USER',tweet)
-    #Remove additional white spaces
-    tweet = re.sub('[\s]+', ' ', tweet)
+    #Convert www.* or https?://* to empty str
+    tweet = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','',tweet)
+    #Convert @username to empty str
+    tweet = re.sub('@[^\s]+','',tweet)
     #Replace #word with word
     tweet = re.sub(r'#([^\s]+)', r'\1', tweet)
+    #Remove additional white spaces
+    tweet = re.sub('[\s]+', ' ', tweet)
     #trim
     tweet = tweet.strip('\'"')
-    return tweet  
-'''
+    return tweet
+
+# Mood Function
+def mood_function(tweet_text):
+    # preprocess text and input it into textblob
+    text_obj = TextBlob(cleanTxt(tweet_text))
+    polarity = text_obj.polarity
+    subjectivity = text_obj.subjectivity
+
+    # We can determine the thresholds for tweet mood
+    mood = ""
+    if polarity < -0.01:
+        mood = "negative"
+    elif polarity >= -0.01 and polarity <= 0.01:
+        mood = "neutral"
+    else:
+        mood = "positive"
+
+    return [mood, polarity, subjectivity] 
 
 # Alternative/Merged Implementation of Clean Text
 '''This implementation entirely removes hashtags and mentions'''
@@ -67,20 +83,3 @@ def getSubjectivity(text):
 
 def getPolarity(text):
     return TextBlob(text).sentiment.polarity # or t.polarity
-
-# Mood Function
-def mood_function(tweet_text):
-    text = cleanData(tweet_text) # text_obj = TextBlob(cleanTxt(tweet_text))
-    polarity = getSubjectivity(text) #text_obj.polarity
-    subjectivity = getPolarity(text) #text_obj.subjectivity
-
-    # We can determine the thresholds for tweet mood
-    mood = ""
-    if polarity < -0.01:
-        mood = "negative"
-    elif polarity >= -0.01 and polarity <= 0.01:
-        mood = "neutral"
-    else:
-        mood = "positive"
-
-    return [mood, polarity, subjectivity]
