@@ -13,7 +13,7 @@ import re
 from textblob import TextBlob #, Word, Blobber
 
 # part of function: https://ipullrank.com/step-step-twitter-sentiment-analysis-visualizing-united-airlines-pr-crisis/
-def cleanTextNN(text, cleanEmoticons=False):
+def cleanText(text, cleanEmoticons=False):
     # Conversions
     text = text.lower() # Convert to lowercase
     

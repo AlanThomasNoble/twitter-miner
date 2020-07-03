@@ -1,3 +1,4 @@
 user,post date-time,account status,account sentiment,retweet status,retweet sentiment,post location,tweet id,account subjectivity,retweet subjectivity
 AVminer2,2020-07-02 03:04:32,'#Daimler-backed #Momenta says its #robotaxis will be fully #driverless and profitable in 2024 https://t.co/ymh44Ss3A5 via @techcrunch',neutral,,,,1278524934499827712,0.0,
-AVminer2,2020-07-02 03:04:05,test           #nice      @AVminer2,neutral,,,,1278524820070809601,0.0,
+AVminer2,2020-06-29 16:45:18,Autonomous vehicles are performing better and better every day.,positive,,,,1277644319927795712,0.4666666666666666,
+AVminer2,2020-06-29 16:44:57,the future of autonomous vehicles is looking bleak due to Covid-19,positive,,,,1277644232229031937,-0.18125,

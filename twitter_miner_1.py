@@ -255,7 +255,8 @@ def FULL_TEXT_tweets_from_list_users(api):
                 tweet_id = each_tweet.id
                 # obtains status using tweet id
                 status = api.get_status(tweet_id, tweet_mode="extended")
-                print(status.place)
+                
+                # print(status.place)
 
                 # w_ptr.write(f"{running_count}) {status.created_at}\n")
                 # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
