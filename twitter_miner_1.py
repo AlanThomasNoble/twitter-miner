@@ -32,15 +32,16 @@ def minerStart():
     print()
     return data
 
+
 # Provides Secondary Output to User for Visualizations
-def visualsStart(): 
+def visualsStart():
     # add spec option later if needed.
     print("\nVisualization Types")
     print("(1) wordCloud")
-    print("(2) WIP")
-    print("(3) WIP\n")
+    print("(2) phraseModeling")
+    print("(3) ngrams\n")
     visType = input("Choose Desired Visualization (i.e. wordCloud): ")
-    print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
+    print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
     os.system('ls *.db') # or *.csv
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
 
