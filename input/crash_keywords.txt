@@ -51,11 +51,6 @@ Tesla Crash
 Toyota: Crash
 Volkswagen Crash
 Volvo Crash
-Bicycle Crash Car
-Bicycle Autonomous Vehicles
-Pedestrian Crash Car
-Pedestrian Right of Way
-Pedestrian hit by Car
 Car Accident
 Autonomous Vehicle Accident
 Self Driving Passenger
@@ -66,3 +61,10 @@ Self Driving Uber
 Passenger Safety Autonomous Vehicles
 Autonomous Truck Crash
 Self Driving Dangers
+Bicycle Safety
+Bike Crash
+Bicycle Crash Car
+Bicycle Autonomous Vehicles
+Pedestrian Crash Car
+Pedestrian Right of Way
+Pedestrian hit by Car

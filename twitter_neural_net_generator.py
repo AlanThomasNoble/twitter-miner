@@ -4,31 +4,9 @@
 # 2) Build our neural net
 # 3) Train it with said data
 # 4) Save the neural net for future use
-
-#################################################### PREPROCESSING ############################################################
-import re
-
-# Alternative/Merged Implementation of Clean Text
-'''This implementation entirely removes hashtags and mentions'''
-'''pythex.org'''
-def cleanTextNN(text, cleanEmoticons=False):
-    # Conversions
-    text = text.lower() # Convert to lowercase
-    
-    # Removals
-    text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
-    text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
-    text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
-
-    # Cleanup
-    text = re.sub('[\s]+',' ',text) # Removes additional white spaces
-    text = text.strip('\'"').lstrip().rstrip() # Trim (Removes '' and Trailing and Leading Spaces)
-
-    if cleanEmoticons:
-        pass    # :\)|:-\)|:\(|:-\(|;\);-\)|:-O|8-|:P|:D|:\||:S|:\$|:@|8o\||\+o\(|\(H\)|\(C\)|\(\?\)
-
-    return text
-
+import sys
+import pandas
+from twitter_nlp import cleanTxt
 
 ###############################################################################################################################
 
@@ -37,24 +15,27 @@ def cleanTextNN(text, cleanEmoticons=False):
 import numpy as np
 print("1")
 # extract columns 1 and 3 from the CSV
-training = np.genfromtxt('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files/Sentiment_Analysis_Dataset.csv', 
-    delimiter=',',
-    skip_header=1,
-    usecols=(1, 3), 
-    dtype=None
-)
+colnames = ['text']
+data = pandas.read_csv('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files/final.txt', names=colnames)
+train_x = data.text.tolist()
+# print(data)
+colnames = ['_sentiment']
+data_1 = pandas.read_csv('/Users/alannoble/Documents/Autonomous-Vehicles-Research/Neural-Net-Files/final.txt', names=colnames)
+train_y = data_1._sentiment.tolist()
+print(train_y)
 
-# list of all the tweets
-train_x_before = [x[1] for x in training]
-train_x = [cleanTextNN(tweet) for tweet in train_x_before]
-# print(len(train_x_before))
-# print(train_x_before[1])
-# print(len(train_x))
-# print(train_x[1])
-# sys.exit()
+# # list of all the tweets
+# train_x_before = [x[1] for x in training]
+# train_x = [cleanTxt(tweet) for tweet in train_x_before]
+# # print(len(train_x_before))
+# # print(train_x_before[1])
+# # print(len(train_x))
+# # print(train_x[1])
+# # sys.exit()
 
-# list of all the respective sentiment labels
-train_y = np.asarray([x[0] for x in training])
+# # list of all the respective sentiment labels
+# train_y = np.asarray([x[0] for x in sentiment_l])
+# print(train_x)
 
 import json
 import keras
