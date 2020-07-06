@@ -8,13 +8,16 @@ def common_words_generator():
     all_tweets = []
     processed_tweets = [cleanTxt(tweet) for tweet in all_tweets]
 
+    # remove stop words
+
     words_list_for_each_tweet = [tweet_text.split() for tweet_text in processed_tweets]
     words_list_final = list(itertools.chain(*words_list_for_each_tweet))
 
     counter_list = collections.Counter(words_list_final)
     counter_list.most_common(3)
-    print(counter_list)
 
+    print(counter_list)
+    # print data graph
 
 def main():
 
