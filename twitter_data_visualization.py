@@ -22,9 +22,10 @@ def start():
     return [data, file_name]
 
 
-# returns list of tweets
+# returns list of tweets based on the sentiment that you are trying to analyse
 # sentiment = positive -> returns list of positive tweets
 # sentiment = negative -> returns list of negative tweets
+# just based off account status as of now -> maybe add retweet status later
 def get_list_based_on_sentiment(sentiment, file):
     col_list = ["account status", "account sentiment"]
     df = pandas.read_csv(f"output/{file}", usecols=col_list)
