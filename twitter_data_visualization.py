@@ -1,4 +1,5 @@
 import sys
+import datetime
 import itertools
 import collections
 import pandas
@@ -17,7 +18,7 @@ def start():
     print()
     data = input("Enter the type of data visualization you would like (Ex: Pos, Neg, Date.): ")
     print()
-    file_name = input("Enter the name of the file would you like to visualize: ")
+    file_name = input("Enter the name of the file in the output folder would you like to visualize: ")
     print()
     return [data, file_name]
 
@@ -39,12 +40,33 @@ def get_list_based_on_sentiment(sentiment, file):
     return processed_tweets
 
 
-def get_list_based_on_dates(date_start, date_end):
-    pass
+def get_list_based_on_dates(file):
+    print("Enter the following dates in this format: M-D-YYYY")
+    start_date = input("Enter the start date (Ex: 5-17-1999): ")
+    end_date = input("Enter the end date (5-17-2020): ")
+    
+    start_list = start_date.split('-')
+    start_day = int(start_list[0])
+    start_month = int(start_list[1])
+    start_year = int(start_list[2])
+    start_datetime = datetime.datetime(start_year, start_month, start_day, 0, 0, 0)
 
+    end_list = end_date.split('-')
+    end_day = int(end_list[0])
+    end_month = int(end_list[1])
+    end_year = int(end_list[2])
+    end_datetime = datetime.datetime(end_year, end_month, end_day, 0, 0, 0)
 
+    print(start_datetime, end_datetime)
+
+    was_date1_before = start_datetime < end_datetime
+
+    print(was_date1_before)
+
+# prints a word frequency dictionary
 def word_freq_generator(processed_tweets):
     num = input("Enter the number of results you would like in your frequency graph: ")
+
     # create list for each tweet
     words_list_for_each_tweet = [tweet_text.split() for tweet_text in processed_tweets]
     
@@ -68,7 +90,7 @@ def main():
         processed_tweets = get_list_based_on_sentiment("negative", user_input[1])
         word_freq_generator(processed_tweets)
     elif user_input[0] == "Date":
-        pass
+        get_list_based_on_dates(user_input[1])
     else:
         print("Program exited.")
         sys.exit()
