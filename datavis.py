@@ -54,7 +54,8 @@ def cleanData(text):
 	# > NLTK impl: nltk.download('punkt'); tokens = nltk.word_tokenize(tweets) (not sure if this impl is desired)
 def tokenizeText(df):
 	# Form list of words in all the tweets.
-	tokens = (' '.join(t for t in df['account status'])).split(' ')
+	weird = ['', 'nan'] # '' not working, nan working
+	tokens = (' '.join(t for t in df['account status'] if t not in weird)).split(' ')
 
 	# Remove any non-alphanumeric characters at the end or beginning of a word.
 	tokens = [re.sub(r"^\W+|\W+$", "", word) for word in tokens]
@@ -114,7 +115,7 @@ def lemmatizeText(text):
 
 # Stores all Visualization Function and Data
 class Visuals:
-	def __init__(self, fileName, visualization, spec=''): # **kwargs
+	def __init__(self, fileName, visualizations, spec=''): # **kwargs
 		# Read from DB File to DataFrame
 		'''
 		conn = sqlite3.connect(f'{fileName}.db')
@@ -135,7 +136,7 @@ class Visuals:
 		
 		# Init Arguments and Specs
 		self.fileName = fileName
-		self.visualization = visualization
+		self.visualizations = visualizations.split(', ')
 		self.spec = spec
 		plt.style.use('fivethirtyeight')
 
@@ -143,21 +144,25 @@ class Visuals:
 		#self.ngrams(userInput=False)
 		modes = dict(wordCloud=self.wordCloud, 
 				phraseModeling=self.phraseModeling, 
-				ngrams=self.ngrams)
+				ngrams=self.ngrams,
+				polSub=self.polSub,
+				valueCount=self.valueCount)
 
-		if visualization in modes:
-			modes[visualization]()
-		else:
-			raise ValueError
+		for vis in self.visualizations:
+			if vis in modes:
+				modes[vis]()
+			else:
+				raise ValueError
 
 
 	# Action: Prints an ngram analysis given an 'n' value (number of words in each token)
 	# Notes: 
 		# > Defaults to n = 1: At 1, this is essentially a frequency distribution.
 		# > Might be beneficial to add an option to lemmatize text.
-	def ngrams(self, userInput=True): 
+	def ngrams(self, userInput=True):
 		if userInput:
-			n = int(input("\nHow many ngrams: ")) # should exit_program()...test.	
+			print("Starting ngrams...") 
+			n = int(input("\nChoose n-value: ")) # should exit_program()...test.	
 		else:
 			n=1
 
@@ -183,29 +188,43 @@ class Visuals:
 		freqDictSorted = sorted(freqDict.items(), key=lambda item: item[1], reverse=False)
 
 		pp.pprint(freqDictSorted)
-		fdist.plot(50, cumulative=False, title=f"50 Most Common {n}-Grams")
+		plt.ion()
+		fdist.plot(50, cumulative=False, title=f"50 Most Common Phrases [n={n}]")
+		plt.savefig('output/freqDist.png')
+		plt.ioff()
+		plt.show()
+		plt.clf()
+		print('\nCompleted ngrams. Figure generated at output/freqDist.png')
+
 
 	# Action: Generates a WordCloud.
 	# Notes:
 		# > Currently working on making the algorithm base itself on frequency distribution.
 	def wordCloud(self, spec=''):
+		print("Starting wordCloud...")
 		freqDict = self.ngrams(userInput=False)
 		wc = WordCloud(width=500,height=300,max_font_size=110)
 		wc = wc.generate_from_frequencies(freqDict)
-		plt.imshow(wc, interpolation='bilinear')
+		plt.imshow(wc, interpolation='bilinear') # imshow to display
 		plt.axis('off')
-		plt.show()
+		plt.savefig('output/wordCloud.png')
+		plt.clf()
+		print('\nImage generated at output/wordCloud.png')
+
+
 
 	# Action: Plots Polarity and Subjectivity
 	def polSub(self, spec=''):
 		plt.figure(figsize=(8,6))
-		for i in range(o, self.df.shape[0]):
-			plt.scatter(self.df['Polarity'][i], self.df['Subjectivity'], color='Blue') # scatter plot: x axis, y axis
+		for i in range(0, self.df.shape[0]):
+			plt.scatter(self.df['account sentiment'][i], self.df['account subjectivity'], color='Blue') # scatter plot: x axis, y axis
 
 		plt.title('Sentiment Analysis')
-		plt.xlabel('Polarity')
+		plt.xlabel('Sentiment/Polarity')
 		plt.ylabel('Subjectivity')
-		plt.show()
+		# plt.show()
+		plt.imshow()
+
 
 	# Action: Plots some general analytics
 	# Notes:
@@ -224,8 +243,9 @@ class Visuals:
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Negative Tweets: {posNegative}%')
 
+
 	# Maybe combine this with above ^
-	def valuecount(self, spec=''):
+	def valueCount(self, spec=''):
 		v = self.df['Analysis'].value_counts()
 		print(f'Value Counts: {v}')
 
@@ -233,8 +253,9 @@ class Visuals:
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment')
 		plt.ylabel('Counts')
-		self.df['Analysis'].value_counts().plot(kind='bar')
+		self.df['account sentiment'].value_counts().plot(kind='bar')
 		plt.show()
+
 
 	# Action: Bigram model that detercts frequently used phrase of two words and sticks them together.
 	def phraseModeling(self):

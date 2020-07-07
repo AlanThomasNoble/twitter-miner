@@ -10,6 +10,10 @@ miner:
 iminer:
 	python3 -i twitter_miner_1.py
 
+# Removes __pycache__ Folder [pycache optimizes code, use post-development]
+clean:
+	rm -rf __pycache__
+
 # Removes Python Artifacts
 clean-pyc:
 	find . -name '*.pyc' -exec rm --force {} +

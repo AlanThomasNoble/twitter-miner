@@ -38,9 +38,10 @@ def visualsStart():
     # add spec option later if needed.
     print("\nVisualization Types")
     print("(1) wordCloud")
-    print("(2) phraseModeling")
-    print("(3) ngrams\n")
-    visType = input("Choose Desired Visualization (i.e. wordCloud): ")
+    print("(2) ngrams")
+    print("(3) polSub")
+    print("(4) valueCount\n")
+    visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
     os.system('cd output && ls *.csv') # or *.db
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
