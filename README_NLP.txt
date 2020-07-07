@@ -41,5 +41,6 @@ Building a neural network using TensorFlow and Keras
     source env/bin/activate
     pip install numpy
     pip install keras
+    pip install tensorflow
     
 
