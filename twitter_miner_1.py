@@ -42,7 +42,7 @@ def visualsStart():
     print("(3) ngrams\n")
     visType = input("Choose Desired Visualization (i.e. wordCloud): ")
     print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-    os.system('ls *.db') # or *.csv
+    os.system('cd output && ls *.csv') # or *.db
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
 
     return visType, fileName
@@ -62,7 +62,7 @@ def check_limit(api):
 def convertToCSV(fileName, params='*'):
     conn = sqlite3.connect(f'{fileName}.db')
     c = conn.cursor()
-    query = f'SELECT * FROM {fileName}'
+    query = f'SELECT {params} FROM {fileName}'
     results = pd.read_sql_query(query, conn)
     results.to_csv(f"{fileName}.csv", index=True)
     conn.close()
@@ -131,6 +131,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
             # Obtain Full Tweets
             counter = len(incoming)
             for tweet in incoming:
+                # storeData(tweet): add function
                 time.sleep(1.2) # Ensure no Runtime Error
                 status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
                 try: # check if retweet
@@ -173,7 +174,6 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         print(f'Tweets Retrieved {runningCount}')
         print(f'SQL File Located in {fileName}.db')
         convertToCSV(fileName) # Remove as Desired.
-        print(f'CSV File Located in {fileName}.csv')
         exit_program()
 
 # Action: quickly outputs tweets from a list of users
