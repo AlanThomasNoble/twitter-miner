@@ -7,6 +7,8 @@ import pandas
 from nltk.corpus import stopwords
 from twitter_nlp import cleanTxt #removes URL, username, and whitespace / gets rid of hashtag / makes lowercase
 
+from datavis import Visuals
+
 stopwords_set = set(stopwords.words('english'))
 
 # The UI provided to the user
@@ -16,13 +18,15 @@ def start():
     print()
     print("(1) Pos - returns word freq graph for positive sentiment tweets")
     print("(2) Neg - returns word freq graph for negative sentiment tweets")
-    print("(2) Date - returns word freq graph for a date range")
+    print("(3) Date - returns word freq graph for a date range")
+    print("(4) wordCloud")
+    print("(5) ngrams")
+    print("(6) polSub")
+    print("(7) valueCount")
     print()
     data = input("Enter the type of data visualization you would like (Ex: Pos, Neg, Date.): ")
     print()
-    file_name = input("Enter the name of the file in the output folder would you like to visualize: ")
-    print()
-    return [data, file_name]
+    return data
 
 
 # returns list of clean/preprocessed tweets based on the sentiment that you are trying to analyse
@@ -144,26 +148,65 @@ def show_freq_graph(dic, description):
 
 def main():
     user_input = start()
-    if user_input[0] == "Pos":
-        processed_tweets = get_list_based_on_sentiment("positive", user_input[1])
+    if user_input == "Pos":
+        file_name = input("Enter the name of the file in the output folder would you like to visualize: ")
+        print()
+        processed_tweets = get_list_based_on_sentiment("positive", file_name)
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Positive Sentiment")
 
-    elif user_input[0] == "Neg":
+    elif user_input == "Neg":
         processed_tweets = get_list_based_on_sentiment("negative", user_input[1])
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Negative Sentiment")
 
-    elif user_input[0] == "Date":
+    elif user_input == "Date":
         processed_tweets = get_list_based_on_dates(user_input[1])
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Date Range")
+
+    elif user_input == "wordCloud":
+        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+        os.system('cd output && ls *.csv') # or *.db
+        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+        try:
+            v = Visuals(file, "wordCloud")
+        except ValueError:
+            exit_program()
+
+    elif user_input == "ngrams":
+        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+        os.system('cd output && ls *.csv') # or *.db
+        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+        try:
+            v = Visuals(file, "ngrams")
+        except ValueError:
+            exit_program()
+
+    elif user_input == "polSub":
+        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+        os.system('cd output && ls *.csv') # or *.db
+        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+        try:
+            v = Visuals(file, "polSub")
+        except ValueError:
+            exit_program()
+
+    elif user_input == "valueCount":
+        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+        os.system('cd output && ls *.csv') # or *.db
+        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+        try:
+            v = Visuals(file, "valueCount")
+        except ValueError:
+            exit_program()
 
     else:
         print("Program exited.")
         sys.exit()
 
     return 0
+
 
 if __name__ == "__main__":
     main()
