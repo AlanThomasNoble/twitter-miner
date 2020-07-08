@@ -1,4 +1,5 @@
 import sys
+import matplotlib.pyplot
 import datetime
 import itertools
 import collections
@@ -104,6 +105,7 @@ def get_list_based_on_dates(file):
 
     return processed_tweets
 
+
 # prints a word frequency dictionary
 def word_freq_generator(processed_tweets):
     num = input("Enter the number of results you would like in your frequency graph: ")
@@ -118,21 +120,45 @@ def word_freq_generator(processed_tweets):
     # calculate frequencies
     counter_list = collections.Counter(words_list_final)
 
-    print(counter_list.most_common(int(num)))
-    # print data graph
+    return counter_list.most_common(int(num))
+
+
+# returns word frequency graph
+def show_freq_graph(dic, description):
+    df_from_dic = pandas.DataFrame(dic, columns=["words", "count"])
+
+    fig, ax = matplotlib.pyplot.subplots(figsize=(8,8))
+
+    # creates the horizontal bar graph
+    df_from_dic.sort_values(by="count").plot.barh(
+        x='words', 
+        y='count',
+        ax=ax,
+        color='green'
+    )
+
+    # prints the graph
+    ax.set_title(f"Common Words Found in Tweets ({description})")
+    matplotlib.pyplot.show()
 
 
 def main():
     user_input = start()
     if user_input[0] == "Pos":
         processed_tweets = get_list_based_on_sentiment("positive", user_input[1])
-        word_freq_generator(processed_tweets)
+        dic = word_freq_generator(processed_tweets)
+        show_freq_graph(dic, "Positive Sentiment")
+
     elif user_input[0] == "Neg":
         processed_tweets = get_list_based_on_sentiment("negative", user_input[1])
-        word_freq_generator(processed_tweets)
+        dic = word_freq_generator(processed_tweets)
+        show_freq_graph(dic, "Negative Sentiment")
+
     elif user_input[0] == "Date":
         processed_tweets = get_list_based_on_dates(user_input[1])
-        word_freq_generator(processed_tweets)
+        dic = word_freq_generator(processed_tweets)
+        show_freq_graph(dic, "Date Range")
+
     else:
         print("Program exited.")
         sys.exit()
