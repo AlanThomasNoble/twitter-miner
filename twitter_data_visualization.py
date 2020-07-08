@@ -8,6 +8,7 @@ from twitter_nlp import cleanTxt #removes URL, username, and whitespace / gets r
 
 stopwords_set = set(stopwords.words('english'))
 
+# The UI provided to the user
 def start():
     print()
     print("This software will be used to output data visualizations.")
@@ -23,7 +24,7 @@ def start():
     return [data, file_name]
 
 
-# returns list of tweets based on the sentiment that you are trying to analyse
+# returns list of clean/preprocessed tweets based on the sentiment that you are trying to analyse
 # sentiment = positive -> returns list of positive tweets
 # sentiment = negative -> returns list of negative tweets
 # just based off account status as of now -> maybe add retweet status later
@@ -40,6 +41,9 @@ def get_list_based_on_sentiment(sentiment, file):
     return processed_tweets
 
 
+# returns list of clean/preprocessed tweets based on the date range that you provide
+# [5-17-1999, 5-17-2020] -> includes both start and end date
+# just based off account status as of now -> maybe add retweet status later
 def get_list_based_on_dates(file):
     print("Enter the following dates in this format: M-D-YYYY Ex: 5-17-1999, 12-2-2019)")
     start_date = input("Enter the start date: ")
@@ -127,7 +131,8 @@ def main():
         processed_tweets = get_list_based_on_sentiment("negative", user_input[1])
         word_freq_generator(processed_tweets)
     elif user_input[0] == "Date":
-        get_list_based_on_dates(user_input[1])
+        processed_tweets = get_list_based_on_dates(user_input[1])
+        word_freq_generator(processed_tweets)
     else:
         print("Program exited.")
         sys.exit()
