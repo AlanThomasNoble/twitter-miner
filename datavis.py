@@ -146,7 +146,7 @@ class Visuals:
 				phraseModeling=self.phraseModeling, 
 				ngrams=self.ngrams,
 				polSub=self.polSub,
-				valueCount=self.valueCount)
+				valueCounts=self.valueCounts)
 
 		for vis in self.visualizations:
 			if vis in modes:
@@ -244,9 +244,11 @@ class Visuals:
 		print(f'Percent Negative Tweets: {posNegative}%')
 
 
-	# Maybe combine this with above ^
-	def valueCount(self, spec=''):
-		v = self.df['Analysis'].value_counts()
+	# Action: Prints and Plots the Counts of Postive/Negative Tweets
+	# Notes:
+		# > Add account subjectivity
+	def valueCounts(self, spec=''):
+		v = self.df['account sentiment'].value_counts()
 		print(f'Value Counts: {v}')
 
 		# Plot and Visualize the Counts
