@@ -1,66 +1,97 @@
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import pandas as pd # double import avoid...
-import sqlite3
+import pandas as pd
+# import sqlite3
 import re
 
 # Cleanup todo
 # from nltk.util import ngrams
-import nltk # eventually will want to use one library...
+import nltk  # eventually will want to use one library...
 import spacy
-import numpy as np
+import stopwords  # sourced from spacy
 
 #####################################################################################################
 '''Helper Functions'''
 #####################################################################################################
 
-# Action: Removes Emojis, Mentions, Hashtags, and https Hyperlinks
 def cleanData(text):
-	text = str(text).lower() # lower all text to simplify nlp later.
-	# Also for some reason, strings are not being passed in implicitly.
+	'''Removes Emojis, Mentions, Hashtags, and https Hyperlinks
+
+	Notes: 
+		> strings are not being passed in implicitly, requiring convert.
+
+	Parameters
+	----------
+	text : str
+		Input string to be cleaned
+
+	Returns
+	-------
+	str
+		String of cleaned input text
+	'''
+
+	text = str(text).lower()  # Lowers text (Simplifies processing)
 
 	# Removals
-	text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
-	text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
-	text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
-	text = re.sub('[\s]+',' ',text) # Removes additional white spaces
-	text = text.strip('\'"').lstrip().rstrip() # Trim (Removes '' and Trailing and Leading Spaces)
+	text = re.sub(r'@[A-Za-z0-9]+', '', text)  # Removes mentions
+	text = re.sub(r'#[A-Za-z0-9_]+', '', text)  # Removes hashtags
+	text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*', '', text) # Removes hyperlink
+	text = re.sub('[\s]+', ' ', text)  # Removes additional white spaces
+	text = text.strip('\'"').lstrip().rstrip() # Trim
 
-	# Ref: https://gist.github.com/Alex-Just/e86110836f3f93fe7932290526529cd1#gistcomment-3208085
-	# Ref: https://en.wikipedia.org/wiki/Unicode_block
 	emoji_patterns = re.compile(
-	"(["
-	"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-	"\U0001F300-\U0001F5FF"  # symbols & pictographs
-	"\U0001F600-\U0001F64F"  # emoticons
-	"\U0001F680-\U0001F6FF"  # transport & map symbols
-	"\U0001F700-\U0001F77F"  # alchemical symbols
-	"\U0001F780-\U0001F7FF"  # Geometric Shapes Extended
-	"\U0001F800-\U0001F8FF"  # Supplemental Arrows-C
-	"\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
-	"\U0001FA00-\U0001FA6F"  # Chess Symbols
-	"\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-	"\U00002702-\U000027B0"  # Dingbats
-	"])"
+		"(["
+		"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+		"\U0001F300-\U0001F5FF"  # symbols & pictographs
+		"\U0001F600-\U0001F64F"  # emoticons
+		"\U0001F680-\U0001F6FF"  # transport & map symbols
+		"\U0001F700-\U0001F77F"  # alchemical symbols
+		"\U0001F780-\U0001F7FF"  # Geometric Shapes Extended
+		"\U0001F800-\U0001F8FF"  # Supplemental Arrows-C
+		"\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
+		"\U0001FA00-\U0001FA6F"  # Chess Symbols
+		"\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
+		"\U00002702-\U000027B0"  # Dingbats
+		"])"
 	)
+
+	# Return
 	text = emoji_patterns.sub('', text)
 	return text
 
 
-# Action: Tokenizes text from a dataframe input.
-# Notes:
-	# > Debating whether to replace contractions (i.e. isn't -> is not)
-	# > Edge Case: 'this--however' (em dashes) (Morgan-Stanley) [Potential Solution: Remove all Dashes]
-	# > NLTK impl: nltk.download('punkt'); tokens = nltk.word_tokenize(tweets) (not sure if this impl is desired)
 def tokenizeText(df):
-	# Form list of words in all the tweets.
-	weird = ['', 'nan'] # '' not working, nan working
-	tokens = (' '.join(t for t in df['account status'] if t not in weird)).split(' ')
+	'''Tokenizes text from dataframe input
 
-	# Remove any non-alphanumeric characters at the end or beginning of a word.
+	Notes: 
+		> '','nan' being added weirdly.
+		> Debating whether to replace contractions (i.e. isn't -> is not)
+		> Edge Case: 'this--however' (em dashes) (Morgan-Stanley) [Potential Solution: Remove all Dashes]
+		> NLTK impl: nltk.download('punkt'); tokens = nltk.word_tokenize(tweets) (not sure if this impl is desired)
+
+	Parameters
+	----------
+	df : pandas.core.frame.DataFrame
+		Storage container for inputted csv file.
+
+	Returns
+	-------
+	list
+		A list of words (tokens) based on input text.
+	'''
+
+	# Split
+	weird = ['', 'nan']  # '' not working, nan working
+	tokens = ' '.join(t for t in df['account status'] if t not in weird)
+	tokens = tokens.split(' ')
+
+	# Remove non-alphanumeric characters at the end or beginning of a word.
 	tokens = [re.sub(r"^\W+|\W+$", "", word) for word in tokens]
 
+	# Return
 	return tokens
+
 '''
 # https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
 negations_dic = {"isn't":"is not", "aren't":"are not", "wasn't":"was not", "weren't":"were not",
@@ -71,13 +102,45 @@ negations_dic = {"isn't":"is not", "aren't":"are not", "wasn't":"was not", "were
 '''
 
 
-# Action: Removes commonly used words (stopwords).  Removes simplified web links as well (i.e. gmail.com)
-# Notes:
-	# > Remove any  website links as well based on domain (.com) in each token, deletes word if found
 def removeStopwords(tokens):
-	import stopwords # sourced from spacy
-	domains = ('.com','.org','.gov','.ny','.edu') # Removes These Tokens.
-	return [t for t in tokens if t not in stopwords.STOP_WORDS and t not in domains]
+	'''Removes common words (stopwords) and simple web links.
+
+	Notes:
+
+	Parameters
+	----------
+	tokens : str
+		The sound the animal makes (default is None)
+
+	Returns
+	-------
+	list
+		A list of words with stopwords removed.
+	'''
+
+	domains = ('.com', '.org', '.gov', '.ny', '.edu')
+	return [t for t in tokens if t not in stopwords.STOP_WORDS and not t.endswith(domains)]
+
+
+def expandAbbr(tokens):
+	'''Expands common twitter abbreviations to full text.
+
+	Notes:
+		> Make function similar to removeStopwords()
+		> Create a file of abbreviations, abbrs.py
+		> import abbrs
+
+	Parameters
+	----------
+	tokens : str
+		A list of words (str)
+
+	Returns
+	-------
+	list
+		A list of words with abbreviations expanded.
+	'''
+
 '''
 	# https://www.ranks.nl/stopwords
 	# https://gist.github.com/sebleier/554280
@@ -94,18 +157,35 @@ def removeStopwords(tokens):
 	# have available stopword lists.
 '''
 
-# Using Spacy...
-# to run: df[account status_lemmatized] = df[account status].apply(lemmatizeText)
-# Or, Pass in an List of 
-def lemmatizeText(text):
+
+def lemmatizeText(tokens):
+	'''Removes common words (stopwords) and simple web links.
+
+	Notes:
+		> WIP
+		> Figure out how to pass in a list of words.
+		> Add feature to expand twitter abbreviations (maybe this is another function)
+
+	Parameters
+	----------
+	tokens : list
+		A list of words (str)
+
+	Returns
+	-------
+	list
+		A list of words with each word lemmatized, if applicable.
+	'''
+
+	# This function is still a WIP...
 	import spacy
 
 	if type(text) is not list:
-		text = nlp(text) # Tokenize Text if Not Already Tokenized.
+		text = nlp(text) # tokenizes text..again.
 
-	# Use a generator object LC for optimization.
 	# Return
 	return list(token.lemma_ for token in text)
+
 
 
 
@@ -113,41 +193,68 @@ def lemmatizeText(text):
 '''Visuals Class'''
 #####################################################################################################
 
-# Stores all Visualization Function and Data
 class Visuals:
-	def __init__(self, fileName, visualizations, spec=''): # **kwargs
+	'''
+	A class used to store visualization effects and analyses.
+
+	Attributes
+	----------
+	df : pandas.core.frame.DataFrame
+		Storage container for inputted container of tweets
+	'''
+
+	df = None
+
+	def __init__(self, fileName, visualizations, **kwargs): 
+		'''
+		Reads file, applys specifications, and starts visualizations.
+
+		Parameters
+		----------
+		fileName : str
+			Name of the file.
+		visualizations : str
+			Visualizations desired.
+		**kwargs : multiple, optional
+			Additional Specifications.
+
+		Raises
+		----------
+		ValueError
+			If input data is not valid. Exits program.
+		'''
+
 		# Read from DB File to DataFrame
-		'''
-		conn = sqlite3.connect(f'{fileName}.db')
-		c = conn.cursor() # unnecesssary?
-		query = f'SELECT * FROM {fileName}' 
-		self.df = pd.read_sql_query(query, conn) #
-		conn.close()
-		'''
+		# conn = sqlite3.connect(f'{fileName}.db')
+		# c = conn.cursor() # unnecesssary?
+		# query = f'SELECT * FROM {fileName}' 
+		# df = pd.read_sql_query(query, conn) #
+		# conn.close()
 
-		# Read from CSV File to DataFrame
+		# Read File
 		try:
-			self.df = pd.read_csv(f'output/{fileName}.csv')
+			df = pd.read_csv(f'output/{fileName}.csv')
 		except FileNotFoundError:
-			raise ValueError # Exits Program
+			raise ValueError  # Exits Program
 
-		# Clean Tweets (Appends Additional Column) (add lemmatization)
-		self.df['account status'] = self.df['account status'].apply(cleanData)
-		
-		# Init Arguments and Specs
+		# Clean Tweets
+		df['account status'] = df['account status'].apply(cleanData)
+
+		# Init Arguments
 		self.fileName = fileName
 		self.visualizations = visualizations.split(', ')
-		self.spec = spec
+
+		# Specs
 		plt.style.use('fivethirtyeight')
 
-		# Call Visualization
-		#self.ngrams(userInput=False)
-		modes = dict(wordCloud=self.wordCloud, 
-				phraseModeling=self.phraseModeling, 
+		# Visualization Calls
+		modes = dict(wordCloud=self.wordCloud,
+				phraseModeling=self.phraseModeling,
 				ngrams=self.ngrams,
+				lemmas=self.lemmas,
 				polSub=self.polSub,
 				valueCounts=self.valueCounts)
-
+		# Evaluate
 		for vis in self.visualizations:
 			if vis in modes:
 				modes[vis]()
@@ -155,19 +262,45 @@ class Visuals:
 				raise ValueError
 
 
-	# Action: Prints an ngram analysis given an 'n' value (number of words in each token)
-	# Notes: 
-		# > Defaults to n = 1: At 1, this is essentially a frequency distribution.
-		# > Might be beneficial to add an option to lemmatize text.
 	def ngrams(self, userInput=True):
+		'''Prints an ngram analysis given an 'n' value. Defaults to n=1
+
+		Notes:
+			> Defaults to n = 1: At 1, this is essentially a frequency distribution.
+			> Figure a simpler/better way to print and plot data nicely
+			> Check if program is exited nicely.
+
+		Parameters
+		----------
+		tokens : list
+			A list of words (str)
+		
+		Raises
+		----------
+		ValueError
+			If input data is not valid. Exits program.
+
+		Returns
+		-------
+		list
+			A list of words with each word lemmatized, if applicable.
+
+		Outputs
+		-------
+		freqDist.png
+			Generated frequency distribution plot if userInput=False
+		'''
+
+		# User Input
 		if userInput:
-			print("Starting ngrams...") 
-			n = int(input("\nChoose n-value: ")) # should exit_program()...test.	
+			print("Starting ngrams...")
+			# should exit_program()...test.
+			n = int(input("\nChoose n-value: "))
 		else:
-			n=1
+			n = 1
 
 		# Tokenize Text and Remove Stopwords
-		tokens = tokenizeText(self.df)
+		tokens = tokenizeText(df)
 		tokens = removeStopwords(tokens)
 
 		# Generate ngram
@@ -176,20 +309,21 @@ class Visuals:
 
 		# Generate Frequency Distribution
 		fdist = nltk.FreqDist(grams)
-		freqDict = {''.join(k):v for k,v in fdist.items()}
+		freqDict = {''.join(k): v for k, v in fdist.items()}
 
 		# Return for Internal Use
 		if not userInput:
-			return freqDict
+		    return freqDict
 
-		# Otherwise, Do some Nice Printing.
-		# For now...
+		# Otherwise, Nice Printing and Frequency Graph
 		import pprint as pp
-		freqDictSorted = sorted(freqDict.items(), key=lambda item: item[1], reverse=False)
+		freqDictSorted = sorted(
+			freqDict.items(), key=lambda item: item[1], reverse=False)
 
 		pp.pprint(freqDictSorted)
 		plt.ion()
-		fdist.plot(50, cumulative=False, title=f"50 Most Common Phrases [n={n}]")
+		fdist.plot(50, cumulative=False,
+					title=f"50 Most Common Phrases [n={n}]")
 		plt.savefig('output/freqDist.png')
 		plt.ioff()
 		plt.show()
@@ -197,27 +331,46 @@ class Visuals:
 		print('\nCompleted ngrams. Figure generated at output/freqDist.png')
 
 
-	# Action: Generates a WordCloud.
-	# Notes:
-		# > Currently working on making the algorithm base itself on frequency distribution.
-	def wordCloud(self, spec=''):
+	def wordCloud(self):
+		'''Generates Word Cloud based on frequency
+
+		Notes:
+			> Remove imshow() and just save image.
+
+		Outputs
+		-------
+		wordCloud.png
+			Generated Word Cloud.
+		'''
+
 		print("Starting wordCloud...")
 		freqDict = self.ngrams(userInput=False)
-		wc = WordCloud(width=500,height=300,max_font_size=110)
+		wc = WordCloud(width=500, height=300, max_font_size=110)
 		wc = wc.generate_from_frequencies(freqDict)
-		plt.imshow(wc, interpolation='bilinear') # imshow to display
+		plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
 		plt.savefig('output/wordCloud.png')
 		plt.clf()
 		print('\nImage generated at output/wordCloud.png')
 
 
+	def polSub(self):
+		'''Plots polarity and subjectivity.
 
-	# Action: Plots Polarity and Subjectivity
-	def polSub(self, spec=''):
-		plt.figure(figsize=(8,6))
-		for i in range(0, self.df.shape[0]):
-			plt.scatter(self.df['account sentiment'][i], self.df['account subjectivity'], color='Blue') # scatter plot: x axis, y axis
+		Notes:
+			> WIP
+
+		Outputs
+		-------
+		polSub.png
+			Generated Plot of Polarity Vs. Subjectivity.
+		'''
+		plt.figure(figsize=(8, 6))
+		for i in range(0, df.shape[0]):
+			# scatter plot: x axis, y axis
+			plt.scatter(df['account sentiment'][i],
+						df['account subjectivity'], 
+						color='Blue')
 
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment/Polarity')
@@ -226,41 +379,63 @@ class Visuals:
 		plt.imshow()
 
 
-	# Action: Plots some general analytics
-	# Notes:
-		# > Currently Displays Percent Positive and Negative Tweets
-		# > More to add in the future.
 	def analytics(self, spec=''):
-		ptweets = self.df[self.df.Analysis == 'Negative']
+		'''Completes some general analytics.
+
+		Notes:
+			> Currently Displays Percent Positive and Negative Tweets
+			> More to add in the future.
+
+		Outputs
+		-------
+		analytics.png
+			...
+		'''
+
+		ptweets = df[df.Analysis == 'Negative']
 		ptweets = ptweets['Tweets']
 
-		ntweets = self.df[self.df.Analysis == 'Negative'] # ''?
+		ntweets = df[df.Analysis == 'Negative']  # ''?
 		ntweets = ntweets['Tweets']
 
-		posPercent = round((ptweets.shape[0] / self.df.shape[0])*100, 1)
-		negPercent = round((ntweets.shape[0] / self.df.shape[0])*100, 1)
+		posPercent = round((ptweets.shape[0] / df.shape[0])*100, 1)
+		negPercent = round((ntweets.shape[0] / df.shape[0])*100, 1)
 
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Negative Tweets: {posNegative}%')
 
 
-	# Action: Prints and Plots the Counts of Postive/Negative Tweets
-	# Notes:
-		# > Add account subjectivity
-	def valueCounts(self, spec=''):
-		v = self.df['account sentiment'].value_counts()
+	def valueCounts(self):
+		'''Prints and Plots the Counts of Postive/Negative Tweets
+
+		Notes:
+			> WIP
+			> Add account subjectivity
+
+		Outputs
+		-------
+		valueCounts.png
+			Generated...
+		'''
+		v = df['account sentiment'].value_counts()
 		print(f'Value Counts: {v}')
 
 		# Plot and Visualize the Counts
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment')
 		plt.ylabel('Counts')
-		self.df['account sentiment'].value_counts().plot(kind='bar')
+		df['account sentiment'].value_counts().plot(kind='bar')
 		plt.show()
 
 
-	# Action: Bigram model that detercts frequently used phrase of two words and sticks them together.
 	def phraseModeling(self):
+		'''Bigram model, detects frequently used two word phrases.
+
+		Notes:
+			> Based on gensim model.
+			> Not tested, might use as an alternative method.
+
+		'''
 		from gensim.models.phrases import Phrases, Phraser
 		tokenized_train = [t.split() for t in x_train]
 		phrases = Phrases(tokenized_train)
