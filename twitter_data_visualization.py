@@ -41,27 +41,64 @@ def get_list_based_on_sentiment(sentiment, file):
 
 
 def get_list_based_on_dates(file):
-    print("Enter the following dates in this format: M-D-YYYY")
-    start_date = input("Enter the start date (Ex: 5-17-1999): ")
-    end_date = input("Enter the end date (5-17-2020): ")
+    print("Enter the following dates in this format: M-D-YYYY Ex: 5-17-1999, 12-2-2019)")
+    start_date = input("Enter the start date: ")
+    end_date = input("Enter the end date: ")
     
     start_list = start_date.split('-')
-    start_day = int(start_list[0])
-    start_month = int(start_list[1])
+    start_day = int(start_list[1])
+    start_month = int(start_list[0])
     start_year = int(start_list[2])
-    start_datetime = datetime.datetime(start_year, start_month, start_day, 0, 0, 0)
+    start_datetime = datetime.datetime(
+        start_year, 
+        start_month, 
+        start_day, 
+        0, 
+        0, 
+        0
+    )
 
     end_list = end_date.split('-')
-    end_day = int(end_list[0])
-    end_month = int(end_list[1])
+    end_day = int(end_list[1])
+    end_month = int(end_list[0])
     end_year = int(end_list[2])
-    end_datetime = datetime.datetime(end_year, end_month, end_day, 0, 0, 0)
+    end_datetime = datetime.datetime(
+        end_year, 
+        end_month, 
+        end_day, 
+        0, 
+        0, 
+        0
+    )
 
     print(start_datetime, end_datetime)
 
-    was_date1_before = start_datetime < end_datetime
+    col_list = ["post date-time", "account status"]
+    df = pandas.read_csv(f"output/{file}", usecols=col_list)
 
-    print(was_date1_before)
+    processed_tweets = []
+    for ind in df.index: 
+        print(1, start_datetime)
+        print(1, df["post date-time"][ind])
+        datetime_list = df["post date-time"][ind].split(' ')
+        date_list = datetime_list[0].split('-')
+        time_list = datetime_list[1].split(':')
+        cur_datetime = datetime.datetime(
+            int(date_list[0]), 
+            int(date_list[1]), 
+            int(date_list[2]), 
+            int(time_list[0]), 
+            int(time_list[1]), 
+            int(time_list[2])
+        )
+        print(2, cur_datetime)
+
+        print("result", cur_datetime > start_datetime)
+        if (cur_datetime >= start_datetime and cur_datetime <= end_datetime) and isinstance(df["account status"][ind], str):
+            text = cleanTxt(df["account status"][ind])
+            processed_tweets.append(text)
+
+    return processed_tweets
 
 # prints a word frequency dictionary
 def word_freq_generator(processed_tweets):
