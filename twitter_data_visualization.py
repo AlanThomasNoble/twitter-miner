@@ -1,4 +1,5 @@
 import sys
+import os
 import matplotlib.pyplot
 import datetime
 import itertools
@@ -8,6 +9,7 @@ from nltk.corpus import stopwords
 from twitter_nlp import cleanTxt #removes URL, username, and whitespace / gets rid of hashtag / makes lowercase
 
 from datavis import Visuals
+from twitter_miner_1 import exit_program
 
 stopwords_set = set(stopwords.words('english'))
 
@@ -24,9 +26,13 @@ def start():
     print("(6) polSub")
     print("(7) valueCount")
     print()
-    data = input("Enter the type of data visualization you would like (Ex: Pos, Neg, Date.): ")
+    data = input("Enter the type of data visualization you would like (Ex: Pos, Neg, etc...): ")
     print()
-    return data
+    print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+    os.system('cd output && ls *.csv') # or *.db
+    fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    print()
+    return data, fileName
 
 
 # returns list of clean/preprocessed tweets based on the sentiment that you are trying to analyse
@@ -148,56 +154,42 @@ def show_freq_graph(dic, description):
 
 def main():
     user_input = start()
-    if user_input == "Pos":
-        file_name = input("Enter the name of the file in the output folder would you like to visualize: ")
-        print()
-        processed_tweets = get_list_based_on_sentiment("positive", file_name)
+    if user_input[0] == "Pos":
+        processed_tweets = get_list_based_on_sentiment("positive", user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Positive Sentiment")
 
-    elif user_input == "Neg":
-        processed_tweets = get_list_based_on_sentiment("negative", user_input[1])
+    elif user_input[0] == "Neg":
+        processed_tweets = get_list_based_on_sentiment("negative", user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Negative Sentiment")
 
-    elif user_input == "Date":
-        processed_tweets = get_list_based_on_dates(user_input[1])
+    elif user_input[0] == "Date":
+        processed_tweets = get_list_based_on_dates(user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Date Range")
 
-    elif user_input == "wordCloud":
-        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-        os.system('cd output && ls *.csv') # or *.db
-        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    elif user_input[0] == "wordCloud":
         try:
-            v = Visuals(file, "wordCloud")
+            v = Visuals(user_input[1], "wordCloud")
         except ValueError:
             exit_program()
 
-    elif user_input == "ngrams":
-        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-        os.system('cd output && ls *.csv') # or *.db
-        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    elif user_input[0] == "ngrams":
         try:
-            v = Visuals(file, "ngrams")
+            v = Visuals(user_input[1], "ngrams")
         except ValueError:
             exit_program()
 
-    elif user_input == "polSub":
-        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-        os.system('cd output && ls *.csv') # or *.db
-        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    elif user_input[0] == "polSub":
         try:
-            v = Visuals(file, "polSub")
+            v = Visuals(user_input[1], "polSub")
         except ValueError:
             exit_program()
 
-    elif user_input == "valueCount":
-        print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-        os.system('cd output && ls *.csv') # or *.db
-        fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    elif user_input[0] == "valueCount":
         try:
-            v = Visuals(file, "valueCount")
+            v = Visuals(user_input[1], "valueCount")
         except ValueError:
             exit_program()
 
