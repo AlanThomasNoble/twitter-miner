@@ -21,6 +21,7 @@ def start():
     print("(1) Pos - returns word freq graph for positive sentiment tweets")
     print("(2) Neg - returns word freq graph for negative sentiment tweets")
     print("(3) Date - returns word freq graph for a date range")
+    print("(4) Pie - returns pie chart: Positive, Neutral, and Negative Tweets")
     print("(4) wordCloud")
     print("(5) ngrams")
     print("(6) polSub")
@@ -152,6 +153,46 @@ def show_freq_graph(dic, description):
     matplotlib.pyplot.show()
 
 
+# Outputs a pie chart comparing the number of positive, neutral, and negative tweets in a CSV
+# Helps us gauge positive and negative distributions amongst the tweets
+# INCLUDES BOTH ACCOUNT AND RETWEET STATUSES
+def pos_vs_neg_pie(file):
+    col_list = ["account sentiment", "retweet sentiment"]
+    df = pandas.read_csv(f"output/{file}", usecols=col_list)
+    
+    num_pos = 0
+    num_neg = 0
+    num_neut = 0
+
+    for ind in df.index: 
+        if df["account sentiment"][ind] and df["account sentiment"][ind] == "positive":
+            num_pos += 1
+        if df["account sentiment"][ind] and df["account sentiment"][ind] == "negative":
+            num_neg += 1
+        if df["account sentiment"][ind] and df["account sentiment"][ind] == "neutral":
+            num_neut += 1
+
+        if df["retweet sentiment"][ind] and df["account sentiment"][ind] == "positive":
+            num_pos += 1
+        if df["retweet sentiment"][ind] and df["account sentiment"][ind] == "negative":
+            num_neg += 1
+        if df["retweet sentiment"][ind] and df["account sentiment"][ind] == "neutral":
+            num_neut += 1
+        
+    # Data to plot
+    labels = 'Positive', 'Neutral', 'Negative'
+    sizes = [num_pos, num_neut, num_neg]
+    colors = ['yellowgreen', 'gold', 'lightcoral']
+    # explode = (0.1, 0, 0, 0)  # explode 1st slice
+
+    # Plot
+    matplotlib.pyplot.pie(sizes, labels=labels, colors=colors,
+    autopct='%1.1f%%', shadow=True, startangle=140)
+
+    matplotlib.pyplot.axis('equal')
+    matplotlib.pyplot.show()
+
+
 def main():
     user_input = start()
     if user_input[0] == "Pos":
@@ -168,6 +209,9 @@ def main():
         processed_tweets = get_list_based_on_dates(user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Date Range")
+    
+    elif user_input[0] == "Pie":
+        pos_vs_neg_pie(user_input[1] + ".csv")
 
     elif user_input[0] == "wordCloud":
         try:
