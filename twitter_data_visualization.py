@@ -111,7 +111,7 @@ def get_list_based_on_dates(file):
             text = cleanTxt(df["account status"][ind])
             processed_tweets.append(text)
 
-    return processed_tweets
+    return processed_tweets # ["tweet", "tweet"]
 
 
 # prints a word frequency dictionary
