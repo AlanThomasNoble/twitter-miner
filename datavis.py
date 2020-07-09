@@ -440,3 +440,13 @@ class Visuals:
 		tokenized_train = [t.split() for t in x_train]
 		phrases = Phrases(tokenized_train)
 		bigram = Phraser(phrases)
+
+	def boxPlot(self):
+		'''based on tweet/token length
+
+		Notes:
+			> WIP
+		'''
+		fig, ax = plt.subplots(figsize=(5, 5))
+		plt.boxplot(df.pre_clean_len)
+		plt.show()

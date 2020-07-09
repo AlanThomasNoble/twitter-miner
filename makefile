@@ -1,7 +1,3 @@
-# Run autopep8 style filter
-style:
-	autopep8 --in-place $(FILE)
-
 # Runs Program
 miner:
 	python3 twitter_miner_1.py
@@ -9,6 +5,14 @@ miner:
 # Interactive Mode
 iminer:
 	python3 -i twitter_miner_1.py
+
+# Run in Debug Mode; pauses execution at point where an error is thrown.
+debug:
+	python3 -m pdb -c continue $(FILE)
+
+# Run autopep8 style filter
+style:
+	autopep8 --in-place $(FILE)
 
 # Removes __pycache__ Folder [pycache optimizes code, use post-development]
 clean:
@@ -25,3 +29,4 @@ clean-build:
 	rm --force --recursive build/
 	rm --force --recursive dist/
 	rm --force --recursive *.egg-info
+
