@@ -97,8 +97,9 @@ def storeData(api, tweet, func):
         return query, data
 
 
-def exit_program():
+def exit_program(err_msg='Invalid Input'):
     '''exits software safely'''
+    print(f'\n{err_msg}')
     print("Exited program.")
     sys.exit()
 

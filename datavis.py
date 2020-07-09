@@ -219,7 +219,7 @@ class Visuals:
 			Additional Specifications.
 
 		Raises
-		----------
+		------
 		ValueError
 			If input data is not valid. Exits program.
 		'''
@@ -276,7 +276,7 @@ class Visuals:
 			A list of words (str)
 		
 		Raises
-		----------
+		------
 		ValueError
 			If input data is not valid. Exits program.
 
@@ -287,6 +287,7 @@ class Visuals:
 
 		Outputs
 		-------
+
 		freqDist.png
 			Generated frequency distribution plot if userInput=False
 		'''

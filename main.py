@@ -72,8 +72,9 @@ def check_limit(api):
     print(api.rate_limit_status())
 
 
-# Action: exits software
-def exit_program():
+def exit_program(err_msg='Invalid Input'):
+    '''exits software safely'''
+    print(f'\n{err_msg}')
     print("Exited program.")
     sys.exit()
 
