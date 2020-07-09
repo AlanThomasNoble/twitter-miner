@@ -94,8 +94,6 @@ def get_list_based_on_dates(file):
 
     processed_tweets = []
     for ind in df.index: 
-        print(1, start_datetime)
-        print(1, df["post date-time"][ind])
         datetime_list = df["post date-time"][ind].split(' ')
         date_list = datetime_list[0].split('-')
         time_list = datetime_list[1].split(':')
@@ -107,9 +105,8 @@ def get_list_based_on_dates(file):
             int(time_list[1]), 
             int(time_list[2])
         )
-        print(2, cur_datetime)
-
-        print("result", cur_datetime > start_datetime)
+        # print(cur_datetime, ">=", start_datetime, 'and', cur_datetime, '<=', end_datetime)
+        # print("result", cur_datetime >= start_datetime and cur_datetime <= end_datetime)
         if (cur_datetime >= start_datetime and cur_datetime <= end_datetime) and isinstance(df["account status"][ind], str):
             text = cleanTxt(df["account status"][ind])
             processed_tweets.append(text)
@@ -118,6 +115,7 @@ def get_list_based_on_dates(file):
 
 
 # prints a word frequency dictionary
+# removes stopwords
 def word_freq_generator(processed_tweets):
     num = input("Enter the number of results you would like in your frequency graph: ")
 
