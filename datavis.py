@@ -1,13 +1,12 @@
+# External Libraries
+from nltk.util import ngrams
+from nltk import FreqDist
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
-# import sqlite3
 import re
 
-# Cleanup todo
-# from nltk.util import ngrams
-import nltk  # eventually will want to use one library...
-import spacy
+# Internal Libraries
 import stopwords  # sourced from spacy
 
 #####################################################################################################
@@ -61,7 +60,7 @@ def cleanData(text):
 	return text
 
 
-def tokenizeText(df):
+def tokenizeText(tweets):
 	'''Tokenizes text from dataframe input
 
 	Notes: 
@@ -72,8 +71,8 @@ def tokenizeText(df):
 
 	Parameters
 	----------
-	df : pandas.core.frame.DataFrame
-		Storage container for inputted csv file.
+	tweets : ? (some pandas type.)
+		Column selection of tweets to be tokenized.
 
 	Returns
 	-------
@@ -83,7 +82,7 @@ def tokenizeText(df):
 
 	# Split
 	weird = ['', 'nan']  # '' not working, nan working
-	tokens = ' '.join(t for t in df['account status'] if t not in weird)
+	tokens = ' '.join(t for t in tweets if t not in weird)
 	tokens = tokens.split(' ')
 
 	# Remove non-alphanumeric characters at the end or beginning of a word.
@@ -91,15 +90,6 @@ def tokenizeText(df):
 
 	# Return
 	return tokens
-
-'''
-# https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
-negations_dic = {"isn't":"is not", "aren't":"are not", "wasn't":"was not", "weren't":"were not",
-			"haven't":"have not","hasn't":"has not","hadn't":"had not","won't":"will not",
-			"wouldn't":"would not", "don't":"do not", "doesn't":"does not","didn't":"did not",
-			"can't":"can not","couldn't":"could not","shouldn't":"should not","mightn't":"might not",
-			"mustn't":"must not"}
-'''
 
 
 def removeStopwords(tokens):
@@ -141,22 +131,6 @@ def expandAbbr(tokens):
 		A list of words with abbreviations expanded.
 	'''
 
-'''
-	# https://www.ranks.nl/stopwords
-	# https://gist.github.com/sebleier/554280
-	# nltk might have a function for this...
-	# You can generate the most recent stopword list by doing the following:
-	# from nltk.corpus import stopwords
-	# sw = stopwords.words("english")
-	# Note that you will need to also do
-	# import nltk
-	# nltk.download('stopwords')
-	# and download all of the corpora in order to use this.
-	# This generates the most up-to-date list of 179 English words you can use. 
-	# Additionally, if you run stopwords.fileids(), you'll find out what languages 
-	# have available stopword lists.
-'''
-
 
 def lemmatizeText(tokens):
 	'''Removes common words (stopwords) and simple web links.
@@ -196,14 +170,7 @@ def lemmatizeText(tokens):
 class Visuals:
 	'''
 	A class used to store visualization effects and analyses.
-
-	Attributes
-	----------
-	df : pandas.core.frame.DataFrame
-		Storage container for inputted container of tweets
 	'''
-
-	df = None
 
 	def __init__(self, fileName, visualizations, **kwargs): 
 		'''
@@ -218,6 +185,11 @@ class Visuals:
 		**kwargs : multiple, optional
 			Additional Specifications.
 
+		Attributes
+		----------
+		df : pandas.core.frame.DataFrame
+			Storage container for inputted container of tweets
+
 		Raises
 		------
 		ValueError
@@ -228,17 +200,18 @@ class Visuals:
 		# conn = sqlite3.connect(f'{fileName}.db')
 		# c = conn.cursor() # unnecesssary?
 		# query = f'SELECT * FROM {fileName}' 
-		# df = pd.read_sql_query(query, conn) #
+		# self.df = pd.read_sql_query(query, conn) #
 		# conn.close()
 
 		# Read File
 		try:
-			df = pd.read_csv(f'output/{fileName}.csv')
+			import pdb; pdb.set_trace()
+			self.df = pd.read_csv(f'output/{fileName}.csv')
 		except FileNotFoundError:
 			raise ValueError  # Exits Program
 
 		# Clean Tweets
-		df['account status'] = df['account status'].apply(cleanData)
+		self.df['account status'] = self.df['account status'].apply(cleanData)
 
 		# Init Arguments
 		self.fileName = fileName
@@ -251,7 +224,6 @@ class Visuals:
 		modes = dict(wordCloud=self.wordCloud,
 				phraseModeling=self.phraseModeling,
 				ngrams=self.ngrams,
-				lemmas=self.lemmas,
 				polSub=self.polSub,
 				valueCounts=self.valueCounts)
 		# Evaluate
@@ -260,6 +232,12 @@ class Visuals:
 				modes[vis]()
 			else:
 				raise ValueError
+
+	def preprocessing(self):
+		'''Tokenize Text and Remove Stopwords'''
+		tokens = tokenizeText(self.df['account status'])
+		tokens = removeStopwords(tokens)
+		return tokens
 
 
 	def ngrams(self, userInput=True):
@@ -300,16 +278,14 @@ class Visuals:
 		else:
 			n = 1
 
-		# Tokenize Text and Remove Stopwords
-		tokens = tokenizeText(df)
-		tokens = removeStopwords(tokens)
+		# Clean Data Into Tokens
+		tokens = self.preprocessing()
 
 		# Generate ngram
-		from nltk.util import ngrams
 		grams = ngrams(tokens, n)
 
 		# Generate Frequency Distribution
-		fdist = nltk.FreqDist(grams)
+		fdist = FreqDist(grams)
 		freqDict = {''.join(k): v for k, v in fdist.items()}
 
 		# Return for Internal Use
@@ -367,10 +343,10 @@ class Visuals:
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
 		plt.figure(figsize=(8, 6))
-		for i in range(0, df.shape[0]):
+		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(df['account sentiment'][i],
-						df['account subjectivity'], 
+			plt.scatter(self.df['account sentiment'][i],
+						self.df['account subjectivity'], 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
@@ -393,14 +369,14 @@ class Visuals:
 			...
 		'''
 
-		ptweets = df[df.Analysis == 'Negative']
+		ptweets = self.df[self.df.Analysis == 'Negative']
 		ptweets = ptweets['Tweets']
 
-		ntweets = df[df.Analysis == 'Negative']  # ''?
+		ntweets = self.df[self.df.Analysis == 'Negative']  # ''?
 		ntweets = ntweets['Tweets']
 
-		posPercent = round((ptweets.shape[0] / df.shape[0])*100, 1)
-		negPercent = round((ntweets.shape[0] / df.shape[0])*100, 1)
+		posPercent = round((ptweets.shape[0] / self.df.shape[0])*100, 1)
+		negPercent = round((ntweets.shape[0] / self.df.shape[0])*100, 1)
 
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Negative Tweets: {posNegative}%')
@@ -418,14 +394,14 @@ class Visuals:
 		valueCounts.png
 			Generated...
 		'''
-		v = df['account sentiment'].value_counts()
+		v = self.df['account sentiment'].value_counts()
 		print(f'Value Counts: {v}')
 
 		# Plot and Visualize the Counts
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment')
 		plt.ylabel('Counts')
-		df['account sentiment'].value_counts().plot(kind='bar')
+		self.df['account sentiment'].value_counts().plot(kind='bar')
 		plt.show()
 
 
@@ -449,5 +425,5 @@ class Visuals:
 			> WIP
 		'''
 		fig, ax = plt.subplots(figsize=(5, 5))
-		plt.boxplot(df.pre_clean_len)
+		plt.boxplot(self.df.pre_clean_len)
 		plt.show()

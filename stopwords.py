@@ -52,3 +52,13 @@ STOP_WORDS.update(contractions)
 for apostrophe in ["‘", "’"]:
     for stopword in contractions:
         STOP_WORDS.add(stopword.replace("'", apostrophe)) # A set contains unique elements.
+
+
+'''
+# https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
+negations_dic = {"isn't":"is not", "aren't":"are not", "wasn't":"was not", "weren't":"were not",
+	"haven't":"have not","hasn't":"has not","hadn't":"had not","won't":"will not",
+	"wouldn't":"would not", "don't":"do not", "doesn't":"does not","didn't":"did not",
+	"can't":"can not","couldn't":"could not","shouldn't":"should not","mightn't":"might not",
+	"mustn't":"must not"}
+'''

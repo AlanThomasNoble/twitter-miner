@@ -1,4 +1,4 @@
-import sys
+import sys, os
 
 #################################### LIBRARIES ######################################################
 from datavis import Visuals
@@ -19,16 +19,13 @@ def start():
 
 # Initial output for Mining
 def miningStart():
-    print()
-    print("This software will be used to mine Twitter data.")
-    print()
-    print("(1) User - obtain a set of a given user's tweets using an account's user ID")
+    print("\nThis software will be used to mine Twitter data.")
+    print("\n(1) User - obtain a set of a given user's tweets using an account's user ID")
     print("(2) List - quickly retrival of tweets from a list of users (cannot guarentee full text)")
     print("(3) F_List - obtain full text tweets from a list of users")
     print("(4) Search - obtain tweets from a search query")
     print("(5) Limits - prints json of current API usage limits")
-    print("(6) Exit - exits software")
-    print()
+    print("(6) Exit - exits software\n")
     user_input = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
     print()
 
@@ -46,7 +43,6 @@ def miningStart():
 
 # Initial output for Visuals
 def visualsStart():
-    # add spec option later if needed.
     print("\nVisualization Types")
     print("(1) wordCloud")
     print("(2) ngrams")
@@ -54,7 +50,9 @@ def visualsStart():
     print("(4) valueCount\n")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-    os.system('cd output && ls *.csv') # or *.db
+    stream = os.popen('cd output && ls *.csv') # or *.db
+    files = stream.read().split()
+    [print(f"({files.index(f)+1}) {f}") for f in files]
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
 
     try:
