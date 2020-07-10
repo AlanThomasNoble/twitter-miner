@@ -18,7 +18,7 @@ def cleanData(text):
 
 	Notes: 
 		> strings are not being passed in implicitly, requiring convert.
-
+		> clean all columns for NaN, nan and '' values.
 	Parameters
 	----------
 	text : str
@@ -213,7 +213,7 @@ class Visuals:
 		# Read File
 		try:
 			self.df = pd.read_csv(f'output/{fileName}.csv')
-			# Filter By Date
+			# Filter By Date (Try between_time(start, end) function?)
 			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
 			if 'start_date' and 'end_date' in kwargs:
 				mask = (self.df['post date-time'] >= kwargs['start_date']) & (self.df['post date-time'] <= kwargs['end_date'])
@@ -226,15 +226,13 @@ class Visuals:
 
 		# Clean Tweets
 		self.df['account status'] = self.df['account status'].apply(cleanData)
-
-
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
-				phraseModeling=self.phraseModeling,
+				analytics=self.analytics,
 				ngrams=self.ngrams,
 				polSub=self.polSub,
 				valueCounts=self.valueCounts,
-				graph=self.graph)
+				freqGraph=self.freqGraph)
 		# Evaluate
 		for vis in self.visualizations:
 			if vis in modes:
@@ -283,8 +281,7 @@ class Visuals:
 		# User Input
 		if userInput:
 			print("Starting ngrams...")
-			# should exit_program()...test.
-			n = int(input("\nChoose n-value: "))
+			n = int(input("Choose n-value: "))
 		else:
 			n = 1
 
@@ -308,9 +305,10 @@ class Visuals:
 			freqDict.items(), key=lambda item: item[1], reverse=False)
 		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
 
-		# Graph (Horizontal Bar)
-		self.graph(freqDict, 'barh', f"50 Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
-		print('\nCompleted ngrams.')
+		# Graph (Horizontal Bar) ...using boxplot for now, change to barh once implemented
+		self.freqGraph(freqDict, 'boxplot', f"50 Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
+		print('Image generated at output/freqDist.png')
+		print('Completed ngrams.\n')
 
 
 	def wordCloud(self):
@@ -329,23 +327,28 @@ class Visuals:
 		freqDict = self.ngrams(userInput=False)
 		wc = WordCloud(width=500, height=300, max_font_size=110)
 		wc = wc.generate_from_frequencies(freqDict)
-		plt.imshow(wc, interpolation='bilinear')
+		# plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
-		plt.savefig('output/wordCloud.png')
-		plt.clf()
-		print('\nImage generated at output/wordCloud.png')
+		wc.to_file('output/wordCloud.png')
+		print('Image generated at output/wordCloud.png')
+		print('Completed wordCloud\n')
 
 
-	def graph(self, freqDict=None, gtype='barh', gtitle='Graph', saveloc='output/graph.png', userInput=True):
-		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input'''
+	def freqGraph(self, freqDict=None, gtype='barh', gtitle='Graph', saveloc='output/graph.png', userInput=True):
+		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input
+		The entire functionality of this function is based on a frequency dictionary.
+		Therefore, allowing any type of graph with any type of data'''
 		if userInput:
 			print("Starting Graphing...")
 			gtype = input("Choose graph type (barh, pie, boxplot): ")
 			gtitle = input("Pick graph title: ")
-			saveloc = input("Pick location to save plot (graph.png default): ")
+			saveloc = 'output/graph.png'
+			# Future Addition: Pick Frequency Data to Graph...give options.
+			# Otherewise, just keep as an internal function.
 			freqDict = self.ngrams(userInput=False) # this may vary...
 
-		if gtype == 'barh':
+		if gtype == 'barh': # WIP
+			# Alan's code
 			df_from_dic = pd.DataFrame(freqDict.items(), columns=["words", "count"])
 			fig, ax = plt.subplots(figsize=(8,8))
 			df_from_dic.iloc[0:50] # trying to get the first 50 items only
@@ -355,9 +358,11 @@ class Visuals:
 			    ax=ax,
 			    color='green'
 			)
+			# Are you able to restrict the amount of items graphed?
+			# i.e. Top 50 Most Common Keywords?
 		elif gtype == 'pie':
-			pass # dataframe has a pie chart grapher.
-
+			# Alan's Code 
+			pass
 		elif gtype == 'boxplot':
 			fig, ax = plt.subplots(figsize=(5, 5))
 			plt.boxplot([v for v in freqDict.values()])
@@ -366,13 +371,15 @@ class Visuals:
 		ax.set_title(gtitle)
 		plt.savefig(saveloc)
 		plt.clf()
-		print(f'Completed graphing. Figure generated at {saveloc}')
+		if userInput:
+			print(f'Completed graphing. Figure generated at {saveloc}\n')
 
 
 	def polSub(self):
 		'''Plots polarity and subjectivity.
-
+	
 		Notes:
+			> Requires changes to mining.py to get # values for subjectivity and sentiment.
 			> WIP
 
 		Outputs
@@ -380,78 +387,83 @@ class Visuals:
 		polSub.png
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
+
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(self.df['account sentiment'][i],
+			plt.scatter(self.df['account sentiment'],
 						self.df['account subjectivity'], 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
-		plt.xlabel('Sentiment/Polarity')
+		plt.xlabel('Sentiment')
 		plt.ylabel('Subjectivity')
-		# plt.show()
-		plt.imshow()
+		plt.savefig('output/polsub.png')
+		plt.clf()
 
 
-	def analytics(self, spec=''):
+	def analytics(self):
 		'''Completes some general analytics.
 
 		Notes:
 			> Currently Displays Percent Positive and Negative Tweets
 			> More to add in the future.
+			> Maybe Rename Function
+			> maybe combine valueCounts into here as well.
 
 		Outputs
 		-------
 		analytics.png
 			...
 		'''
+		print('Running Analytics...')
+		postweets = self.df[self.df['account sentiment'] == 'positive']
+		neuttweets = self.df[self.df['account sentiment'] == 'neutral']
+		negtweets = self.df[self.df['account sentiment'] == 'negative']
 
-		ptweets = self.df[self.df.Analysis == 'Negative']
-		ptweets = ptweets['Tweets']
-
-		ntweets = self.df[self.df.Analysis == 'Negative']  # ''?
-		ntweets = ntweets['Tweets']
-
-		posPercent = round((ptweets.shape[0] / self.df.shape[0])*100, 1)
-		negPercent = round((ntweets.shape[0] / self.df.shape[0])*100, 1)
+		posPercent = round((postweets.shape[0] / self.df.shape[0])*100, 1)
+		neutPercent = round((neuttweets.shape[0] / self.df.shape[0])*100, 1)
+		negPercent = round((negtweets.shape[0] / self.df.shape[0])*100, 1)
 
 		print(f'Percent Positive Tweets: {posPercent}%')
-		print(f'Percent Negative Tweets: {posNegative}%')
+		print(f'Percent Neutral Tweets {neutPercent}%')
+		print(f'Percent Negative Tweets: {negPercent}%')
+		print('Completed Analytics.\n')
 
 
 	def valueCounts(self):
 		'''Prints and Plots the Counts of Postive/Negative Tweets
 
 		Notes:
-			> WIP
-			> Add account subjectivity
+			> Requires column addition for subjectivity label.
 
 		Outputs
 		-------
 		valueCounts.png
-			Generated...
+			Generated and saved to output folder.
 		'''
+		print('Running valueCounts...')
 		v = self.df['account sentiment'].value_counts()
-		print(f'Value Counts: {v}')
+		print(f'Value Counts: \n{v}')
 
-		# Plot and Visualize the Counts
+		# Plot and Visualize Sentiment Counts
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment')
 		plt.ylabel('Counts')
 		self.df['account sentiment'].value_counts().plot(kind='bar')
-		plt.show()
+		plt.savefig('output/valueCounts_sentiment.png')
+		plt.clf()
+		print('Completed valueCounts.\n')
 
-
-	def phraseModeling(self):
-		'''Bigram model, detects frequently used two word phrases.
-
-		Notes:
-			> Based on gensim model.
-			> Not tested, might use as an alternative method.
-
+		# Plot and Visualize Subjectivity Counts
 		'''
-		from gensim.models.phrases import Phrases, Phraser
-		tokenized_train = [t.split() for t in x_train]
-		phrases = Phrases(tokenized_train)
-		bigram = Phraser(phrases)
+		v = self.df['account subjectivity'].value_counts()
+		print(f'Value Counts: \n{v}')
+		plt.title('Subjectivity Analysis')
+		plt.xlabel('Subjectivity')
+		plt.ylabel('Counts')
+		self.df['account subjectivity'].value_counts().plot(kind='bar')
+		plt.show()
+		plt.savefig('valueCounts_subjectivity.png')
+		plt.clf()
+		'''

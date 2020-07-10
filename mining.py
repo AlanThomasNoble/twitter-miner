@@ -19,7 +19,8 @@ access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
 access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 def tweepyAuthentication():
-    # Basis of the Twitter App
+    '''Completes authentication steps for tweepy'''
+
     # Creating the authentication object
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     # Setting your access token and secret

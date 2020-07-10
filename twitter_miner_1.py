@@ -334,7 +334,7 @@ def obtain_tweets_from_search(api):
 
     # open the file
     # f_ptr = open(f'input/list_of_keywords.txt', 'r')
-    f_ptr = open(f'input/crash_keywords.txt', 'r')
+    f_ptr = open(f'input/list_of_keywords.txt', 'r')
     with open('output/KEYWORD_SEARCH_OUTPUT.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user',
