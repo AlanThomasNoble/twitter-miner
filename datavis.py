@@ -203,16 +203,6 @@ class Visuals:
 		# self.df = pd.read_sql_query(query, conn) #
 		# conn.close()
 
-		# Read File
-		try:
-			import pdb; pdb.set_trace()
-			self.df = pd.read_csv(f'output/{fileName}.csv')
-		except FileNotFoundError:
-			raise ValueError  # Exits Program
-
-		# Clean Tweets
-		self.df['account status'] = self.df['account status'].apply(cleanData)
-
 		# Init Arguments
 		self.fileName = fileName
 		self.visualizations = visualizations.split(', ')
@@ -220,18 +210,38 @@ class Visuals:
 		# Specs
 		plt.style.use('fivethirtyeight')
 
+		# Read File
+		try:
+			self.df = pd.read_csv(f'output/{fileName}.csv')
+			# Filter By Date
+			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
+			if 'start_date' and 'end_date' in kwargs:
+				mask = (self.df['post date-time'] >= kwargs['start_date']) & (self.df['post date-time'] <= kwargs['end_date'])
+				self.df.loc[mask]
+				self.df = self.df.loc[mask]
+			# Sort Values By Date [Delete if Desired]
+			self.df = self.df.sort_values(by='post date-time', ascending=True)
+		except FileNotFoundError:
+			raise ValueError  # Exits Program
+
+		# Clean Tweets
+		self.df['account status'] = self.df['account status'].apply(cleanData)
+
+
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
 				phraseModeling=self.phraseModeling,
 				ngrams=self.ngrams,
 				polSub=self.polSub,
-				valueCounts=self.valueCounts)
+				valueCounts=self.valueCounts,
+				graph=self.graph)
 		# Evaluate
 		for vis in self.visualizations:
 			if vis in modes:
 				modes[vis]()
 			else:
 				raise ValueError
+
 
 	def preprocessing(self):
 		'''Tokenize Text and Remove Stopwords'''
@@ -296,16 +306,11 @@ class Visuals:
 		import pprint as pp
 		freqDictSorted = sorted(
 			freqDict.items(), key=lambda item: item[1], reverse=False)
+		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
 
-		pp.pprint(freqDictSorted)
-		plt.ion()
-		fdist.plot(50, cumulative=False,
-					title=f"50 Most Common Phrases [n={n}]")
-		plt.savefig('output/freqDist.png')
-		plt.ioff()
-		plt.show()
-		plt.clf()
-		print('\nCompleted ngrams. Figure generated at output/freqDist.png')
+		# Graph (Horizontal Bar)
+		self.graph(freqDict, 'barh', f"50 Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
+		print('\nCompleted ngrams.')
 
 
 	def wordCloud(self):
@@ -329,6 +334,39 @@ class Visuals:
 		plt.savefig('output/wordCloud.png')
 		plt.clf()
 		print('\nImage generated at output/wordCloud.png')
+
+
+	def graph(self, freqDict=None, gtype='barh', gtitle='Graph', saveloc='output/graph.png', userInput=True):
+		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input'''
+		if userInput:
+			print("Starting Graphing...")
+			gtype = input("Choose graph type (barh, pie, boxplot): ")
+			gtitle = input("Pick graph title: ")
+			saveloc = input("Pick location to save plot (graph.png default): ")
+			freqDict = self.ngrams(userInput=False) # this may vary...
+
+		if gtype == 'barh':
+			df_from_dic = pd.DataFrame(freqDict.items(), columns=["words", "count"])
+			fig, ax = plt.subplots(figsize=(8,8))
+			df_from_dic.iloc[0:50] # trying to get the first 50 items only
+			df_from_dic.sort_values(by="count").plot.barh(
+			    x='words', 
+			    y='count',
+			    ax=ax,
+			    color='green'
+			)
+		elif gtype == 'pie':
+			pass # dataframe has a pie chart grapher.
+
+		elif gtype == 'boxplot':
+			fig, ax = plt.subplots(figsize=(5, 5))
+			plt.boxplot([v for v in freqDict.values()])
+
+		# Show, Save, and Close Graph
+		ax.set_title(gtitle)
+		plt.savefig(saveloc)
+		plt.clf()
+		print(f'Completed graphing. Figure generated at {saveloc}')
 
 
 	def polSub(self):
@@ -417,13 +455,3 @@ class Visuals:
 		tokenized_train = [t.split() for t in x_train]
 		phrases = Phrases(tokenized_train)
 		bigram = Phraser(phrases)
-
-	def boxPlot(self):
-		'''based on tweet/token length
-
-		Notes:
-			> WIP
-		'''
-		fig, ax = plt.subplots(figsize=(5, 5))
-		plt.boxplot(self.df.pre_clean_len)
-		plt.show()

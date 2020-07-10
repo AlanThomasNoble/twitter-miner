@@ -5,8 +5,8 @@ from datavis import Visuals
 import mining
 #####################################################################################################
 
-# Provides initial output to the user
 def start():
+    '''Provides initial output to user'''
     choice = input("What would you like to do today? \n(1) mine\n(2) visuals\tchoice: ")
 
     if choice == 'mine':
@@ -17,8 +17,8 @@ def start():
         exit_program()
 
 
-# Initial output for Mining
 def miningStart():
+    '''Initial output for Mining'''
     print("\nThis software will be used to mine Twitter data.")
     print("\n(1) User - obtain a set of a given user's tweets using an account's user ID")
     print("(2) List - quickly retrival of tweets from a list of users (cannot guarentee full text)")
@@ -41,37 +41,50 @@ def miningStart():
         exit_program()
 
 
-# Initial output for Visuals
 def visualsStart():
+    '''Initial output for Visuals'''
     print("\nVisualization Types")
     print("(1) wordCloud")
     print("(2) ngrams")
     print("(3) polSub")
-    print("(4) valueCount\n")
+    print("(4) valueCount")
+    print("(5) graph\n")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
     stream = os.popen('cd output && ls *.csv') # or *.db
     files = stream.read().split()
     [print(f"({files.index(f)+1}) {f}") for f in files]
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
+    print("\nAdditional Specifications ('select' or 'pass'): ")
+    choice = input("Would you like to analyze tweets from certain dates? ")
+    start_date = None; end_date = None
+    if choice == 'select':
+        start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
+        end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
+    print()
+    kwargs = dict(start_date=start_date, end_date=end_date)
+    kwargs = dict(filter(lambda k: k[1], kwargs.items())) # Remove all None
 
     try:
-        v = Visuals(fileName, visType)
+        v = Visuals(fileName, visType, **kwargs)
     except ValueError:
         exit_program()
 
 
-# Returns json showing the current limits of the API calls
 def check_limit(api):
-    # check for '/statuses/user_timeline'
-    # check for '/statuses/lookup'
-    # check for '/statuses/show/:id'
-    # check for '/search/tweets'
+    '''Returns json showing the current limits of the API calls
+
+    Notes:
+        > check for '/statuses/user_timeline'
+        > check for '/statuses/lookup'
+        > check for '/statuses/show/:id'
+        > check for '/search/tweets'
+    '''
     print(api.rate_limit_status())
 
 
 def exit_program(err_msg='Invalid Input'):
-    '''exits software safely'''
+    '''Exits software safely'''
     print(f'\n{err_msg}')
     print("Exited program.")
     sys.exit()

@@ -47,7 +47,7 @@ def convertToCSV(fileName, params='*'):
     '''
     conn = sqlite3.connect(f'{fileName}.db')
     c = conn.cursor()
-    query = f'SELECT {params} FROM {fileName}'
+    query = f'SELECT {params} -FROM {fileName}'
     results = pd.read_sql_query(query, conn)
     results.to_csv(f"{fileName}.csv", index=True)
     conn.close()
@@ -74,6 +74,8 @@ def getInfo(status, t, retweet, func):
     else:
         tweet = not status.is_quote_status and not bool(status.in_reply_to_status_id)
         quoted = status.is_quote_status
+        if quoted:
+            quoted_text = None # WIP
         reply = bool(status.in_reply_to_status_id)
         retweet = False
 
@@ -110,7 +112,7 @@ def exit_program(err_msg='Invalid Input'):
 '''Mining Functions'''
 #####################################################################################################
 def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
-    '''outputs a set of given user's tweets'''
+    '''Outputs a set of given user's tweets'''
     try:
         user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
         print("\nObtaining user's tweets...")
@@ -178,13 +180,20 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         convertToCSV(fileName) # Remove as Desired.
         exit_program()
 
-# Action: quickly outputs tweets from a list of users
-# Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
-# The file containing the list of accounts is found in the input folder
-# Requirements
-# 1) Each account id corresponds to a PUBLIC accounts
-# 2) Each account id is spelled correctly
+
 def PARTIAL_TEXT_tweets_from_list_users(api):
+    '''Quickly outputs tweets from a list of users
+
+    Notes: 
+        > Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
+        > The file containing the list of accounts is found in the input folder
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+    '''
+
     print("Obtaining tweets from a list of users...")
     print()
 
@@ -213,13 +222,19 @@ def PARTIAL_TEXT_tweets_from_list_users(api):
     print("Tweets can be found in PARTIAL_TEXT_list_of_accounts_output.txt")
 
 
-# Action: outputs FULL TEXT tweets from a list of users
-# The file containing the list of accounts is found in the input folder
-# WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
-# Requirements
-# 1) Each account id corresponds to a PUBLIC accounts
-# 2) Each account id is spelled correctly
 def FULL_TEXT_tweets_from_list_users(api):
+    '''Outputs FULL TEXT tweets from a list of users
+
+    Notes: 
+        > The file containing the list of accounts is found in the input folder
+        > WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+    '''
+
     num_tweets = input("Enter the number of tweets you would like per user in the list: ")
     print()
     print("Obtaining tweets from a list of users...")
@@ -328,6 +343,27 @@ def FULL_TEXT_tweets_from_list_users(api):
 # Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
 # q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
 def obtain_tweets_from_search(api):
+    '''Obtains tweets from a search query and returns list of json objects for each result from query.
+
+    Notes: 
+        > The file containing the list of accounts is found in the input folder
+        > WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
+        > If we have list of keywords, we will be able to generate hundreds of tweets
+        > Enter a list of twitter search queries (Ex: Autonomous Vehicles, Self Driving Technology, etc.) in list_of_keywords.txt
+        > Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
+        > q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+
+    Returns
+    -------
+    JSON object:
+        tweet text, tweet id, tweet hashtag information, and the tweet user information
+    '''
+
     num_tweets = input("Enter the number of tweets you would like per keyword in the list (enter >= 5 tweets): ")
     print()
     print("Obtaining tweets from a list of keywords...")
