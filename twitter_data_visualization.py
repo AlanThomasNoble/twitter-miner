@@ -13,7 +13,7 @@ from twitter_miner_1 import exit_program
 
 stopwords_set = set(stopwords.words('english'))
 
-# The UI provided to the user
+# The UI provided to the cur user
 def start():
     print()
     print("This software will be used to output data visualizations.")
