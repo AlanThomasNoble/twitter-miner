@@ -128,6 +128,7 @@ def word_freq_generator(processed_tweets):
 
     # calculate frequencies
     counter_list = collections.Counter(words_list_final)
+    print(counter_list.most_common(int(num)))
 
     return counter_list.most_common(int(num))
 

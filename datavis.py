@@ -5,6 +5,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
 import re
+import sys
+from collections import Counter
 
 # Internal Libraries
 import stopwords  # sourced from spacy
@@ -340,16 +342,20 @@ class Visuals:
 		Therefore, allowing any type of graph with any type of data'''
 		if userInput:
 			print("Starting Graphing...")
-			gtype = input("Choose graph type (barh, pie, boxplot): ")
-			gtitle = input("Pick graph title: ")
-			saveloc = 'output/graph.png'
+			gtype = input("Choose graph type (bar, boxplot): ")
 			# Future Addition: Pick Frequency Data to Graph...give options.
 			# Otherewise, just keep as an internal function.
 			freqDict = self.ngrams(userInput=False) # this may vary...
 
-		if gtype == 'barh': # WIP
+		saveloc = ''
+		if gtype == 'bar': # WIP
 			# Alan's code
-			df_from_dic = pd.DataFrame(freqDict.items(), columns=["words", "count"])
+			saveloc = 'output/word_freq_graph_bar.png'
+			print()
+			num = input("Enter the number of results you would like in your frequency graph: ")
+			counter_dict = Counter(freqDict)
+			print(counter_dict.most_common(int(num)))
+			df_from_dic = pd.DataFrame(counter_dict.most_common(int(num)), columns=["words", "count"])
 			fig, ax = plt.subplots(figsize=(8,8))
 			df_from_dic.iloc[0:50] # trying to get the first 50 items only
 			df_from_dic.sort_values(by="count").plot.barh(
@@ -358,18 +364,15 @@ class Visuals:
 			    ax=ax,
 			    color='green'
 			)
-			# Are you able to restrict the amount of items graphed?
-			# i.e. Top 50 Most Common Keywords?
-		elif gtype == 'pie':
-			# Alan's Code 
-			pass
 		elif gtype == 'boxplot':
+			saveloc = 'output/word_freq_graph_boxplot.png'
 			fig, ax = plt.subplots(figsize=(5, 5))
 			plt.boxplot([v for v in freqDict.values()])
 
 		# Show, Save, and Close Graph
-		ax.set_title(gtitle)
+		ax.set_title("Word Frequency in Tweets")
 		plt.savefig(saveloc)
+		plt.show()
 		plt.clf()
 		if userInput:
 			print(f'Completed graphing. Figure generated at {saveloc}\n')
