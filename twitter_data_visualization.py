@@ -40,13 +40,13 @@ def start():
 # sentiment = positive -> returns list of positive tweets
 # sentiment = negative -> returns list of negative tweets
 # just based off account status as of now -> maybe add retweet status later
-def get_list_based_on_sentiment(sentiment, file):
+def get_list_based_on_sentiment(file):
     col_list = ["account status", "account sentiment"]
     df = pandas.read_csv(f"output/{file}", usecols=col_list)
 
     processed_tweets = []
     for ind in df.index: 
-        if isinstance(df["account status"][ind], str) and df["account sentiment"][ind] == sentiment:
+        if isinstance(df["account status"][ind], str):
             text = cleanTxt(df["account status"][ind])
             processed_tweets.append(text)
 
@@ -195,12 +195,12 @@ def pos_vs_neg_pie(file):
 def main():
     user_input = start()
     if user_input[0] == "Pos":
-        processed_tweets = get_list_based_on_sentiment("positive", user_input[1] + ".csv")
+        processed_tweets = get_list_based_on_sentiment(user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Positive Sentiment")
 
     elif user_input[0] == "Neg":
-        processed_tweets = get_list_based_on_sentiment("negative", user_input[1] + ".csv")
+        processed_tweets = get_list_based_on_sentiment(user_input[1] + ".csv")
         dic = word_freq_generator(processed_tweets)
         show_freq_graph(dic, "Negative Sentiment")
 
