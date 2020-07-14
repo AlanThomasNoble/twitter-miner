@@ -442,17 +442,28 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
+		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
+
 		print('Running valueCounts...')
 		v = self.df['account sentiment'].value_counts()
 		print(f'Value Counts: \n{v}')
 
-		# Plot and Visualize Sentiment Counts
 		plt.title('Sentiment Analysis')
-		plt.xlabel('Sentiment')
-		plt.ylabel('Counts')
-		self.df['account sentiment'].value_counts().plot(kind='bar')
-		plt.savefig('output/valueCounts_sentiment.png')
-		plt.clf()
+		if(chart_type == "bar"):
+			# Plot and Visualize Sentiment Counts
+			plt.xlabel('Sentiment')
+			plt.ylabel('Counts')
+			self.df['account sentiment'].value_counts().plot(kind='bar')
+			plt.savefig('output/valueCounts_sentiment_bar.png')
+			plt.clf()
+		if(chart_type == "pie"):
+			labels = 'Positive', 'Neutral', 'Negative'
+			sizes = [v.positive, v.neutral, v.negative]
+			colors = ['yellowgreen', 'gold', 'lightcoral']
+			plt.pie(sizes, labels=labels, colors=colors,
+				autopct='%1.1f%%', shadow=True, startangle=140)
+			plt.savefig('output/valueCounts_sentiment_pie.png')
+			plt.axis('equal')
 		print('Completed valueCounts.\n')
 
 		# Plot and Visualize Subjectivity Counts
