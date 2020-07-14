@@ -36,7 +36,7 @@ def cleanData(text):
 
 	# Removals
 	text = re.sub(r'@[A-Za-z0-9]+', '', text)  # Removes mentions
-	text = re.sub(r'#[A-Za-z0-9_]+', '', text)  # Removes hashtags
+	text = re.sub(r'#([^\s]+)', r'\1', text) #Replace #word with word
 	text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*', '', text) # Removes hyperlink
 	text = re.sub('[\s]+', ' ', text)  # Removes additional white spaces
 	text = text.strip('\'"').lstrip().rstrip() # Trim
