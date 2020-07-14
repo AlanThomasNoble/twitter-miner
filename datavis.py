@@ -37,9 +37,7 @@ def cleanData(text):
 	# Removals
 	text = re.sub(r'@[A-Za-z0-9]+', '', text)  # Removes mentions
 	text = re.sub(r'#([^\s]+)', r'\1', text) #Replace #word with word
-	text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','',text) # Removes hyperlink
-	text = re.sub('[\s]+', ' ', text)  # Removes additional white spaces
-	text = text.strip('\'"').lstrip().rstrip() # Trim
+	text = re.sub(r'((www\.[^\s]+)|(https?://[^\s]+))','',text) # Removes hyperlink
 
 	emoji_patterns = re.compile(
 		"(["
@@ -59,6 +57,10 @@ def cleanData(text):
 
 	# Return
 	text = emoji_patterns.sub('', text)
+	
+	text = re.sub(r'[\s]+', ' ', text)  # Removes additional white spaces
+	text = text.strip('\'"').lstrip().rstrip() # Trim
+	
 	return text
 
 
@@ -336,7 +338,7 @@ class Visuals:
 		print('Completed wordCloud\n')
 
 
-	def freqGraph(self, freqDict=None, gtype='barh', gtitle='Graph', saveloc='output/graph.png', userInput=True):
+	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Graph', saveloc='output/graph.png', userInput=True):
 		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input
 		The entire functionality of this function is based on a frequency dictionary.
 		Therefore, allowing any type of graph with any type of data'''
