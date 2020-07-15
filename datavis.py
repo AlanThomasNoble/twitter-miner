@@ -247,23 +247,28 @@ class Visuals:
 		# Listing Options
 		print("\nDataframe Editing Parameters")
 		print("(1) datetime - analyze a region of tweets based on date and time")
-		print("(2) ...")
+		print("(2) sentiment - analyze a region of tweets based on sentiment")
 		print("(3) ...")
 
 		# User Selections
-		valid = ('datetime', ) # tuple (,)
+		valid = ('datetime', 'sentiment') # tuple (,)
 		params = input("Choose Desired Parameters (Separate By Commas): ")
 		params = params.split(', ')
-		check = [True for p in params if p in valid]
-		if not list(filter(lambda x: x, check)):
+		check = [True if p in valid else False for p in params]
+		if False in check:
 			raise ValueError # Exit Program
 
 		# Dataframe Editing
 		if 'datetime' in params:
+			print('Editing datetime...')
 			start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
 			end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
 			mask = (self.df['post date-time'] >= start_date) & (self.df['post date-time'] <= end_date)
-			self.df.loc[mask]
+			self.df = self.df.loc[mask]
+		if 'sentiment' in params:
+			print('Editing sentiment...')
+			sentiment = input("Select Tweet Sentiment (positive, negative, neutral): ")
+			mask = (self.df['account sentiment'] == sentiment)
 			self.df = self.df.loc[mask]
 		print()
 
@@ -476,7 +481,6 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
-
 		print('Running valueCounts...')
 		v = self.df['account sentiment'].value_counts()
 		print(f'Value Counts: \n{v}')
@@ -499,7 +503,7 @@ class Visuals:
 			plt.savefig('output/valueCounts_sentiment_pie.png')
 			plt.axis('equal')
 			plt.clf()
-			
+
 		print('Completed valueCounts.\n')
 
 		# Plot and Visualize Subjectivity Counts
