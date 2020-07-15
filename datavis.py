@@ -32,13 +32,13 @@ def cleanData(text):
 		String of cleaned input text
 	'''
 
-	text = str(text).lower()  # Lowers text (Simplifies processing)
+	# Lower text (Simplifies processing)
+	text = str(text).lower()
 
 	# Removals
 	text = re.sub(r'@[A-Za-z0-9]+', '', text)  # Removes mentions
 	text = re.sub(r'#([^\s]+)', r'\1', text) #Replace #word with word
 	text = re.sub(r'((www\.[^\s]+)|(https?://[^\s]+))','',text) # Removes hyperlink
-
 	emoji_patterns = re.compile(
 		"(["
 		"\U0001F1E0-\U0001F1FF"  # flags (iOS)
@@ -54,10 +54,9 @@ def cleanData(text):
 		"\U00002702-\U000027B0"  # Dingbats
 		"])"
 	)
-
-	# Return
 	text = emoji_patterns.sub('', text)
 	
+	# Cleanup
 	text = re.sub(r'[\s]+', ' ', text)  # Removes additional white spaces
 	text = text.strip('\'"').lstrip().rstrip() # Trim
 	
@@ -176,10 +175,17 @@ class Visuals:
 	A class used to store visualization effects and analyses.
 	'''
 
-	def __init__(self, fileName, visualizations, **kwargs): 
+	def __init__(self, fileName, visualizations): 
 		'''
 		Reads file, applys specifications, and starts visualizations.
 
+		Notes:
+			> # Read from DB File to DataFrame
+					conn = sqlite3.connect(f'{fileName}.db')
+					c = conn.cursor() # unnecesssary?
+					query = f'SELECT * FROM {fileName}' 
+					self.df = pd.read_sql_query(query, conn) #
+					conn.close()
 		Parameters
 		----------
 		fileName : str
@@ -200,16 +206,9 @@ class Visuals:
 			If input data is not valid. Exits program.
 		'''
 
-		# Read from DB File to DataFrame
-		# conn = sqlite3.connect(f'{fileName}.db')
-		# c = conn.cursor() # unnecesssary?
-		# query = f'SELECT * FROM {fileName}' 
-		# self.df = pd.read_sql_query(query, conn) #
-		# conn.close()
-
 		# Init Arguments
 		self.fileName = fileName
-		self.visualizations = visualizations.split(', ')
+		self.visualizations = visualizations.split(', ') 
 
 		# Specs
 		plt.style.use('fivethirtyeight')
@@ -217,16 +216,16 @@ class Visuals:
 		# Read File
 		try:
 			self.df = pd.read_csv(f'output/{fileName}.csv')
-			# Filter By Date (Try between_time(start, end) function?)
 			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
-			if 'start_date' and 'end_date' in kwargs:
-				mask = (self.df['post date-time'] >= kwargs['start_date']) & (self.df['post date-time'] <= kwargs['end_date'])
-				self.df.loc[mask]
-				self.df = self.df.loc[mask]
-			# Sort Values By Date [Delete if Desired]
-			self.df = self.df.sort_values(by='post date-time', ascending=True)
 		except FileNotFoundError:
 			raise ValueError  # Exits Program
+
+		# Edit DataFrame
+		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
+		if constrain == 'y':
+			self.editDataframe()
+		# Sort Values By Date [Delete if Desired]
+		self.df = self.df.sort_values(by='post date-time', ascending=True)
 
 		# Clean Tweets
 		self.df['account status'] = self.df['account status'].apply(cleanData)
@@ -237,12 +236,38 @@ class Visuals:
 				polSub=self.polSub,
 				valueCounts=self.valueCounts,
 				freqGraph=self.freqGraph)
+		
 		# Evaluate
 		for vis in self.visualizations:
 			if vis in modes:
 				modes[vis]()
 			else:
 				raise ValueError
+
+
+	def editDataframe(self):
+		# Listing Options
+		print("\nDataframe Editing Parameters")
+		print("(1) datetime - analyze a region of tweets based on date and time")
+		print("(2) ...")
+		print("(3) ...")
+
+		# User Selections
+		valid = ('datetime', ) # tuple (,)
+		params = input("Choose Desired Parameters (Separate By Commas): ")
+		params = params.split(', ')
+		check = [True for p in params if p in valid]
+		if not list(filter(lambda x: x, check)):
+			raise ValueError # Exit Program
+
+		# Dataframe Editing
+		if 'datetime' in params:
+			start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
+			end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
+			mask = (self.df['post date-time'] >= start_date) & (self.df['post date-time'] <= end_date)
+			self.df.loc[mask]
+			self.df = self.df.loc[mask]
+		print()
 
 
 	def preprocessing(self):

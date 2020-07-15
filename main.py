@@ -51,23 +51,14 @@ def visualsStart():
     print("(5) analytics")
     print("(6) freqGraph\n")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
-    print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
+    print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
     stream = os.popen('cd output && ls *.csv') # or *.db
     files = stream.read().split()
     [print(f"({files.index(f)+1}) {f}") for f in files]
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
-    print("\nAdditional Specifications ('select' or 'pass'): ")
-    dateChoice = input("Would you like to analyze tweets from certain dates? ")
-    start_date = None; end_date = None
-    if dateChoice == 'select':
-        start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
-        end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
-    print()
-    kwargs = dict(start_date=start_date, end_date=end_date) # add more as needed.
-    kwargs = dict(filter(lambda k: k[1], kwargs.items())) # Remove all None
 
     try:
-        v = Visuals(fileName, visType, **kwargs)
+        v = Visuals(fileName, visType)
     except ValueError:
         exit_program()
 
