@@ -192,8 +192,6 @@ class Visuals:
 			Name of the file.
 		visualizations : str
 			Visualizations desired.
-		**kwargs : multiple, optional
-			Additional Specifications.
 
 		Attributes
 		----------
@@ -334,8 +332,8 @@ class Visuals:
 			freqDict.items(), key=lambda item: item[1], reverse=False)
 		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
 
-		# Graph (Horizontal Bar) ...using boxplot for now, change to barh once implemented
-		self.freqGraph(freqDict, 'boxplot', f"50 Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
+		# Graph (Horizontal Bar)
+		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
 		print('Image generated at output/freqDist.png')
 		print('Completed ngrams.\n')
 
@@ -363,23 +361,24 @@ class Visuals:
 		print('Completed wordCloud\n')
 
 
-	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Graph', saveloc='output/graph.png', userInput=True):
+	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/freqGraph.png', userInput=True):
 		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input
 		The entire functionality of this function is based on a frequency dictionary.
 		Therefore, allowing any type of graph with any type of data'''
+		
 		if userInput:
 			print("Starting Graphing...")
 			gtype = input("Choose graph type (bar, boxplot): ")
 			# Future Addition: Pick Frequency Data to Graph...give options.
 			# Otherewise, just keep as an internal function.
 			freqDict = self.ngrams(userInput=False) # this may vary...
+			# file saved default to output/graph.png
 
-		saveloc = ''
+		# Collect Results
+		num = input("Enter the number of results you would like in your frequency graph: ")
 		if gtype == 'bar': # WIP
 			# Alan's code
 			saveloc = 'output/word_freq_graph_bar.png'
-			print()
-			num = input("Enter the number of results you would like in your frequency graph: ")
 			counter_dict = Counter(freqDict)
 			print(counter_dict.most_common(int(num)))
 			df_from_dic = pd.DataFrame(counter_dict.most_common(int(num)), columns=["words", "count"])
@@ -392,12 +391,17 @@ class Visuals:
 			    color='green'
 			)
 		elif gtype == 'boxplot':
+			# https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.DataFrame.boxplot.html
+			# use pandas, like above? generalize and reduce code duplication?
 			saveloc = 'output/word_freq_graph_boxplot.png'
 			fig, ax = plt.subplots(figsize=(5, 5))
 			plt.boxplot([v for v in freqDict.values()])
+		# add pie? i think it could be cool here.
 
 		# Show, Save, and Close Graph
-		ax.set_title("Word Frequency in Tweets")
+		ax.set_title(gtitle.replace('**', num))
+		# ^, I use replace to add the number of frequency entries in the graph "post-emptively"
+		# no worries, if ** is not found, gtitle is returned and simply that is used.
 		plt.savefig(saveloc)
 		plt.show()
 		plt.clf()
@@ -472,11 +476,11 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
-		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
 
 		print('Running valueCounts...')
 		v = self.df['account sentiment'].value_counts()
 		print(f'Value Counts: \n{v}')
+		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
 
 		plt.title('Sentiment Analysis')
 		if(chart_type == "bar"):
@@ -494,6 +498,8 @@ class Visuals:
 				autopct='%1.1f%%', shadow=True, startangle=140)
 			plt.savefig('output/valueCounts_sentiment_pie.png')
 			plt.axis('equal')
+			plt.clf()
+			
 		print('Completed valueCounts.\n')
 
 		# Plot and Visualize Subjectivity Counts
