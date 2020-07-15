@@ -164,6 +164,14 @@ def lemmatizeText(tokens):
 	return list(token.lemma_ for token in text)
 
 
+def displayDataframe(df):
+	'''displays current dataframe'''
+	'''not tested'''
+	pd.set_option("display.max_rows", None, "display.max_columns", None)
+	print(df)
+	pandas.reset_option('all')
+
+
 
 
 #####################################################################################################
