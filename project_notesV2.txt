@@ -1,0 +1,43 @@
+General Project Notes
+(Updated project_notes file)
+
+Tasks Todo...
+> datavis.py
+	/Helper Functions/
+		- finish lemmmatizeText(), expandAbbr() (expandAbbr() may not be that useful)
+		- test displayDataframe() function
+
+	/Visuals Class/
+		- Figure out how to save images to output WITHOUT parts of the image being cut out. (autofit options?)
+
+		/editDataframe()/
+			- subjectivity filtering (once columns are added)
+		/freqGraph()/
+			- generalize some code.
+			- show user the maximum number of entries that they can use?
+				-> if it is not a sentiment based...chart.
+			- add pie chart?
+				-> we can limit num entries for pie chart by writing this in user input() message for num.
+		/polSub()/
+			- Requires column additions to get # values for subjectivity and sentiment.
+			- then, test.
+		/analytics()/
+			- eventually phase out and merge with valueCounts()
+		/valueCounts()/
+			- deal with `sizes = [v.positive, v.neutral, v.negative]` error when filtering tweets.
+			- Requires column additions for subjectivity value counts.
+
+> twitter_miner1.py
+	- nothing major, mostly cleanup stuff if anything
+	- adding columns
+	- merging json writing code to getInfo()?
+
+Next Steps...
+> More Visualizations
+	- any ideas?
+
+> App Dev
+	- Python Eel Packager: https://www.youtube.com/watch?v=iy2aKf9AAvc
+		-> Quick way to use Python backend to develop a cross-platform desktop application using only JavaScript, HTML, and the Python EEL Package.
+
+> ...
