@@ -233,9 +233,11 @@ def FULL_TEXT_tweets_from_list_users(api):
             'user', 
             'post date-time', 
             'account status', 
-            'account sentiment', 
+            'account sentiment',
+            'account sentiment score', 
             'retweet status', 
             'retweet sentiment',
+            'retweet sentiment score',
             'post location', 
             'tweet id', 
             'account subjectivity', 
@@ -264,42 +266,50 @@ def FULL_TEXT_tweets_from_list_users(api):
                 # w_ptr.write(f"{running_count}) {status.created_at}\n")
                 # w_ptr.write(str(running_count) + ") " + str(status.created_at) + "\n")
                 retweet_status = ""
-                retweet_exists = False
                 account_status = ""
-                account_exists = False
                 account_sentiment = ""
                 retweet_sentiment = ""
+                account_sentiment_score = ""
+                retweet_sentiment_score = ""
                 account_subjectivity = ""
                 retweet_subjectivity = ""
 
+                # retweet_exists = False
+                # account_exists = False
                 try:
                     retweet_status = status.retweeted_status.full_text
-                    retweet_exists = True
+                    # retweet_exists = True
                     retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
                     retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                 except AttributeError:
                     account_status = status.full_text
-                    account_exists = True
+                    # account_exists = True
                     account_sentiment = twitter_nlp.mood_function(account_status)[0]
+                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
                     account_subjectivity = twitter_nlp.mood_function(account_status)[2]
+
                     retweet_status = ""
-                    retweet_exists = False
+                    # retweet_exists = False
                     try:
                         retweet_status = status.quoted_status.full_text
-                        retweet_exists = True
+                        # retweet_exists = True
                         retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
                         retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                     except AttributeError:
                         retweet_status = ""
-                        retweet_exists = False
+                        # retweet_exists = False
 
                 writer.writerow({
                     'user': account,
                     'post date-time': status.created_at,
                     'account status': account_status,
                     'account sentiment': account_sentiment,
+                    'account sentiment score': account_sentiment_score,
                     'retweet status': retweet_status,
                     'retweet sentiment': retweet_sentiment,
+                    'retweet sentiment score': retweet_sentiment_score,
                     'post location': status.place, # only available if user adds on IOS or andriod / not on web
                     'tweet id': tweet_id,
                     'account subjectivity': account_subjectivity,
@@ -341,9 +351,11 @@ def obtain_tweets_from_search(api):
             'search query', 
             'post date-time', 
             'account status', 
-            'account sentiment', 
+            'account sentiment',
+            'account sentiment score', 
             'retweet status', 
             'retweet sentiment',
+            'retweet sentiment score',
             'post location', 
             'tweet id', 
             'account subjectivity', 
@@ -364,34 +376,40 @@ def obtain_tweets_from_search(api):
 
                 # initializing all the fieldnames
                 retweet_status = ""
-                retweet_exists = False
                 account_status = ""
-                account_exists = False
                 account_sentiment = ""
                 retweet_sentiment = ""
+                account_sentiment_score = ""
+                retweet_sentiment_score = ""
                 account_subjectivity = ""
                 retweet_subjectivity = ""
 
+                # retweet_exists = False
+                # account_exists = False
                 try:
                     retweet_status = status.retweeted_status.full_text
-                    retweet_exists = True
+                    # retweet_exists = True
                     retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
                     retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                 except AttributeError:
                     account_status = status.full_text
-                    account_exists = True
+                    # account_exists = True
                     account_sentiment = twitter_nlp.mood_function(account_status)[0]
+                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
                     account_subjectivity = twitter_nlp.mood_function(account_status)[2]
+
                     retweet_status = ""
-                    retweet_exists = False
+                    # retweet_exists = False
                     try:
                         retweet_status = status.quoted_status.full_text
-                        retweet_exists = True
+                        # retweet_exists = True
                         retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
                         retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
                     except AttributeError:
                         retweet_status = ""
-                        retweet_exists = False
+                        # retweet_exists = False
 
                 writer.writerow({
                     'user': status.user.screen_name,
@@ -399,8 +417,10 @@ def obtain_tweets_from_search(api):
                     'post date-time': status.created_at,
                     'account status': account_status,
                     'account sentiment': account_sentiment,
+                    'account sentiment score': account_sentiment_score,
                     'retweet status': retweet_status,
                     'retweet sentiment': retweet_sentiment,
+                    'retweet sentiment score': retweet_sentiment_score,
                     'post location': status.place, # only available if user adds on IOS or andriod / not on web
                     'tweet id': tweet.id,
                     'account subjectivity': account_subjectivity,
