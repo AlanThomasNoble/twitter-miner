@@ -3,7 +3,6 @@ ALakrintis
 LawOfDriverless
 _AVPodcast
 selfdriving360
-smartavcars
 sensible4ltd
 NewsfromTRL
 AUVSI
