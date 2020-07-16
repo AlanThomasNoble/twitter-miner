@@ -15,6 +15,11 @@ from datavis import Visuals
 #####################################################################################################
 
 
+
+#####################################################################################################
+'''Helper Functions'''
+#####################################################################################################
+
 # Provides initial output to the user
 def minerStart():
     print()
@@ -33,34 +38,37 @@ def minerStart():
     return data
 
 
-# Provides Secondary Output to User for Visualizations
-def visualsStart():
-    # add spec option later if needed.
-    print("\nVisualization Types")
-    print("(1) wordCloud")
-    print("(2) ngrams")
-    print("(3) polSub")
-    print("(4) valueCount\n")
-    visType = input("Choose Desired Visualizations (Separate By Commas): ")
-    print("Available Files [Please Do Not Include Extension in Entry (.csv)]: ")
-    os.system('cd output && ls *.csv') # or *.db
-    fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
-
-    return visType, fileName
-
-
-# Returns json showing the current limits of the API calls
 def check_limit(api):
-    # check for '/statuses/user_timeline'
-    # check for '/statuses/lookup'
-    # check for '/statuses/show/:id'
-    # check for '/search/tweets'
+    '''
+        Returns json showing the current limits of the API calls
+        check for '/statuses/user_timeline'
+        check for '/statuses/lookup'
+        check for '/statuses/show/:id'
+        check for '/search/tweets'
+    '''
     print(api.rate_limit_status())
+
+
+def exit_program(err_msg='Manual exit'):
+    '''exits software safely'''
+    print(f'\n{err_msg}')
+    print("Exited program.")
+    sys.exit()
 
 
 # Action: Converts DB Files to CSV Format
 # Specify Params for Desired Columns (Default is Everything *)
 def convertToCSV(fileName, params='*'):
+    '''Converts DB Files to CSV Format
+
+    Parameters
+    ----------
+    fileName: str
+        Name of File
+
+    params: str
+        Specifies selection parameters for SQL 
+    '''
     conn = sqlite3.connect(f'{fileName}.db')
     c = conn.cursor()
     query = f'SELECT {params} FROM {fileName}'
@@ -72,6 +80,7 @@ def convertToCSV(fileName, params='*'):
 
 # Action: Outputs Data Based on Status Object (Defaults to Single User)
 def getInfo(status, t, retweet, func='single_user'):
+    '''Outputs Data Based on Status Object'''
     user = status.author.screen_name
     tweet_text = t
     date_time = status.created_at.__str__()
@@ -95,8 +104,14 @@ def getInfo(status, t, retweet, func='single_user'):
     # Add your own if block here for the corresponding function.
 
 
-# Action: outputs a set of a given user's tweets
+
+#####################################################################################################
+'''Mining Functions'''
+#####################################################################################################
+
 def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
+    '''Outputs a set of given user's tweets'''
+
     try:
         user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
         print()
@@ -116,7 +131,18 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
 
         # Create Table (datatypes: https://www.sqlite.org/datatype3.html)
         if not append:
-            c.execute('''CREATE TABLE tweets (user TEXT, tweet_text TEXT, date_time DATETIME, location TEXT, id INTEGER, hashtags TEXT, user_mentions TEXT, tweet BOOLEAN, quoted BOOLEAN, reply BOOLEAN, retweet BOOLEAN)''')
+            c.execute('''CREATE TABLE tweets (
+                user TEXT, 
+                post_date_time TEXT, 
+                account_status TEXT, 
+                account_sentiment score TEXT, 
+                retweet_status TEXT,
+                retweet_sentiment TEXT,
+                retweet_sentiment_score TEXT,
+                post_location TEXT, 
+                tweet_id TEXT, 
+                account_subjectivity TEXT, 
+                retweet_subjectivity TEXT)''')
 
         # init loop variables
         firstIteration = True; incoming = []; oldest = [];
@@ -133,18 +159,59 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
             counter = len(incoming)
             for tweet in incoming:
                 # storeData(tweet): add function
-                time.sleep(1.2) # Ensure no Runtime Error
+                time.sleep(1) # Ensure no Runtime Error
                 status = api.get_status(tweet.id, tweet_mode="extended") # obtain tweet
-                try: # check if retweet
-                    t = status.retweeted_status.full_text
-                    data = getInfo(status,t,True) # Returns a Tuple
-                    query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-                    c.execute(query, data)
-                except AttributeError: # Not a retweet
-                    t = status.full_text
-                    data = getInfo(status,t,False) # Returns a Tuple
-                    query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-                    c.execute(query, data)
+
+                retweet_status = ""
+                account_status = ""
+                account_sentiment = ""
+                retweet_sentiment = ""
+                account_sentiment_score = ""
+                retweet_sentiment_score = ""
+                account_subjectivity = ""
+                retweet_subjectivity = ""
+
+                # retweet_exists = False
+                # account_exists = False
+                try:
+                    retweet_status = status.retweeted_status.full_text
+                    # retweet_exists = True
+                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
+                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                except AttributeError:
+                    account_status = status.full_text
+                    # account_exists = True
+                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
+                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
+                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
+
+                    retweet_status = ""
+                    # retweet_exists = False
+                    try:
+                        retweet_status = status.quoted_status.full_text
+                        # retweet_exists = True
+                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
+                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
+                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                    except AttributeError:
+                        retweet_status = ""
+                        # retweet_exists = False
+
+                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                data = tuple((
+                    status.user.screen_name, 
+                    status.created_at, 
+                    account_status, 
+                    account_sentiment_score, 
+                    retweet_status,
+                    retweet_sentiment,
+                    retweet_sentiment_score,
+                    status.place, 
+                    tweet.id, 
+                    account_subjectivity, 
+                    retweet_subjectivity))
+                c.execute(query, data)
 
                 # Decrement
                 counter -= 1
@@ -177,13 +244,20 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         convertToCSV(fileName) # Remove as Desired.
         exit_program()
 
-# Action: quickly outputs tweets from a list of users
-# Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
-# The file containing the list of accounts is found in the input folder
-# Requirements
-# 1) Each account id corresponds to a PUBLIC accounts
-# 2) Each account id is spelled correctly
+
 def PARTIAL_TEXT_tweets_from_list_users(api):
+    '''Quickly outputs tweets from a list of users
+
+    Notes: 
+        > Can occasionally obtain a PARTIAL TEXT tweet but will QUICKLY run
+        > The file containing the list of accounts is found in the input folder
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+    '''
+
     print("Obtaining tweets from a list of users...")
     print()
 
@@ -212,13 +286,19 @@ def PARTIAL_TEXT_tweets_from_list_users(api):
     print("Tweets can be found in PARTIAL_TEXT_list_of_accounts_output.txt")
 
 
-# Action: outputs FULL TEXT tweets from a list of users
-# The file containing the list of accounts is found in the input folder
-# WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
-# Requirements
-# 1) Each account id corresponds to a PUBLIC accounts
-# 2) Each account id is spelled correctly
 def FULL_TEXT_tweets_from_list_users(api):
+    '''Outputs FULL TEXT tweets from a list of users
+
+    Notes: 
+        > The file containing the list of accounts is found in the input folder
+        > WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+    '''
+
     num_tweets = input("Enter the number of tweets you would like per user in the list: ")
     print()
     print("Obtaining tweets from a list of users...")
@@ -228,7 +308,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     f_ptr = open(f'input/list_of_accounts.txt', 'r')
     # w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
     
-    with open('output/FULL_TEXT_LIST.csv', 'w', newline='') as csvfile:
+    with open('output/LIST_OF_ACCOUNTS_TWEETS.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user', 
             'post date-time', 
@@ -329,14 +409,27 @@ def FULL_TEXT_tweets_from_list_users(api):
     print("Tweets can be found in FULL_TEXT_LIST.csv")
 
 
-# Action: obtains tweets from a search query and returns list of json objects for each result from query
-# Return: JSON objects have the tweet text, tweet id, tweet hashtag information, and the tweet user information
-# If we have list of keywords, we will be able to generate hundreds of tweets
-# Enter a list of twitter search queries (Ex: Autonomous Vehicles, Self Driving Technology, etc.) in list_of_keywords.txt
-# IMPORTANT DETAILS:
-# Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
-# q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
 def obtain_tweets_from_search(api):
+    '''Obtains tweets from a search query and returns list of json objects for each result from query.
+
+    Notes: 
+        > The file containing the list of accounts is found in the input folder
+        > WILL OBTAIN FULL TEXT AND RETWEET TEXT BUT WILL TAKE A LONG TIME TO RUN
+        > If we have list of keywords, we will be able to generate hundreds of tweets
+        > Enter a list of twitter search queries (Ex: Autonomous Vehicles, Self Driving Technology, etc.) in list_of_keywords.txt
+        > Keep in mind that the search index has a 7-day limit. In other words, no tweets will be found for a date older than one week.
+        > q – the search query string of 500 characters maximum, including operators. Queries may additionally be limited by complexity.
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+
+    Returns
+    -------
+    CSV with all the tweets and analystics data
+    '''
+
     num_tweets = input("Enter the number of tweets you would like per keyword in the list (enter >= 5 tweets): ")
     print()
     print("Obtaining tweets from a list of keywords...")
@@ -434,12 +527,6 @@ def obtain_tweets_from_search(api):
             print(running_count, "tweets collected...")
         print(f"{running_count} tweets generated")
         print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
- 
-
-# Action: exits software
-def exit_program():
-    print("Exited program.")
-    sys.exit()
 
 
 def main():
@@ -462,12 +549,6 @@ def main():
 
     if user_input in validCalls:
         validCalls[user_input](api)
-    elif user_input == 'Visuals':
-        vis, file = visualsStart()
-        try:
-            v = Visuals(file, vis)
-        except ValueError:
-            exit_program()
     else:
         exit_program()
 

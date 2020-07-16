@@ -1,0 +1,5 @@
+,user,post_date_time,account_status,account_sentiment,retweet_status,retweet_sentiment,retweet_sentiment_score,post_location,tweet_id,account_subjectivity,retweet_subjectivity
+0,Tesla,2020-07-02 18:30:16,"Tesla Q2 2020 Vehicle Production &amp; Deliveries | Tesla, Inc. https://t.co/hgJDXLWmBg",0.0,,,,,1278757900568023041,0.0,
+1,Tesla,2020-06-20 20:44:50,https://t.co/26o1bAP14v,0.0,,,,,1274443110362214405,0.0,
+2,Tesla,2020-06-09 02:00:25,https://t.co/MROOCn4w9f,0.0,,,,,1270173874844397569,0.0,
+3,Tesla,2020-05-10 02:22:59,https://t.co/X9dzVXLBLx,0.0,,,,,1259307919721459712,0.0,
