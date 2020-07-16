@@ -399,13 +399,13 @@ def FULL_TEXT_tweets_from_list_users(api):
                 # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
                 # which is the max output for the rate limit twitter sets
                 time.sleep(1)
-            print(running_count, "tweets collected")
+                print(f'Running Count: {running_count}\r', end="")
 
         # w_ptr.write("\n")
         # w_ptr.write("\n")
 
     f_ptr.close()
-    print(running_count, "tweets generated.")
+    print("Completed mining via list of accounts.")
     print("Tweets can be found in FULL_TEXT_LIST.csv")
 
 
@@ -524,8 +524,8 @@ def obtain_tweets_from_search(api):
                 # we can only make 180 search api calls -> 1 search api call per 5 sec
                 # in every 15 min
                 time.sleep(1)
-            print(running_count, "tweets collected...")
-        print(f"{running_count} tweets generated")
+            print(f'Running Count: {running_count}\r', end="")
+        print("Completed mining via keyword search.")
         print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
 
 
