@@ -221,7 +221,7 @@ class Visuals:
 
 		# Read File
 		try:
-			self.df = pd.read_csv(f'output/{fileName}.csv')
+			self.df = pd.read_csv(f'output/visuals/{fileName}.csv')
 			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
 		except FileNotFoundError:
 			raise ValueError  # Exits Program
@@ -346,8 +346,8 @@ class Visuals:
 		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
 
 		# Graph (Horizontal Bar)
-		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/freqDist.png',userInput=False)
-		print('Image generated at output/freqDist.png')
+		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist.png',userInput=False)
+		print('Image generated at output/visuals/freqDist.png')
 		print('Completed ngrams.\n')
 
 
@@ -369,12 +369,12 @@ class Visuals:
 		wc = wc.generate_from_frequencies(freqDict)
 		# plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
-		wc.to_file('output/wordCloud.png')
-		print('Image generated at output/wordCloud.png')
+		wc.to_file('output/visuals/wordCloud.png')
+		print('Image generated at output/visuals/wordCloud.png')
 		print('Completed wordCloud\n')
 
 
-	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/freqGraph.png', userInput=True):
+	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph.png', userInput=True):
 		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input
 		The entire functionality of this function is based on a frequency dictionary.
 		Therefore, allowing any type of graph with any type of data'''
@@ -385,13 +385,13 @@ class Visuals:
 			# Future Addition: Pick Frequency Data to Graph...give options.
 			# Otherewise, just keep as an internal function.
 			freqDict = self.ngrams(userInput=False) # this may vary...
-			# file saved default to output/graph.png
+			# file saved default to output/visuals/graph.png
 
 		# Collect Results
 		num = input("Enter the number of results you would like in your frequency graph: ")
 		if gtype == 'bar': # WIP
 			# Alan's code
-			saveloc = 'output/word_freq_graph_bar.png'
+			saveloc = 'output/visuals/word_freq_graph_bar.png'
 			counter_dict = Counter(freqDict)
 			print(counter_dict.most_common(int(num)))
 			df_from_dic = pd.DataFrame(counter_dict.most_common(int(num)), columns=["words", "count"])
@@ -406,7 +406,7 @@ class Visuals:
 		elif gtype == 'boxplot':
 			# https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.DataFrame.boxplot.html
 			# use pandas, like above? generalize and reduce code duplication?
-			saveloc = 'output/word_freq_graph_boxplot.png'
+			saveloc = 'output/visuals/word_freq_graph_boxplot.png'
 			fig, ax = plt.subplots(figsize=(5, 5))
 			plt.boxplot([v for v in freqDict.values()])
 		# add pie? i think it could be cool here.
@@ -445,7 +445,7 @@ class Visuals:
 		plt.title('Sentiment Analysis')
 		plt.xlabel('Sentiment')
 		plt.ylabel('Subjectivity')
-		plt.savefig('output/polsub.png')
+		plt.savefig('output/visuals/polsub.png')
 		plt.clf()
 
 
@@ -500,7 +500,7 @@ class Visuals:
 			plt.xlabel('Sentiment')
 			plt.ylabel('Counts')
 			self.df['account sentiment'].value_counts().plot(kind='bar')
-			plt.savefig('output/valueCounts_sentiment_bar.png')
+			plt.savefig('output/visuals/valueCounts_sentiment_bar.png')
 			plt.clf()
 		if(chart_type == "pie"):
 			labels = 'Positive', 'Neutral', 'Negative'
@@ -508,7 +508,7 @@ class Visuals:
 			colors = ['yellowgreen', 'gold', 'lightcoral']
 			plt.pie(sizes, labels=labels, colors=colors,
 				autopct='%1.1f%%', shadow=True, startangle=140)
-			plt.savefig('output/valueCounts_sentiment_pie.png')
+			plt.savefig('output/visuals/valueCounts_sentiment_pie.png')
 			plt.axis('equal')
 			plt.clf()
 
