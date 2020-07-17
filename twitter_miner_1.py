@@ -114,6 +114,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
 
     try:
         user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
+        num = input("Enter the number of tweets you want to mine: ")
         print()
         print("Obtaining user's tweets...")
         print()
@@ -134,7 +135,8 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
             c.execute('''CREATE TABLE tweets (
                 user TEXT, 
                 post_date_time TEXT, 
-                account_status TEXT, 
+                account_status TEXT,
+                account_sentiment TEXT, 
                 account_sentiment score TEXT, 
                 retweet_status TEXT,
                 retweet_sentiment TEXT,
@@ -202,7 +204,8 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 data = tuple((
                     status.user.screen_name, 
                     status.created_at, 
-                    account_status, 
+                    account_status,
+                    account_sentiment, 
                     account_sentiment_score, 
                     retweet_status,
                     retweet_sentiment,
@@ -222,6 +225,11 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 # Print Running Count
                 runningCount += 1
                 print(f'Running Count: {runningCount}\r', end="")
+
+                if(runningCount == num):
+                    break
+            if(runningCount == num):
+                break
 
             # Update Set of Tweet Objects
             incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
