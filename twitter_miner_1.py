@@ -114,6 +114,8 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
 
     try:
         user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
+        print()
+        print("Enter -1 if no specific number is desired.")
         number_mine = input("Enter the number of tweets you want to mine from this account: ")
         print()
         print("Obtaining user's tweets...")

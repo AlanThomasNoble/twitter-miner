@@ -1,3 +1,17 @@
 ,user,post_date_time,account_status,account_sentiment,account_sentiment_score,retweet_status,retweet_sentiment,retweet_sentiment_score,post_location,tweet_id,account_subjectivity,retweet_subjectivity
 0,Tesla,2020-07-02 18:30:16,"Tesla Q2 2020 Vehicle Production &amp; Deliveries | Tesla, Inc. https://t.co/hgJDXLWmBg",neutral,0.0,,,,,1278757900568023041,0.0,
 1,Tesla,2020-06-20 20:44:50,https://t.co/26o1bAP14v,neutral,0.0,,,,,1274443110362214405,0.0,
+2,Tesla,2020-06-09 02:00:25,https://t.co/MROOCn4w9f,neutral,0.0,,,,,1270173874844397569,0.0,
+3,Tesla,2020-05-10 02:22:59,https://t.co/X9dzVXLBLx,neutral,0.0,,,,,1259307919721459712,0.0,
+4,Tesla,2020-04-09 00:41:11,"Tesla wins 5/6 Kelley Blue Book awards
+
+🏆 Best Overall
+🏆 Best Value
+🏆 Most Refined
+🏆 Best Performance
+🏆 Best Styling",positive,0.6,,,,,1248048276714094592,0.25,
+5,Tesla,2020-04-05 23:18:35,Engineering update on the Tesla ventilator,neutral,0.0,,,,,1246940326838718464,0.0,
+6,Tesla,2020-03-22 20:30:51,@UCLAHealth @elonmusk @3M Glad we can help! We’re sending masks and supplies to as many hospitals as we can.,positive,0.5625,,,,,1241824684586352640,0.75,
+7,Tesla,2020-03-16 17:40:52,"Model Y deliveries begin!
+
+https://t.co/ZhuiM5MTOf https://t.co/3gX6MBPmhp",neutral,0.0,,,,,1239607579518484480,0.0,
