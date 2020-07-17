@@ -83,7 +83,8 @@ def exit_program(err_msg='Invalid Input'):
 
 
 def main():
-    start()
+    visualsStart()
+    #start()
 
 
 if __name__ == "__main__":

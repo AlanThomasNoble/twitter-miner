@@ -506,12 +506,12 @@ class Visuals:
 			# Plot and Visualize Sentiment Counts
 			plt.xlabel('Sentiment')
 			plt.ylabel('Counts')
-			self.df['account sentiment'].value_counts().plot(kind='bar')
+			v.plot(kind='bar')
 			plt.savefig('output/visuals/valueCounts_sentiment_bar.png')
 			plt.clf()
 		if(chart_type == "pie"):
-			labels = 'Positive', 'Neutral', 'Negative'
-			sizes = [v.positive, v.neutral, v.negative]
+			labels = [str(k) for k in v.keys()]
+			sizes = [int(v[l]) for l in labels]
 			colors = ['yellowgreen', 'gold', 'lightcoral']
 			plt.pie(sizes, labels=labels, colors=colors,
 				autopct='%1.1f%%', shadow=True, startangle=140)
