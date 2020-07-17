@@ -114,7 +114,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
 
     try:
         user_id = input("Enter user's id (Ex: _AVPodcast, selfdriving360, etc.): ")
-        num = input("Enter the number of tweets you want to mine: ")
+        number_mine = input("Enter the number of tweets you want to mine from this account: ")
         print()
         print("Obtaining user's tweets...")
         print()
@@ -137,7 +137,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 post_date_time TEXT, 
                 account_status TEXT,
                 account_sentiment TEXT, 
-                account_sentiment score TEXT, 
+                account_sentiment_score TEXT, 
                 retweet_status TEXT,
                 retweet_sentiment TEXT,
                 retweet_sentiment_score TEXT,
@@ -200,7 +200,7 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                         retweet_status = ""
                         # retweet_exists = False
 
-                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"
                 data = tuple((
                     status.user.screen_name, 
                     status.created_at, 
@@ -226,10 +226,9 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 runningCount += 1
                 print(f'Running Count: {runningCount}\r', end="")
 
-                if(runningCount == num):
-                    break
-            if(runningCount == num):
-                break
+                if(runningCount == int(number_mine)):
+                    sys.exit()
+
 
             # Update Set of Tweet Objects
             incoming = api.user_timeline(screen_name=user_id,count=200,max_id=oldest,tweet_mode='extended', include_rts=True)
@@ -243,10 +242,10 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         print('SQL File Located in tweets.db')
         convertToCSV(fileName) # Remove as Desired.
 
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, SystemExit):
         conn.commit()
         conn.close()
-        print('\nStopped Early...')
+        print('\nStopped early or number of tweets wanted has been achieved...')
         print(f'Tweets Retrieved {runningCount}')
         print(f'SQL File Located in {fileName}.db')
         convertToCSV(fileName) # Remove as Desired.
