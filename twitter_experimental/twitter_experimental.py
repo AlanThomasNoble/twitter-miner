@@ -40,7 +40,7 @@ premium_search_args = load_credentials("twitter_experimental/twitter_keys.yaml",
 with open(FILENAME, 'a', encoding='utf-8') as f:
     f_ptr = open(f'input/list_of_keywords_2.txt', 'r')
     for query in f_ptr:
-        rule = gen_rule_payload(query,
+        rule = gen_rule_payload(query.rstrip('\n'),
                                 results_per_call=RESULTS_PER_CALL,
                                 from_date=FROM_DATE,
                                 to_date=TO_DATE
@@ -55,61 +55,7 @@ with open(FILENAME, 'a', encoding='utf-8') as f:
             n += 1
             if n % PRINT_AFTER_X == 0:
                 print('{0}: {1}'.format(str(n), tweet['created_at']))
+            tweet["Alan_keyword_query"] = query 
             json.dump(tweet, f)
             f.write('\n')
 print('done')
-
-# import yaml
-
-# consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
-# consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
-# access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
-# access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
-
-# config = dict(
-#     search_tweets_api = dict(
-#         account_type = 'premium',
-#         endpoint = 'https://api.twitter.com/1.1/tweets/search/fullarchive/experiment.json',
-#         consumer_key = consumer_key,
-#         consumer_secret = consumer_secret
-#     )
-# )
-
-# with open('experiment/twitter_keys_fullarchive.yaml', 'w') as config_file:
-#     yaml.dump(config, config_file, default_flow_style=False)
-
-# import json
-# from searchtweets import load_credentials
-
-# premium_search_args = load_credentials("twitter_keys_fullarchive.yaml",
-#                                        yaml_key="search_tweets_api",
-#                                        env_overwrite=False)
-# print(premium_search_args)
-
-
-# from searchtweets import gen_rule_payload
-
-# rule = gen_rule_payload("from:AVminer2", 
-#                         results_per_call=100,
-#                         from_date="2019-03-01 00:00",
-#                         to_date="2020-06-30 00:00"
-#                        )
-
-
-# from searchtweets import ResultStream
-
-# rs = ResultStream(rule_payload=rule,
-#                   max_results=100,
-#                   **premium_search_args)
-# print(rs)
-
-
-# with open("twitter_experimental/experimental_output.jsonl", 'a', encoding='utf-8') as f:
-#     n = 0
-#     for tweet in rs.stream():
-#         n += 1
-#         if n % 1== 0:
-#             print('{0}: {1}'.format(str(n), tweet['created_at']))
-#         json.dump(tweet, f)
-#         f.write('\n')
-# print('done')

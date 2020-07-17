@@ -1,17 +1,13 @@
 user,post date-time,account status,account sentiment,account sentiment score,retweet status,retweet sentiment,retweet sentiment score,post location,tweet id,account subjectivity,retweet subjectivity
 AVminer2,2020-07-09 18:52:00,https://t.co/zpQjYUYyDH,neutral,0.0,,,,,1281300086069309442,0.0,
 ALakrintis,2020-07-16 08:19:57,Spiking Neural Networks Place Data In Time #AI #CMOS applications #spikingneuralnetworks #SNN https://t.co/Z5LxggqFkX,neutral,0.0,,,,,1283677739980029952,0.0,
-LawOfDriverless,2020-07-16 16:12:27,Interesting to see @oxbotica going in big promoting the benefits of localised sensors over GPS in this @Daily_Express article: https://t.co/PuLS6A68TZ https://t.co/ICXHGxGdjt,positive,0.25,,,,,1283796646640463872,0.3,
+LawOfDriverless,2020-07-17 15:46:23,,,,New article from me in @NewLawJournal this week re e-scooters and micromobility (paywalled): https://t.co/zhZyTGEvcb,positive,0.13636363636363635,,1284152474937569282,,0.45454545454545453
 _AVPodcast,2019-12-06 18:21:19,"""The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG.""
 https://t.co/oQHpt8THMb #autonomousvehicles",positive,0.05,,,,,1203016585960493056,0.30000000000000004,
-selfdriving360,2020-07-16 19:32:40,"#selfdrivingcars #driverlesscars #autonomouscars #autonomousvehicles #selfdriving #driverless #cars #automotive #transport 
+selfdriving360,2020-07-17 15:06:00,"#GM and #Honda unveiled the Origin, a new self-driving vehicle with no steering wheel or pedals - via @cnni 
 
-https://t.co/oX7upcTvWJ",neutral,0.0,,,,,1283847033908953088,0.0,
-sensible4ltd,2020-07-16 10:10:15,"How can we ensure that autonomous vehicles are safe?
+Read/Add #SelfDrivingCars news
+https://t.co/bpSD60NE0w
 
-Obstacle detection gives the autonomous vehicles situational awareness by using sensor fusion. Read our latest blog to learn more. #autonomousvehicles #robotics #engineering #machinelearning https://t.co/RBgen2g1rV",positive,0.45999999999999996,,,,,1283705498143993857,0.6599999999999999,
-NewsfromTRL,2020-07-16 07:15:02,"https://t.co/TPshRxcfvI
-
-Our mission is to create safe transport for everyone.  Usually our research takes many years to influence policy change.  It's gratifying for our experts to see our evidence applied swiftly. Every life saved is progress towards  #VisionZero.   #roadsafety",positive,0.25,,,,,1283661405388967936,0.4166666666666667,
-AUVSI,2020-07-16 19:30:07,AUVSI urges Congress to fund the Unmanned Maritime Systems R&amp;D efforts included in the @USNavy FY21 budget request. Full funding of these programs will support the warfighter &amp; encourage sustained investment by industry in #unmanned systems @defense_news https://t.co/OwYQlpqWNW,positive,0.35,,,,,1283846391454998529,0.55,
-AI_motive,2020-07-14 14:38:20,"We have spent a good bit of 2020 working from home because of #COVID19. Thanks to the flattened curve in Hungary, we've been back in the office since July and – in compliance with all safety regulations – are working hard to deliver our vision: bringing #automateddriving to all! https://t.co/rF6Oy9TW5U",positive,0.08708333333333333,,,,,1283048189747253251,0.2883333333333334,
+#driverlesscars #autonomouscars #autonomousvehicles 
+#selfdriving #driverless #robocars #cars #automotive https://t.co/uS9Unrk1HJ",positive,0.13636363636363635,,,,,1284142312834994176,0.45454545454545453,
