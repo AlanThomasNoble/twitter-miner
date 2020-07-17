@@ -236,15 +236,13 @@ class Visuals:
 		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
 		if constrain == 'y':
 			self.editDataframe()
-		# Sort Values By Date [Delete if Desired]
-		self.df = self.df.sort_values(by='post date-time', ascending=True)
+		self.df = self.df.sort_values(by='post date-time', ascending=True) # Sort Values By Date [Delete if Desired]
 
 		# Clean Tweets and Correct Spellings
 		self.df['account status'] = self.df['account status'].apply(cleanData)
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
-				analytics=self.analytics,
 				ngrams=self.ngrams,
 				polSub=self.polSub,
 				valueCounts=self.valueCounts,
@@ -282,8 +280,9 @@ class Visuals:
 			self.df = self.df.loc[mask]
 		if 'sentiment' in params:
 			print('Editing sentiment...')
-			sentiment = input("Select Tweet Sentiment (positive, negative, neutral): ")
-			mask = (self.df['account sentiment'] == sentiment)
+			sentiments = input("Select Tweet Sentiments (positive, negative, neutral): ")
+			sentiments = sentiments.split(', ')
+			mask = (self.df['account sentiment'].isin(sentiments))
 			self.df = self.df.loc[mask]
 		print()
 
@@ -455,20 +454,7 @@ class Visuals:
 		plt.savefig('output/visuals/polsub.png')
 		plt.clf()
 
-
-	def analytics(self):
-		'''Completes some general analytics.
-
-		Notes:
-			> Currently Displays Percent Positive and Negative Tweets
-			> More to add in the future.
-			> Maybe Rename Function
-			> maybe combine valueCounts into here as well.
-
-		Outputs
-		-------
-		analytics.png
-			...
+# Old Analytics Code For Reference
 		'''
 		print('Running Analytics...')
 		postweets = self.df[self.df['account sentiment'] == 'positive']
@@ -483,10 +469,10 @@ class Visuals:
 		print(f'Percent Neutral Tweets {neutPercent}%')
 		print(f'Percent Negative Tweets: {negPercent}%')
 		print('Completed Analytics.\n')
-
+		'''
 
 	def valueCounts(self):
-		'''Prints and Plots the Counts of Postive/Negative Tweets
+		'''Prints Counts and Percentages of Subjectivity and Polarity
 
 		Notes:
 			> Requires column addition for subjectivity label.
@@ -496,11 +482,27 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
-		print('Running valueCounts...')
-		v = self.df['account sentiment'].value_counts()
-		print(f'Value Counts: \n{v}')
-		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
 
+		print('Running valueCounts...')
+		
+		# Analysis
+		v = self.df['account sentiment'].value_counts()
+		keys = [str(k) for k in v.keys()]
+		values = [int(v[k]) for k in keys] 
+		d = dict(zip(keys, values))
+		posPercent = round((d.get('positive',0) / self.df.shape[0])*100, 1)
+		neutPercent = round((d.get('neutral',0) / self.df.shape[0])*100, 1)
+		negPercent = round((d.get('negative',0) / self.df.shape[0])*100, 1)
+
+		# Printing
+		print(f'Value Counts: \n{v}')
+		print('Percentages:')
+		print(f'Percent Positive Tweets: {posPercent}%')
+		print(f'Percent Neutral Tweets {neutPercent}%')
+		print(f'Percent Negative Tweets: {negPercent}%')
+
+		# Plotting
+		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
 		plt.title('Sentiment Analysis')
 		if(chart_type == "bar"):
 			# Plot and Visualize Sentiment Counts
@@ -510,10 +512,8 @@ class Visuals:
 			plt.savefig('output/visuals/valueCounts_sentiment_bar.png')
 			plt.clf()
 		if(chart_type == "pie"):
-			labels = [str(k) for k in v.keys()]
-			sizes = [int(v[l]) for l in labels]
 			colors = ['yellowgreen', 'gold', 'lightcoral']
-			plt.pie(sizes, labels=labels, colors=colors,
+			plt.pie(values, labels=keys, colors=colors,
 				autopct='%1.1f%%', shadow=True, startangle=140)
 			plt.savefig('output/visuals/valueCounts_sentiment_pie.png')
 			plt.axis('equal')
@@ -522,7 +522,7 @@ class Visuals:
 		print('Completed valueCounts.\n')
 
 		# Plot and Visualize Subjectivity Counts
-		'''
+		r'''
 		v = self.df['account subjectivity'].value_counts()
 		print(f'Value Counts: \n{v}')
 		plt.title('Subjectivity Analysis')

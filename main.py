@@ -48,8 +48,7 @@ def visualsStart():
     print("(2) ngrams")
     print("(3) polSub (WIP)")
     print("(4) valueCounts")
-    print("(5) analytics")
-    print("(6) freqGraph\n")
+    print("(5) freqGraph\n")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
     stream = os.popen('cd output && ls *.csv') # or *.db
