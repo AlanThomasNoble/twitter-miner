@@ -60,6 +60,10 @@ def cleanData(text):
 	text = re.sub(r'[\s]+', ' ', text)  # Removes additional white spaces
 	text = text.strip('\'"').lstrip().rstrip() # Trim
 	
+	# Spelling Correction (https://textblob.readthedocs.io/en/dev/quickstart.html#spelling-correction)
+	from textblob import TextBlob
+	text = str(TextBlob(text).correct()) 
+
 	return text
 
 
@@ -233,8 +237,9 @@ class Visuals:
 		# Sort Values By Date [Delete if Desired]
 		self.df = self.df.sort_values(by='post date-time', ascending=True)
 
-		# Clean Tweets
+		# Clean Tweets and Correct Spellings
 		self.df['account status'] = self.df['account status'].apply(cleanData)
+
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
 				analytics=self.analytics,
