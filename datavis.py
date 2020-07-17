@@ -15,7 +15,7 @@ import stopwords  # sourced from spacy
 '''Helper Functions'''
 #####################################################################################################
 
-def cleanData(text):
+def cleanData(text, correctSpelling=False):
 	'''Removes Emojis, Mentions, Hashtags, and https Hyperlinks
 
 	Notes: 
@@ -61,8 +61,10 @@ def cleanData(text):
 	text = text.strip('\'"').lstrip().rstrip() # Trim
 	
 	# Spelling Correction (https://textblob.readthedocs.io/en/dev/quickstart.html#spelling-correction)
-	from textblob import TextBlob
-	text = str(TextBlob(text).correct()) 
+	# Taking a really long time... to finish.
+	if correctSpelling:
+		from textblob import TextBlob
+		text = str(TextBlob(text).correct()) 
 
 	return text
 
@@ -225,7 +227,7 @@ class Visuals:
 
 		# Read File
 		try:
-			self.df = pd.read_csv(f'output/visuals/{fileName}.csv')
+			self.df = pd.read_csv(f'output/{fileName}.csv')
 			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
 		except FileNotFoundError:
 			raise ValueError  # Exits Program
