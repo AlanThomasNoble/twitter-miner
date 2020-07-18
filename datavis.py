@@ -261,10 +261,10 @@ class Visuals:
 		print("\nDataframe Editing Parameters")
 		print("(1) datetime - analyze a region of tweets based on date and time")
 		print("(2) sentiment - analyze a region of tweets based on sentiment")
-		print("(3) ...")
+		print("(3) subjectivity - analyze a region of tweets based on subjectivity")
 
 		# User Selections
-		valid = ('datetime', 'sentiment') # tuple (,)
+		valid = ('datetime', 'sentiment', 'subjectivity')
 		params = input("Choose Desired Parameters (Separate By Commas): ")
 		params = params.split(', ')
 		check = [True if p in valid else False for p in params]
@@ -280,9 +280,15 @@ class Visuals:
 			self.df = self.df.loc[mask]
 		if 'sentiment' in params:
 			print('Editing sentiment...')
-			sentiments = input("Select Tweet Sentiments (positive, negative, neutral): ")
+			sentiments = input("Select Sentiments (positive, negative, neutral): ")
 			sentiments = sentiments.split(', ')
 			mask = (self.df['account sentiment'].isin(sentiments))
+			self.df = self.df.loc[mask]
+		if 'subjectivity' in params:
+			print('Editing subjectivity...')
+			subjs = input("Select Subjectivities (very objective, objective, subjective, very subjective): ")
+			subjs = subjs.split(', ')
+			mask = (self.df['account subjectivity'].isin(subjs))
 			self.df = self.df.loc[mask]
 		print()
 
@@ -444,8 +450,8 @@ class Visuals:
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(self.df['account sentiment'],
-						self.df['account subjectivity'], 
+			plt.scatter(self.df['account sentiment_score'],
+						self.df['account subjectivity_score'], 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
@@ -486,34 +492,58 @@ class Visuals:
 		print('Running valueCounts...')
 		
 		# Analysis
-		v = self.df['account sentiment'].value_counts()
-		keys = [str(k) for k in v.keys()]
-		values = [int(v[k]) for k in keys] 
-		d = dict(zip(keys, values))
-		posPercent = round((d.get('positive',0) / self.df.shape[0])*100, 1)
-		neutPercent = round((d.get('neutral',0) / self.df.shape[0])*100, 1)
-		negPercent = round((d.get('negative',0) / self.df.shape[0])*100, 1)
+		vc_sent = self.df['account sentiment'].value_counts()
+		keys_sent = [str(k) for k in vc_sent.keys()]
+		values_sent = [int(vc_sent[k]) for k in keys_sent] 
+		d_sent = dict(zip(keys_sent, values_sent))
+		posPercent = round((d_sent.get('positive',0) / self.df.shape[0])*100, 1)
+		neutPercent = round((d_sent.get('neutral',0) / self.df.shape[0])*100, 1)
+		negPercent = round((d_sent.get('negative',0) / self.df.shape[0])*100, 1)
+
+		'''
+		vc_subj = self.df['account sentiment'].value_counts()
+		keys_subj = [str(k) for k in vc_subj.keys()]
+		values_subj = [int(vc_subj[k]) for k in keys_subj] 
+		d_subj = dict(zip(keys_subj, values))
+		vobjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
+		objPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
+		subjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
+		vsubjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
+		'''
 
 		# Printing
-		print(f'Value Counts: \n{v}')
+		print('**SENTIMENT**')
+		print(f'Value Counts: \n{vc_sent}')
 		print('Percentages:')
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Neutral Tweets {neutPercent}%')
 		print(f'Percent Negative Tweets: {negPercent}%')
-
+		'''
+		print('**SUBJECTIVITY**')
+		print(f'Value Counts: \n{vc_subj}')
+		print('Percentages:')
+		print(f'Percent Very Objective Tweets: {vobjPercent}%')
+		print(f'Percent Objective Tweets {objPercent}%')
+		print(f'Percent Subjective Tweets: {subjPercent}%')
+		print(f'Percent Very Subjective Tweets: {vsubjPercent}')
+		'''
 		# Plotting
-		chart_type = input("Enter the chart type you would like for the output (Ex: bar, pie): ")
-		plt.title('Sentiment Analysis')
+		sent_chart = input("Select Chart Type For Sentiment output (Ex: bar, pie): ")
+		#subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
+
+		chart_type = sent_chart # workaround for now.
 		if(chart_type == "bar"):
 			# Plot and Visualize Sentiment Counts
+			plt.title('Sentiment Analysis')
 			plt.xlabel('Sentiment')
 			plt.ylabel('Counts')
 			v.plot(kind='bar')
 			plt.savefig('output/visuals/valueCounts_sentiment_bar.png')
 			plt.clf()
 		if(chart_type == "pie"):
+			plt.title('Sentiment Analysis')
 			colors = ['yellowgreen', 'gold', 'lightcoral']
-			plt.pie(values, labels=keys, colors=colors,
+			plt.pie(values_sent, labels=keys_sent, colors=colors,
 				autopct='%1.1f%%', shadow=True, startangle=140)
 			plt.savefig('output/visuals/valueCounts_sentiment_pie.png')
 			plt.axis('equal')
