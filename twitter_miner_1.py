@@ -469,7 +469,7 @@ def obtain_tweets_from_search(api):
         # go through each line in the file
         running_count = 0
         for query in f_ptr:
-
+            query = query.rstrip('\n')
             tweets = api.search(query, count=int(num_tweets))
 
             for tweet in tweets:
