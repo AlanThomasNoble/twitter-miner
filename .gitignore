@@ -3,3 +3,4 @@ env/
 medium.py
 .jsonl/
 __pycache__/
+local/*
