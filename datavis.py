@@ -332,6 +332,7 @@ class Visuals:
 
 		# User Input
 		if userInput:
+			print('*******************************************************************************')
 			print("Starting ngrams...")
 			n = int(input("Choose n-value: "))
 		else:
@@ -358,9 +359,9 @@ class Visuals:
 		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
 
 		# Graph (Horizontal Bar)
-		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist.png',userInput=False)
-		print('Image generated at output/visuals/freqDist.png')
-		print('Completed ngrams.\n')
+		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist',userInput=False)
+		print('Completed ngrams.')
+		print('*******************************************************************************\n')
 
 
 	def wordCloud(self):
@@ -374,7 +375,7 @@ class Visuals:
 		wordCloud.png
 			Generated Word Cloud.
 		'''
-
+		print('*******************************************************************************')
 		print("Starting wordCloud...")
 		freqDict = self.ngrams(userInput=False)
 		wc = WordCloud(width=500, height=300, max_font_size=110)
@@ -383,55 +384,80 @@ class Visuals:
 		plt.axis('off')
 		wc.to_file('output/visuals/wordCloud.png')
 		print('Image generated at output/visuals/wordCloud.png')
-		print('Completed wordCloud\n')
+		print('Completed wordCloud.')
+		print('*******************************************************************************\n')
 
 
-	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph.png', userInput=True):
-		'''Generic graphing function: plots Pie, Bar, and BoxPlots based on user Input
-		The entire functionality of this function is based on a frequency dictionary.
-		Therefore, allowing any type of graph with any type of data'''
+	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph', userInput=True):
+		'''Generic graphing function: generates bar, pie, and boxplot graphs based on userInput or internal funciton call.
+		
+		Notes:
+			> Planning to shift to a purely internal function in the future.
+		
+		Arguments
+		---------
+		keyword arguments
+			list of parameters to help generate the graph
+
+		Outputs
+		-------
+		Desired Graph
+		'''
 		
 		if userInput:
+			print('*******************************************************************************')
 			print("Starting Graphing...")
-			gtype = input("Choose graph type (bar, boxplot): ")
-			# Future Addition: Pick Frequency Data to Graph...give options.
-			# Otherewise, just keep as an internal function.
-			freqDict = self.ngrams(userInput=False) # this may vary...
-			# file saved default to output/visuals/graph.png
+			gtype = input("Choose graph type (boxplot, pie, barh): ")
+			freqDict = self.ngrams(userInput=False) # Future Addition: pick data to graph?
 
-		# Collect Results
-		num = input("Enter the number of results you would like in your frequency graph: ")
-		if gtype == 'bar': # WIP
-			# Alan's code
-			saveloc = 'output/visuals/word_freq_graph_bar.png'
-			counter_dict = Counter(freqDict)
-			print(counter_dict.most_common(int(num)))
-			df_from_dic = pd.DataFrame(counter_dict.most_common(int(num)), columns=["words", "count"])
-			fig, ax = plt.subplots(figsize=(8,8))
-			df_from_dic.iloc[0:50] # trying to get the first 50 items only
-			df_from_dic.sort_values(by="count").plot.barh(
+		# Automatically Limit Entries
+		num = len(freqDict)
+		if num > 50 and not gtype=='boxplot': # remove and not gtype=='boxplot'?
+			num = 50
+			print('Number Reduced to 50 for Graphing Visibility.')
+
+		#freqDf = pd.DataFrame(list(freqDict.items()), columns=["words","count"])
+		# Select Top {num} Entries
+		counter_dict = Counter(freqDict)
+		freqDf = pd.DataFrame(counter_dict.most_common(int(num)), columns=["words", "count"])
+		freqDf = freqDf.sort_values(by='count')
+		freqDict = freqDf.to_dict() # used in 'pie'
+
+		# Init Params
+		fig, ax = plt.subplots(figsize=(8,8))
+		
+		# Plot
+		if gtype == 'barh':
+			freqDf.plot.barh(
 			    x='words', 
 			    y='count',
 			    ax=ax,
 			    color='green'
 			)
 		elif gtype == 'boxplot':
-			# https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.DataFrame.boxplot.html
-			# use pandas, like above? generalize and reduce code duplication?
-			saveloc = 'output/visuals/word_freq_graph_boxplot.png'
-			fig, ax = plt.subplots(figsize=(5, 5))
-			plt.boxplot([v for v in freqDict.values()])
-		# add pie? i think it could be cool here.
+			freqDf.boxplot()
+		elif gtype == 'pie':
+			data = freqDict['count'].values() 
+			labels = freqDict['words'].values()
+			if 'positive' in labels or 'neutral' in labels or 'negative' in labels:
+				colors = ['yellowgreen', 'gold', 'lightcoral'] 
+				plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', 
+					shadow=True, startangle=140)
+			else:
+				plt.pie(data, labels=labels, autopct='%1.1f%%', shadow=True, 
+					startangle=140)
+			plt.axis('equal')
 
-		# Show, Save, and Close Graph
-		ax.set_title(gtitle.replace('**', num))
-		# ^, I use replace to add the number of frequency entries in the graph "post-emptively"
-		# no worries, if ** is not found, gtitle is returned and simply that is used.
-		plt.savefig(saveloc)
-		plt.show()
+		# Save and Close Graph
+		ax.set_title(gtitle.replace('**', str(num)))
+		plt.savefig(f'{saveloc}_{gtype}.png')
 		plt.clf()
+
+		# End
+		print(f'Figure generated at {saveloc}_{gtype}.png')
 		if userInput:
-			print(f'Completed graphing. Figure generated at {saveloc}\n')
+			print('Completed graphing')
+			print('*******************************************************************************\n')
 
 
 	def polSub(self):
@@ -439,14 +465,14 @@ class Visuals:
 	
 		Notes:
 			> Requires changes to mining.py to get # values for subjectivity and sentiment.
-			> WIP
 
 		Outputs
 		-------
 		polSub.png
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
-
+		print('*******************************************************************************')
+		print('Running polSub...')
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
@@ -459,23 +485,9 @@ class Visuals:
 		plt.ylabel('Subjectivity')
 		plt.savefig('output/visuals/polsub.png')
 		plt.clf()
+		print('Completed polSub')
+		print('*******************************************************************************\n')
 
-# Old Analytics Code For Reference
-		'''
-		print('Running Analytics...')
-		postweets = self.df[self.df['account sentiment'] == 'positive']
-		neuttweets = self.df[self.df['account sentiment'] == 'neutral']
-		negtweets = self.df[self.df['account sentiment'] == 'negative']
-
-		posPercent = round((postweets.shape[0] / self.df.shape[0])*100, 1)
-		neutPercent = round((neuttweets.shape[0] / self.df.shape[0])*100, 1)
-		negPercent = round((negtweets.shape[0] / self.df.shape[0])*100, 1)
-
-		print(f'Percent Positive Tweets: {posPercent}%')
-		print(f'Percent Neutral Tweets {neutPercent}%')
-		print(f'Percent Negative Tweets: {negPercent}%')
-		print('Completed Analytics.\n')
-		'''
 
 	def valueCounts(self):
 		'''Prints Counts and Percentages of Subjectivity and Polarity
@@ -488,7 +500,7 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
-
+		print('*******************************************************************************')
 		print('Running valueCounts...')
 		
 		# Analysis
@@ -512,13 +524,13 @@ class Visuals:
 		'''
 
 		# Printing
-		print('**SENTIMENT**')
+		print('SENTIMENT')
 		print(f'Value Counts: \n{vc_sent}')
 		print('Percentages:')
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Neutral Tweets {neutPercent}%')
 		print(f'Percent Negative Tweets: {negPercent}%')
-		'''
+		r'''
 		print('**SUBJECTIVITY**')
 		print(f'Value Counts: \n{vc_subj}')
 		print('Percentages:')
@@ -528,28 +540,12 @@ class Visuals:
 		print(f'Percent Very Subjective Tweets: {vsubjPercent}')
 		'''
 		# Plotting
-		sent_chart = input("Select Chart Type For Sentiment output (Ex: bar, pie): ")
+		sent_chart = input("Select Chart Type For Sentiment output (Ex: barh, pie): ")
 		#subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
 
-		chart_type = sent_chart # workaround for now.
-		if(chart_type == "bar"):
-			# Plot and Visualize Sentiment Counts
-			plt.title('Sentiment Analysis')
-			plt.xlabel('Sentiment')
-			plt.ylabel('Counts')
-			v.plot(kind='bar')
-			plt.savefig('output/visuals/valueCounts_sentiment_bar.png')
-			plt.clf()
-		if(chart_type == "pie"):
-			plt.title('Sentiment Analysis')
-			colors = ['yellowgreen', 'gold', 'lightcoral']
-			plt.pie(values_sent, labels=keys_sent, colors=colors,
-				autopct='%1.1f%%', shadow=True, startangle=140)
-			plt.savefig('output/visuals/valueCounts_sentiment_pie.png')
-			plt.axis('equal')
-			plt.clf()
-
-		print('Completed valueCounts.\n')
+		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Analysis', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
+		print('Completed valueCounts.')
+		print('*******************************************************************************\n')
 
 		# Plot and Visualize Subjectivity Counts
 		r'''

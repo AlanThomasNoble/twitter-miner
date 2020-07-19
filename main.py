@@ -56,6 +56,12 @@ def visualsStart():
     [print(f"({files.index(f)+1}) {f}") for f in files]
     fileName = input("Choose FileName to Perform Visualization (i.e. tweets): ")
 
+    # Potential Structural Change (To Decrease User Input in Functions)
+    # And Locate all User Input within this Function
+    # dict: {analysis: [visualizations]}
+    # then in datavis, call each analysis (pass in visualization as a parameter)
+    # allow them to editDataframe() beforehand
+
     try:
         v = Visuals(fileName, visType)
     except ValueError:
