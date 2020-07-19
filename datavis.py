@@ -332,7 +332,7 @@ class Visuals:
 
 		# User Input
 		if userInput:
-			print('*******************************************************************************')
+			print('*'*80)
 			print("Starting ngrams...")
 			n = int(input("Choose n-value: "))
 		else:
@@ -346,22 +346,24 @@ class Visuals:
 
 		# Generate Frequency Distribution
 		fdist = FreqDist(grams)
-		freqDict = {''.join(k): v for k, v in fdist.items()}
+		freqDict = {', '.join(k): v for k, v in fdist.items()}
 
 		# Return for Internal Use
 		if not userInput:
 		    return freqDict
 
-		# Otherwise, Nice Printing and Frequency Graph
-		import pprint as pp
+		# Otherwise, Print FreqDict to File and Generate Frequency Graph
 		freqDictSorted = sorted(
-			freqDict.items(), key=lambda item: item[1], reverse=False)
-		pp.pprint(freqDictSorted) # sorted does NOT return a dict, tuples.
+			freqDict.items(), key=lambda item: item[1], reverse=True)
 
+		with open('output/ngrams_freqDict.txt', 'w') as file:
+			[file.write(f'{item}\n') for item in freqDictSorted]
+
+		print(f'List of {len(freqDict)} Entries Generated at output/ngrams_freqDict.txt')
 		# Graph (Horizontal Bar)
 		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist',userInput=False)
 		print('Completed ngrams.')
-		print('*******************************************************************************\n')
+		print('*'*80, '\n')
 
 
 	def wordCloud(self):
@@ -375,7 +377,7 @@ class Visuals:
 		wordCloud.png
 			Generated Word Cloud.
 		'''
-		print('*******************************************************************************')
+		print('*'*80)
 		print("Starting wordCloud...")
 		freqDict = self.ngrams(userInput=False)
 		wc = WordCloud(width=500, height=300, max_font_size=110)
@@ -385,7 +387,7 @@ class Visuals:
 		wc.to_file('output/visuals/wordCloud.png')
 		print('Image generated at output/visuals/wordCloud.png')
 		print('Completed wordCloud.')
-		print('*******************************************************************************\n')
+		print('*'*80, '\n')
 
 
 	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph', userInput=True):
@@ -403,9 +405,9 @@ class Visuals:
 		-------
 		Desired Graph
 		'''
-		
+
 		if userInput:
-			print('*******************************************************************************')
+			print('*'*80)
 			print("Starting Graphing...")
 			gtype = input("Choose graph type (boxplot, pie, barh): ")
 			freqDict = self.ngrams(userInput=False) # Future Addition: pick data to graph?
@@ -457,7 +459,7 @@ class Visuals:
 		print(f'Figure generated at {saveloc}_{gtype}.png')
 		if userInput:
 			print('Completed graphing')
-			print('*******************************************************************************\n')
+			print('*'*80, '\n')
 
 
 	def polSub(self):
@@ -471,7 +473,7 @@ class Visuals:
 		polSub.png
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
-		print('*******************************************************************************')
+		print('*'*80)
 		print('Running polSub...')
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
@@ -486,7 +488,7 @@ class Visuals:
 		plt.savefig('output/visuals/polsub.png')
 		plt.clf()
 		print('Completed polSub')
-		print('*******************************************************************************\n')
+		print('*'*80, '\n')
 
 
 	def valueCounts(self):
@@ -500,7 +502,7 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
-		print('*******************************************************************************')
+		print('*'*80)
 		print('Running valueCounts...')
 		
 		# Analysis
@@ -545,7 +547,7 @@ class Visuals:
 
 		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Analysis', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
 		print('Completed valueCounts.')
-		print('*******************************************************************************\n')
+		print('*'*80, '\n')
 
 		# Plot and Visualize Subjectivity Counts
 		r'''
