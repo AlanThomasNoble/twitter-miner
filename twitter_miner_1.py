@@ -345,7 +345,7 @@ def FULL_TEXT_tweets_from_list_users(api):
                 account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
             except tweepy.TweepError:
                 continue
-
+                    
             # status.retweeted can be used to see if the text was retweeted
             for each_tweet in account_tweets:
                 running_count += 1
