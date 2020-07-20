@@ -1,13 +1,4 @@
 user,post date-time,account status,account sentiment,account sentiment score,retweet status,retweet sentiment,retweet sentiment score,post location,tweet id,account subjectivity,retweet subjectivity
 AVminer2,2020-07-09 18:52:00,https://t.co/zpQjYUYyDH,neutral,0.0,,,,,1281300086069309442,0.0,
-ALakrintis,2020-07-16 08:19:57,Spiking Neural Networks Place Data In Time #AI #CMOS applications #spikingneuralnetworks #SNN https://t.co/Z5LxggqFkX,neutral,0.0,,,,,1283677739980029952,0.0,
-LawOfDriverless,2020-07-17 15:46:23,,,,New article from me in @NewLawJournal this week re e-scooters and micromobility (paywalled): https://t.co/zhZyTGEvcb,positive,0.13636363636363635,,1284152474937569282,,0.45454545454545453
-_AVPodcast,2019-12-06 18:21:19,"""The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG.""
-https://t.co/oQHpt8THMb #autonomousvehicles",positive,0.05,,,,,1203016585960493056,0.30000000000000004,
-selfdriving360,2020-07-17 15:06:00,"#GM and #Honda unveiled the Origin, a new self-driving vehicle with no steering wheel or pedals - via @cnni 
-
-Read/Add #SelfDrivingCars news
-https://t.co/bpSD60NE0w
-
-#driverlesscars #autonomouscars #autonomousvehicles 
-#selfdriving #driverless #robocars #cars #automotive https://t.co/uS9Unrk1HJ",positive,0.13636363636363635,,,,,1284142312834994176,0.45454545454545453,
+ALakrintis,2020-07-20 10:46:43,,,,"@Mobileye and @Ford are collaborating on cutting-edge driver-assistance systems across Ford’s global product lineup. #ADAS #DriverSafety #Mobility 
+https://t.co/UIo4DAfsFM",neutral,0.0,,1285164225401421826,,0.0

@@ -340,7 +340,11 @@ def FULL_TEXT_tweets_from_list_users(api):
         for line in f_ptr:
             account = line.rstrip('\n')
             # max number of tweets per accounts is 200
-            account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
+            account_tweets = []
+            try:
+                account_tweets = api.user_timeline(account, count=num_tweets, include_rts=True)
+            except tweepy.TweepError:
+                continue
 
             # status.retweeted can be used to see if the text was retweeted
             for each_tweet in account_tweets:
