@@ -1,3 +1,7 @@
+CarsAutomated
+PonyAI_tech
+DeepMapInc
+CARMERA
 DriverlessNow
 DriverlessRev
 awtonomus
