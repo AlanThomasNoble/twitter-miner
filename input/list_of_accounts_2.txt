@@ -5,3 +5,8 @@ comma_ai
 selfdrivecarlaw
 Mobileye
 VelodyneLidar
+TuSimpleAI
+saildrone
+BradBerman
+NIOGlobal
+JoannMuller
