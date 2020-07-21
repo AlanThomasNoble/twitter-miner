@@ -15,6 +15,20 @@ from datavis import Visuals
 #####################################################################################################
 
 
+#####################################################################################################
+'''Authentication'''
+#####################################################################################################
+def tweepyAuthentication():
+    '''Completes authentication steps for tweepy'''
+
+    # Creating the authentication object
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    # Setting your access token and secret
+    auth.set_access_token(access_token, access_token_secret)
+    # Creating the API object while passing in auth information
+    api = tweepy.API(auth)
+    return api
+
 
 #####################################################################################################
 '''Helper Functions'''
@@ -36,17 +50,6 @@ def minerStart():
     data = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
     print()
     return data
-
-
-def check_limit(api):
-    '''
-        Returns json showing the current limits of the API calls
-        check for '/statuses/user_timeline'
-        check for '/statuses/lookup'
-        check for '/statuses/show/:id'
-        check for '/search/tweets'
-    '''
-    print(api.rate_limit_status())
 
 
 def exit_program(err_msg='Manual exit'):
@@ -102,7 +105,6 @@ def getInfo(status, t, retweet, func='single_user'):
     if func == 'single_user':
         return tuple((user, tweet_text, date_time, location, ID, hashtags, user_mentions, tweet, quoted, reply, retweet))
     # Add your own if block here for the corresponding function.
-
 
 
 #####################################################################################################
@@ -540,30 +542,3 @@ def obtain_tweets_from_search(api):
                 print(f'Running Count: {running_count}\r', end="")
         print("Completed mining via keyword search.")
         print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
-
-
-def main():
-    # Basis of the Twitter App
-    # Creating the authentication object
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    # Setting your access token and secret
-    auth.set_access_token(access_token, access_token_secret)
-    # Creating the API object while passing in auth information
-    api = tweepy.API(auth)
-
-    # Outputs initial messages to the user
-    user_input = minerStart()
-
-    validCalls = dict(User=obtain_tweets_from_single_user,
-            List=PARTIAL_TEXT_tweets_from_list_users,
-            F_List=FULL_TEXT_tweets_from_list_users,
-            Search=obtain_tweets_from_search,
-            Limits=check_limit)
-
-    if user_input in validCalls:
-        validCalls[user_input](api)
-    else:
-        exit_program()
-
-if __name__ == "__main__":
-    main()

@@ -2,7 +2,7 @@ import sys, os
 
 #################################### LIBRARIES ######################################################
 from datavis import Visuals
-import mining
+import twitter_miner_1
 #####################################################################################################
 
 def start():
@@ -29,13 +29,13 @@ def miningStart():
     user_input = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
     print()
 
-    validCalls = dict(User=mining.obtain_tweets_from_single_user,
-            List=mining.PARTIAL_TEXT_tweets_from_list_users,
-            F_List=mining.FULL_TEXT_tweets_from_list_users,
-            Search=mining.obtain_tweets_from_search,
+    validCalls = dict(User=twitter_miner_1.obtain_tweets_from_single_user,
+            List=twitter_miner_1.PARTIAL_TEXT_tweets_from_list_users,
+            F_List=twitter_miner_1.FULL_TEXT_tweets_from_list_users,
+            Search=twitter_miner_1.obtain_tweets_from_search,
             Limits=check_limit)
     if user_input in validCalls:
-        api = mining.tweepyAuthentication()
+        api = twitter_miner_1.tweepyAuthentication()
         validCalls[user_input](api)
     else:
         exit_program()
@@ -80,7 +80,7 @@ def check_limit(api):
     print(api.rate_limit_status())
 
 
-def exit_program(err_msg='Invalid Input'):
+def exit_program(err_msg='Manual Exit'):
     '''Exits software safely'''
     print(f'\n{err_msg}')
     print("Exited program.")
@@ -88,8 +88,7 @@ def exit_program(err_msg='Invalid Input'):
 
 
 def main():
-    visualsStart()
-    #start()
+    start()
 
 
 if __name__ == "__main__":

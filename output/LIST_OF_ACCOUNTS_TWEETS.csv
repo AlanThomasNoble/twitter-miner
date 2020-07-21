@@ -1,4 +1,16 @@
 user,post date-time,account status,account sentiment,account sentiment score,retweet status,retweet sentiment,retweet sentiment score,post location,tweet id,account subjectivity,retweet subjectivity
 AVminer2,2020-07-09 18:52:00,https://t.co/zpQjYUYyDH,neutral,0.0,,,,,1281300086069309442,0.0,
-ALakrintis,2020-07-20 10:46:43,,,,"@Mobileye and @Ford are collaborating on cutting-edge driver-assistance systems across Ford’s global product lineup. #ADAS #DriverSafety #Mobility 
-https://t.co/UIo4DAfsFM",neutral,0.0,,1285164225401421826,,0.0
+ALakrintis,2020-07-21 09:59:57,"We want to know what you think! @SA_Update  and #AuroraLabs are surveying the #autoindustry to find out what technologies and market drivers you believe are key to the automotive industry's transformation. There is a chance you will win an #Apple #iPad!  
+https://t.co/Joo6ez9gAO https://t.co/gXtaXfTmez",positive,0.5,,,,,1285514844091940866,0.7,
+LawOfDriverless,2020-07-20 11:43:44,,,,"Uber drivers to launch legal bid to uncover app's algorithm
+
+https://t.co/oUgPOu1D5X",positive,0.2,,1285178576275308544,,0.2
+_AVPodcast,2019-12-06 18:21:19,"""The market for automotive computer chips is expected to grow from about $40 billion today, per IHS Markit, to as much as $200 billion by 2040, according to KPMG.""
+https://t.co/oQHpt8THMb #autonomousvehicles",positive,0.05,,,,,1203016585960493056,0.30000000000000004,
+selfdriving360,2020-07-21 17:08:00,"PorscheLab Director talks about self-driving cars, AI and sustainability - via @QuickTake @JeroenBartelse 
+
+Read/Add #SelfDrivingCars news
+https://t.co/bpSD60NE0w
+
+#driverlesscars #autonomouscars #autonomousvehicles 
+#selfdriving #driverless #robocars #cars #automotive #tech https://t.co/rW83BV9VUr",neutral,0.0,,,,,1285622566845968384,0.0,
