@@ -53,6 +53,12 @@ for apostrophe in ["‘", "’"]:
     for stopword in contractions:
         STOP_WORDS.add(stopword.replace("'", apostrophe)) # A set contains unique elements.
 
+AV_STOP_WORDS=set(
+	"""
+driverless autonomousvehicles selfdriving self-driving autonomous driving cars car
+autonomouscars autonomousmobility autonomouscar selfdrivingcar
+""".split()
+)
 
 '''
 # https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
