@@ -3,28 +3,24 @@ General Project Notes
 
 Tasks Todo...
 > datavis.py
+	/General/
+		- I think eventually we'll want to ideally remove all userInput apart from editDataframe() from this file.  
+		- To do this, I think we'll need to do things.
+			1) Automaticaly generate all possible visualizations w/o asking user.
+			2) Add prints() to main.py to ask user for this function(), these are the additional parameters we'll need (i.e. num n for ngrams).  And, then these will be passed in the class and the function.
 	/Helper Functions/
 		- finish lemmmatizeText(), expandAbbr() (expandAbbr() may not be that useful)
 		- test displayDataframe() function
+		- add handleMiddleAbbreviation() function (i.e. -, ...)
 
 	/Visuals Class/
 		- Figure out how to save images to output WITHOUT parts of the image being cut out. (autofit options?)
 
 		/editDataframe()/
 			- subjectivity filtering (once columns are added)
-		/freqGraph()/
-			- generalize some code.
-			- show user the maximum number of entries that they can use?
-				-> if it is not a sentiment based...chart.
-			- add pie chart?
-				-> we can limit num entries for pie chart by writing this in user input() message for num.
 		/polSub()/
-			- Requires column additions to get # values for subjectivity and sentiment.
-			- then, test.
-		/analytics()/
-			- eventually phase out and merge with valueCounts()
+			- tested, requires column addition, and then update referenced name for self.df
 		/valueCounts()/
-			- deal with `sizes = [v.positive, v.neutral, v.negative]` error when filtering tweets.
 			- Requires column additions for subjectivity value counts.
 
 > twitter_miner1.py

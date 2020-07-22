@@ -171,13 +171,17 @@ def lemmatizeText(tokens):
 
 
 def displayDataframe(df):
-	'''displays current dataframe'''
-	'''not tested'''
+	'''displays inputted dataframe'''
 	pd.set_option("display.max_rows", None, "display.max_columns", None)
 	print(df)
 	pandas.reset_option('all')
 
 
+def exit_program(err_msg='Invalid Input'):
+    '''Exits software safely'''
+    print(f'\n{err_msg}')
+    print("Exited program.")
+    sys.exit()
 
 
 #####################################################################################################
@@ -223,14 +227,14 @@ class Visuals:
 		self.visualizations = visualizations.split(', ') 
 
 		# Specs
-		plt.style.use('fivethirtyeight')
+		plt.style.use('ggplot')
 
 		# Read File
 		try:
 			self.df = pd.read_csv(f'output/{fileName}.csv')
 			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
 		except FileNotFoundError:
-			raise ValueError  # Exits Program
+			exit_program('File Read Unsuccessful')  # Exits Program
 
 		# Edit DataFrame
 		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
@@ -241,10 +245,13 @@ class Visuals:
 		# Clean Tweets and Correct Spellings
 		self.df['account status'] = self.df['account status'].apply(cleanData)
 
+		self.yearMonthDate()
+
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
 				ngrams=self.ngrams,
 				polSub=self.polSub,
+				yearMonthDate=self.yearMonthDate,
 				valueCounts=self.valueCounts,
 				freqGraph=self.freqGraph)
 		
@@ -253,7 +260,7 @@ class Visuals:
 			if vis in modes:
 				modes[vis]()
 			else:
-				raise ValueError
+				exit_program(f'Visualization {vis} is not a valid input')
 
 
 	def editDataframe(self):
@@ -269,7 +276,7 @@ class Visuals:
 		params = params.split(', ')
 		check = [True if p in valid else False for p in params]
 		if False in check:
-			raise ValueError # Exit Program
+			exit_program('Invalid Input for Datafarme Editing Parameters')
 
 		# Dataframe Editing
 		if 'datetime' in params:
@@ -371,7 +378,7 @@ class Visuals:
 
 		Notes:
 			> Remove imshow() and just save image.
-
+			> car mask
 		Outputs
 		-------
 		wordCloud.png
@@ -384,7 +391,7 @@ class Visuals:
 		wc = wc.generate_from_frequencies(freqDict)
 		# plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
-		wc.to_file('output/visuals/wordCloud.png')
+		wc.to_file('output/visuals/wordCloud_negative.png')
 		print('Image generated at output/visuals/wordCloud.png')
 		print('Completed wordCloud.')
 		print('*'*80, '\n')
@@ -395,7 +402,8 @@ class Visuals:
 		
 		Notes:
 			> Planning to shift to a purely internal function in the future.
-		
+			> BoxPlot of sentiment score changes over time.
+
 		Arguments
 		---------
 		keyword arguments
@@ -441,6 +449,7 @@ class Visuals:
 		elif gtype == 'pie':
 			data = freqDict['count'].values() 
 			labels = freqDict['words'].values()
+			# workaround, perhaps there's a cleaner way to do below.
 			if 'positive' in labels or 'neutral' in labels or 'negative' in labels:
 				colors = ['yellowgreen', 'gold', 'lightcoral'] 
 				plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', 
@@ -449,6 +458,8 @@ class Visuals:
 				plt.pie(data, labels=labels, autopct='%1.1f%%', shadow=True, 
 					startangle=140)
 			plt.axis('equal')
+
+		#stacked bar graph
 
 		# Save and Close Graph
 		ax.set_title(gtitle.replace('**', str(num)))
@@ -473,13 +484,14 @@ class Visuals:
 		polSub.png
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
+		
 		print('*'*80)
 		print('Running polSub...')
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(self.df['account sentiment_score'],
-						self.df['account subjectivity_score'], 
+			plt.scatter(self.df['account sentiment score'],
+						self.df['account subjectivity'], # account subjectivity score change for newer file versions. 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
@@ -502,6 +514,7 @@ class Visuals:
 		valueCounts.png
 			Generated and saved to output folder.
 		'''
+
 		print('*'*80)
 		print('Running valueCounts...')
 		
@@ -515,7 +528,7 @@ class Visuals:
 		negPercent = round((d_sent.get('negative',0) / self.df.shape[0])*100, 1)
 
 		'''
-		vc_subj = self.df['account sentiment'].value_counts()
+		vc_subj = self.df['account subjectivity'].value_counts()
 		keys_subj = [str(k) for k in vc_subj.keys()]
 		values_subj = [int(vc_subj[k]) for k in keys_subj] 
 		d_subj = dict(zip(keys_subj, values))
