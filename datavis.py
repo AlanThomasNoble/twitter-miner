@@ -245,7 +245,7 @@ class Visuals:
 		# Clean Tweets and Correct Spellings
 		self.df['account status'] = self.df['account status'].apply(cleanData)
 
-		self.yearMonthDate()
+		#self.yearMonthDate()
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
