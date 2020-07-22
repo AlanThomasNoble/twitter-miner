@@ -62,10 +62,7 @@ def visualsStart():
     # then in datavis, call each analysis (pass in visualization as a parameter)
     # allow them to editDataframe() beforehand
 
-    try:
-        v = Visuals(fileName, visType)
-    except ValueError:
-        exit_program()
+    v = Visuals(fileName, visType)
 
 
 def check_limit(api):

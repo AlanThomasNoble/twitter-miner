@@ -177,7 +177,7 @@ def displayDataframe(df):
 	pandas.reset_option('all')
 
 
-def exit_program(err_msg='Invalid Input'):
+def exit_program(err_msg='Manual Exit'):
     '''Exits software safely'''
     print(f'\n{err_msg}')
     print("Exited program.")
@@ -484,7 +484,7 @@ class Visuals:
 		polSub.png
 			Generated Plot of Polarity Vs. Subjectivity.
 		'''
-		
+
 		print('*'*80)
 		print('Running polSub...')
 		plt.figure(figsize=(8, 6))
