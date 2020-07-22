@@ -1,10 +1,10 @@
 # Runs Program
 miner:
-	python3 twitter_miner_1.py
+	python3 main.py
 
 # Interactive Mode
 iminer:
-	python3 -i twitter_miner_1.py
+	python3 -i main.py
 
 # Run in Debug Mode; pauses execution at point where an error is thrown.
 debug:
