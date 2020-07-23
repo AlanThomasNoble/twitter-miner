@@ -37,7 +37,19 @@ def mood_function(tweet_text):
     else:
         mood = "positive"
 
-    return [mood, polarity, subjectivity] 
+    subj_level = ""
+    if subjectivity <= 0.25 and subjectivity >= 0:
+        subj_level = "very objective"
+    elif subjectivity <= 0.5 and subjectivity > 0.25:
+        subj_level = "objective"
+    elif subjectivity <= 0.75 and subjectivity > 0.5:
+        subj_level = "subjective"
+    else:
+        subj_level = "very subjective"
+
+
+    return [mood, polarity, subjectivity, subj_level] 
+
 
 # Alternative/Merged Implementation of Clean Text
 '''This implementation entirely removes hashtags and mentions'''

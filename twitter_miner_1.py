@@ -147,9 +147,11 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 retweet_sentiment TEXT,
                 retweet_sentiment_score TEXT,
                 post_location TEXT, 
-                tweet_id TEXT, 
+                tweet_id TEXT,
                 account_subjectivity TEXT, 
-                retweet_subjectivity TEXT)''')
+                account_subjectivity_score TEXT, 
+                retweet_subjectivity TEXT,
+                retweet_subjectivity_score)''')
 
         # init loop variables
         firstIteration = True; incoming = []; oldest = [];
@@ -176,36 +178,43 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                 account_sentiment_score = ""
                 retweet_sentiment_score = ""
                 account_subjectivity = ""
+                account_subjectivity_score = ""
                 retweet_subjectivity = ""
+                retweet_subjectivity_score = ""
 
                 # retweet_exists = False
                 # account_exists = False
                 try:
                     retweet_status = status.retweeted_status.full_text
                     # retweet_exists = True
-                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                    retweet_list = twitter_nlp.mood_function(retweet_status)
+                    retweet_sentiment = retweet_list[0]
+                    retweet_sentiment_score = retweet_list[1]
+                    retweet_subjectivity_score = retweet_list[2]
+                    retweet_subjectivity = retweet_list[3]
                 except AttributeError:
                     account_status = status.full_text
                     # account_exists = True
-                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
-                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
-                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
-
+                    account_list = twitter_nlp.mood_function(account_status)
+                    account_sentiment = account_list[0]
+                    account_sentiment_score = account_list[1]
+                    account_subjectivity_score = account_list[2]
+                    account_subjectivity = account_list[3]
                     retweet_status = ""
                     # retweet_exists = False
                     try:
                         retweet_status = status.quoted_status.full_text
                         # retweet_exists = True
-                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                        retweet_list = twitter_nlp.mood_function(retweet_status)
+                        retweet_sentiment = retweet_list[0]
+                        retweet_sentiment_score = retweet_list[1]
+                        retweet_subjectivity_score = retweet_list[2]
+                        retweet_subjectivity = retweet_list[3]
                     except AttributeError:
                         retweet_status = ""
                         # retweet_exists = False
 
-                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"
+                query = f"INSERT INTO tweets VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 data = tuple((
                     status.user.screen_name, 
                     status.created_at, 
@@ -216,9 +225,11 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
                     retweet_sentiment,
                     retweet_sentiment_score,
                     status.place, 
-                    tweet.id, 
+                    tweet.id,
                     account_subjectivity, 
-                    retweet_subjectivity))
+                    account_subjectivity_score,
+                    retweet_subjectivity, 
+                    retweet_subjectivity_score))
                 c.execute(query, data)
 
                 # Decrement
@@ -331,9 +342,11 @@ def FULL_TEXT_tweets_from_list_users(api):
             'retweet sentiment',
             'retweet sentiment score',
             'post location', 
-            'tweet id', 
+            'tweet id',
             'account subjectivity', 
-            'retweet subjectivity'
+            'account subjectivity score',
+            'retweet subjectivity', 
+            'retweet subjectivity score'
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -368,31 +381,38 @@ def FULL_TEXT_tweets_from_list_users(api):
                 account_sentiment_score = ""
                 retweet_sentiment_score = ""
                 account_subjectivity = ""
-                retweet_subjectivity = ""
+                account_subjectivity_score = ""
+                retweet_subjectivity= ""
+                retweet_subjectivity_score = ""
 
                 # retweet_exists = False
                 # account_exists = False
                 try:
                     retweet_status = status.retweeted_status.full_text
                     # retweet_exists = True
-                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                    retweet_list = twitter_nlp.mood_function(retweet_status)
+                    retweet_sentiment = retweet_list[0]
+                    retweet_sentiment_score = retweet_list[1]
+                    retweet_subjectivity_score = retweet_list[2]
+                    retweet_subjectivity = retweet_list[3]
                 except AttributeError:
                     account_status = status.full_text
                     # account_exists = True
-                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
-                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
-                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
-
+                    account_list = twitter_nlp.mood_function(account_status)
+                    account_sentiment = account_list[0]
+                    account_sentiment_score = account_list[1]
+                    account_subjectivity_score = account_list[2]
+                    account_subjectivity = account_list[3]
                     retweet_status = ""
                     # retweet_exists = False
                     try:
                         retweet_status = status.quoted_status.full_text
                         # retweet_exists = True
-                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                        retweet_list = twitter_nlp.mood_function(retweet_status)
+                        retweet_sentiment = retweet_list[0]
+                        retweet_sentiment_score = retweet_list[1]
+                        retweet_subjectivity_score = retweet_list[2]
+                        retweet_subjectivity = retweet_list[3]
                     except AttributeError:
                         retweet_status = ""
                         # retweet_exists = False
@@ -409,7 +429,9 @@ def FULL_TEXT_tweets_from_list_users(api):
                     'post location': status.place, # only available if user adds on IOS or andriod / not on web
                     'tweet id': tweet_id,
                     'account subjectivity': account_subjectivity,
-                    'retweet subjectivity': retweet_subjectivity 
+                    'account subjectivity score': account_subjectivity_score,
+                    'retweet subjectivity': retweet_subjectivity,
+                    'retweet subjectivity score': retweet_subjectivity_score 
                 })
                 
                 # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
@@ -466,9 +488,11 @@ def obtain_tweets_from_search(api):
             'retweet sentiment',
             'retweet sentiment score',
             'post location', 
-            'tweet id', 
+            'tweet id',
             'account subjectivity', 
-            'retweet subjectivity'
+            'account subjectivity score',
+            'retweet subjectivity', 
+            'retweet subjectivity score'
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -491,31 +515,38 @@ def obtain_tweets_from_search(api):
                 account_sentiment_score = ""
                 retweet_sentiment_score = ""
                 account_subjectivity = ""
+                account_subjectivity_score = ""
                 retweet_subjectivity = ""
+                retweet_subjectivity_score = ""
 
                 # retweet_exists = False
                 # account_exists = False
                 try:
                     retweet_status = status.retweeted_status.full_text
                     # retweet_exists = True
-                    retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                    retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                    retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                    retweet_list = twitter_nlp.mood_function(retweet_status)
+                    retweet_sentiment = retweet_list[0]
+                    retweet_sentiment_score = retweet_list[1]
+                    retweet_subjectivity_score = retweet_list[2]
+                    retweet_subjectivity = retweet_list[3]
                 except AttributeError:
                     account_status = status.full_text
                     # account_exists = True
-                    account_sentiment = twitter_nlp.mood_function(account_status)[0]
-                    account_sentiment_score = twitter_nlp.mood_function(account_status)[1]
-                    account_subjectivity = twitter_nlp.mood_function(account_status)[2]
-
+                    account_list = twitter_nlp.mood_function(account_status)
+                    account_sentiment = account_list[0]
+                    account_sentiment_score = account_list[1]
+                    account_subjectivity_score = account_list[2]
+                    account_subjectivity = account_list[3]
                     retweet_status = ""
                     # retweet_exists = False
                     try:
                         retweet_status = status.quoted_status.full_text
                         # retweet_exists = True
-                        retweet_sentiment = twitter_nlp.mood_function(retweet_status)[0]
-                        retweet_sentiment_score = twitter_nlp.mood_function(retweet_status)[1]
-                        retweet_subjectivity = twitter_nlp.mood_function(retweet_status)[2]
+                        retweet_list = twitter_nlp.mood_function(retweet_status)
+                        retweet_sentiment = retweet_list[0]
+                        retweet_sentiment_score = retweet_list[1]
+                        retweet_subjectivity_score = retweet_list[2]
+                        retweet_subjectivity = retweet_list[3]
                     except AttributeError:
                         retweet_status = ""
                         # retweet_exists = False
@@ -533,7 +564,9 @@ def obtain_tweets_from_search(api):
                     'post location': status.place, # only available if user adds on IOS or andriod / not on web
                     'tweet id': tweet.id,
                     'account subjectivity': account_subjectivity,
-                    'retweet subjectivity': retweet_subjectivity 
+                    'account subjectivity score': account_subjectivity_score,
+                    'retweet subjectivity': retweet_subjectivity,
+                    'retweet subjectivity score': retweet_subjectivity_score 
                 })
 
                 # we can only make 900 get status calls -> 1 status call per sec
