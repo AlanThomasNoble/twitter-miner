@@ -41,7 +41,8 @@ n = 0
 with open(FILENAME, 'a', encoding='utf-8') as f:
     f_ptr = open(f'input/list_of_keywords_2.txt', 'r')
     for query in f_ptr:
-        rule = gen_rule_payload(query.rstrip('\n'),
+        query = query.rstrip('\n')
+        rule = gen_rule_payload(query,
                                 results_per_call=RESULTS_PER_CALL,
                                 from_date=FROM_DATE,
                                 to_date=TO_DATE
