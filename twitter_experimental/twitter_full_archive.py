@@ -7,7 +7,7 @@ RESULTS_PER_CALL = 100  # 100 for sandbox, 500 for paid tiers
 TO_DATE = '2020-07-01' # format YYYY-MM-DD HH:MM (hour and minutes optional)
 FROM_DATE = '2019-11-01'  # format YYYY-MM-DD HH:MM (hour and minutes optional)
 
-MAX_RESULTS = 950  # Number of Tweets you want to collect
+MAX_RESULTS = 930  # Number of Tweets you want to collect
 
 FILENAME = 'twitter_experimental/experimental_output.jsonl'  # Where the Tweets should be saved
 

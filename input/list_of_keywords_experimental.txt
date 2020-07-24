@@ -1,13 +1,13 @@
 July -
 autonomous vehicles
-autonomous vehicle
 autonomous driving
+autonomous cars
+driverless
 self driving (also gets self-driving)
-selfdriving
 
 August -
-autonomous cars
-driverless cars
+selfdriving
+autonomous vehicle
 assisted driving
 driver assistance
 
