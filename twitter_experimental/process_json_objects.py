@@ -42,7 +42,7 @@ with open('twitter_experimental/FULL_ARCHIVE_TWEETS.csv', 'w', newline='') as cs
     writer.writeheader()
 
     running_count = 0
-    with open("twitter_experimental/all_JSON_objects.jsonl", "r") as fptr:
+    with open("twitter_experimental/experimental_output.jsonl", "r") as fptr:
         for json_object in fptr:
             running_count += 1
             # print(json_object)

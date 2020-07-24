@@ -327,7 +327,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     print()
 
     # open the file
-    f_ptr = open(f'input/list_of_accounts.txt', 'r')
+    f_ptr = open(f'input/LOA1.txt', 'r')
     # w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
     
     with open('output/LIST_OF_ACCOUNTS_TWEETS.csv', 'w', newline='') as csvfile:
