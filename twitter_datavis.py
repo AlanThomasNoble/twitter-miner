@@ -414,10 +414,10 @@ class Visuals:
 		keys_subj = [str(k) for k in vc_subj.keys()]
 		values_subj = [int(vc_subj[k]) for k in keys_subj] 
 		d_subj = dict(zip(keys_subj, values))
-		vobjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
-		objPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
-		subjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
-		vsubjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
+		vobjPercent = round((d_subj.get('very objective',0) / self.df.shape[0])*100, 1)
+		objPercent = round((d_subj.get('objective',0) / self.df.shape[0])*100, 1)
+		subjPercent = round((d_subj.get('subjective',0) / self.df.shape[0])*100, 1)
+		vsubjPercent = round((d_subj.get('very subjective',0) / self.df.shape[0])*100, 1)
 
 		# Printing
 		print('SENTIMENT')
