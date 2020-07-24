@@ -231,8 +231,7 @@ class Visuals:
 
 		# Read File
 		try:
-			self.df = pd.read_csv(f'output/{fileName}.csv')
-			self.df['post date-time'] = pd.to_datetime(self.df['post date-time'])
+			self.df = pd.read_csv(f'output/{fileName}.csv', parse_dates=['post date-time'], index_col='post date-time')
 		except FileNotFoundError:
 			exit_program('File Read Unsuccessful')  # Exits Program
 
@@ -240,18 +239,16 @@ class Visuals:
 		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
 		if constrain == 'y':
 			self.editDataframe()
-		self.df = self.df.sort_values(by='post date-time', ascending=True) # Sort Values By Date [Delete if Desired]
+		self.df = self.df.sort_index(ascending=True)
 
-		# Clean Tweets and Correct Spellings
+		# Clean Tweets and Dataframe
 		self.df['account status'] = self.df['account status'].apply(cleanData)
-
-		#self.yearMonthDate()
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
 				ngrams=self.ngrams,
 				polSub=self.polSub,
-				yearMonthDate=self.yearMonthDate,
+				intervalGraph=self.intervalGraph,
 				valueCounts=self.valueCounts,
 				freqGraph=self.freqGraph)
 		
@@ -283,8 +280,7 @@ class Visuals:
 			print('Editing datetime...')
 			start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
 			end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
-			mask = (self.df['post date-time'] >= start_date) & (self.df['post date-time'] <= end_date)
-			self.df = self.df.loc[mask]
+			self.df = self.df.loc[start_date: end_date] # start and stop of place are both included.
 		if 'sentiment' in params:
 			print('Editing sentiment...')
 			sentiments = input("Select Sentiments (positive, negative, neutral): ")
@@ -471,6 +467,50 @@ class Visuals:
 		if userInput:
 			print('Completed graphing')
 			print('*'*80, '\n')
+
+
+	def intervalGraph(self):
+		'''Plots graphs based on intervals (boxplots, barh)
+
+			Notes:
+				> implement 'smart' interval.
+				> seaborn, plotly (other libraries to consider)
+				> fillna?
+				> Generate all possible graphs (avoid user input)
+				> Add Stacked.
+				> Set Interval
+					self.df = self.df.sort_values(by='post date-time')
+					g.iat[0]-g.iat[-1] # Timedelta('-9 days +05:45:35')
+		'''
+		plt.style.use('ggplot')
+		interval = 'M'
+
+		fig, ax = plt.subplots(figsize=(15,7))
+		gtype='box'
+		if gtype=='bar':
+			mean = self.df.resample(interval)['account subjectivity'].mean() # filters data and obtains mean.
+			mean = mean.sort_index().fillna(0)
+			mean.plot(kind='bar', ax=ax)
+			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date') # otherwise, set_xlabel, set_title, set_ylabel
+			ax.set_xticklabels(mean.index.strftime('%b %Y').format(),rotation=70, rotation_mode="anchor", ha="right") # not sure what thething in format does.
+			plt.clf()
+		elif gtype == 'box':
+			self.df['month year'] = self.df.index.to_period(interval)
+			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
+			self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
+			self.df.boxplot(by='month year', column='account subjectivity',grid=False, rot=90)
+			ax.set(title='Subjectivity BoxPlot Per Month', ylabel='Subjectivity Score')
+		elif gtype == 'stacked':
+			pass
+			#g.plot(kind='bar',x='A',y='A','B','C') #stacked bar graph
+
+		plt.savefig(f'output/visuals/intervalGraph_{gtype}.png')
+		plt.clf()
+
+		# Cleanup
+		#del df['colum name']
+		columns = ['Y','M','D','month year']
+		df.drop(columns, axis=1)
 
 
 	def polSub(self):
