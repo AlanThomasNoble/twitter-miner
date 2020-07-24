@@ -138,7 +138,11 @@ def expandAbbr(tokens):
 
 def lemmatizeText(tokens):
 	'''Removes common words (stopwords) and simple web links.
-
+	Converts input list of strings to list of spacy token objects in order to lemmatize,
+	then converts them back to strings and appends them to output list.
+	NOTE: User must have spacy en library downloaded.
+	Run: python3 -m spacy download en_core_web_sm
+	
 	Parameters
 	----------
 	tokens : list
@@ -147,7 +151,13 @@ def lemmatizeText(tokens):
 	Returns
 	-------
 	list
-		A list of words with each word lemmatized, if applicable.
+		A list of words (str) with each word lemmatized, if applicable.
 	'''
 
-	### add code here ###
+	out = "".join(tokens)
+    nlp = spacy.load('en')
+    doc = nlp(out)
+    output = []
+    for token in doc:
+    	output.append(token.lemma_)
+    return output
