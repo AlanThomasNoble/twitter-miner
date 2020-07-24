@@ -231,7 +231,7 @@ class Visuals:
 
 		# Read File
 		try:
-			self.df = pd.read_csv(f'output/{fileName}.csv', parse_dates=['post date-time'], index_col='post date-time')
+			self.df = pd.read_csv(f'output/{fileName}.csv', parse_dates=['post_date-time'], index_col='post_date-time')
 		except FileNotFoundError:
 			exit_program('File Read Unsuccessful')  # Exits Program
 
@@ -242,7 +242,7 @@ class Visuals:
 		self.df = self.df.sort_index(ascending=True)
 
 		# Clean Tweets and Dataframe
-		self.df['account status'] = self.df['account status'].apply(cleanData)
+		self.df['account_status'] = self.df['account_status'].apply(cleanData)
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
@@ -285,20 +285,20 @@ class Visuals:
 			print('Editing sentiment...')
 			sentiments = input("Select Sentiments (positive, negative, neutral): ")
 			sentiments = sentiments.split(', ')
-			mask = (self.df['account sentiment'].isin(sentiments))
+			mask = (self.df['account_sentiment'].isin(sentiments))
 			self.df = self.df.loc[mask]
 		if 'subjectivity' in params:
 			print('Editing subjectivity...')
 			subjs = input("Select Subjectivities (very objective, objective, subjective, very subjective): ")
 			subjs = subjs.split(', ')
-			mask = (self.df['account subjectivity'].isin(subjs))
+			mask = (self.df['account_subjectivity'].isin(subjs))
 			self.df = self.df.loc[mask]
 		print()
 
 
 	def preprocessing(self):
 		'''Tokenize Text and Remove Stopwords'''
-		tokens = tokenizeText(self.df['account status'])
+		tokens = tokenizeText(self.df['account_status'])
 		tokens = removeStopwords(tokens)
 		return tokens
 
@@ -482,13 +482,12 @@ class Visuals:
 					self.df = self.df.sort_values(by='post date-time')
 					g.iat[0]-g.iat[-1] # Timedelta('-9 days +05:45:35')
 		'''
-		plt.style.use('ggplot')
 		interval = 'M'
 
 		fig, ax = plt.subplots(figsize=(15,7))
 		gtype='box'
 		if gtype=='bar':
-			mean = self.df.resample(interval)['account subjectivity'].mean() # filters data and obtains mean.
+			mean = self.df.resample(interval)['account_subjectivity_score'].mean() # filters data and obtains mean.
 			mean = mean.sort_index().fillna(0)
 			mean.plot(kind='bar', ax=ax)
 			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date') # otherwise, set_xlabel, set_title, set_ylabel
@@ -498,7 +497,7 @@ class Visuals:
 			self.df['month year'] = self.df.index.to_period(interval)
 			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
 			self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
-			self.df.boxplot(by='month year', column='account subjectivity',grid=False, rot=90)
+			self.df.boxplot(by='month year', column='account_subjectivity_score',grid=False, rot=90)
 			ax.set(title='Subjectivity BoxPlot Per Month', ylabel='Subjectivity Score')
 		elif gtype == 'stacked':
 			pass
@@ -530,8 +529,8 @@ class Visuals:
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(self.df['account sentiment score'],
-						self.df['account subjectivity'], # account subjectivity score change for newer file versions. 
+			plt.scatter(self.df['account_sentiment_score'],
+						self.df['account_subjectivity_score'], # account_subjectivity score change for newer file versions. 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
@@ -559,7 +558,7 @@ class Visuals:
 		print('Running valueCounts...')
 		
 		# Analysis
-		vc_sent = self.df['account sentiment'].value_counts()
+		vc_sent = self.df['account_sentiment'].value_counts()
 		keys_sent = [str(k) for k in vc_sent.keys()]
 		values_sent = [int(vc_sent[k]) for k in keys_sent] 
 		d_sent = dict(zip(keys_sent, values_sent))
@@ -567,8 +566,7 @@ class Visuals:
 		neutPercent = round((d_sent.get('neutral',0) / self.df.shape[0])*100, 1)
 		negPercent = round((d_sent.get('negative',0) / self.df.shape[0])*100, 1)
 
-		'''
-		vc_subj = self.df['account subjectivity'].value_counts()
+		vc_subj = self.df['account_subjectivity'].value_counts()
 		keys_subj = [str(k) for k in vc_subj.keys()]
 		values_subj = [int(vc_subj[k]) for k in keys_subj] 
 		d_subj = dict(zip(keys_subj, values))
@@ -576,7 +574,6 @@ class Visuals:
 		objPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
 		subjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
 		vsubjPercent = round((d_subj.get('positive',0) / self.df.shape[0])*100, 1)
-		'''
 
 		# Printing
 		print('SENTIMENT')
@@ -585,32 +582,19 @@ class Visuals:
 		print(f'Percent Positive Tweets: {posPercent}%')
 		print(f'Percent Neutral Tweets {neutPercent}%')
 		print(f'Percent Negative Tweets: {negPercent}%')
-		r'''
-		print('**SUBJECTIVITY**')
+		print('SUBJECTIVITY')
 		print(f'Value Counts: \n{vc_subj}')
 		print('Percentages:')
 		print(f'Percent Very Objective Tweets: {vobjPercent}%')
 		print(f'Percent Objective Tweets {objPercent}%')
 		print(f'Percent Subjective Tweets: {subjPercent}%')
 		print(f'Percent Very Subjective Tweets: {vsubjPercent}')
-		'''
+		
 		# Plotting
 		sent_chart = input("Select Chart Type For Sentiment output (Ex: barh, pie): ")
-		#subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
+		subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
 
 		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Analysis', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
+		self.freqGraph(freqDict=d_subj, gtype=subj_chart, gtitle='Subjectivity Analysis', saveloc='output/visuals/valueCounts_subjectivity', userInput=False)
 		print('Completed valueCounts.')
 		print('*'*80, '\n')
-
-		# Plot and Visualize Subjectivity Counts
-		r'''
-		v = self.df['account subjectivity'].value_counts()
-		print(f'Value Counts: \n{v}')
-		plt.title('Subjectivity Analysis')
-		plt.xlabel('Subjectivity')
-		plt.ylabel('Counts')
-		self.df['account subjectivity'].value_counts().plot(kind='bar')
-		plt.show()
-		plt.savefig('valueCounts_subjectivity.png')
-		plt.clf()
-		'''

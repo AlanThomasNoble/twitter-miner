@@ -1,7 +1,7 @@
 import sys, os
 
 #################################### LIBRARIES ######################################################
-from datavis import Visuals
+from twitter_datavis import Visuals
 import twitter_miner_1
 #####################################################################################################
 
@@ -46,9 +46,10 @@ def visualsStart():
     print("\nVisualization Types")
     print("(1) wordCloud")
     print("(2) ngrams")
-    print("(3) polSub (WIP)")
+    print("(3) polSub")
     print("(4) valueCounts")
-    print("(5) freqGraph\n")
+    print("(5) intervalGraph")
+    print("(6) freqGraph\n")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
     stream = os.popen('cd output && ls *.csv') # or *.db
@@ -61,6 +62,7 @@ def visualsStart():
     # dict: {analysis: [visualizations]}
     # then in datavis, call each analysis (pass in visualization as a parameter)
     # allow them to editDataframe() beforehand
+    # or just generate all possible graphs for a given dataset.
 
     v = Visuals(fileName, visType)
 

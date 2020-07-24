@@ -11,7 +11,6 @@ access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
 
 #################################### LIBRARIES FOR NLP ##############################################
 import twitter_nlp
-from datavis import Visuals
 #####################################################################################################
 
 

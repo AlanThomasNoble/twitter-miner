@@ -1,10 +1,13 @@
 # Runs Program
-miner:
-	python3 main.py
+start:
+	python3 twitter_main.py
 
 # Interactive Mode
 iminer:
-	python3 -i main.py
+	python3 -i twitter_main.py
+
+# Default File if Not Specified By Command Line
+FILE := "twitter_main.py"
 
 # Run in Debug Mode; pauses execution at point where an error is thrown.
 debug:
@@ -18,6 +21,15 @@ style:
 clean:
 	rm -rf __pycache__
 
+# Removes Generated Visuals
+cleanVisuals:
+	rm -rf output/visuals/*
+
+# Removes Visuals, Output Files, and __pycache__
+cleanAll:
+	rm -rf output/*
+	rm -rf __pycache__
+
 # Removes Python Artifacts
 clean-pyc:
 	find . -name '*.pyc' -exec rm --force {} +
@@ -29,4 +41,3 @@ clean-build:
 	rm --force --recursive build/
 	rm --force --recursive dist/
 	rm --force --recursive *.egg-info
-
