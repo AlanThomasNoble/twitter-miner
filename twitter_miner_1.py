@@ -437,13 +437,14 @@ def FULL_TEXT_tweets_from_list_users(api):
                 # which is the max output for the rate limit twitter sets
                 time.sleep(1)
                 print(f'Running Count: {running_count}\r', end="")
-
+        print()
+        print(f"{running_count} tweets generated.")
         # w_ptr.write("\n")
         # w_ptr.write("\n")
 
     f_ptr.close()
     print("Completed mining via list of accounts.")
-    print("Tweets can be found in FULL_TEXT_LIST.csv")
+    print("Tweets can be found in output/LIST_OF_ACCOUNTS_TWEETS.csv")
 
 
 def obtain_tweets_from_search(api):

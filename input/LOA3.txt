@@ -20,8 +20,6 @@ roboauto
 NrzPolar
 ProZainKhawaja
 propelmee
-iot_automotive
-SelfdrivingVehi
 JeroenBartelse
 HyundaiAptivJV
 Auro_AI
@@ -31,4 +29,6 @@ AutonomousDrive
 CognitivePilot
 torcrobotics
 AAnwar_SA_ADS
-DerekViita
+aurrigoaust
+avdrivelaw
+AutonomouStuff
