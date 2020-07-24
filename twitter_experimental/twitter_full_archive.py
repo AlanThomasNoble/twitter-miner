@@ -7,12 +7,12 @@ RESULTS_PER_CALL = 100  # 100 for sandbox, 500 for paid tiers
 TO_DATE = '2020-07-01' # format YYYY-MM-DD HH:MM (hour and minutes optional)
 FROM_DATE = '2019-11-01'  # format YYYY-MM-DD HH:MM (hour and minutes optional)
 
-MAX_RESULTS = 100  # Number of Tweets you want to collect
+MAX_RESULTS = 950  # Number of Tweets you want to collect
 
 FILENAME = 'twitter_experimental/experimental_output.jsonl'  # Where the Tweets should be saved
 
 # Script prints an update to the CLI every time it collected another X Tweets
-PRINT_AFTER_X = 1
+PRINT_AFTER_X = 100
 
 #--------------------------- STOP -------------------------------#
 
@@ -37,6 +37,7 @@ premium_search_args = load_credentials("twitter_experimental/twitter_keys.yaml",
                                        yaml_key="search_tweets_api",
                                        env_overwrite=False)
 
+n = 0
 with open(FILENAME, 'a', encoding='utf-8') as f:
     f_ptr = open(f'input/list_of_keywords_2.txt', 'r')
     for query in f_ptr:
@@ -50,12 +51,14 @@ with open(FILENAME, 'a', encoding='utf-8') as f:
                         max_results=MAX_RESULTS,
                         **premium_search_args)
 
-        n = 0
         for tweet in rs.stream():
             n += 1
             if n % PRINT_AFTER_X == 0:
                 print('{0}: {1}'.format(str(n), tweet['created_at']))
+                print(f"Running count: {n}")
             tweet["Alan_keyword_query"] = query 
             json.dump(tweet, f)
             f.write('\n')
+print()
+print(f"Running count: {n}")
 print('done')
