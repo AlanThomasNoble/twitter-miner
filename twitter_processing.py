@@ -159,5 +159,5 @@ def lemmatizeText(tokens):
 	doc = nlp(out)
 	output = []
 	for token in doc:
-    	output.append(token.lemma_)
+		output.append(token.lemma_)
 	return output
