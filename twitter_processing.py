@@ -153,11 +153,11 @@ def lemmatizeText(tokens):
 	list
 		A list of words (str) with each word lemmatized, if applicable.
 	'''
-
+	
 	out = "".join(tokens)
-    nlp = spacy.load('en')
-    doc = nlp(out)
-    output = []
-    for token in doc:
+	nlp = spacy.load('en')
+	doc = nlp(out)
+	output = []
+	for token in doc:
     	output.append(token.lemma_)
-    return output
+	return output
