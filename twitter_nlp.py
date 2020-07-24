@@ -47,51 +47,7 @@ def mood_function(tweet_text):
     else:
         subj_level = "very subjective"
 
-
     return [mood, polarity, subjectivity, subj_level] 
-
-
-# Alternative/Merged Implementation of Clean Text
-'''This implementation entirely removes hashtags and mentions'''
-'''pythex.org'''
-def cleanData(text, cleanEmoticons=False, removeFullHashtag=True, removeFullMention=True):
-    # Removals
-    if removeFullMention:
-        text = re.sub(r'@[A-Za-z0-9]+','',text) # Removes mentions
-    else:
-        pass
-    if removeFullHashtag:
-        text = re.sub(r'#[A-Za-z0-9_]+','',text) # Removes hashtags
-    else:
-        pass
-    
-    text = re.sub(r'(https?)://[-a-zA-Z0-9@:%_\+.~#?&//=]*','',text) # Removes hyperlink
-
-    # Cleanup
-    text = re.sub('[\s]+',' ',text) # Removes additional white spaces
-    text = text.strip('\'"').lstrip().rstrip() # Trim (Removes '' and Trailing and Leading Spaces)
-
-    # Ref: https://gist.github.com/Alex-Just/e86110836f3f93fe7932290526529cd1#gistcomment-3208085
-    # Ref: https://en.wikipedia.org/wiki/Unicode_block
-    if cleanEmoticons:
-        emoji_patterns = re.compile(
-        "(["
-        "\U0001F1E0-\U0001F1FF"  # flags (iOS)
-        "\U0001F300-\U0001F5FF"  # symbols & pictographs
-        "\U0001F600-\U0001F64F"  # emoticons
-        "\U0001F680-\U0001F6FF"  # transport & map symbols
-        "\U0001F700-\U0001F77F"  # alchemical symbols
-        "\U0001F780-\U0001F7FF"  # Geometric Shapes Extended
-        "\U0001F800-\U0001F8FF"  # Supplemental Arrows-C
-        "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
-        "\U0001FA00-\U0001FA6F"  # Chess Symbols
-        "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-        "\U00002702-\U000027B0"  # Dingbats
-        "])"
-        )
-        text = emoji_patterns.sub('', text)
-
-    return text
 
 # Subjectivity and Polarity
 def getSubjectivity(text):
