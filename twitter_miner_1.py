@@ -436,7 +436,7 @@ def FULL_TEXT_tweets_from_list_users(api):
                 # for every tweet that I get, I will sleep for 1 sec. This means we can do 900 tweets per 15 min,
                 # which is the max output for the rate limit twitter sets
                 time.sleep(1)
-                print(f'Running Count: {running_count}\r', end="")
+                print(f'Running Count: {running_count}, Account: {account}\r', end="")
         print()
         print(f"{running_count} tweets generated.")
         # w_ptr.write("\n")
