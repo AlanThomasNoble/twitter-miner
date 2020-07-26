@@ -42,7 +42,7 @@ def analyze(text):
         scores = [sadness, joy, fear, disgust, anger]
         names = ['sadness','joy','fear','disgust','anger']
         group = list(zip(scores,names))
-        tones = list(map(lambda name: name[1], filter(lambda scores: scores[0] > .1, group)))
+        tones = list(map(lambda name: name[1], filter(lambda scores: scores[0] > .5, group)))
         tones = ', '.join(tones)
         scores.insert(0, tones)
         return scores
