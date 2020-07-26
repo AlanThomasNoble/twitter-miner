@@ -360,12 +360,10 @@ s				> Set Interval
 			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
 			d = self.df.groupby('month year').apply(lambda x: x['account sentiment'].value_counts())
 			d.unstack().fillna(0).plot.bar(stacked=True)
-			gtype = gtype.replace('_sentiment','')
 			self.df.drop(['month year'], axis=1) # or del df['colname']
 
-		plt.savefig(f'output/visuals/intervalGraph_{gtype}.png')
+		plt.savefig(f'output/visuals/intervalGraph_{gtype}.png', bbox_inches='tight')
 		plt.clf()
-		import pdb; pdb.set_trace()
 
 		print('Completed intervalGraphing.')
 		print('*'*80, '\n')
