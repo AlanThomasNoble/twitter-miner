@@ -1,13 +1,13 @@
+# Default File if Not Specified By Command Line
+FILE := "twitter_main.py"
+
 # Runs Program
 start:
-	python3 twitter_main.py
+	python3 $(FILE)
 
 # Interactive Mode
 iminer:
-	python3 -i twitter_main.py
-
-# Default File if Not Specified By Command Line
-FILE := "twitter_main.py"
+	python3 -i $(FILE)
 
 # Run in Debug Mode; pauses execution at point where an error is thrown.
 debug:

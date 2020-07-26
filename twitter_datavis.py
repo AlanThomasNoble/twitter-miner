@@ -75,7 +75,7 @@ class Visuals:
 
 		# Read File
 		try:
-			self.df = pd.read_csv(f'output/{fileName}.csv', parse_dates=['post_date_time'], index_col='post_date_time')
+			self.df = pd.read_csv(f'output/{fileName}.csv', parse_dates=['post date-time'], index_col='post date-time')
 		except FileNotFoundError:
 			exit_program('File Read Unsuccessful')  # Exits Program
 
@@ -86,7 +86,7 @@ class Visuals:
 		self.df = self.df.sort_index(ascending=True)
 
 		# Clean Tweets and Dataframe
-		self.df['account_status'] = self.df['account_status'].apply(processing.cleanData)
+		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
@@ -94,7 +94,9 @@ class Visuals:
 				polSub=self.polSub,
 				intervalGraph=self.intervalGraph,
 				valueCounts=self.valueCounts,
-				freqGraph=self.freqGraph)
+				freqGraph=self.freqGraph,
+				toneCounts=self.toneCounts,
+				toneGraph=self.toneGraph)
 		
 		# Evaluate
 		for vis in self.visualizations:
@@ -112,7 +114,7 @@ class Visuals:
 		print("(3) subjectivity - analyze a region of tweets based on subjectivity")
 
 		# User Selections
-		valid = ('datetime', 'sentiment', 'subjectivity')
+		valid = ('datetime', 'sentiment', 'subjectivity','tone')
 		params = input("Choose Desired Parameters (Separate By Commas): ")
 		params = params.split(', ')
 		check = [True if p in valid else False for p in params]
@@ -129,20 +131,20 @@ class Visuals:
 			print('Editing sentiment...')
 			sentiments = input("Select Sentiments (positive, negative, neutral): ")
 			sentiments = sentiments.split(', ')
-			mask = (self.df['account_sentiment'].isin(sentiments))
+			mask = (self.df['account sentiment'].isin(sentiments))
 			self.df = self.df.loc[mask]
 		if 'subjectivity' in params:
 			print('Editing subjectivity...')
 			subjs = input("Select Subjectivities (very objective, objective, subjective, very subjective): ")
 			subjs = subjs.split(', ')
-			mask = (self.df['account_subjectivity'].isin(subjs))
+			mask = (self.df['account subjectivity'].isin(subjs))
 			self.df = self.df.loc[mask]
 		print()
 
 
 	def preprocessing(self):
 		'''Tokenize Text and Remove Stopwords'''
-		tokens = processing.tokenizeText(self.df['account_status'])
+		tokens = processing.tokenizeText(self.df['account status'])
 		tokens = processing.removeStopwords(tokens)
 		return tokens
 
@@ -331,7 +333,7 @@ class Visuals:
 		fig, ax = plt.subplots(figsize=(15,7))
 		gtype='box'
 		if gtype=='bar':
-			mean = self.df.resample(interval)['account_subjectivity_score'].mean() # filters data and obtains mean.
+			mean = self.df.resample(interval)['account subjectivity score'].mean() # filters data and obtains mean.
 			mean = mean.sort_index().fillna(0)
 			mean.plot(kind='bar', ax=ax)
 			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date') # otherwise, set_xlabel, set_title, set_ylabel
@@ -341,7 +343,7 @@ class Visuals:
 			self.df['month year'] = self.df.index.to_period(interval)
 			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
 			self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
-			self.df.boxplot(by='month year', column='account_subjectivity_score',grid=False, rot=90)
+			self.df.boxplot(by='month year', column='account subjectivity score',grid=False, rot=90)
 			ax.set(title='Subjectivity BoxPlot Per Month', ylabel='Subjectivity Score')
 		elif gtype == 'stacked':
 			pass
@@ -373,8 +375,8 @@ class Visuals:
 		plt.figure(figsize=(8, 6))
 		for i in range(0, self.df.shape[0]):
 			# scatter plot: x axis, y axis
-			plt.scatter(self.df['account_sentiment_score'],
-						self.df['account_subjectivity_score'], # account_subjectivity score change for newer file versions. 
+			plt.scatter(self.df['account sentiment score'],
+						self.df['account subjectivity score'], # account_subjectivity score change for newer file versions. 
 						color='Blue')
 
 		plt.title('Sentiment Analysis')
@@ -402,7 +404,7 @@ class Visuals:
 		print('Running valueCounts...')
 		
 		# Analysis
-		vc_sent = self.df['account_sentiment'].value_counts()
+		vc_sent = self.df['account sentiment'].value_counts()
 		keys_sent = [str(k) for k in vc_sent.keys()]
 		values_sent = [int(vc_sent[k]) for k in keys_sent] 
 		d_sent = dict(zip(keys_sent, values_sent))
@@ -410,7 +412,7 @@ class Visuals:
 		neutPercent = round((d_sent.get('neutral',0) / self.df.shape[0])*100, 1)
 		negPercent = round((d_sent.get('negative',0) / self.df.shape[0])*100, 1)
 
-		vc_subj = self.df['account_subjectivity'].value_counts()
+		vc_subj = self.df['account subjectivity'].value_counts()
 		keys_subj = [str(k) for k in vc_subj.keys()]
 		values_subj = [int(vc_subj[k]) for k in keys_subj] 
 		d_subj = dict(zip(keys_subj, values))
@@ -442,3 +444,54 @@ class Visuals:
 		self.freqGraph(freqDict=d_subj, gtype=subj_chart, gtitle='Subjectivity Analysis', saveloc='output/visuals/valueCounts_subjectivity', userInput=False)
 		print('Completed valueCounts.')
 		print('*'*80, '\n')
+
+
+	def toneCounts(self):
+		print('*'*80)
+		print('Starting toneCounts')
+		counts = self.df.tones.str.get_dummies(sep=', ').sum()
+		print(counts)
+		keys = [str(k) for k in counts.keys()]
+		values = [int(counts[k]) for k in keys] 
+		d = dict(zip(keys, values))
+		# use another thing for size. (implement later)
+		sadness = round((d.get('sadness',0) / self.df.shape[0])*100, 1)
+		joy = round((d.get('joy',0) / self.df.shape[0])*100, 1)
+		fear = round((d.get('fear',0) / self.df.shape[0])*100, 1)
+		disgust = round((d.get('disgust',0) / self.df.shape[0])*100, 1)
+		anger = round((d.get('anger',0) / self.df.shape[0])*100, 1)
+
+		self.freqGraph(freqDict=d, gtype='pie', gtitle='Tone Analysis', saveloc='output/visuals/toneCounts', userInput=False)
+		print('Completed toneCounts')
+		print('*'*80,'\n')
+
+
+	def toneGraph(self):
+		print('*'*80)
+		print('Starting toneGraph...')
+
+		# Generate Radar Graph (https://pypi.org/project/radar-chart/)
+		# matplot way (seems a bit complicated): https://stackoverflow.com/questions/60231146/how-can-i-turn-my-dataframe-into-a-radar-chart-using-python
+		from radar_chart.radar_chart import radar_chart
+		plt.figure()
+		counts = self.df.tones.str.get_dummies(sep=', ').sum()
+		print(counts)
+		keys = [str(k) for k in counts.keys()]
+		values = [int(counts[k]) for k in keys] 
+		radar_chart(values, keys, line_color='red', fill_color='red', rotate=45)
+		plt.savefig('output/visuals/tone_radar.png')
+		plt.clf()
+
+		# Generate BoxPlot
+		plt.figure()
+		self.df.boxplot(['sadness_score','joy_score','fear_score','disgust_score','anger_score'])
+		plt.savefig('output/visuals/tone_boxplot.png')
+		plt.clf()
+
+		print('toneGraph complete')
+		print('*'*80,'\n')
+		# Generate BarChartRace (could do mean as well?)
+		# simple mean() bar chart for now.
+		#import bar_chart_race as bcr # pip install bar-chart-race
+		#bcr.bar_chart_race()
+
