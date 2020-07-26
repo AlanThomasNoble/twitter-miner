@@ -24,7 +24,7 @@ def cleanData(text):
     cleaned = str(text)
     cleaned = re.sub(r'@[A-Za-z0-9]+', '', cleaned)  # Removes mentions
     cleaned = re.sub(r'((www\.[^\s]+)|(https?://[^\s]+))','',cleaned) # Removes hyperlink  
-    cleaned = re.sub(r'\bNaN\b','',cleaned) # Removes NaN values 
+    cleaned = re.sub(r'(\bNaN\b)|(\bnan\b)','',cleaned) # Removes NaN values 
     cleaned = re.sub(r'[\s]+', ' ', cleaned)  # Removes additional white spaces
     cleaned = cleaned.strip('\'"').lstrip().rstrip() # Trim
     return cleaned
@@ -58,6 +58,8 @@ df = pd.read_csv(f'output/{file}.csv')
 
 # Call Functions
 df['account status'] = df['account status'].apply(cleanData)
+df['account status'].replace('',float('nan'),inplace=True)
+df.dropna(subset=['account status'], inplace=True)
 analyze.counter = 1
 df[['tones', 'sadness_score', 'joy_score','fear_score','disgust_score','anger_score']] = df.apply(
     lambda row: pd.Series(analyze(row['account status'])), axis=1)

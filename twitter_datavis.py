@@ -87,6 +87,9 @@ class Visuals:
 
 		# Clean Tweets and Dataframe
 		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
+		import pdb; pdb.set_trace()
+		self.df['account status'].replace('',float('nan'),inplace=True)
+		self.df.dropna(subset=['account status'], inplace=True)
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,

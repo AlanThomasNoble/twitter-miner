@@ -34,6 +34,7 @@ def cleanData(text, correctSpelling=False):
 	text = re.sub(r'@[A-Za-z0-9]+', '', text)  # Removes mentions
 	text = re.sub(r'#([^\s]+)', r'\1', text) #Replace #word with word
 	text = re.sub(r'((www\.[^\s]+)|(https?://[^\s]+))','',text) # Removes hyperlink
+	text = re.sub(r'(\bNaN\b)|(\bnan\b)','',text) # Removes NaN values 
 	emoji_patterns = re.compile(
 		"(["
 		"\U0001F1E0-\U0001F1FF"  # flags (iOS)
