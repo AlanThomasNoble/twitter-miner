@@ -303,8 +303,6 @@ class Visuals:
 					startangle=140)
 			plt.axis('equal')
 
-		#stacked bar graph
-
 		# Save and Close Graph
 		ax.set_title(gtitle.replace('**', str(num)))
 		plt.savefig(f'{saveloc}_{gtype}.png')
@@ -325,39 +323,52 @@ class Visuals:
 				> seaborn, plotly (other libraries to consider)
 				> fillna?
 				> Generate all possible graphs (avoid user input)
-				> Add Stacked.
-				> Set Interval
+s				> Set Interval
 					self.df = self.df.sort_values(by='post date-time')
 					g.iat[0]-g.iat[-1] # Timedelta('-9 days +05:45:35')
 		'''
+		print('*'*80,'\n')
+		print('Starting intervalGraphing...')
 		interval = 'M'
 
-		fig, ax = plt.subplots(figsize=(15,7))
-		gtype='box'
+		plt.figure()
+		gtype='stacked'
 		if gtype=='bar':
 			mean = self.df.resample(interval)['account subjectivity score'].mean() # filters data and obtains mean.
 			mean = mean.sort_index().fillna(0)
 			mean.plot(kind='bar', ax=ax)
 			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date') # otherwise, set_xlabel, set_title, set_ylabel
-			ax.set_xticklabels(mean.index.strftime('%b %Y').format(),rotation=70, rotation_mode="anchor", ha="right") # not sure what thething in format does.
-			plt.clf()
+			ax.set_xticklabels(mean.index.strftime('%b %Y').format(),rotation=70, rotation_mode="anchor", ha="right")
 		elif gtype == 'box':
 			self.df['month year'] = self.df.index.to_period(interval)
 			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
 			self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
 			self.df.boxplot(by='month year', column='account subjectivity score',grid=False, rot=90)
 			ax.set(title='Subjectivity BoxPlot Per Month', ylabel='Subjectivity Score')
+			self.df.drop(['Y','M','D','month year'], axis=1)
 		elif gtype == 'stacked':
-			pass
-			#g.plot(kind='bar',x='A',y='A','B','C') #stacked bar graph
+			gtype = gtype + '_subjectivity'
+			self.df['month year'] = self.df.index.to_period(interval)
+			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
+			d = self.df.groupby('month year').apply(lambda x: x['account subjectivity'].value_counts())
+			d.unstack().fillna(0).plot.bar(stacked=True)
+			plt.savefig(f'output/visuals/intervalGraph_{gtype}.png')
+			plt.clf()
+			plt.figure()
+			gtype = gtype.replace('_subjectivity','_sentiment')
+			self.df['month year'] = self.df.index.to_period(interval)
+			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
+			d = self.df.groupby('month year').apply(lambda x: x['account sentiment'].value_counts())
+			d.unstack().fillna(0).plot.bar(stacked=True)
+			gtype = gtype.replace('_sentiment','')
+			self.df.drop(['month year'], axis=1) # or del df['colname']
 
 		plt.savefig(f'output/visuals/intervalGraph_{gtype}.png')
 		plt.clf()
+		import pdb; pdb.set_trace()
 
-		# Cleanup
-		#del df['colum name']
-		columns = ['Y','M','D','month year']
-		df.drop(columns, axis=1)
+		print('Completed intervalGraphing.')
+		print('*'*80, '\n')
 
 
 	def polSub(self):
