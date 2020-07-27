@@ -51,8 +51,9 @@ def visualsStart():
     print("(5) intervalGraph")
     print("(6) freqGraph")
     print("(7) toneCounts")
-    print("(8) toneGraph\n")
-    print("Vis (7) and (8) Requires Watson Analysis to be Done First to CSV File")
+    print("(8) toneGraph")
+    print("(9) toneBCR\n")
+    print("Vis (7), (8), and (9) Requires Watson Analysis to be Done First to CSV File")
     visType = input("Choose Desired Visualizations (Separate By Commas): ")
     print("\nAvailable Files [Please Do Not Include Extension in Entry (.csv)]: ")
     stream = os.popen('cd output && ls *.csv') # or *.db

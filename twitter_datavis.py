@@ -98,6 +98,7 @@ class Visuals:
 				valueCounts=self.valueCounts,
 				freqGraph=self.freqGraph,
 				toneCounts=self.toneCounts,
+				toneBCR=self.toneBCR,
 				toneGraph=self.toneGraph)
 		
 		# Evaluate
@@ -477,6 +478,16 @@ s				> Set Interval
 		print('*'*80,'\n')
 
 
+	def toneBCR(self):
+		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]
+		import bar_chart_race as bcr
+		html = bcr.bar_chart_race(df,
+			figsize=(4, 2.5), 
+			title='Tones Over Time') # add start date and end date with f-string
+		with open('output/visuals/tone_barchartrace.html','w') as file:
+			file.write(html.data)
+
+
 	def toneGraph(self):
 		print('*'*80)
 		print('Starting toneGraph...')
@@ -501,8 +512,3 @@ s				> Set Interval
 
 		print('toneGraph complete')
 		print('*'*80,'\n')
-		# Generate BarChartRace (could do mean as well?)
-		# simple mean() bar chart for now.
-		#import bar_chart_race as bcr # pip install bar-chart-race
-		#bcr.bar_chart_race()
-
