@@ -236,7 +236,7 @@ class Visuals:
 		wc = wc.generate_from_frequencies(freqDict)
 		# plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
-		wc.to_file('output/visuals/wordCloud_negative.png')
+		wc.to_file('output/visuals/wordCloud.png')
 		print('Image generated at output/visuals/wordCloud.png')
 		print('Completed wordCloud.')
 		print('*'*80, '\n')
