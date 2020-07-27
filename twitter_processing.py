@@ -114,7 +114,8 @@ def removeStopwords(tokens):
 	'''
 
 	domains = ('.com', '.org', '.gov', '.ny', '.edu')
-	return [t for t in tokens if t not in (stopwords.STOP_WORDS and stopwords.AV_STOP_WORDS) and not t.endswith(domains)]
+
+	return [t for t in tokens if (t not in stopwords.STOP_WORDS) and (t not in stopwords.AV_STOP_WORDS) and (len(t) != 0) and not t.endswith(domains)]
 
 
 def expandAbbr(tokens):
