@@ -479,11 +479,14 @@ s				> Set Interval
 
 
 	def toneBCR(self):
+		from IPython.core.display import HTML
 		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]
 		import bar_chart_race as bcr
 		html = bcr.bar_chart_race(df,
 			figsize=(4, 2.5), 
-			title='Tones Over Time') # add start date and end date with f-string
+			title='Tones Over Time',
+			period_fmt='%B %d, %Y %X',
+			perpendicular_bar_func='median') # add start date and end date with f-string
 		with open('output/visuals/tone_barchartrace.html','w') as file:
 			file.write(html.data)
 
