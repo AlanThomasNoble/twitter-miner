@@ -1,0 +1,232 @@
+user,search query,post date-time,account status,account sentiment,account sentiment score,retweet status,retweet sentiment,retweet sentiment score,post location,tweet id,account subjectivity,account subjectivity score,retweet subjectivity,retweet subjectivity score
+ryanegly,"Autonomous Vehicles
+",2020-01-01 23:33:21,"Technological advances I expect this decade:
+1. Elimination of cellular data throttling 
+2. Connected &amp; Autonomous Vehicles
+3. The content of this tweet https://t.co/1QklaAnOSV",positive,0.4,"2020:
+
+Microchip the football. Study it for a year to make sure technology works
+
+2021:
+
+Microchipped football can be used to determine if ball crosses goal line
+
+2022:
+
+Eliminate guessing game of a chain gang. Microchipped football determines exact placement of ball
+
+3 year plan",positive,0.11666666666666665,"Place(_api=<tweepy.api.API object at 0x12e31ddd8>, id='8756b03c96ced8be', url='https://api.twitter.com/1.1/geo/id/8756b03c96ced8be.json', place_type='city', name='Lawrenceburg', full_name='Lawrenceburg, TN', country_code='US', country='United States', contained_within=[], bounding_box=BoundingBox(_api=<tweepy.api.API object at 0x12e31ddd8>, type='Polygon', coordinates=[[[-87.392679, 35.182599], [-87.287124, 35.182599], [-87.287124, 35.285295], [-87.392679, 35.285295]]]), attributes={})",1212517197056299008,subjective,0.7,subjective,0.512962962962963
+AndrewRReid1,"Autonomous Vehicles
+",2020-01-01 23:22:29,Proving once again that autonomous vehicles are still a long way off. https://t.co/Hh1ZiuMilX,positive,0.17500000000000002,Tesla may have been on Autopilot in California crash which killed two https://t.co/kFRhGHQzrW,negative,-0.2,,1212514462214737920,subjective,0.55,very objective,0.0
+CStoreNews_,"Autonomous Vehicles
+",2020-01-01 23:21:55,"Credit #CES2020: Retail technologies for the next decade: TradeShow 
+
+1 AI
+2 IoT
+3 BlockChain
+4 3D print
+5 Mobile 
+6 Autonomous Vehicles 
+7 Smartphones 
+8 Robotics 
+9 VR/AR
+10 Wireless Tech 
+11 Quantum Computers
+12 5G 
+13 Voice Assistant
+14 CyberSecurity 
+15 RetailTech https://t.co/zZBSOOE6io",positive,0.2,,,,,1212514316093677568,objective,0.35,,
+i_proximity,"Autonomous Vehicles
+",2020-01-01 23:16:06,Baidu secures licenses to test self-driving cars in Beijing https://t.co/GNsTncebEw #autonomousvehicles,neutral,0.0,,,,,1212512855230222342,very objective,0.0,,
+JosefSpalenka,"Autonomous Vehicles
+",2020-01-01 23:07:03,"I don’t get this kind of tech pessimism. Electric vehicles, rocketry, autonomous vehicles, clean tech, Starlink are all poised to have a transformative decade. If they all fizzle and amount to nothing much by 2030 I would be very surprised. https://t.co/sAdJTuxrSx",positive,0.3393333333333334,"I figured I’d look up some tech predictions for 2020. This list has AI, IoT, quantum computing, aerospace, 5G/starlink, genome analysis, self-driving cars, blockchain. Almost all stuff where they’re left saying “it’ll finally start to deliver, promise”. https://t.co/T8Hms8rIHH",neutral,0.0,,1212510576229933057,subjective,0.7000000000000001,objective,0.5
+66Iot,"Autonomous Vehicles
+",2020-01-02 23:57:11,"mt: @MikeQuindazzi
+copy @Antgrasso @Fisher85m
+
+3/4 of a billion vehicles will be #IoT connected via telematics by 2023 &gt;&gt;&gt; @juniperresearch via @MikeQuindazzi &gt;&gt;&gt; #AI #AutonomousVehicles #DataAnalytics #CloudComputing #SelfDrivingCars &gt;&gt;&gt; https://t.co/Ms43xxtMbo .. https://t.co/CIkRuMEiwt",neutral,0.0,,,,,1212885581883150336,very objective,0.0,,
+bhagirathl,"Autonomous Vehicles
+",2020-01-02 23:49:17,"Tesla may have been on Autopilot in California crash which killed two
+
+January 2020
+
+#tesla #AutonomousVehicles #autonomouscars
+
+https://t.co/t2MIiO4igr",negative,-0.2,,,,,1212883592864395264,very objective,0.0,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-02 23:47:16,"IAM Platform Curated Retweet:
+
+Via: https://t.co/KZ3WBiFtFs
+
+The world's first flying #motorcycle will be a reality in 2020
+
+HT GlenGilmore  
+#AutonomousVehicles #IoT #SmartCity #EmergingTech #Flyingvehicles #IoT #HealthTech #FirstResponders #Emergen",positive,0.25,,,,,1212883085097918464,objective,0.3333333333333333,,
+RHAMembers,"Autonomous Vehicles
+",2020-01-02 23:46:35,"Rotterdam seeking new type of AGV for CER
+
+More Info: https://t.co/9NZJTLEvaX
+
+Tweet
+Rotterdam Port Authority (HbR) has issued a market exploration request for the autonomous vehicles it wants to see deployed on... https://t.co/CHdD4JRvPe",positive,0.3090909090909091,,,,,1212882914247086081,objective,0.43863636363636366,,
+PawlowskiMario,"Autonomous Vehicles
+",2020-01-02 23:42:54,"The world's first flying #motorcycle will be a reality in 2020
+
+HT @GlenGilmore  
+#AutonomousVehicles #IoT #SmartCity #EmergingTech #Flyingvehicles #IoT #HealthTech #FirstResponders #EmergencyMedicine #CES2020 @vishnucr92 @MikeQuindazzi @enricomolinari 
+
+ https://t.co/SwBHQopszz",positive,0.25,,,,,1212881984428691457,objective,0.3333333333333333,,
+SofteiCom,"Autonomous Vehicles
+",2020-01-03 23:59:24,Perception software runs in #sensors of autonomous vehicles https://t.co/jzxmKxVovJ #ai #iot #latestnews https://t.co/ZbDcuDAmAo,positive,0.4,,,,,1213248525498232833,subjective,0.7,,
+NGCVCFT,"Autonomous Vehicles
+",2020-01-03 23:44:26,"Bridging the gap between civilian #AutonomousVehicles  and #combat #AutonomousVehicles. #modernization 
+
+@usarmyccdc @CCDC_GVSC @armyfutures @USArmy https://t.co/l9WqcYY7rZ",neutral,0.0,"Hear Dr. Kevin McEnery, Next-Generation Combat Vehicle Cross-Functional Team deputy director, lay out the challenges with autonomous cars becoming commonplace in civilian communities and the challenges they face in complex environments. #RCTA #TechTalk  https://t.co/vW39p5qrny https://t.co/s55dGiGlQ0",positive,0.18333333333333335,,1213244761982799872,very objective,0.0,subjective,0.65
+Mcfixit,"Autonomous Vehicles
+",2020-01-03 23:42:56,Engineers taught this driverless DeLorean to drift and it could make future autonomous vehicles safer - Mashable https://t.co/bHV9uOcfwd,positive,0.2,,,,,1213244380749938690,objective,0.4125,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-03 23:39:42,"IAM Platform Curated Tweet:
+
+Bosch debuts long-range lidar sensor for autonomous vehicles 
+
+https://t.co/XB2rWT5ST4
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #FutureWP2TWTR1",positive,0.4,,,,,1213243568690782214,subjective,0.7,,
+EvanKirstel,"Autonomous Vehicles
+",2020-01-03 23:34:00,You said you wanted flying cars!?  #Robotics #Aviation #Automotive #AutonomousVehicles #CES2020 @3DSNorthAmerica @Dassault3DS #smartcity #Industry40 https://t.co/ihIbKZb151,neutral,0.0,,,,,1213242136113508352,very objective,0.0,,
+DriverlessNow,"Autonomous Vehicles
+",2020-01-04 23:56:22,Honda plans to launch 'level 3' autonomous vehicle this year https://t.co/b0n9elfFfR @japantimes #SelfDrivingCars #AutonomousVehicles @Honda,positive,0.4,,,,,1213610149215997953,subjective,0.7,,
+IQ2US,"Autonomous Vehicles
+",2020-01-04 23:50:39,Fully autonomous vehicles are officially on the road in California. Get the details (and buckle up): https://t.co/JdICJ3156j https://t.co/rSUncLFx0Z,positive,0.4,,,,,1213608710595059714,subjective,0.7,,
+spxbot,"Autonomous Vehicles
+",2020-01-04 23:50:17,AI+ NEWS * https://t.co/wSMtK663B1 Newswire – The AI Eye: Sony (NYSE: SNE) Developing LiDAR for Autonomous Vehicles and K https://t.co/XFvQDFiiqg,positive,0.4,,,,,1213608618546913284,subjective,0.7,,
+Rosie_Avetisyan,"Autonomous Vehicles
+",2020-01-04 23:40:20,I wonder what all you reckless ass attention seeking drivers are gonna do when autonomous vehicles take over😂,positive,0.4,,,,,1213606117575520256,subjective,0.7,,
+EvanKirstel,"Autonomous Vehicles
+",2020-01-04 23:34:00,You said you wanted flying cars!?  #Robotics #Aviation #Automotive #AutonomousVehicles #CES2020 @3DSNorthAmerica @Dassault3DS #smartcity #Industry40 https://t.co/ihIbKZb151,neutral,0.0,,,,,1213604524574666752,very objective,0.0,,
+MarkQuinn_VO,"Autonomous Vehicles
+",2020-01-05 23:52:44,"This #selfdriving passenger #drone it's built on #blockchain! 
+#AI #AutonomousVehicles #SmartCities #Tech #CES2020   https://t.co/1TTLYxqO0e",neutral,0.0,,,,,1213971623671238656,very objective,0.0,,
+ForbesTechCncl,"Autonomous Vehicles
+",2020-01-05 23:35:40,There are significant technical and regulatory hurdles to overcome for the future of autonomous vehicles to become a reality. https://t.co/9rNVsvLbYa,positive,0.19375,,,,,1213967328582545413,objective,0.45,,
+EvanKirstel,"Autonomous Vehicles
+",2020-01-05 23:34:00,You said you wanted flying cars!?  #Robotics #Aviation #Automotive #AutonomousVehicles #CES2020 @3DSNorthAmerica @Dassault3DS #smartcity #Industry40 https://t.co/ihIbKZb151,neutral,0.0,,,,,1213966911207178241,very objective,0.0,,
+DonotInnovate,"Autonomous Vehicles
+",2020-01-05 23:29:21,@RVAwonk I take a @lyft to the train station to teach an UG class on the implications of technology (esp AI and autonomous vehicles). I’ve actually changed my class multiple times based on drivers’ insights about how autonomous vehicles will change the world.  Some fascinating people!!!,positive,0.36,,,,,1213965739738181632,objective,0.47000000000000003,,
+botbaitclick,"Autonomous Vehicles
+",2020-01-05 23:24:16,Try these 19 things to get grounded and find energy. #AutonomousVehicles #clickbait,neutral,0.0,,,,,1213964461087870976,very objective,0.0,,
+willphoto,"Autonomous Vehicles
+",2020-01-06 23:58:26,"CES, actual speed. #CES #Vegas #LasVegas #tech #innovation #tradeshow #drones #robots 3dPrinting #ai #alexaeverything #conceptcare #autonomousvehicles @ Las Vegas Convention Center https://t.co/W8WT4KIK8E",negative,-0.05,,,,,1214335445670211584,very objective,0.1,,
+telecomlead,"Autonomous Vehicles
+",2020-01-06 23:52:04,"Qualcomm brings Snapdragon Ride for autonomous vehicles
+https://t.co/hRnCoApDyx",positive,0.4,,,,,1214333842963750912,subjective,0.7,,
+mobileworldlive,"Autonomous Vehicles
+",2020-01-06 23:51:33,#CES2020 @Qualcomm made a big play in #connectedcar and #autonomousvehicles; and unveiled a #5G laptop with @Lenovo powered by #Snapdragon8cx. #SnapdragonRide #CES https://t.co/xOiKOEXVWM https://t.co/HW5BKsZl0H,neutral,0.0,,,,,1214333713330450433,very objective,0.1,,
+Musclepapa,"Autonomous Vehicles
+",2020-01-06 23:39:08,"Forget drones — the U.S. Air Force is turning existing planes into autonomous vehicles by putting robot pilots in the cockpit.
+https://t.co/Fgs2qK5llZ https://t.co/Fgs2qK5llZ",positive,0.4,,,,,1214330589257650178,subjective,0.7,,
+rwang0,"Autonomous Vehicles
+",2020-01-06 23:38:03,"MyPOV: @MindtronicAI  Ran GAO sharing how their #ai mobility platform can create an #ai digital cockpit 
+
+Instrument clusters 
+IVI
+Domain controller 
+Hyper visor
+Computer vision
+#deeplearning
+#AutonomousVehicles 
+
+#taitra #ces2020 https://t.co/uwVQQShPEj",neutral,0.0,,,,,1214330316296376320,very objective,0.0,,
+TFSUK,"Autonomous Vehicles
+",2020-01-07 23:59:00,"Discover @VALERANN_LTD at @CES 2020 on stand 51902-U. After winning #CES2020 #innovation award, they’re not to be missed, come &amp; watch the #technology that will change the future of #mobility. https://t.co/SSXWzz9Inr #V2X #CES #smartcity #Autonomousvehicles #techUK #tradegovuk https://t.co/e4rZfSLPdK",positive,0.25,,,,,1214697976339169285,objective,0.4375,,
+NBDPress,"Autonomous Vehicles
+",2020-01-07 23:58:00,.#Intel subsidiary #Mobileye announced a partnership with Chinese carmaker #SaicMotor at #CES2020 . Saic Motor plans to use Mobileye’s REM #mapping technology to map China for L2+ #ADAS deployment while paving the way for #AutonomousVehicles in the country. (TechCrunch) https://t.co/Y3cOuuEpoj,neutral,0.0,,,,,1214697723829481473,very objective,0.0,,
+glcavanagh,"Autonomous Vehicles
+",2020-01-07 23:55:24,"Bjarke Ingels &amp; Toyota Woven City Master plan in Japan using electric autonomous vehicles &amp; pedestrian park promenades:
+https://t.co/Xq6p01Mm6n @BjarkeIngels #ToyotaWovenCity",positive,0.4,,,,,1214697073141899264,subjective,0.7,,
+CallumRN,"Autonomous Vehicles
+",2020-01-07 23:52:34,"Looks cool 
+Toyota plans to build 'city of the future' with housing, robots and autonomous vehicles in Japan https://t.co/ItJy145Ls1",positive,0.25,,,,,1214696359204290560,objective,0.4916666666666667,,
+SmartMoneyM,"Autonomous Vehicles
+",2020-01-07 23:46:13,"Horses, Equine Law And The Future Of The Autonomous Vehicle Legal Framework What should be the right legal theory for Autonomous Vehicles ? We... - https://t.co/MakMDXmdg8 #Qrcode #StockMarket #Money #Management #Inflation #Trading #Asset #BullMarket #Capital #Transfer https://t.co/rMQqNhUexM",positive,0.24761904761904763,,,,,1214694758959980550,objective,0.41011904761904755,,
+sallyeaves,"Autonomous Vehicles
+",2020-01-08 23:45:31,"An excellent roundup of the start of #CES2020 and many thanks for the inclusion, much appreciated! #SmartNews #cities #care #CES20  #AutonomousVehicles #HealthTech #futureofwork #skills @CoresightNews @ipfconline1 @TechNative @CES https://t.co/HHePInWlT5",positive,0.4875,,,,,1215056974187921409,objective,0.45,,
+GBelloncle,"Autonomous Vehicles
+",2020-01-08 23:40:37,@Dassault3DS @ #CES2020 Accelerate safe automated mobility experience development for #ADAS and #AutonomousVehicles with @CognataAI and @3DSCATIA on #3DEXPERIENCE platform. Learn more in North Hall #4623 &amp; #8132 https://t.co/R2QSAOXwb5,positive,0.5,,,,,1215055737929584642,objective,0.5,,
+bellresources,"Autonomous Vehicles
+",2020-01-08 23:32:38,"Sony electric car took Las Vegas by surprise on Monday, designed as connected tech showcase. Wow!
+https://t.co/2Pf8FifcYh #ev #ElectricVehicles #AutonomousVehicles #selfDrivingCar #energy #resources #renewables #Sony #Bellresources #bellhub_HQ",positive,0.125,,,,,1215053731495960576,very subjective,1.0,,
+spooney35,"Autonomous Vehicles
+",2020-01-08 23:31:19,@momness1 it's the newest technology from around the world. Lots of amazing stuff dealing with autonomous vehicles research health communications smarthomes security you name it they got it. Databases are using facial recognition to give access 2 things you store online. And much more,positive,0.375,,,,,1215053397067325440,subjective,0.525,,
+Domenclature,"Autonomous Vehicles
+",2020-01-08 23:27:04,"Serious About #AI? 
+Available!!
+
+https://t.co/VhRpYbwgqM
+AiHQs .com
+
+""#ArtificialIntelligence Headquarters""
+
+#AiIndia #Tech #Drone #Driverless #AutonomousVehicles #DomainForSale #China #Japan #Startup #Microsoft #Google #tesla #Amazon #PremiumDomains https://t.co/NOFyzg2Ahl",positive,0.14583333333333334,,,,,1215052328371253248,subjective,0.5333333333333333,,
+Guenda_S,"Autonomous Vehicles
+",2020-01-09 23:40:50,Super nice!! #AutonomousVehicles #AI #Unity https://t.co/iW5zlKlLtO,positive,0.6354166666666666,"Microsoft AirSim, now on Unity, provides an open-source system for training autonomous systems. Faster and safer than training these systems in the real world, explore how AirSim utilizes multiple learning methods to create a realistic environment: https://t.co/h6GFpVQnf1",positive,0.19166666666666668,,1215418180920889344,very subjective,0.8333333333333333,objective,0.3333333333333333
+IAM__Network,"Autonomous Vehicles
+",2020-01-09 23:32:24,"IAM Platform Curated Tweet:
+
+Consumers still concerned about autonomous vehicle safety: Can a decision-making model help? 
+
+https://t.co/02FeGEHUWk
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future https://t.co/tZHpV76o86",positive,0.2,,,,,1215416059672612865,objective,0.4125,,
+godofcommerce,"Autonomous Vehicles
+",2020-01-09 23:31:19,@HakeemAngeIes There are some companies being allowed to do testing with driver-assisted autonomous vehicles but until the safety is near perfect you won't see unmanned vans out on the road doing deliveries. 5-7 years.,positive,0.5,,,,,1215415785943732226,subjective,0.7000000000000001,,
+gayatri397,"Autonomous Vehicles
+",2020-01-09 23:30:00,"Have you been using AIOT?  If not you should be using it on things like smart cameras, drones, office buildings/homes, fleet management of autonomous vehicles and robots. #AI #IoT https://t.co/mCaSGcANKU",positive,0.30714285714285716,,,,,1215415455382474753,subjective,0.6714285714285715,,
+lidarnews,"Autonomous Vehicles
+",2020-01-09 23:28:27,"Velodyne's Smallest #lidar #sensor Priced at $100
+@VelodyneLidar @VelodyneFounder #AutonomousVehicles #safety #3D #perception @CES #UAV #Robots #infrastructure @RoboticResearch #GPS 
+https://t.co/3NetxKEaKR https://t.co/ojWcccepJZ",neutral,0.0,,,,,1215415065601609733,very objective,0.0,,
+DrBradTaylor,"Autonomous Vehicles
+",2020-01-10 23:58:21,@missy_cummings Yes. We have to be careful when our tools exceed our local senses. Be they missiles or autonomous vehicles. Doesn't mean not using them. Just not using them wrong,negative,-0.1025,,,,,1215784977813712897,subjective,0.6575,,
+todiba,"Autonomous Vehicles
+",2020-01-10 23:43:00,"20 Technology Metatrends That Will Define the Next Decade 
+#ArtificialInteligence #VirtualReality #AugmentedReality #QuantumMechanics #Robotics #MachineLearning #AutonomousVehicles #Sensors #Entrepreneurship #SiliconValley #whatittakes 
+https://t.co/btMOzlk1x4 https://t.co/K5R1hGzd36",neutral,0.0,,,,,1215781113718808576,very objective,0.0,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-10 23:40:32,"IAM Platform Curated Tweet:
+
+Plan for autonomous vehicles offered 
+
+https://t.co/DWfwM6VfXE
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #FutureWP2TWTR1 https://t.co/7RjkcEe3UX",positive,0.4,,,,,1215780495587450880,subjective,0.7,,
+IoTBreakthrough,"Autonomous Vehicles
+",2020-01-10 23:34:02,Waymo’s autonomous cars have driven 20 million miles on public roads https://t.co/pqR7Q074kq #AutonomousVehicles https://t.co/DYJOtEs5A3,positive,0.2,,,,,1215778857187512321,objective,0.3833333333333333,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-10 23:32:59,"IAM Platform Curated Tweet:
+
+World’s First Laboratory to Help Connected and Autonomous Vehicles Talk to Traffic Signals Opens in Metro Atlanta 
+
+https://t.co/U67pfvP2EZ
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future",positive,0.21666666666666667,,,,,1215778593713872897,objective,0.38611111111111107,,
+tollguru,"Autonomous Vehicles
+",2020-01-11 23:59:35,"After Uber’s ‘Manifold’, Lyft Open Sources It’s Cloud-Native Machine Learning Model ‘Flyte’ https://t.co/1S74j6ViSF via @analyticsindiam #lyft #ridesharing #Uber #OpenSource #transportation #infrastructure #AutonomousVehicles #SelfDrivingCars #autonomous #AI #DataScience #dataset",positive,0.2,,,,,1216147673859805184,subjective,0.6,,
+UnlockBiz,"Autonomous Vehicles
+",2020-01-11 23:54:07,"AI-controlled vehicles could greatly reduce human error and, by reducing or eliminating the need for a human driver, HAVs have the potential to profoundly change our transportation system. Link&gt;&gt; https://t.co/xdMx1DNXMo @USGAO @MikeQuindazzi @antgrasso #AutonomousVehicles #AI https://t.co/R3qrE0kk4o",positive,0.1766666666666667,,,,,1216146298497388544,subjective,0.5900000000000001,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-11 23:36:00,"IAM Platform Curated Tweet:
+
+How to Solve Autonomous Vehicles’ Data Problem – Grit Daily News 
+
+https://t.co/LpWefOLdtn
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #Future https://t.co/wJmM4tXW7A",positive,0.13333333333333333,,,,,1216141742946373636,objective,0.27499999999999997,,
+IAM__Network,"Autonomous Vehicles
+",2020-01-11 23:31:06,"IAM Platform Curated Tweet:
+
+Trump administration plans to let autonomous-vehicle industry regulate itself 
+
+https://t.co/LNljE7jhZ1
+
+#AutonomousVehicles #Autopilot #Cars #Cities #Drones #FutureWP2TWTR1 https://t.co/cLm7iZQlae",neutral,0.0,,,,,1216140506385788929,very objective,0.0,,
