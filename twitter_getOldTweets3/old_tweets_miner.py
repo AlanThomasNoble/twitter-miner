@@ -53,9 +53,11 @@ def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5) :
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        with open('input/list_of_keywords.txt', "r") as fptr:
+        with open('input/list_of_keywords_2.txt', "r") as fptr:
             for query in fptr:
+                query = query.rstrip('\n')
                 print(query)
+                print()
                 for day in days:
                     init = got.manager.TweetCriteria().setQuerySearch(query).setSince((since + timedelta(days=day)).strftime('%Y-%m-%d')).setUntil((since+ timedelta(days=day+1)).strftime('%Y-%m-%d')).setMaxTweets(maxtweetperday)
                     get = got.manager.TweetManager.getTweets(init)
