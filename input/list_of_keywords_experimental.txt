@@ -1,16 +1,62 @@
-1 -
+1 - DONE
 autonomous vehicles
 autonomous driving
 autonomous cars
 driverless
 self driving (also gets self-driving)
 
-2 -
+2 - DONE
 assisted driving
 autonomous technology
 autonomous level
 intelligent driving systems
 artificial intelligence cars
+
+3 - doing
+self driving crash
+autonomous vehicle crash
+autonomous parking
+autonomous robots
+LIDAR in vehicles
+
+4 - 
+autonomous driving
+self driving bikes
+self driving law
+self driving safety
+computer vision cars
+
+5 - 
+Tesla self driving
+Waymo self driving
+Argo AI self driving
+Lyft self driving
+Uber self driving
+
+6 -
+Baidu self driving
+Zoox self driving
+nuTonomy self driving
+Cruise self driving
+Enbark self driving
+
+7 - 
+Ford self driving
+BMW self driving
+Mercedes self driving
+Voyage self driving
+Carmera self driving
+
+8 - 
+Nuro Autonomous Robot
+Pony AI autonomous driving
+
+
+
+
+
+
+
 
 
 
