@@ -26,7 +26,7 @@ self driving law
 self driving safety
 computer vision cars
 
-5 - 
+5 - Current
 self driving car accidents
 self driving dangers
 self driving death
@@ -59,5 +59,5 @@ Voyage self driving
 Carmera self driving
 
 10 - 
-Nuro Autonomous Robot
+Nuro autonomous robot
 Pony AI autonomous driving

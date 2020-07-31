@@ -1,5 +1,5 @@
-autonomous driving
-self driving bikes
-self driving law
-self driving safety
-computer vision cars
+self driving car accidents
+self driving dangers
+self driving death
+pedestrian autonomous vehicles
+deep learning cars
