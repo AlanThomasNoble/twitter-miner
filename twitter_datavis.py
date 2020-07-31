@@ -84,6 +84,9 @@ class Visuals:
 		if constrain == 'y':
 			self.editDataframe()
 		self.df = self.df.sort_index(ascending=True)
+		self.df['datetime_extra'] = self.df.index # We dont necessarily need this. I just thought this would be helpful while indexing time.
+		# print(self.df.index[0])
+		print()
 
 		# Clean Tweets and Dataframe
 		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
