@@ -5,6 +5,9 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
 import sys
+import plotly
+import plotly.graph_objects as go
+import plotly.express as px
 from collections import Counter
 
 # Internal Libraries
@@ -102,7 +105,8 @@ class Visuals:
 				freqGraph=self.freqGraph,
 				toneCounts=self.toneCounts,
 				toneBCR=self.toneBCR,
-				toneGraph=self.toneGraph)
+				toneGraph=self.toneGraph,
+				plotly=self.plotly)
 		
 		# Evaluate
 		for vis in self.visualizations:
@@ -372,6 +376,9 @@ s				> Set Interval
 		print('Completed intervalGraphing.')
 		print('*'*80, '\n')
 
+	def plotly(self):
+		fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
+		fig.show()
 
 	def polSub(self):
 		'''Plots polarity and subjectivity.

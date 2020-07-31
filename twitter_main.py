@@ -44,6 +44,7 @@ def miningStart():
 def visualsStart():
     '''Initial output for Visuals'''
     print("\nVisualization Types")
+    print("(0) plotly")
     print("(1) wordCloud")
     print("(2) ngrams")
     print("(3) polSub")
