@@ -1,5 +1,0 @@
-self driving crash
-autonomous vehicle crash
-autonomous parking
-autonomous robots
-LIDAR in vehicles

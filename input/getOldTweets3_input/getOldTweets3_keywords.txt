@@ -12,14 +12,14 @@ autonomous level
 intelligent driving systems
 artificial intelligence cars
 
-3 - doing
+3 - DONE
 self driving crash
 autonomous vehicle crash
 autonomous parking
 autonomous robots
 LIDAR in vehicles
 
-4 - 
+4 - DONE
 autonomous driving
 self driving bikes
 self driving law
@@ -27,49 +27,37 @@ self driving safety
 computer vision cars
 
 5 - 
+self driving car accidents
+self driving dangers
+self driving death
+pedestrian autonomous vehicles
+deep learning cars
+
+6 -
+human machine interface vehicles
+autonomous vehicles research
+
+7 - 
 Tesla self driving
 Waymo self driving
 Argo AI self driving
 Lyft self driving
 Uber self driving
 
-6 -
+8 -
 Baidu self driving
 Zoox self driving
 nuTonomy self driving
 Cruise self driving
 Enbark self driving
 
-7 - 
+9 - 
 Ford self driving
 BMW self driving
 Mercedes self driving
 Voyage self driving
 Carmera self driving
 
-8 - 
+10 - 
 Nuro Autonomous Robot
 Pony AI autonomous driving
-
-
-
-
-
-
-
-
-
-
-selfdriving
-autonomous vehicle
-assisted driving
-driver assistance
-
-September -
-Vision Processing in Cars
-
-https://www.gearbrain.com/autonomous-car-self-driving-terms-1904661774.html 
-
-
-Pandemic Autonomous Vehicles
-Covid Autonomous Vehicles

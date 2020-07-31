@@ -53,7 +53,7 @@ def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5) :
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        with open('input/list_of_keywords_2.txt', "r") as fptr:
+        with open('input/getOldTweets3_input/LOK.txt', "r") as fptr:
             for query in fptr:
                 query = query.rstrip('\n')
                 print(query)
