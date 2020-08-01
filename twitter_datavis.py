@@ -82,7 +82,7 @@ class Visuals:
 		except FileNotFoundError:
 			exit_program('File Read Unsuccessful')  # Exits Program
 
-		# Edit DataFrame
+		# Edit DataFrame (and sorts)
 		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
 		if constrain == 'y':
 			self.editDataframe()
@@ -91,10 +91,8 @@ class Visuals:
 		# print(self.df.index[0])
 		print()
 
-		# Clean Tweets and Dataframe
-		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
-		self.df['account status'].replace('',float('nan'),inplace=True)
-		self.df.dropna(subset=['account status'], inplace=True)
+		# Clean DataFrame
+		self.cleanDataframe()
 
 		# Visualization Calls
 		modes = dict(wordCloud=self.wordCloud,
@@ -114,6 +112,18 @@ class Visuals:
 				modes[vis]()
 			else:
 				exit_program(f'Visualization {vis} is not a valid input')
+
+
+	def cleanDataframe(self):
+		'''Cleans DataFrame.  Removes '', 'nan', and Repeat Entries'''
+		total = len(self.df)
+		print(f"Total Entries: {total}")
+		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
+		self.df['account status'].replace('',float('nan'),inplace=True)
+		self.df.dropna(subset=['account status'], inplace=True)
+		self.df.drop_duplicates(subset='tweet id')
+		print(f"***{total - len(self.df)} Entries Removed***")
+		print(f"New Total: {len(self.df)}\n")
 
 
 	def editDataframe(self):
