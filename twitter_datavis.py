@@ -431,6 +431,7 @@ s				> Set Interval
 		fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
 		fig.show()
 
+
 	def polSub(self):
 		'''Plots polarity and subjectivity.
 	
@@ -541,11 +542,11 @@ s				> Set Interval
 
 	def toneBCR(self):
 		from IPython.core.display import HTML
-		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]
+		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]*100
 		import bar_chart_race as bcr
 		html = bcr.bar_chart_race(df,
 			figsize=(4, 2.5), 
-			title='Tones Over Time',
+			title='Tones Over Time [0 to 1]*100',
 			period_fmt='%B %d, %Y %X',
 			perpendicular_bar_func='median') # add start date and end date with f-string
 		with open('output/visuals/tone_barchartrace.html','w') as file:
