@@ -13,6 +13,8 @@ from collections import Counter
 # Internal Libraries
 import twitter_processing as processing
 
+
+
 #####################################################################################################
 '''Helper Functions'''
 ##################################################################################################### 
@@ -29,6 +31,13 @@ def exit_program(err_msg='Manual Exit'):
     print(f'\n{err_msg}')
     print("Exited program.")
     sys.exit()
+
+
+def mkdir(path):
+	'''Creates SubDirectories if Path Does not Exist'''
+	from pathlib import Path
+	Path(path).mkdir(parents=True, exist_ok=True)
+
 
 
 #####################################################################################################
@@ -335,8 +344,8 @@ class Visuals:
 			print('*'*80, '\n')
 
 
-	def intervalGraph(self):
-		'''Plots graphs based on intervals (boxplots, barh)
+	def intervalGraph(self, gtypes='bar, box, stacked'):
+		'''Plots graphs based on intervals (boxplots, barh) of sentiment and subjectivity.
 
 			Notes:
 				> implement 'smart' interval.
@@ -347,46 +356,76 @@ s				> Set Interval
 					self.df = self.df.sort_values(by='post date-time')
 					g.iat[0]-g.iat[-1] # Timedelta('-9 days +05:45:35')
 		'''
-		print('*'*80,'\n')
+		print('*'*80)
 		print('Starting intervalGraphing...')
-		interval = 'M'
 
-		plt.figure()
-		gtype='stacked'
-		if gtype=='bar':
-			mean = self.df.resample(interval)['account subjectivity score'].mean() # filters data and obtains mean.
-			mean = mean.sort_index().fillna(0)
-			mean.plot(kind='bar', ax=ax)
-			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date') # otherwise, set_xlabel, set_title, set_ylabel
-			ax.set_xticklabels(mean.index.strftime('%b %Y').format(),rotation=70, rotation_mode="anchor", ha="right")
-		elif gtype == 'box':
-			self.df['month year'] = self.df.index.to_period(interval)
-			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
-			self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
+		def openplt():
+			fig = plt.figure()
+			ax = plt.gca()
+			return fig, ax
+		def closeplt(feature, gtype):
+			print(f"{gtype} graph of {feature} generated.")
+			path = 'output/visuals/intervalGraph/'
+			mkdir(path)
+			plt.savefig(f'{path}intervalGraph_{feature}_{gtype}.png', bbox_inches='tight')
+			plt.clf()
+
+		interval = 'M'
+		gtypes = gtypes.split(', ')
+		
+		# Form Columns
+		self.df['month year'] = self.df.index.to_period(interval)
+		self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
+		self.df['Y'] = self.df.index.year;self.df['M'] = self.df.index.month; self.df['D'] = self.df.index.day
+
+		if 'bar' in gtypes:
+			# Sentiment
+			fig,ax = openplt()
+			sentmean = self.df.resample(interval)['account sentiment score'].mean()
+			sentmean = sentmean.sort_index().fillna(0)
+			sentmean.plot(kind='bar', ax=ax)
+			ax.set(title='Sentiment Average Per Month', ylabel='Average', xlabel='Date')
+			ax.set_xticklabels(sentmean.index.strftime('%b %Y').format())#,rotation=70, rotation_mode="anchor", ha="right")
+			closeplt('sentiment','bar')
+			# Subjectivity
+			fig,ax = openplt()
+			subjmean = self.df.resample(interval)['account subjectivity score'].mean()
+			subjmean = subjmean.sort_index().fillna(0)
+			subjmean.plot(kind='bar', ax=ax)
+			ax.set(title='Subjectivity Average Per Month', ylabel='Average', xlabel='Date')
+			ax.set_xticklabels(subjmean.index.strftime('%b %Y').format())#,rotation=70, rotation_mode="anchor", ha="right")
+			closeplt('subjectivity','bar')
+		if 'box' in gtypes:
+			# Sentiment
+			fig,ax = openplt()
+			self.df.boxplot(by='month year', column='account sentiment score',grid=False, rot=90)
+			ax.set(title='Sentiment BoxPlot Per Month', ylabel='Sentiment Score')
+			closeplt('sentiment','box')
+			# Subjectivity
+			fig,ax = openplt()
 			self.df.boxplot(by='month year', column='account subjectivity score',grid=False, rot=90)
 			ax.set(title='Subjectivity BoxPlot Per Month', ylabel='Subjectivity Score')
-			self.df.drop(['Y','M','D','month year'], axis=1)
-		elif gtype == 'stacked':
-			gtype = gtype + '_subjectivity'
-			self.df['month year'] = self.df.index.to_period(interval)
-			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
+			closeplt('subjectivity','box')
+		if 'stacked' in gtypes:
+			# Sentiment
+			fig,ax = openplt()
+			d_sent = self.df.groupby('month year').apply(lambda x: x['account sentiment'].value_counts())
+			d_sent.unstack().fillna(0).plot.bar(stacked=True)
+			closeplt('sentiment','stacked')
+			# Subjectivity
+			fig,ax = openplt()
 			d = self.df.groupby('month year').apply(lambda x: x['account subjectivity'].value_counts())
-			d.unstack().fillna(0).plot.bar(stacked=True)
-			plt.savefig(f'output/visuals/intervalGraph_{gtype}.png')
-			plt.clf()
-			plt.figure()
-			gtype = gtype.replace('_subjectivity','_sentiment')
-			self.df['month year'] = self.df.index.to_period(interval)
-			self.df['month year'] = self.df['month year'].apply(lambda x: x.strftime('%b %Y'))
-			d = self.df.groupby('month year').apply(lambda x: x['account sentiment'].value_counts())
-			d.unstack().fillna(0).plot.bar(stacked=True)
-			self.df.drop(['month year'], axis=1) # or del df['colname']
+			d.unstack().fillna(0).plot.bar(stacked=True) # do we really want to fillna with 0 here?
+			# just remove NaN values from graph? (copy to new dataframe?)
+			closeplt('subjectivity','stacked')
 
-		plt.savefig(f'output/visuals/intervalGraph_{gtype}.png', bbox_inches='tight')
-		plt.clf()
+		# Cleanup
+		self.df.drop(['Y','M','D','month year'], axis=1) # test if this is working?
 
+		print('All output located at output/visuals/intervalGraph/')
 		print('Completed intervalGraphing.')
 		print('*'*80, '\n')
+
 
 	def plotly(self):
 		fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
