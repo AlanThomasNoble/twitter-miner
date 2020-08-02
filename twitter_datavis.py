@@ -534,13 +534,16 @@ s				> Set Interval
 		fear = round((d.get('fear',0) / self.df.shape[0])*100, 1)
 		disgust = round((d.get('disgust',0) / self.df.shape[0])*100, 1)
 		anger = round((d.get('anger',0) / self.df.shape[0])*100, 1)
-
-		self.freqGraph(freqDict=d, gtype='pie', gtitle='Tone Analysis', saveloc='output/visuals/toneCounts', userInput=False)
+		path='output/visuals/toneputs/'
+		mkdir(path)
+		self.freqGraph(freqDict=d, gtype='pie', gtitle='Tone Analysis', saveloc=f'{path}toneCounts', userInput=False)
 		print('Completed toneCounts')
 		print('*'*80,'\n')
 
 
 	def toneBCR(self):
+		print('*'*80)
+		print('Starting toneBCR')
 		from IPython.core.display import HTML
 		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]*100
 		import bar_chart_race as bcr
@@ -549,8 +552,13 @@ s				> Set Interval
 			title='Tones Over Time [0 to 1]*100',
 			period_fmt='%B %d, %Y %X',
 			perpendicular_bar_func='median') # add start date and end date with f-string
-		with open('output/visuals/tone_barchartrace.html','w') as file:
+		path='output/visuals/toneputs/'
+		mkdir(path)
+		with open(f'{path}tone_barchartrace.html','w') as file:
 			file.write(html.data)
+		print(f'HTML file generated at {path}tone_barchartrace.html')
+		print('Completed toneBCR')
+		print('*'*80,'\n')
 
 
 	def toneGraph(self):
@@ -558,7 +566,6 @@ s				> Set Interval
 		print('Starting toneGraph...')
 
 		# Generate Radar Graph (https://pypi.org/project/radar-chart/)
-		# matplot way (seems a bit complicated): https://stackoverflow.com/questions/60231146/how-can-i-turn-my-dataframe-into-a-radar-chart-using-python
 		from radar_chart.radar_chart import radar_chart
 		plt.figure()
 		counts = self.df.tones.str.get_dummies(sep=', ').sum()
@@ -566,14 +573,17 @@ s				> Set Interval
 		keys = [str(k) for k in counts.keys()]
 		values = [int(counts[k]) for k in keys] 
 		radar_chart(values, keys, line_color='red', fill_color='red', rotate=45)
-		plt.savefig('output/visuals/tone_radar.png')
+		path='output/visuals/toneputs/'
+		mkdir(path)
+		plt.savefig(f'{path}tone_radar.png')
 		plt.clf()
+		print(f'Figure generated at {path}tone_radar.png')
 
 		# Generate BoxPlot
 		plt.figure()
 		self.df.boxplot(['sadness_score','joy_score','fear_score','disgust_score','anger_score'])
-		plt.savefig('output/visuals/tone_boxplot.png')
+		plt.savefig(f'{path}tone_boxplot.png')
 		plt.clf()
-
+		print(f'Figure generated at {path}tone_boxplot.png')
 		print('toneGraph complete')
 		print('*'*80,'\n')
