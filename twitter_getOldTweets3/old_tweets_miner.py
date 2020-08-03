@@ -29,7 +29,7 @@ def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5) :
     #create a list of day numbers
     since = datetime.strptime(SinceDate, '%Y-%m-%d')
     days = list(range(0, (datetime.strptime(UntilDate, '%Y-%m-%d') - datetime.strptime(SinceDate, '%Y-%m-%d')).days+1))
-    print(days)
+    # print(days)
     # tweets = []
 
     running_count = 0
