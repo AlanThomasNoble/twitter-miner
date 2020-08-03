@@ -56,7 +56,8 @@ def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5) :
         with open('input/getOldTweets3_input/LOK.txt', "r") as fptr:
             for query in fptr:
                 query = query.rstrip('\n')
-                print(query)
+                print("Current account: ", query)
+                print()
                 print()
                 for day in days:
                     init = got.manager.TweetCriteria().setQuerySearch(query).setSince((since + timedelta(days=day)).strftime('%Y-%m-%d')).setUntil((since+ timedelta(days=day+1)).strftime('%Y-%m-%d')).setMaxTweets(maxtweetperday)
