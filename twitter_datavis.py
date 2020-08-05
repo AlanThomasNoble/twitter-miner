@@ -428,7 +428,7 @@ s				> Set Interval
 
 
 	def plotly(self):
-		choice = input("What type of visualization do you want? \n(1) pie chart\n(2) bar graph\n(3) scatterplot\n\tchoice: ")
+		choice = input("What type of visualization do you want? \n(1) pie chart\n(2) bar graph\n(3) scatterplot\nchoice: ")
 		if choice == 'pie chart':
 			fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
 			fig.show()
