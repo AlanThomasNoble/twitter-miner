@@ -9,7 +9,7 @@ import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 from collections import Counter
-
+from datetime import datetime
 # Internal Libraries
 import twitter_processing as processing
 
@@ -428,9 +428,24 @@ s				> Set Interval
 
 
 	def plotly(self):
-		fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
-		fig.show()
+		choice = input("What type of visualization do you want? \n(1) pie chart\n(2) bar graph\n(3) scatterplot\n\tchoice: ")
+		if choice == 'pie chart':
+			fig = px.sunburst(self.df, path=['user'], values='account sentiment score')
+			fig.show()
+		elif choice == 'bar graph':
+			fig = px.bar(self.df, x="user", y=["account sentiment score", "account subjectivity score"], title="Wide-Form Input")
+			fig.show()
+		elif choice == 'scatterplot':
+			fig = px.scatter(self.df, x='datetime_extra', y='account sentiment score')
+			fig.show()
+		else:
+			exit_program()
 
+		#Code to export graph as html in /output/timeStamp + choice.html - Time stamp is used to ensure output will never overwrite
+		dateTimeObj = datetime.now()
+		choice = "-".join(choice.split())
+		timeStamp = str(dateTimeObj.year) + '-' + str(dateTimeObj.month) + '-' + str(dateTimeObj.day) + '-' + str(dateTimeObj.hour) + '-' + str(dateTimeObj.minute) + '-' + choice
+		fig.write_html("output/visuals/plotly/" + timeStamp + ".html")
 
 	def polSub(self):
 		'''Plots polarity and subjectivity.
