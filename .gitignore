@@ -3,4 +3,4 @@ env/
 .jsonl/
 __pycache__/*
 local/*
-	
+test.py

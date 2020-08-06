@@ -70,10 +70,17 @@ df.to_csv(f'{file}_watson.csv')
 '''Entire Document (I think we may be limited by the size of the text input (But hopefully we should be fine)''' 
 ##################################################################################################### 
 # Check out Datavis.py
-text = ' '.join(df['account status'])
-response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=['Covid-19','Autonomous Vehicles']))).get_result()
-print(response)
-
+try:
+    text = ' '.join(df['account status'])
+    import math
+    units = math.ceil(len(text)/10000)
+    print(f'NLU Data Units: {units}')
+    response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=['Covid-19','Autonomous Vehicles']))).get_result()
+    print(response)
+except:
+    import json
+    with open('entireDocumentOfTweetsResponse.txt','w') as file:
+        file.write(json.dumps(response,indent=2))
 import json
-with open('entireDocumentOfTweetsResponse.txt','w') as file:
-    file.write(json.dumps(response,indent=2))
+    with open('entireDocumentOfTweetsResponse.txt','w') as file:
+        file.write(json.dumps(response,indent=2))
