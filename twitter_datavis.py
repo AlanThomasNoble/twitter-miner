@@ -606,8 +606,21 @@ s				> Set Interval
 
 
 	def wordAnalyzer(self):
-		# word = input("Enter the word that you would like to analyze: ")
-		word = 'Autonomous Vehicles'
+		word = input("Enter the word that you would like to analyze: ")
+		print()
+
+		y_n = input(f"Would you like a sentiment pie chart for {word} (y or n): ")
+		if y_n == 'y':
+			self.sentiment_pie_for_keyword(word)
+		print()
+
+		y_n = input(f"Would you like a time series chart for {word} (y or n): ")
+		if y_n == 'y':
+			self.date_range_slider(word)
+		print()
+
+
+	def sentiment_pie_for_keyword(self, word):
 		word_pie_df = self.df
 		word_pie_df = word_pie_df.loc[(word_pie_df['search query'] == word)]
 
@@ -650,10 +663,58 @@ s				> Set Interval
 		autopct='%1.1f%%', shadow=True, startangle=140)
 
 		plt.axis('equal')
-
+		plt.title(f'Sentiment Pie: {word}', loc='center')
 		path='output/visuals/wordAnalyzer/'
 		mkdir(path)
 		plt.savefig(f'{path}{word}-pie_chart.png')
 		plt.clf()
 		print(f'Figure generated at {path}{word}-pie_chart.png')
+
+
+	def date_range_slider(self, word):
+		word_pie_df = self.df
+		word_pie_df = word_pie_df.loc[(word_pie_df['search query'] == word)]
+
+		fig = go.Figure()
+
+		fig.add_trace(
+			go.Scatter(x=list(word_pie_df['datetime_extra']), y=list(word_pie_df['account sentiment score'])))
+
+		# Set title
+		fig.update_layout(
+			title_text=f"Sentiment Score Time Series: {word}"
+		)
+
+		# Add range slider
+		fig.update_layout(
+			xaxis=dict(
+				rangeselector=dict(
+					buttons=list([
+						dict(count=1,
+							label="1m",
+							step="month",
+							stepmode="backward"),
+						dict(count=6,
+							label="6m",
+							step="month",
+							stepmode="backward"),
+						dict(count=1,
+							label="YTD",
+							step="year",
+							stepmode="todate"),
+						dict(count=1,
+							label="1y",
+							step="year",
+							stepmode="backward"),
+						dict(step="all")
+					])
+				),
+				rangeslider=dict(
+					visible=True
+				),
+				type="date"
+			)
+		)
+
+		fig.show()
 
