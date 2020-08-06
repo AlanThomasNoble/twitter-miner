@@ -131,10 +131,13 @@ class Visuals:
 		self.df.drop_duplicates(subset='tweet id')
 		print(f"***{total - len(self.df)} Duplicate Entries Removed***")
 		total = len(self.df)
+		self.df.dropna(subset=['account status'], inplace=True)
+		print(f"***{total - len(self.df)} nan Entries Removed***")
+		total = len(self.df)
 		self.df['account status'] = self.df['account status'].apply(processing.cleanData)
 		self.df['account status'].replace('',float('nan'),inplace=True)
 		self.df.dropna(subset=['account status'], inplace=True)
-		print(f"***{total - len(self.df)} Empty/nan Entries Removed***")
+		print(f"***{total - len(self.df)} Empty Entries Removed***")
 		print(f"New Total: {len(self.df)}\n")
 
 
