@@ -113,7 +113,8 @@ class Visuals:
 				toneCounts=self.toneCounts,
 				toneBCR=self.toneBCR,
 				toneGraph=self.toneGraph,
-				plotly=self.plotly)
+				plotly=self.plotly,
+				wordAnalyzer=self.wordAnalyzer)
 		
 		# Evaluate
 		for vis in self.visualizations:
@@ -602,3 +603,57 @@ s				> Set Interval
 		print(f'Figure generated at {path}tone_boxplot.png')
 		print('toneGraph complete')
 		print('*'*80,'\n')
+
+
+	def wordAnalyzer(self):
+		# word = input("Enter the word that you would like to analyze: ")
+		word = 'Autonomous Vehicles'
+		word_pie_df = self.df
+		word_pie_df = word_pie_df.loc[(word_pie_df['search query'] == word)]
+
+		positive = -1
+		negative = -1
+		neutral = -1
+		try: 
+			positive = word_pie_df['account sentiment'].value_counts()['positive']
+		except KeyError:
+			positive = -1
+		
+		try: 
+			negative = word_pie_df['account sentiment'].value_counts()['negative']
+		except KeyError:
+			negative = -1
+
+		try: 
+			neutral = word_pie_df['account sentiment'].value_counts()['neutral']
+		except KeyError:
+			neutral = -1
+
+		sizes = []
+		colors = []
+		labels = []
+		if positive != -1:
+			sizes.append(positive)
+			colors.append('yellowgreen')
+			labels.append('positive')
+		if negative != -1:
+			sizes.append(negative)
+			colors.append('lightcoral')
+			labels.append('negative')
+		if neutral != -1:
+			sizes.append(neutral)
+			colors.append('gold')
+			labels.append('neutral')
+
+		# Plot
+		plt.pie(sizes, labels=labels, colors=colors,
+		autopct='%1.1f%%', shadow=True, startangle=140)
+
+		plt.axis('equal')
+
+		path='output/visuals/wordAnalyzer/'
+		mkdir(path)
+		plt.savefig(f'{path}{word}-pie_chart.png')
+		plt.clf()
+		print(f'Figure generated at {path}{word}-pie_chart.png')
+
