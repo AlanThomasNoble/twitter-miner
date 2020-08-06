@@ -673,7 +673,6 @@ s				> Set Interval
 		plt.clf()
 		print(f'Figure generated at {path}{word}-pie_chart.png')
 
-
 	def date_range_slider(self, word):
 		word_pie_df = self.df
 		word_pie_df = word_pie_df.loc[(word_pie_df['search query'] == word)]
