@@ -609,7 +609,7 @@ s				> Set Interval
 
 
 	def wordAnalyzer(self):
-		word = input("Enter the word that you would like to analyze: ")
+		word = input("Enter the keyword that you would like to analyze: ")
 		print()
 
 		y_n = input(f"Would you like a sentiment pie chart for {word} (y or n): ")
@@ -672,6 +672,7 @@ s				> Set Interval
 		plt.savefig(f'{path}{word}-pie_chart.png')
 		plt.clf()
 		print(f'Figure generated at {path}{word}-pie_chart.png')
+
 
 	def date_range_slider(self, word):
 		word_pie_df = self.df
