@@ -61,16 +61,16 @@ nuTonomy self driving
 Cruise self driving
 Enbark self driving
 
-10 - Aashish
+10 - Aashish DONE
 Ford self driving
 BMW self driving
 Mercedes self driving
 Voyage self driving
 Carmera self driving
 
-11 - 
+11 - DONE
 Nuro autonomous robot
 Pony AI autonomous driving
 
-12 -
+12 - DONE
 self driving expert
