@@ -47,7 +47,7 @@ deep learning cars
 self driving future
 autonomous vehicle benefits
 
-8 - Alan
+8 - Alan DONE
 Tesla self driving
 Waymo self driving
 Argo AI self driving
