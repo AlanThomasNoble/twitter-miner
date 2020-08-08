@@ -29,6 +29,23 @@ def cleanData(text):
     cleaned = cleaned.strip('\'"').lstrip().rstrip() # Trim
     return cleaned
 
+def cleanDataframe(df):
+    total = len(df)
+    print(f"Total Entries: {total}")
+    df.drop_duplicates(subset='tweet id')
+    print(f"***{total - len(df)} Duplicate Entries Removed***")
+    total = len(df)
+    df.dropna(subset=['account status'], inplace=True)
+    print(f"***{total - len(df)} nan Entries Removed***")
+    total = len(df)
+    import twitter_processing as processing
+    df['account status'] = df['account status'].apply(processing.cleanData)
+    df['account status'].replace('',float('nan'),inplace=True)
+    df.dropna(subset=['account status'], inplace=True)
+    print(f"***{total - len(df)} Empty Entries Removed***")
+    print(f"New Total: {len(df)}\n")
+    return df
+
 def analyze(text):
     print(f'Running Count: {analyze.counter}\r')
     analyze.counter +=1
@@ -53,34 +70,47 @@ def analyze(text):
 ##################################################################################################### 
 '''Read File, Call Functions, Save to CSV File'''
 ##################################################################################################### 
-file = 'KEYWORD_SEARCH_OUTPUT'
-df = pd.read_csv(f'output/{file}.csv')
+# Read File
+num = 5 #### ****MODIFY HERE***** ####
 
-# Call Functions
-df['account status'] = df['account status'].apply(cleanData)
-df['account status'].replace('',float('nan'),inplace=True)
-df.dropna(subset=['account status'], inplace=True)
-analyze.counter = 1
-df[['tones', 'sadness_score', 'joy_score','fear_score','disgust_score','anger_score']] = df.apply(
-    lambda row: pd.Series(analyze(row['account status'])), axis=1)
+file = f'keywords_output_{num}'
+df = pd.read_csv(f'output/KSO/{file}.csv')
 
-df.to_csv(f'{file}_watson.csv')
+from twitter_datavis import mkdir
+path = 'output/watson/'
+mkdir(path)
 
-##################################################################################################### 
-'''Entire Document (I think we may be limited by the size of the text input (But hopefully we should be fine)''' 
-##################################################################################################### 
-# Check out Datavis.py
 try:
-    text = ' '.join(df['account status'])
-    import math
-    units = math.ceil(len(text)/10000)
-    print(f'NLU Data Units: {units}')
-    response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=['Covid-19','Autonomous Vehicles']))).get_result()
-    print(response)
-except:
-    import json
-    with open('entireDocumentOfTweetsResponse.txt','w') as file:
-        file.write(json.dumps(response,indent=2))
-import json
-    with open('entireDocumentOfTweetsResponse.txt','w') as file:
-        file.write(json.dumps(response,indent=2))
+    # Clean Data
+    df['account status'] = df['account status'].apply(cleanData)
+    df = cleanDataframe(df)
+
+    # Call Tone Analyzer
+    analyze.counter = 1
+    df[['tones', 'sadness_score', 'joy_score','fear_score','disgust_score','anger_score']] = df.apply(
+        lambda row: pd.Series(analyze(row['account status'])), axis=1)
+
+except:# Save to CSV
+    df.to_csv(f'output/watson/{file}_watson.csv')
+
+df.to_csv(f'output/watson/{file}_watson.csv')
+
+# ##################################################################################################### 
+# '''Entire Document (I think we may be limited by the size of the text input (But hopefully we should be fine)''' 
+# ##################################################################################################### 
+# # Check out Datavis.py
+# try:
+#     text = ' '.join(df['account status'])
+#     import math
+#     units = math.ceil(len(text)/10000)
+#     print(f'NLU Data Units: {units}')
+#     response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=['Covid-19','Autonomous Vehicles']))).get_result()
+#     print(response)
+# except:
+#     import json
+#     with open(f'output/watson/entireDocumentOfTweetsResponse_{num}.txt','w') as file:
+#         file.write(json.dumps(response,indent=2))
+
+# import json
+#     with open(f'output/watson/entireDocumentOfTweetsResponse_{num}.txt','w') as file:
+#         file.write(json.dumps(response,indent=2))
