@@ -71,7 +71,7 @@ def analyze(text):
 '''Read File, Call Functions, Save to CSV File'''
 ##################################################################################################### 
 # Read File
-num = 11 #### ****MODIFY HERE***** ####
+num = 1 #### ****MODIFY HERE***** ####
 
 file = f'keywords_output_{num}'
 df = pd.read_csv(f'output/KSO/{file}.csv')
