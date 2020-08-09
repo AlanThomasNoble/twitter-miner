@@ -568,13 +568,14 @@ s				> Set Interval
 		print('*'*80)
 		print('Starting toneBCR')
 		from IPython.core.display import HTML
+		#import pdb; pdb.set_trace()
 		# Per Day
 		df = self.df.resample('D')[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']].mean()*100 # Scale By 100
 		import bar_chart_race as bcr
 		html = bcr.bar_chart_race(df,
 			figsize=(4, 2.5), 
 			title='Tones Over Time [0 to 1]*100',
-			period_fmt='%B %d' # to include time: %Y %X',
+			period_fmt='%B %d', # to include time: %Y %X',
 			perpendicular_bar_func='median') # add start date and end date with f-string
 		path='output/visuals/toneputs/'
 		mkdir(path)
