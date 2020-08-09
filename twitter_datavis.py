@@ -568,7 +568,6 @@ s				> Set Interval
 		print('*'*80)
 		print('Starting toneBCR')
 		from IPython.core.display import HTML
-		#import pdb; pdb.set_trace()
 		# Per Day
 		df = self.df.resample('D')[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']].mean()*100 # Scale By 100
 		import bar_chart_race as bcr
