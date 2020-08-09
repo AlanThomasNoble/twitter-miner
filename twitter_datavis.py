@@ -110,9 +110,7 @@ class Visuals:
 				intervalGraph=self.intervalGraph,
 				valueCounts=self.valueCounts,
 				freqGraph=self.freqGraph,
-				toneCounts=self.toneCounts,
-				toneBCR=self.toneBCR,
-				toneGraph=self.toneGraph,
+				toneputs=self.toneputs,
 				plotly=self.plotly,
 				wordAnalyzer=self.wordAnalyzer)
 		
@@ -539,6 +537,12 @@ s				> Set Interval
 		print('*'*80, '\n')
 
 
+	def toneputs(self):
+		self.toneCounts()
+		self.toneGraph()
+		self.toneBCR()
+
+
 	def toneCounts(self):
 		print('*'*80)
 		print('Starting toneCounts')
@@ -564,12 +568,13 @@ s				> Set Interval
 		print('*'*80)
 		print('Starting toneBCR')
 		from IPython.core.display import HTML
-		df = self.df[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']]*100
+		# Per Day
+		df = self.df.resample('D')[['sadness_score', 'joy_score','fear_score','disgust_score','anger_score']].mean()*100 # Scale By 100
 		import bar_chart_race as bcr
 		html = bcr.bar_chart_race(df,
 			figsize=(4, 2.5), 
 			title='Tones Over Time [0 to 1]*100',
-			period_fmt='%B %d, %Y %X',
+			period_fmt='%B %d' # to include time: %Y %X',
 			perpendicular_bar_func='median') # add start date and end date with f-string
 		path='output/visuals/toneputs/'
 		mkdir(path)
@@ -720,4 +725,3 @@ s				> Set Interval
 		)
 
 		fig.show()
-
