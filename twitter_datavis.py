@@ -627,6 +627,8 @@ s				> Set Interval
 			self.date_range_slider(word)
 		print()
 
+		self.date_range_slider_average_of_all_keywords()
+
 
 	def sentiment_pie_for_keyword(self, word):
 		word_pie_df = self.df
@@ -691,6 +693,64 @@ s				> Set Interval
 		# Set title
 		fig.update_layout(
 			title_text=f"Sentiment Score Time Series: {word}"
+		)
+
+		# Add range slider
+		fig.update_layout(
+			xaxis=dict(
+				rangeselector=dict(
+					buttons=list([
+						dict(count=1,
+							label="1m",
+							step="month",
+							stepmode="backward"),
+						dict(count=6,
+							label="6m",
+							step="month",
+							stepmode="backward"),
+						dict(count=1,
+							label="YTD",
+							step="year",
+							stepmode="todate"),
+						dict(count=1,
+							label="1y",
+							step="year",
+							stepmode="backward"),
+						dict(step="all")
+					])
+				),
+				rangeslider=dict(
+					visible=True
+				),
+				type="date"
+			)
+		)
+
+		fig.show()
+
+
+	def date_range_slider_average_of_all_keywords(self):
+		big_df = self.df
+
+		hash_df = {}
+		hash_freq = {}
+		for index, row in big_df.iterrows():
+			if row['datetime_extra'] in hash_df:
+				hash_freq[row['datetime_extra']] = hash_freq[row['datetime_extra']] + 1
+				hash_df[row['datetime_extra']] = (hash_df[row['datetime_extra']] + row['account sentiment score']) / hash_freq[row['datetime_extra']]
+
+			else:
+				hash_df[row['datetime_extra']] = row['account sentiment score']
+				hash_freq[row['datetime_extra']] = 1
+
+		fig = go.Figure()
+
+		fig.add_trace(
+			go.Scatter(x=list(hash_df.keys()), y=list(hash_df.values())))
+
+		# Set title
+		fig.update_layout(
+			title_text="Average Sentiment Score Time Series"
 		)
 
 		# Add range slider
