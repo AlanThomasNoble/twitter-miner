@@ -326,7 +326,7 @@ class Visuals:
 			labels = freqDict['words'].values()
 			# workaround, perhaps there's a cleaner way to do below.
 			if 'positive' in labels or 'neutral' in labels or 'negative' in labels:
-				colors = ['yellowgreen', 'gold', 'lightcoral'] 
+				colors = ['lightcoral', 'gold', 'yellowgreen'] 
 				plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', 
 					shadow=True, startangle=140)
 			else:
@@ -531,7 +531,7 @@ s				> Set Interval
 		sent_chart = input("Select Chart Type For Sentiment output (Ex: barh, pie): ")
 		subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
 
-		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Analysis', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
+		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Percentages for entire Twitter Data', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
 		self.freqGraph(freqDict=d_subj, gtype=subj_chart, gtitle='Subjectivity Analysis', saveloc='output/visuals/valueCounts_subjectivity', userInput=False)
 		print('Completed valueCounts.')
 		print('*'*80, '\n')
