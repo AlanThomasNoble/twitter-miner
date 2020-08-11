@@ -676,7 +676,7 @@ s				> Set Interval
 		autopct='%1.1f%%', shadow=True, startangle=140)
 
 		plt.axis('equal')
-		plt.title(f'Sentiment Pie: {word}', loc='center')
+		plt.title(f'Sentiment Percentages: "{word}"', loc='center')
 		path='output/visuals/wordAnalyzer/'
 		mkdir(path)
 		plt.savefig(f'{path}{word}-pie_chart.png')
