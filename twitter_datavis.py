@@ -627,7 +627,10 @@ s				> Set Interval
 			self.date_range_slider(word)
 		print()
 
-		self.date_range_slider_average_of_all_keywords()
+		y_n = input(f"Would you like a time series chart for entire dataset (y or n): ")
+		if y_n == 'y':
+			self.date_range_slider_average_of_all_keywords()
+		print()
 
 
 	def sentiment_pie_for_keyword(self, word):
