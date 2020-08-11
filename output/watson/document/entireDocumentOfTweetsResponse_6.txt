@@ -1,0 +1,36 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "autonomous vehicles research",
+        "emotion": {
+          "sadness": 0.100855,
+          "joy": 0.551954,
+          "fear": 0.165896,
+          "disgust": 0.01951,
+          "anger": 0.044686
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.111517,
+        "joy": 0.601059,
+        "fear": 0.143642,
+        "disgust": 0.032922,
+        "anger": 0.055165
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 283373

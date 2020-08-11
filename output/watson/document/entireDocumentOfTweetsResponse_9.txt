@@ -1,0 +1,36 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "Baidu self driving",
+        "emotion": {
+          "sadness": 0.392464,
+          "joy": 0.038215,
+          "fear": 0.161809,
+          "disgust": 0.444465,
+          "anger": 0.282478
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.471736,
+        "joy": 0.540057,
+        "fear": 0.140488,
+        "disgust": 0.095636,
+        "anger": 0.13402
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 156926

@@ -1,0 +1,36 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "Tesla self driving",
+        "emotion": {
+          "sadness": 0.331034,
+          "joy": 0.202342,
+          "fear": 0.261528,
+          "disgust": 0.162585,
+          "anger": 0.267266
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.481178,
+        "joy": 0.548585,
+        "fear": 0.148327,
+        "disgust": 0.130578,
+        "anger": 0.511235
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 502216

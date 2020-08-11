@@ -1,0 +1,36 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "assisted driving",
+        "emotion": {
+          "sadness": 0.124875,
+          "joy": 0.56151,
+          "fear": 0.080332,
+          "disgust": 0.066473,
+          "anger": 0.070337
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.577655,
+        "joy": 0.566393,
+        "fear": 0.111944,
+        "disgust": 0.111713,
+        "anger": 0.117584
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 686438

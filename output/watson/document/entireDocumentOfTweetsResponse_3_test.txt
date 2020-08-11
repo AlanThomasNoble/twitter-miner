@@ -1,0 +1,96 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "autonomous vehicles",
+        "emotion": {
+          "sadness": 0.08815,
+          "joy": 0.014208,
+          "fear": 0.212771,
+          "disgust": 0.139667,
+          "anger": 0.067646
+        }
+      },
+      {
+        "text": "self driving",
+        "emotion": {
+          "sadness": 0.580654,
+          "joy": 0.132493,
+          "fear": 0.182644,
+          "disgust": 0.144344,
+          "anger": 0.217273
+        }
+      },
+      {
+        "text": "tesla",
+        "emotion": {
+          "sadness": 0.560977,
+          "joy": 0.524041,
+          "fear": 0.157672,
+          "disgust": 0.116687,
+          "anger": 0.543729
+        }
+      },
+      {
+        "text": "waymo",
+        "emotion": {
+          "sadness": 0.583547,
+          "joy": 0.512342,
+          "fear": 0.160775,
+          "disgust": 0.129974,
+          "anger": 0.201854
+        }
+      },
+      {
+        "text": "driverless",
+        "emotion": {
+          "sadness": 0.540609,
+          "joy": 0.094721,
+          "fear": 0.191485,
+          "disgust": 0.215288,
+          "anger": 0.446625
+        }
+      },
+      {
+        "text": "AI",
+        "emotion": {
+          "sadness": 0.528187,
+          "joy": 0.584665,
+          "fear": 0.151142,
+          "disgust": 0.106772,
+          "anger": 0.149543
+        }
+      },
+      {
+        "text": "driverless",
+        "emotion": {
+          "sadness": 0.540609,
+          "joy": 0.094721,
+          "fear": 0.191485,
+          "disgust": 0.215288,
+          "anger": 0.446625
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.61212,
+        "joy": 0.53363,
+        "fear": 0.198464,
+        "disgust": 0.149678,
+        "anger": 0.576105
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 431479

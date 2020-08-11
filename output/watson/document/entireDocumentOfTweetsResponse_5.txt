@@ -1,0 +1,36 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "self driving car accidents",
+        "emotion": {
+          "sadness": 0.251598,
+          "joy": 0.053193,
+          "fear": 0.239894,
+          "disgust": 0.071693,
+          "anger": 0.653183
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.251772,
+        "joy": 0.128182,
+        "fear": 0.514481,
+        "disgust": 0.113167,
+        "anger": 0.209037
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 306235
