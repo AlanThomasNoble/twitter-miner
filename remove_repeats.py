@@ -14,6 +14,11 @@ for index, row in df.iterrows():
         count = count + 1
         id_set.add(row['tweet id'])
 
-print(f"dropped: {dropped}")
-print(f"new total: {count}")
+    if count % 100 == 0:
+        print(f"dropped: {dropped}")
+        print(f"new total: {count}")
+        print()
+
+print(f"final dropped: {dropped}")
+print(f"final new total: {count}")
 df.to_csv('final_filename.csv', index = False)
