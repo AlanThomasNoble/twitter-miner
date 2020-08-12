@@ -32,7 +32,7 @@ import re
 # def cleanDataframe(df):
 #     total = len(df)
 #     print(f"Total Entries: {total}")
-#     df.drop_duplicates(subset='tweet id')
+#     df.drop_duplicates(subset='tweet id', keep='first', inplace=True)
 #     print(f"***{total - len(df)} Duplicate Entries Removed***")
 #     total = len(df)
 #     df.dropna(subset=['account status'], inplace=True)
@@ -99,7 +99,7 @@ import re
 '''Entire Document (I think we may be limited by the size of the text input (But hopefully we should be fine)''' 
 ##################################################################################################### 
 # Check out Datavis.py
-num = 11
+num = 8
 df = pd.read_csv(f'output/watson/keywords_output_{num}_watson.csv')
 print('Starting Generation...')
 try:
@@ -108,7 +108,8 @@ try:
     import math
     units = math.ceil(len(text)/10000)
     print(f'NLU Data Units: {units}')
-    response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=['Nuro autonomous robot', 'Pony AI autonomous driving', 'self driving expert']))).get_result()
+    import keywords
+    response = natural_language_understanding.analyze(text=text,language='en', features=Features(emotion=EmotionOptions(targets=keywords.eight))).get_result()
     print(response)
 except:
     import json
@@ -120,3 +121,4 @@ import json
 with open(f'output/watson/document/entireDocumentOfTweetsResponse_{num}.txt','w') as file:
     file.write(json.dumps(response,indent=2))
     file.write(f'\n\n Character Length: {len(text)}')
+

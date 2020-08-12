@@ -8,13 +8,23 @@
   "emotion": {
     "targets": [
       {
-        "text": "self driving expert",
+        "text": "Tesla",
         "emotion": {
-          "sadness": 0.152433,
-          "joy": 0.222047,
-          "fear": 0.285716,
-          "disgust": 0.211835,
-          "anger": 0.133412
+          "sadness": 0.508908,
+          "joy": 0.477637,
+          "fear": 0.107095,
+          "disgust": 0.164093,
+          "anger": 0.139106
+        }
+      },
+      {
+        "text": "Uber",
+        "emotion": {
+          "sadness": 0.584633,
+          "joy": 0.14968,
+          "fear": 0.176339,
+          "disgust": 0.091197,
+          "anger": 0.133544
         }
       }
     ],

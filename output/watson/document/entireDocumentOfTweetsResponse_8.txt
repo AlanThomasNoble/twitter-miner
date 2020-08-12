@@ -8,13 +8,43 @@
   "emotion": {
     "targets": [
       {
-        "text": "Tesla self driving",
+        "text": "Tesla",
         "emotion": {
-          "sadness": 0.331034,
-          "joy": 0.202342,
-          "fear": 0.261528,
-          "disgust": 0.162585,
-          "anger": 0.267266
+          "sadness": 0.473975,
+          "joy": 0.544011,
+          "fear": 0.14137,
+          "disgust": 0.113842,
+          "anger": 0.165188
+        }
+      },
+      {
+        "text": "Waymo",
+        "emotion": {
+          "sadness": 0.468118,
+          "joy": 0.564702,
+          "fear": 0.120576,
+          "disgust": 0.066686,
+          "anger": 0.101446
+        }
+      },
+      {
+        "text": "Lyft",
+        "emotion": {
+          "sadness": 0.262036,
+          "joy": 0.191697,
+          "fear": 0.41496,
+          "disgust": 0.079848,
+          "anger": 0.098244
+        }
+      },
+      {
+        "text": "Uber",
+        "emotion": {
+          "sadness": 0.176241,
+          "joy": 0.578753,
+          "fear": 0.08925,
+          "disgust": 0.096259,
+          "anger": 0.093933
         }
       }
     ],

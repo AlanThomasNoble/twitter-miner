@@ -126,7 +126,7 @@ class Visuals:
 		'''Cleans DataFrame.  Removes '', 'nan', and Repeat Entries'''
 		total = len(self.df)
 		print(f"Total Entries: {total}")
-		self.df.drop_duplicates(subset='tweet id')
+		self.df.drop_duplicates(subset='tweet id', keep='first',inplace=True)
 		print(f"***{total - len(self.df)} Duplicate Entries Removed***")
 		total = len(self.df)
 		self.df.dropna(subset=['account status'], inplace=True)

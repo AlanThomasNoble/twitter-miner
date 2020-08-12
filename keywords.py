@@ -1,4 +1,5 @@
-#default = list['']
+default = ["autonomous vehicles","self driving","tesla", "waymo", "assisted driving", "AI", "driverless", "future", "Covid-19", "self driving future"]
+
 one = ['autonomous vehicles', 'autonomous driving', 'autonomous cars', 'driverless', 'self driving']
 
 two = ['assisted driving', 'autonomous technology', 'autonomous level', 'intelligent driving systems', 'artificial intelligence cars']
@@ -13,7 +14,8 @@ six = ['human machine interface vehicles', 'autonomous vehicles research', 'unma
 
 seven = ['self driving engineer', 'autonomous vehicle engineer', 'deep learning cars', 'self driving future', 'autonomous vehicle benefits']
 
-eight = ['Tesla self driving', 'Waymo self driving', 'Argo AI self driving', 'Lyft self driving', 'Uber self driving']
+#eight = ['Tesla self driving', 'Waymo self driving', 'Argo AI self driving', 'Lyft self driving', 'Uber self driving']
+eight = ['Tesla', 'Waymo', 'Argo AI', 'Lyft', 'Uber']
 
 nine = ['Baidu self driving', 'Zoox self driving', 'nuTonomy self driving', 'Cruise self driving', 'Enbark self driving']
 
