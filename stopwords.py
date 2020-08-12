@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 STOP_WORDS = set(
     """
 a about above across after afterwards again against all almost alone along
-already also although always am among amongst amount an and another any anyhow
+already also although always am amp among amongst amount an and another any anyhow
 anyone anything anyway anywhere are around as at
 back be became because become becomes becoming been before beforehand behind
 being below beside besides between beyond both bottom but by
@@ -56,7 +56,8 @@ for apostrophe in ["‘", "’"]:
 AV_STOP_WORDS=set(
 	"""
 driverless autonomousvehicles selfdriving self-driving autonomous driving cars car
-autonomouscars autonomousmobility autonomouscar selfdrivingcar
+autonomouscars autonomousmobility autonomouscar selfdrivingcar selfdrivingcars self
+vehicle vehicles
 """.split()
 )
 

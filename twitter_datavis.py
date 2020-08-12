@@ -328,10 +328,11 @@ class Visuals:
 			if 'positive' in labels or 'neutral' in labels or 'negative' in labels:
 				colors = ['lightcoral', 'gold', 'yellowgreen'] 
 				plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', 
-					shadow=True, startangle=140)
+					shadow=True, startangle=140, textprops={'fontsize': 19})
 			else:
 				plt.pie(data, labels=labels, autopct='%1.1f%%', shadow=True, 
-					startangle=140)
+					startangle=140, textprops={'fontsize': 19})
+
 			plt.axis('equal')
 
 		# Save and Close Graph
@@ -673,7 +674,7 @@ s				> Set Interval
 
 		# Plot
 		plt.pie(sizes, labels=labels, colors=colors,
-		autopct='%1.1f%%', shadow=True, startangle=140)
+		autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 19})
 
 		plt.axis('equal')
 		plt.title(f'Sentiment Percentages: "{word}"', loc='center')
