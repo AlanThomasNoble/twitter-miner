@@ -8,7 +8,7 @@ dropped = 0
 for index, row in df.iterrows():
     if row['tweet id'] in id_set:
         # remove it from df
-        df.drop([index])
+        df.drop(index, inplace=True)
         dropped = dropped + 1
     else:
         count = count + 1
