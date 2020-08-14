@@ -53,13 +53,6 @@ class Visuals:
 		'''
 		Reads file, applys specifications, and starts visualizations.
 
-		Notes:
-			> # Read from DB File to DataFrame
-					conn = sqlite3.connect(f'{fileName}.db')
-					c = conn.cursor() # unnecesssary?
-					query = f'SELECT * FROM {fileName}' 
-					self.df = pd.read_sql_query(query, conn) #
-					conn.close()
 		Parameters
 		----------
 		fileName : str
@@ -91,13 +84,12 @@ class Visuals:
 		except FileNotFoundError:
 			exit_program('File Read Unsuccessful')  # Exits Program
 
-		# Edit DataFrame (and sorts)
+		# Edit DataFrame and Sort By Date
 		constrain = input("\nWould you like to constrain analyzed entries? (y or n): ")
 		if constrain == 'y':
 			self.editDataframe()
 		self.df = self.df.sort_index(ascending=True)
-		self.df['datetime_extra'] = self.df.index # We dont necessarily need this. I just thought this would be helpful while indexing time.
-		# print(self.df.index[0])
+		self.df['datetime_extra'] = self.df.index # Extra Date Column
 		print()
 
 		# Clean DataFrame
@@ -123,7 +115,8 @@ class Visuals:
 
 
 	def cleanDataframe(self):
-		'''Cleans DataFrame.  Removes '', 'nan', and Repeat Entries'''
+		'''Removes duplicate, nan, and empty entries from dataframe'''
+
 		total = len(self.df)
 		print(f"Total Entries: {total}")
 		self.df.drop_duplicates(subset='tweet id', keep='first',inplace=True)
@@ -140,13 +133,15 @@ class Visuals:
 
 
 	def editDataframe(self):
-		# Listing Options
+		'''Provides editing options for dataframe: by datetime, sentiment, and subjectivity'''
+
+		# Options
 		print("\nDataframe Editing Parameters")
 		print("(1) datetime - analyze a region of tweets based on date and time")
 		print("(2) sentiment - analyze a region of tweets based on sentiment")
 		print("(3) subjectivity - analyze a region of tweets based on subjectivity")
 
-		# User Selections
+		# Selections
 		valid = ('datetime', 'sentiment', 'subjectivity','tone')
 		params = input("Choose Desired Parameters (Separate By Commas): ")
 		params = params.split(', ')
@@ -154,12 +149,12 @@ class Visuals:
 		if False in check:
 			exit_program('Invalid Input for Datafarme Editing Parameters')
 
-		# Dataframe Editing
+		# Editing
 		if 'datetime' in params:
 			print('Editing datetime...')
 			start_date = input("Select a start date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
 			end_date = input("Select an end date [yyyy-mm-dd hh:mm:ss] (Time is Optional): ")
-			self.df = self.df.loc[start_date: end_date] # start and stop of place are both included.
+			self.df = self.df.loc[start_date: end_date]
 		if 'sentiment' in params:
 			print('Editing sentiment...')
 			sentiments = input("Select Sentiments (positive, negative, neutral): ")
@@ -183,33 +178,26 @@ class Visuals:
 
 
 	def ngrams(self, userInput=True):
-		'''Prints an ngram analysis given an 'n' value. Defaults to n=1
-
-		Notes:
-			> Defaults to n = 1: At 1, this is essentially a frequency distribution.
-			> Figure a simpler/better way to print and plot data nicely
-			> Check if program is exited nicely.
-
+		'''Prints an ngram analysis given an 'n' value. Defaults to n=1.
+	
 		Parameters
 		----------
-		tokens : list
-			A list of words (str)
-		
-		Raises
-		------
-		ValueError
-			If input data is not valid. Exits program.
+		userInput : bool
+			If True outputs are generated, otherwise n defaults to 1,
+			and a simple frequency analysis is returned.
 
 		Returns
 		-------
-		list
-			A list of words with each word lemmatized, if applicable.
+		dict (if userInput=False)
+			Returns a dictionary of tokens with respective counts.
 
 		Outputs
 		-------
-
-		freqDist.png
+		freqDist_barh.png (if userInput=True)
 			Generated frequency distribution plot if userInput=False
+		
+		ngrams_freqDist.txt (if userInput=True)
+			Frequency distribution per n-phrase written to file.
 		'''
 
 		# User Input
@@ -220,30 +208,27 @@ class Visuals:
 		else:
 			n = 1
 
-		# Clean Data Into Tokens
+		# Tokenize Text and Frequency Analysis
 		tokens = self.preprocessing()
-
-		# Generate ngram
 		grams = ngrams(tokens, n)
-
-		# Generate Frequency Distribution
 		fdist = FreqDist(grams)
 		freqDict = {', '.join(k): v for k, v in fdist.items()}
-
-		# Return for Internal Use
-		if not userInput:
-		    return freqDict
-
-		# Otherwise, Print FreqDict to File and Generate Frequency Graph
 		freqDictSorted = sorted(
 			freqDict.items(), key=lambda item: item[1], reverse=True)
 
+		# Return if for Internal Use
+		if not userInput:
+		    return freqDict
+
+		# Print FreqDict to File
 		with open('output/ngrams_freqDict.txt', 'w') as file:
 			[file.write(f'{item}\n') for item in freqDictSorted]
-
 		print(f'List of {len(freqDict)} Entries Generated at output/ngrams_freqDict.txt')
-		# Graph (Horizontal Bar)
+		
+		# Generated Frequency Graph
 		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist',userInput=False)
+		
+		# End
 		print('Completed ngrams.')
 		print('*'*80, '\n')
 
@@ -251,14 +236,12 @@ class Visuals:
 	def wordCloud(self):
 		'''Generates Word Cloud based on frequency
 
-		Notes:
-			> Remove imshow() and just save image.
-			> car mask
 		Outputs
 		-------
 		wordCloud.png
 			Generated Word Cloud.
 		'''
+
 		print('*'*80)
 		print("Starting wordCloud...")
 		freqDict = self.ngrams(userInput=False)
@@ -275,10 +258,6 @@ class Visuals:
 	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph', userInput=True):
 		'''Generic graphing function: generates bar, pie, and boxplot graphs based on userInput or internal funciton call.
 		
-		Notes:
-			> Planning to shift to a purely internal function in the future.
-			> BoxPlot of sentiment score changes over time.
-
 		Arguments
 		---------
 		keyword arguments
@@ -348,17 +327,7 @@ class Visuals:
 
 
 	def intervalGraph(self, gtypes='bar, box, stacked'):
-		'''Plots graphs based on intervals (boxplots, barh) of sentiment and subjectivity.
-
-			Notes:
-				> implement 'smart' interval.
-				> seaborn, plotly (other libraries to consider)
-				> fillna?
-				> Generate all possible graphs (avoid user input)
-s				> Set Interval
-					self.df = self.df.sort_values(by='post date-time')
-					g.iat[0]-g.iat[-1] # Timedelta('-9 days +05:45:35')
-		'''
+		'''Plots graphs based on intervals (boxplots, barh) of sentiment and subjectivity'''
 		print('*'*80)
 		print('Starting intervalGraphing...')
 
@@ -373,7 +342,7 @@ s				> Set Interval
 			plt.savefig(f'{path}intervalGraph_{feature}_{gtype}.png', bbox_inches='tight')
 			plt.clf()
 
-		interval = 'M'
+		interval = 'M' # Set
 		gtypes = gtypes.split(', ')
 		
 		# Form Columns
@@ -450,11 +419,9 @@ s				> Set Interval
 		timeStamp = str(dateTimeObj.year) + '-' + str(dateTimeObj.month) + '-' + str(dateTimeObj.day) + '-' + str(dateTimeObj.hour) + '-' + str(dateTimeObj.minute) + '-' + choice
 		fig.write_html("output/visuals/plotly/" + timeStamp + ".html")
 
+
 	def polSub(self):
 		'''Plots polarity and subjectivity.
-	
-		Notes:
-			> Requires changes to mining.py to get # values for subjectivity and sentiment.
 
 		Outputs
 		-------
@@ -482,9 +449,6 @@ s				> Set Interval
 
 	def valueCounts(self):
 		'''Prints Counts and Percentages of Subjectivity and Polarity
-
-		Notes:
-			> Requires column addition for subjectivity label.
 
 		Outputs
 		-------
