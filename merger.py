@@ -1,3 +1,4 @@
+'''This script joins multiple csv files in a directory into a single file.'''
 import os
 from glob import glob
 import pandas as pd
