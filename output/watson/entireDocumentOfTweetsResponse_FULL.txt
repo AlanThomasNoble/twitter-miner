@@ -1,0 +1,86 @@
+{
+  "usage": {
+    "text_units": 5,
+    "text_characters": 50000,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "targets": [
+      {
+        "text": "self driving",
+        "emotion": {
+          "sadness": 0.118705,
+          "joy": 0.573858,
+          "fear": 0.09745,
+          "disgust": 0.136701,
+          "anger": 0.155213
+        }
+      },
+      {
+        "text": "tesla",
+        "emotion": {
+          "sadness": 0.481449,
+          "joy": 0.535642,
+          "fear": 0.652386,
+          "disgust": 0.148053,
+          "anger": 0.510413
+        }
+      },
+      {
+        "text": "waymo",
+        "emotion": {
+          "sadness": 0.113518,
+          "joy": 0.170558,
+          "fear": 0.06037,
+          "disgust": 0.085397,
+          "anger": 0.086205
+        }
+      },
+      {
+        "text": "AI",
+        "emotion": {
+          "sadness": 0.504762,
+          "joy": 0.517646,
+          "fear": 0.080042,
+          "disgust": 0.127817,
+          "anger": 0.12618
+        }
+      },
+      {
+        "text": "driverless",
+        "emotion": {
+          "sadness": 0.573041,
+          "joy": 0.036064,
+          "fear": 0.342797,
+          "disgust": 0.211967,
+          "anger": 0.148149
+        }
+      },
+      {
+        "text": "future",
+        "emotion": {
+          "sadness": 0.097842,
+          "joy": 0.533418,
+          "fear": 0.657653,
+          "disgust": 0.621718,
+          "anger": 0.638638
+        }
+      }
+    ],
+    "document": {
+      "emotion": {
+        "sadness": 0.176405,
+        "joy": 0.272676,
+        "fear": 0.121642,
+        "disgust": 0.104682,
+        "anger": 0.435717
+      }
+    }
+  },
+  "warnings": [
+    "Text content exceeds 50000 character limit. Only first 50000 characters processed..."
+  ]
+}
+
+ Character Length: 8148741

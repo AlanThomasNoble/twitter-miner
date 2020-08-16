@@ -221,12 +221,14 @@ class Visuals:
 		    return freqDict
 
 		# Print FreqDict to File
-		with open('output/ngrams_freqDict.txt', 'w') as file:
+		path = 'output/visuals/ngrams/'
+		mkdir(path)
+		with open(f'{path}ngrams_freqDict.txt', 'w') as file:
 			[file.write(f'{item}\n') for item in freqDictSorted]
-		print(f'List of {len(freqDict)} Entries Generated at output/ngrams_freqDict.txt')
+		print(f'List of {len(freqDict)} Entries Generated at {path}ngrams_freqDict.txt')
 		
 		# Generated Frequency Graph
-		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", 'output/visuals/freqDist',userInput=False)
+		self.freqGraph(freqDict, 'barh', f"** Most Common Phrases [n={n}]", f'{path}freqDist',userInput=False)
 		
 		# End
 		print('Completed ngrams.')
@@ -249,13 +251,15 @@ class Visuals:
 		wc = wc.generate_from_frequencies(freqDict)
 		# plt.imshow(wc, interpolation='bilinear')
 		plt.axis('off')
-		wc.to_file('output/visuals/wordCloud.png')
-		print('Image generated at output/visuals/wordCloud.png')
+		path = 'output/visuals/wordcloud/'
+		mkdir(path)
+		wc.to_file(f'{path}wordCloud.png')
+		print(f'Image generated at {path}wordCloud.png')
 		print('Completed wordCloud.')
 		print('*'*80, '\n')
 
 
-	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph', userInput=True):
+	def freqGraph(self, freqDict=None, gtype='bar', gtitle='Freq Graph', saveloc='output/visuals/freqGraph/freqGraph_ngrams', userInput=True):
 		'''Generic graphing function: generates bar, pie, and boxplot graphs based on userInput or internal funciton call.
 		
 		Arguments
@@ -273,6 +277,8 @@ class Visuals:
 			print("Starting Graphing...")
 			gtype = input("Choose graph type (boxplot, pie, barh): ")
 			freqDict = self.ngrams(userInput=False) # Future Addition: pick data to graph?
+			path = 'output/visuals/freqGraph/'
+			mkdir(path)
 
 		# Automatically Limit Entries
 		num = len(freqDict)
@@ -496,8 +502,10 @@ class Visuals:
 		sent_chart = input("Select Chart Type For Sentiment output (Ex: barh, pie): ")
 		subj_chart = input("Select Chart Type For Subjectivity output (Ex: bar, pie): ")
 
-		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Percentages for entire Twitter Data', saveloc='output/visuals/valueCounts_sentiment', userInput=False)
-		self.freqGraph(freqDict=d_subj, gtype=subj_chart, gtitle='Subjectivity Analysis', saveloc='output/visuals/valueCounts_subjectivity', userInput=False)
+		path = 'output/visuals/valueCounts/'
+		mkdir(path)
+		self.freqGraph(freqDict=d_sent, gtype=sent_chart, gtitle='Sentiment Percentages for entire Twitter Data', saveloc=f'{path}valueCounts_sentiment', userInput=False)
+		self.freqGraph(freqDict=d_subj, gtype=subj_chart, gtitle='Subjectivity Analysis', saveloc=f'{path}valueCounts_subjectivity', userInput=False)
 		print('Completed valueCounts.')
 		print('*'*80, '\n')
 
