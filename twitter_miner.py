@@ -335,7 +335,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     print()
 
     # open the file
-    f_ptr = open(f'input/LOA2.txt', 'r')
+    f_ptr = open(f'input/List_Of_Accounts_input/LOA2.txt', 'r')
     # w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
     
     with open('output/List_Of_Accounts/list_of_accounts_out.csv', 'w', newline='') as csvfile:
@@ -483,7 +483,7 @@ def obtain_tweets_for_weekly_search(api):
 
     # open the file
     # f_ptr = open(f'input/list_of_keywords.txt', 'r')
-    f_ptr = open(f'input/list_of_keywords.txt', 'r')
+    f_ptr = open(f'input/weeklySearch_input/list_of_keywords.txt', 'r')
     with open('output/weeklySearch/weeklySearch_out.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user',
@@ -603,8 +603,8 @@ def search_no_limits(api, maxtweetperday=5):
 
     sinceDate = input("Enter the search start date (ex: YYYY-MM-DD): ")
     untilDate = input("Enter the search end date (ex: YYYY-MM-DD): ")
-    sinceDate = "2019-01-01"
-    untilDate = "2019-07-01"
+    # sinceDate = "2019-01-01"
+    # untilDate = "2019-07-01"
 
     #create a list of day numbers
     since = datetime.strptime(sinceDate, '%Y-%m-%d')
@@ -631,7 +631,7 @@ def search_no_limits(api, maxtweetperday=5):
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        with open('input/getOldTweets3_input/LOK.txt', "r") as fptr:
+        with open('input/Search_input/LOK.txt', "r") as fptr:
             for query in fptr:
                 query = query.rstrip('\n')
                 print("Current account: ", query)
