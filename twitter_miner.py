@@ -456,7 +456,7 @@ def FULL_TEXT_tweets_from_list_users(api):
 
 
 def obtain_tweets_for_weekly_search(api):
-    '''Obtains tweets from a search query and returns list of json objects for each result from query.
+    '''Obtains tweets from the past 7 days for a search query list and returns csv with results from query list.
 
     Notes: 
         > The file containing the list of accounts is found in the input folder
@@ -587,6 +587,18 @@ def obtain_tweets_for_weekly_search(api):
 
 
 def search_no_limits(api, maxtweetperday=5):
+    '''Obtains tweets for a search query list and returns csv with results for the query list.
+
+    Requirements
+    ------------
+    1) Each accound id corresponds to a PUBLIC accounts
+    2) Each account id is spelled correctly
+
+    Returns
+    -------
+    CSV with all the tweets and analystics data
+    '''
+
     sinceDate = input("Enter the search start date (ex: YYYY-MM-DD): ")
     untilDate = input("Enter the search end date (ex: YYYY-MM-DD): ")
     sinceDate = "2019-01-01"
