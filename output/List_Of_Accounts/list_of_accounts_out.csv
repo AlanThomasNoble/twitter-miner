@@ -1,0 +1,16 @@
+user,post date-time,account status,account sentiment,account sentiment score,retweet status,retweet sentiment,retweet sentiment score,post location,tweet id,account subjectivity,account subjectivity score,retweet subjectivity,retweet subjectivity score
+MITDriverless,2020-08-12 19:26:51,"#throwback to our podium moment exactly 1 year ago! (Only 1 year ago, we were actually allowed to be packed in 1 confined space like this!)
+
+It’s crazy that it’s only been 1 year and yet so much has happened. We are… https://t.co/4H5qUCgEQu",negative,-0.014583333333333328,,,,,1293630042703093762,subjective,0.5750000000000001,,
+_Driverless,2020-04-07 20:42:26,Timely milestone for @nurobots.  Congrats. #AVProgress #driverless https://t.co/jwhdN6EFis,neutral,0.0,"NEW: Self-driving robot start-up Nuro can now test grocery-delivery cars on California roads without a human driver behind the wheel, making it the second company to get a permit allowing such trials from the safety-conscious state. https://t.co/wC3OFCH9So",negative,-0.052727272727272734,,1247625807331241985,very objective,0.0,objective,0.3509090909090909
+Tesla,2020-08-14 16:25:26,,,,"In Tesla’s Q2 earnings call they dropped the little bombshell that Tesla's solar panels cost $1.49 per watt after incentives.  I found it can be even lower than that.  This is big news.  
+
+https://t.co/3ZQU6fMVjR",negative,-0.09375,,1294309164257120261,,,objective,0.3
+DriverlessID,2017-08-31 20:18:06,Are you a fast-paced and hungry writer with an obsession for self-driving cars? Join us: https://t.co/0wn92nuFYm,neutral,0.0,,,,,903351210807316480,very objective,0.0,,
+aurrigotech,2020-08-12 10:41:53,,,,"Blind Veterans UK took part in the @royalsociety conference on Trauma recovery: new science and technology for mental and physical health earlier this year.
+ 
+Special thanks to @UniofOxford @aurrigotech @BlindedVeterans. 👏
+ 
+Read the report online: https://t.co/kTkGsl1Fja https://t.co/2xKkKIyN7h",positive,0.013358070500927648,,1293497930150809600,,,objective,0.39078540507111936
+driverlesscomm1,2019-06-06 15:05:37,"A cheaper, more efficient alternative to light rail: Autonomous shuttles @AtlantaBeltLine @MARTASERVICE @beltlinerailnow https://t.co/UNpiHPR5F7",positive,0.43333333333333335,Transportation on the entire BeltLine in 10 years for a fraction of the cost? Autonomous shuttles are the answer. https://t.co/zQIRhtOi6v,positive,0.2,,1136650358074335232,subjective,0.6333333333333333,subjective,0.6625
+driverlesscars_,2016-11-07 09:50:59,REGISTRATION IS CLOSING - last minute tickets can be bought at https://t.co/GbcS8tUj5d,neutral,0.0,,,,,795564195643326464,very objective,0.06666666666666667,,

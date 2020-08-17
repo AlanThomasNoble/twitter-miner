@@ -338,7 +338,7 @@ def FULL_TEXT_tweets_from_list_users(api):
     f_ptr = open(f'input/LOA2.txt', 'r')
     # w_ptr = open(f'output/FULL_TEXT_list_of_accounts_output.txt', 'w')
     
-    with open('output/LIST_OF_ACCOUNTS_TWEETS.csv', 'w', newline='') as csvfile:
+    with open('output/List_Of_Accounts/list_of_accounts_out.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user', 
             'post date-time', 
@@ -446,13 +446,13 @@ def FULL_TEXT_tweets_from_list_users(api):
                 time.sleep(1)
                 print(f'Running Count: {running_count}, Account: {account}\r', end="")
         print()
-        print(f"{running_count} tweets generated.")
+        print("Completed mining via list of accounts.")
+        print(f"Tweets generated: {running_count}")
         # w_ptr.write("\n")
         # w_ptr.write("\n")
 
     f_ptr.close()
-    print("Completed mining via list of accounts.")
-    print("Tweets can be found in output/LIST_OF_ACCOUNTS_TWEETS.csv")
+    print("Tweets can be found in output/List_Of_Accounts/list_of_accounts_out.csv")
 
 
 def obtain_tweets_for_weekly_search(api):
@@ -484,7 +484,7 @@ def obtain_tweets_for_weekly_search(api):
     # open the file
     # f_ptr = open(f'input/list_of_keywords.txt', 'r')
     f_ptr = open(f'input/list_of_keywords.txt', 'r')
-    with open('output/KEYWORD_SEARCH_OUTPUT.csv', 'w', newline='') as csvfile:
+    with open('output/weeklySearch/weeklySearch_out.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user',
             'search query', 
@@ -582,8 +582,10 @@ def obtain_tweets_for_weekly_search(api):
                 # in every 15 min
                 time.sleep(1)
                 print(f'Running Count: {running_count}\r', end="")
-        print("Completed mining via keyword search.")
-        print("Output can be found in KEYWORD_SEARCH_OUTPUT.csv.")
+        print()
+        print("Completed mining via weeklySearch.")
+        print(f"Tweets generated: {running_count}")
+        print("Output can be found in output/weeklySearch/weeklySearch_out.csv.")
 
 
 def search_no_limits(api, maxtweetperday=5):
@@ -609,7 +611,7 @@ def search_no_limits(api, maxtweetperday=5):
     days = list(range(0, (datetime.strptime(untilDate, '%Y-%m-%d') - datetime.strptime(sinceDate, '%Y-%m-%d')).days+1))
 
     running_count = 0
-    with open('output/getOldTweets3_output/out.csv', 'w', newline='') as csvfile:
+    with open('output/Search/out.csv', 'w', newline='') as csvfile:
         fieldnames = [
             'user',
             'search query', 
@@ -712,4 +714,7 @@ def search_no_limits(api, maxtweetperday=5):
                         # which is the max output for the rate limit twitter sets
                         time.sleep(1)
                         print(f'Running Count: {running_count}\r', end="")
-
+    print()
+    print("Completed mining via Search.")
+    print(f"Tweets generated: {running_count}")
+    print("Output can be found in output/Search/out.csv.")
