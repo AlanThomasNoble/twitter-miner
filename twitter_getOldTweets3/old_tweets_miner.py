@@ -25,7 +25,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
-def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5) :
+def DownloadTweets(SinceDate, UntilDate, maxtweetperday=5):
     #create a list of day numbers
     since = datetime.strptime(SinceDate, '%Y-%m-%d')
     days = list(range(0, (datetime.strptime(UntilDate, '%Y-%m-%d') - datetime.strptime(SinceDate, '%Y-%m-%d')).days+1))

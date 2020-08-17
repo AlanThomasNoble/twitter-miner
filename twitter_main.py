@@ -2,7 +2,7 @@ import sys, os
 
 #################################### LIBRARIES ######################################################
 from twitter_datavis import Visuals
-import twitter_miner_1
+import twitter_miner
 #####################################################################################################
 
 def start():
@@ -19,23 +19,25 @@ def start():
 
 def miningStart():
     '''Initial output for Mining'''
-    print("\nThis software will be used to mine Twitter data.")
-    print("\n(1) User - obtain a set of a given user's tweets using an account's user ID")
-    print("(2) List - quickly retrival of tweets from a list of users (cannot guarentee full text)")
-    print("(3) F_List - obtain full text tweets from a list of users")
-    print("(4) Search - obtain tweets from a search query")
-    print("(5) Limits - prints json of current API usage limits")
-    print("(6) Exit - exits software\n")
+    print("\nThis software will be used to mine Twitter data.\n")
+    print("(1) Search - obtain tweets from a search query list (no restrictions)")
+    print("(2) weeklySearch - obtain tweets FROM THE LAST 7 DAYS from a search query list")
+    print("(3) F_List - obtain tweets from a list of users (guarentees full text)")
+    print("(4) List - obtain tweets from a list of users (cannot guarentee full text)")
+    print("(5) User - obtain tweets from a single user")
+    print("(6) Limits - prints json of current API usage limits")
+    print("(7) Exit - exits software\n")
     user_input = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
     print()
 
-    validCalls = dict(User=twitter_miner_1.obtain_tweets_from_single_user,
-            List=twitter_miner_1.PARTIAL_TEXT_tweets_from_list_users,
-            F_List=twitter_miner_1.FULL_TEXT_tweets_from_list_users,
-            Search=twitter_miner_1.obtain_tweets_from_search,
+    validCalls = dict(User=twitter_miner.obtain_tweets_from_single_user,
+            List=twitter_miner.PARTIAL_TEXT_tweets_from_list_users,
+            F_List=twitter_miner.FULL_TEXT_tweets_from_list_users,
+            weeklySearch=twitter_miner.obtain_tweets_for_weekly_search,
+            Search=twitter_miner.search_no_limits,
             Limits=check_limit)
     if user_input in validCalls:
-        api = twitter_miner_1.tweepyAuthentication()
+        api = twitter_miner.tweepyAuthentication()
         validCalls[user_input](api)
     else:
         exit_program()
