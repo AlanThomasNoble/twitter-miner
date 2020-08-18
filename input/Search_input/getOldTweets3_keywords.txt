@@ -1,76 +1,74 @@
-1 - DONE
+1 - Alan DONE
 autonomous vehicles
 autonomous driving
 autonomous cars
 driverless
 self driving (also gets self-driving)
 
-2 - DONE
+2 - Aashish
 assisted driving
 autonomous technology
 autonomous level
 intelligent driving systems
 artificial intelligence cars
 
-3 - DONE
+3 - Akshay
 self driving crash
 autonomous vehicle crash
 autonomous parking
 autonomous robots
 LIDAR in vehicles
 
-4 - DONE
+4 -
 autonomous driving
 self driving bikes
 self driving law
 self driving safety
 computer vision cars
 
-5 - Alan DONE
+5 - 
 self driving car accidents
 self driving dangers
 self driving death
 pedestrian autonomous vehicles
 self driving issues
 
-6 - Akshay DONE
+6 -
 human machine interface vehicles
 autonomous vehicles research
 unmanned vehicle
 self driving sensors
 neural network cars
 
-7 - Aashish DONE
+7 -
 self driving engineer
 autonomous vehicle engineer
 deep learning cars
 self driving future
 autonomous vehicle benefits
 
-8 - Alan DONE
+8 - 
 Tesla self driving
 Waymo self driving
 Argo AI self driving
 Lyft self driving
 Uber self driving
 
-9 - Akshay
+9 - 
 Baidu self driving
 Zoox self driving
 nuTonomy self driving
 Cruise self driving
 Enbark self driving
 
-10 - Aashish DONE
+10 -
 Ford self driving
 BMW self driving
 Mercedes self driving
 Voyage self driving
 Carmera self driving
 
-11 - DONE
+11 -
 Nuro autonomous robot
 Pony AI autonomous driving
-
-12 - DONE
 self driving expert
