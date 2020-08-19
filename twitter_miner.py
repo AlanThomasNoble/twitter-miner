@@ -42,24 +42,6 @@ def tweepyAuthentication():
 '''Helper Functions'''
 #####################################################################################################
 
-# Provides initial output to the user
-def minerStart():
-    print()
-    print("This software will be used to mine Twitter data.")
-    print()
-    print("(1) User - obtain a set of a given user's tweets using an account's user ID")
-    print("(2) List - quickly retrival of tweets from a list of users (cannot guarentee full text)")
-    print("(3) F_List - obtain full text tweets from a list of users")
-    print("(4) Search - obtain tweets from a search query")
-    print("(5) Limits - prints json of current API usage limits")
-    print("(6) Visuals - skips to visualization step")
-    print("(7) Exit - exits software")
-    print()
-    data = input("Enter the type of data from the above list that you would like to mine (Ex: User, Exit, etc.): ")
-    print()
-    return data
-
-
 def exit_program(err_msg='Manual exit'):
     '''exits software safely'''
     print(f'\n{err_msg}')
@@ -67,8 +49,6 @@ def exit_program(err_msg='Manual exit'):
     sys.exit()
 
 
-# Action: Converts DB Files to CSV Format
-# Specify Params for Desired Columns (Default is Everything *)
 def convertToCSV(fileName, params='*'):
     '''Converts DB Files to CSV Format
 
@@ -89,7 +69,6 @@ def convertToCSV(fileName, params='*'):
     print(f'CSV File Generated - {fileName}.csv')
 
 
-# Action: Outputs Data Based on Status Object (Defaults to Single User)
 def getInfo(status, t, retweet, func='single_user'):
     '''Outputs Data Based on Status Object'''
     user = status.author.screen_name
@@ -132,15 +111,11 @@ def obtain_tweets_from_single_user(api, fileName='tweets', append=False):
         print()
         print("The following tweets are from this account:", user_id)
 
-        # Delete File Contents
+        # Reset
         if not append:
             os.system(f'rm -rf {fileName}.*')
-
-        # Connection Object
         conn = sqlite3.connect(f'{fileName}.db')
-
-        # Cursor Object
-        c = conn.cursor() # Cursor Object
+        c = conn.cursor()
 
         # Create Table (datatypes: https://www.sqlite.org/datatype3.html)
         if not append:
