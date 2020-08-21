@@ -33,14 +33,14 @@ self driving death
 pedestrian autonomous vehicles
 self driving issues
 
-6 -
+6 - Akshay DONE
 human machine interface vehicles
 autonomous vehicles research
 unmanned vehicle
 self driving sensors
 neural network cars
 
-7 -
+7 - Alan DONE
 self driving engineer
 autonomous vehicle engineer
 deep learning cars
