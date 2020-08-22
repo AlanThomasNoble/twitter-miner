@@ -1,4 +1,4 @@
-Twitter Miner
+# Twitter Miner
 This program helps you compile large Twitter datasets. It is written in Python 3.6.
 
 Requirements: Python 3.6
