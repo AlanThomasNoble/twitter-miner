@@ -47,21 +47,21 @@ deep learning cars
 self driving future
 autonomous vehicle benefits
 
-8 - 
+8 - Akshay done
 Tesla self driving
 Waymo self driving
 Argo AI self driving
 Lyft self driving
 Uber self driving
 
-9 - 
+9 - Alan done
 Baidu self driving
 Zoox self driving
 nuTonomy self driving
 Cruise self driving
-Enbark self driving
+Enbark self driving  (should be embark?)
 
-10 -
+10 - Alan done
 Ford self driving
 BMW self driving
 Mercedes self driving
@@ -72,3 +72,16 @@ Carmera self driving
 Nuro autonomous robot
 Pony AI autonomous driving
 self driving expert
+
+12 - pedestrian? 
+pedestrian safety self driving
+pedestrian crashes self driving
+pedestrian fatality self driving
+pedestrian injury self driving
+
+13 - causation?
+self driving red light
+self driving stop sign
+self driving interaction
+
+
