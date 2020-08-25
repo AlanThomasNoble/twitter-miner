@@ -1,3 +1,4 @@
+AV KEYWORDS: (Sets 1-11)
 1 - Alan DONE
 autonomous vehicles
 autonomous driving
@@ -68,20 +69,59 @@ Mercedes self driving
 Voyage self driving
 Carmera self driving
 
-11 -
+11 - Alan Done
 Nuro autonomous robot
 Pony AI autonomous driving
 self driving expert
 
-12 - pedestrian? 
-pedestrian safety self driving
-pedestrian crashes self driving
-pedestrian fatality self driving
-pedestrian injury self driving
-
-13 - causation?
-self driving red light
-self driving stop sign
-self driving interaction
 
 
+2019/2020 AV STATISTICS
+53 keywords/search queries
+~5 per day from Jan 1st, 2019 - Jul 1st, 2019
+2019 -> 26983
+
+~5 per day from Jan 1st, 2020 - Jul 1st, 2020
+2020 -> 23650
+
+-3,333 tweets from 2019 to 2020
+-12.4% of the tweets in 2019
+less overall interation with AVs on Twitter
+
+
+
+12 - PEDESTRIAN KEYWORDS
+car hits pedestrian
+car hits onlooker
+car hits bicyclist
+car hits building
+car kills pedestrian
+car kills onlookers
+car kills bicyclist
+
+13 -
+pedestrian safety car
+car crashes pedestrian
+pedestrian fatality car
+car injures pedestrian
+pedestrian jaywalking
+pedestrian crosswalk car
+pedestrian runs onto road
+pedestrian right of way
+
+14-
+pedestrian crashes ADAS
+pedestrian crashes automated vehicle features
+pedestrian fatality ADAS
+pedestrian crash scenario
+pedestrian crash causation  
+pedestrian crash human error
+pedestrian crash system error  
+
+
+15 - CAUSATION KEYWORDS
+vehicle runs red light
+vehicle runs stop sign
+vehicle speeds
+driving drunk
+car interaction
