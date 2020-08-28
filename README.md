@@ -6,6 +6,7 @@ To start program, type __make__
 You'll then be presented with two options: _mine_ or _visuals_.
 
 __mine:__ this selection will direct you to a place to help you mine tweets.
+
 __visuals:__ this selection will direct you to a place to generate visualizations based on mined data.
 
 All terminal UI is contained in twitter_main.py for clarity.
