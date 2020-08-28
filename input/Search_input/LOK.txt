@@ -1,7 +1,6 @@
-car hits pedestrian
-car hits onlooker
-car hits bicyclist
-car hits building
-car kills pedestrian
-car kills onlookers
-car kills bicyclist
+pedestrian fatality car
+car injures pedestrian
+pedestrian jaywalking
+pedestrian crosswalk car
+pedestrian runs onto road
+pedestrian right of way
