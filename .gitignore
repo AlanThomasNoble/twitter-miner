@@ -5,4 +5,3 @@ __pycache__/*
 local/*
 .env
 test.py
-twitter_getOldTweets3/FULL_OLD_TWEETS_part1.csv
