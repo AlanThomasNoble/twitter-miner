@@ -1,0 +1,3 @@
+,user,post_date_time,account_status,account_sentiment,account_sentiment_score,retweet_status,retweet_sentiment,retweet_sentiment_score,post_location,tweet_id,account_subjectivity,account_subjectivity_score,retweet_subjectivity,retweet_subjectivity_score
+0,Tesla,2020-08-20 15:58:14,Aka 162 hours of uninterrupted wifi https://t.co/fvm8Y5oERB,neutral,0.0,"Power is flowing again from the grid. 
+Grateful for my @Tesla #Powerwall and 162 hours of uninterrupted backup power. ⚡️⚡️⚡️ https://t.co/eHABBzr8OA",neutral,0.0,,1296476645650567169,very objective,0.0,very objective,0.0

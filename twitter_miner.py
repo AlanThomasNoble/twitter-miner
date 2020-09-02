@@ -3,11 +3,12 @@ import sys
 import time
 import csv
 import sqlite3, os, pandas as pd
+from decouple import config
 
-consumer_key = "e9phIIirNUPdAX8IvMFqQSzDp"
-consumer_secret = "4Mnv0GBAWly06Wcf3U4Gzo98tvWqrpdfRMNqsbU4sQ3maMVN3S"
-access_token = "1270458425063981056-jvtE1ym2vqFCLLt9iWcNsuS2lk6x8j"
-access_token_secret = "hVVaARh1MkNkMnSRVhKdXPScfkJhOpdl5IsGf51QV30GX"
+consumer_key = config("consumer_key")
+consumer_secret = config("consumer_secret")
+access_token = config("access_token")
+access_token_secret = config("access_token_secret")
 
 #################################### LIBRARIES FOR NLP ##############################################
 import twitter_nlp
